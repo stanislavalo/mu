@@ -1,0 +1,55 @@
+export default [
+  {
+    id:1,
+    name: 'MainMenu',
+    items:[
+      {
+        id:1,
+        name:'People',
+        items:['Staff','Summary']
+      },
+      {
+        id:2,
+        name:'Institute',
+        items:['Home']
+      },
+      {
+        id:3,
+        name:'Events & Calender',
+        items:[]
+      },
+      {
+        id:4,
+        name:'Position',
+        items:[]
+      }
+    ]
+  },
+  {
+    id:2,
+    name: 'BisMenu',
+    items:[
+      {
+        id:1,
+        name:'Research',
+        items:['Preprints','Publications']
+      },
+      {
+        id:2,
+        name:'Departemes',
+        items:['EDE','BB','MLATS']
+      },
+      {
+        id:3,
+        name:'Journals',
+        items:[]
+      },
+      {
+        id:4,
+        name:'Partnership',
+        items:[]
+      }
+    ]
+  },
+]
+;
