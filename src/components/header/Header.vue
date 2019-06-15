@@ -1,19 +1,13 @@
 <template>
 <!------------HEADER ------------------->
-  <div>
+  <div class="col-sm-12">
     <v-layout xs12 md6 row wrap 
       style="background: #252697;" 
-      min-height="100"> 
-      
+      min-height="90px">    
       <!------------LOGO, TITLE------------------->
-      <v-flex shrink  class="hidden-sm-and-down ma-0">
-        <app-logo-big></app-logo-big>
-      </v-flex>
-      <v-flex shrink  class="hidden-md-and-up ma-0">
-       <app-logo-small></app-logo-small>
-      </v-flex>
+      <app-logo-big></app-logo-big>
       <!------------MENUS LINE------------------------>
-      <v-flex   class="mt-2">
+      <v-flex class="mt-2">
         <!---------navigation stable - always display------>
         <app-navigation-stable></app-navigation-stable>
         <!----------Main menu---line------------->
@@ -23,7 +17,7 @@
           <v-flex  class="hidden-lg-and-up " >
             <v-layout align-end justify-end > 
               <v-toolbar-side-icon light
-                @click="toggleDrawer"
+                @click="toggleDrawer(mdAndDown)"
                 class="white--text" >
               </v-toolbar-side-icon>
             </v-layout>
@@ -39,9 +33,92 @@
     <!----------Main menu---sandwich------------->
     <app-main-menu-sandwich v-if="showMainMenuDown"  :mainMenu="mainMenu"></app-main-menu-sandwich>
     <!-------------bis menu sandwich------------------>
-      <app-bis-menu-sandwich v-if="showBisMenuDown" :bisMenu="bisMenu"></app-bis-menu-sandwich> -->
+    <app-bis-menu-sandwich v-if="showBisMenuDown" :bisMenu="bisMenu"></app-bis-menu-sandwich> 
   </div>   
 </template>
-<script src="./header.js"></script>
-<style src="./header.css"></style>
+<script>
+// import data
+import menus from '../../data/header.js';
+// import getters + actions from store
+import {mapGetters} from 'vuex';
+import {mapActions} from 'vuex';
+// import components
+import mainMenu from './menus/Mainmenu.vue';
+import logoBig from './logo/LogoBig.vue';
+// import logoSmall from './logo/LogoSmall.vue';
+import navigationStable from './menus/NavigationStable.vue';
+import bisMenu from './menus/BisMenu.vue';
+import mainMenuSandwich from './menus/MainMenuSandwich.vue';
+import bisMenuSandwich from './menus/BisMenuSandwich.vue';
+
+export default {
+  data(){
+    return{
+      mainMenu: [],
+      bisMenu: [],
+      MembersMenu: [ 'Intranet','Webmail','Login' ],
+      mdAndDown:false
+    }
+  },
+  components:{
+    AppMainMenu: mainMenu,
+    AppLogoBig: logoBig,
+    // AppLogoSmall: logoSmall,
+    AppNavigationStable: navigationStable,
+    AppBisMenu: bisMenu,
+    AppMainMenuSandwich: mainMenuSandwich,
+    AppBisMenuSandwich: bisMenuSandwich,
+
+  },
+  mounted () {
+    console.log(this.$vuetify.breakpoint);
+    this.mdAndDown = this.$vuetify.breakpoint.mdAndDown;
+  },
+  created: function() {
+    var main = [];
+    var bis = [];
+    menus.forEach(function(element) {
+      if(element.type == 'main'){
+        main.push(element);
+      }
+      else if(element.type == 'bis'){
+        bis.push(element);
+      }
+    });
+    this.mainMenu = main;
+    this.bisMenu = bis;
+  },
+  computed: {
+    ...mapGetters({
+      drawer:'drawer',
+      showBisMenuDown:'showBisMenuDown',
+      showMainMenuDown:'showMainMenuDown'
+    }),
+  },
+  methods: {
+    ...mapActions({
+      toggleDrawer:'toggleDrawer'
+    }),
+    getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+  }
+}
+</script>
+<style>
+ul.menudown{
+  position: absolute; 
+  z-index:2; 
+  background-color:white;
+  width: 100%;
+  min-width: 200px;
+  max-width: 260px;
+  border-bottom: 3px solid rgba(227, 226, 228, 0.6);
+  border-left:3px solid rgba(227, 226, 228, 0.6);
+  border-right:3px solid rgba(227, 226, 228, 0.6);
+}
+a, a:link, a:visited, a:active {
+    text-decoration: none;
+}
+</style>
 
