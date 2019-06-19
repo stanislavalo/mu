@@ -4,6 +4,5 @@ export default
   themes:['Research themes','Vědecká témata'],
   production:['Scientifique production','Výzkumná činnost'],
   members:['Members','Členové'],
-  membersFormer:['Former,Members','Bývalí členové'],
+  membersFormer:['Former,Members','Bývalí členové']
 }
- 

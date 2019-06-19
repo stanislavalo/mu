@@ -148,7 +148,7 @@ export default [
   {
     id:4,
     sigle:"CMMA",
-    name:["Constructive Methods of Mathematical Analysis"],
+    name:["Constructive Methods of Mathematical Analysis","Konstruktivní metody matematické analýzy"],
     date_start:1970,
     date_end:null,
     activ:true,
