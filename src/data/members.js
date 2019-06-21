@@ -52,7 +52,7 @@ export default [
     fax:'222090809',  
     office:'256',
     photo:true,
-    interest:'Descriptive set theory and its applications in real and functional analysis'    
+    interest:[{title:null,description:'Descriptive set theory and its applications in real and functional analysis' }]   
   },
   
   {
@@ -71,7 +71,7 @@ export default [
     fax:'+420 222 090 711',  
     office:'11',
     photo:true,
-    interest:'several complex variables, complex geometry,functional analysis, mathematical physics'    
+    interest:[{title:null,description:'several complex variables, complex geometry,functional analysis, mathematical physics'}]  
   },
   {
     id:8,
@@ -91,7 +91,7 @@ export default [
     fax:'+420 222 090 711',  
     office:'11',
     photo:true,
-    interest: 'Functional analysis, Banach spaces, Nonlinear analysis, Topology'   
+    interest:[{title:null,description:'Functional analysis, Banach spaces, Nonlinear analysis, Topology'}]   
   },
   {
     id:4,
@@ -109,7 +109,7 @@ export default [
     fax:'+420 222 090 726',  
     office:'122',
     photo:true,
-    interest:'graph theory, random discrete structures, graph limits'    
+    interest:[{title:null,description:'graph theory, random discrete structures, graph limits' }]   
   },
   {
     id:2,
@@ -127,9 +127,10 @@ export default [
     fax:'+420 222 090 716',  
     office:'257',
     photo:true,
-    interest:'partial differential equations, dynamical systems, mathematical fluid '    
-  },
-  {
+    interest:[{title:'differential equations',description:'partial differential equations, dynamical systems, mathematical fluid ' },   
+            {title:'existence of Strong Solutions', description:'On the Existence of Strong Solutions to a Fluid Structure Interaction Problem with Navier Boundary Conditions'}]
+    },
+    {
     id:5,
     type: {staff:false,researcher:true},
     typeResearcher:{type:'researcher',departmentId:5,from:1999,to:null},
@@ -145,7 +146,7 @@ export default [
     fax:'222090809',  
     office:'256', 
     photo:true,
-    interest:'partial differential equations, dynamical systems, mathematical fluid '   
+    interest:[{title:null,description:'partial differential equations, dynamical systems, mathematical fluid'},]  
   },
   {
     id:6,
@@ -163,7 +164,7 @@ export default [
     fax:'222090809',  
     office:'256', 
     photo:true,
-    interest:'Computational complexity, communication complexity, quantum '   
+    interest:[{title:null,description:'Computational complexity, communication complexity, quantum '  }], 
   },
   {
     id:7,
@@ -181,7 +182,7 @@ export default [
     fax:'222090809',  
     office:'256', 
     photo:true,
-    interest:'Boundary value problems for ordinary and functional differential equations'   
+    interest:[{title:null,description:'Boundary value problems for ordinary and functional differential equations'}],  
   },
 ] 
 

@@ -5,7 +5,7 @@
         <v-img
           class="white--text"
           height="200px"
-          src="http://localhost:8080/src/assets/departments/docks.jpg">
+          src="http://localhost:8080/src/assets/departments/naturali.jpg">
           <v-container fill-height fluid>
             <v-layout fill-height>
               <v-flex xs12 align-end flexbox>

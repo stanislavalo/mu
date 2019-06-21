@@ -12,13 +12,22 @@
               d-flex
             >
               <v-card  tile class="d-flex">
-                <div>
+                <router-link :to="{name:'researcher',params:{id:researcher.id}}" >
+                  <div class="black--text">
                   <v-img
                   :src=researcher.photo
                   :lazy-src=researcher.photo
                     aspect-ratio="0.75"
                     class="grey lighten-2"
                   >
+                    <v-container fill-height fluid >
+                      <v-layout align-end justify-end ml-4 mt-4>
+                        <v-spacer></v-spacer>
+                        <v-flex xs4 align-end  flexbox>
+                          <img src="../../assets/members/ic_assignment_ind.png">
+                        </v-flex>
+                      </v-layout>
+                    </v-container>
                     <template v-slot:placeholder>
                       <v-layout
                         fill-height
@@ -30,14 +39,16 @@
                       </v-layout>
                     </template>
                   </v-img>
-                  <div class="mt-2 ml-1">
-                    <h5 class="mb-0">{{researcher.first_name}} {{researcher.last_name}}</h5>
-                    <p class="ma-0 pa-0 caption">{{researcher.title}}</p>
-                    <p class="ma-0 pa-0">Departement: <span class="body-2">{{researcher.department[2]}}</span></p>
-                    <p class="body-2 mb-1">{{researcher.department[language]}}</p>
-                    <p class="ma-0 pa-1 tt">	Research interests:<br>{{researcher.interest}}</p>
+                    <div class="mt-2 ml-1">
+                      <h5 class="mb-0  black--text">{{researcher.first_name}} {{researcher.last_name}}</h5>
+                      <!-- <img v-if="!formerMembers" class="mr-1" src="../../assets/members/chevron-right.png"> -->
+                      <p class="ma-0 pa-0  black--text caption">{{researcher.title}}</p>
+                      <p class="ma-0 pa-0  black--text">Departement: <span class="body-2">{{researcher.department[2]}}</span></p>
+                      <p class="body-2 mb-1  black--text">{{researcher.department[language]}}</p>
+                      <p class="ma-0 pa-1 interests">Research interests:<br>{{researcher.interest}}</p>
+                    </div>
                   </div>
-                </div>
+                </router-link>
               </v-card>
             </v-flex>
           </v-layout>
@@ -66,7 +77,7 @@ export default {
           researcher.last_name = element.last_name;
           researcher.first_name = element.first_name;
           researcher.title = element.title;
-          researcher.interest= element.interest;
+          researcher.interest= getInterest(element.interest);
           if(element.photo){ 
             researcher.photo = "http://localhost:8080/src/data/photos/"+element.id+".jpg"
           }
@@ -78,9 +89,7 @@ export default {
           researchersData.push(researcher);
       }
     });
-    this.researchers = researchersData;
-    console.log("-------researchers-----");
-    console.log(this.researchers);       
+    this.researchers = researchersData;   
   },
   computed: {
     ...mapGetters({
@@ -90,7 +99,6 @@ export default {
 }
 function getDepartement(typeResearcher) {  
   var department = [];
-  console.log(typeResearcher);
   var departmentId = typeResearcher.departmentId;
   departments.forEach(function(departmentItem){
     if(departmentItem.id == departmentId){
@@ -101,9 +109,16 @@ function getDepartement(typeResearcher) {
   });
   return department;  
 }
+function getInterest(interest){
+  var description = '';
+  interest.forEach(function(item){
+    description = description +  item.description + ' ,';
+  });
+  return description;
+}
 </script>
 <style>
-p.tt{
+p.interests{
     background-color: #424242;
     border-color: #424242;
     color: #fff;

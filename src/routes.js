@@ -2,6 +2,7 @@ import Home from './components/home/Home.vue';
 import Staff from './components/members/Staff.vue';
 import Summary from './components/members/Summary.vue';
 import Researchers from './components/members/Researchers.vue';
+import Researcher from './components/members/Researcher.vue';
 import Members from './components/members/Members.vue';
 import Events from './components/events/Events.vue';
 import Calendar from './components/events/Calendar.vue';
@@ -16,7 +17,8 @@ import DepartmentDetail from './components/departments/DepartmentDetail.vue';
 export const routes = [
   {path: '/', name: 'home', component: Home} ,
   {path: '/members', name: 'members', component: Members, children:[
-    {path:'researchers',name: 'researchers', component: Researchers},
+    {path:'researchers',name:'researchers', component: Researchers},
+    {path:'researcher/:id',name:'researcher',component:Researcher},
     {path:'staff',name: 'staff', component: Staff},
     {path: 'summary', name: 'summary', component: Summary}
   ]} ,
