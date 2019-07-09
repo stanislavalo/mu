@@ -128,19 +128,19 @@ export default [
     ],
     production:[
       {
-        name:['Preprints','Preprinty'],
+        name:'preprints',
         url:'recherche/preprints/preprints.php?id_equipe=15',
       },
       {
-        name:['Publications','Publikace'],
+        name:'publications',
         url:'recherche/publications/publications.php?id_equipe=15'
       },
       {
-        name:['Lectures','Přednášky'],
-        url:'recherche/conferences_invites/conferences_invites.php?id_equipe=15'
+        name:'lectures',
+        url:'recherche/lectures/lectures.php?id_equipe=15'
       },
       {
-        name:['Theses','Doktorské disertace'],
+        name:'theses',
         url:'recherche/theses/theses.php?id_equipe=15'
       }
     ] 
@@ -265,21 +265,22 @@ export default [
         url:'membre/110'
       },   
     ],
+
     production:[
       {
-        name:['Preprints','Preprinty'],
+        name:'preprints',
         url:'recherche/preprints/preprints.php?id_equipe=15',
       },
       {
-        name:['Publications','Publikace'],
+        name:'publications',
         url:'recherche/publications/publications.php?id_equipe=15'
       },
       {
-        name:['Lectures','Přednášky'],
-        url:'recherche/conferences_invites/conferences_invites.php?id_equipe=15'
+        name:'lectures',
+        url:'recherche/lectures/lectures.php?id_equipe=15'
       },
       {
-        name:['Theses','Doktorské disertace'],
+        name:'theses',
         url:'recherche/theses/theses.php?id_equipe=15'
       }
     ] 

@@ -24,7 +24,15 @@
 <script>
 // import actions from store
 import {mapActions} from 'vuex';
+
+
 export default {
+  // mounted() {
+  //   // console.log(this.$options);
+  //   // console.dir(this.$options.__proto__._base);
+  //   //var instance = this.$options.__proto__._base;
+  //   //console.log(instance);
+  // },
   methods:{
     ...mapActions({
         toggleLanguage:'toggleLanguage',

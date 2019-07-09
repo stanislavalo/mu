@@ -2,7 +2,7 @@
 <v-container class="mx-2" >
   <v-layout row wrap class="mb-2">
     <v-flex xs12>
-      <span class="headline blue--text text--darken-4 ">Summary</span>
+      <span class="headline blue--text text--darken-4 ">{{ $t("summary.title") }}</span>
     <button type="button" class="btn btn-small btn-outline-dark mx-4" 
       @click="summary=all">
       All

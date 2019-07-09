@@ -2,8 +2,8 @@
   <v-container class="mx-2">
     <v-flex xs12 class=" px-0">
     <v-layout row wrap class="mb-2">
-      <v-flex xs12>
-      <span class="headline blue--text text--darken-4 ">Staff</span>
+      <v-flex xs12 >
+      <span class="headline blue--text text--darken-4 ">{{ $t("staff.title") }}</span>
       </v-flex>
     </v-layout>
     <v-layout  row wrap>
@@ -28,13 +28,13 @@
   </v-container> 
 </template>
 <script>
+import {mapGetters} from 'vuex';
 // import data
-
 import members from '../../data/members';
 export default {
   data(){
     return {
-      staff:[],
+      staff:[]
     }
   },
   created: function() {
@@ -46,6 +46,11 @@ export default {
     });
     this.staff = staffData;
   },
+  computed: {
+    ...mapGetters({
+        language:'language',
+    })
+  } 
 }
 </script>
 <style>

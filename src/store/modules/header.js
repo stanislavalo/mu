@@ -1,3 +1,7 @@
+import { i18n } from '../../plugins/i18n/i18n';
+console.log(i18n._vm)
+var instance = i18n._vm;
+
 const state = {
   items:[],
   showItems:false,
@@ -33,10 +37,10 @@ const getters = {
 const mutations = {
   'TOGGLE_LANGUAGE'(state){
     if(state.language === 1)
-      state.language = 0;
+      state.language = 0; //en
     else{
-      state.language = 1;
-    }  
+      state.language = 1; //cz
+    }
   },
   'SET_SUBMENU' (state, menu) {
     state.showItems = !state.showItems;
@@ -78,13 +82,17 @@ const actions = {
   toggleDrawer: ({commit},mdAndDown) => {
     commit('TOGGLE_DRAWER',mdAndDown);
   },
-  toggleLanguage:({commit}) => {
-    commit('TOGGLE_LANGUAGE');
+  toggleLanguage:({commit},instance) => {
+    commit('TOGGLE_LANGUAGE',instance);
+    console.log('ACTION :state.language='+state.language)  ;
+    i18n.locale = state.language;
+    console.log('i18n.locale='+i18n.locale);
   }
 };
-  export default {
+
+export default {
     state,
     mutations,
     actions,
-    getters
+    getters,
 }

@@ -37,6 +37,12 @@ module.exports = {
           'css-loader'
         ]
       },
+      {
+        test: /\.i18n$/,
+        loader:  `@kazupon/vue-i18n-loader?${JSON.stringify(
+          { includePaths: [path.resolve(__dirname), 'node_modules'] }
+        )}`,
+      }
     ]
   },
   resolve: {

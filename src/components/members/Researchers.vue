@@ -1,7 +1,7 @@
 <template>
   <v-layout>
     <v-flex xs12 sm6 offset-sm3>
-      <div class="ma-0 pa-1 headline blue--text text--darken-4 ">Researchers</div>
+      <div class="ma-0 pa-1 headline blue--text text--darken-4 ">{{ $t("researchers.title") }}</div>
       <v-card>
         <v-container grid-list-sm fluid class="ma-0 pa-1">
           <v-layout row wrap>
@@ -43,9 +43,9 @@
                       <h5 class="mb-0  black--text">{{researcher.first_name}} {{researcher.last_name}}</h5>
                       <!-- <img v-if="!formerMembers" class="mr-1" src="../../assets/members/chevron-right.png"> -->
                       <p class="ma-0 pa-0  black--text caption">{{researcher.title}}</p>
-                      <p class="ma-0 pa-0  black--text">Departement: <span class="body-2">{{researcher.department[2]}}</span></p>
+                      <p class="ma-0 pa-0  black--text">{{ $t("researchers.departement") }}: <span class="body-2">{{researcher.department[2]}}</span></p>
                       <p class="body-2 mb-1  black--text">{{researcher.department[language]}}</p>
-                      <p class="ma-0 pa-1 interests">Research interests:<br>{{researcher.interest}}</p>
+                      <p class="ma-0 pa-1 interests">{{ $t("researchers.interests") }}:<br>{{researcher.interest}}</p>
                     </div>
                   </div>
                 </router-link>

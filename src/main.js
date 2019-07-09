@@ -1,29 +1,24 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router';
+//import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css' ;
 
 import App from './App.vue';
-import { routes } from './routes';
+import router from './router/index.js'
+//import { routes } from './router/routes';
 import store from './store/store';
+import { i18n } from './plugins/i18n/i18n';
 
 Vue.use(Vuetify);
-Vue.use(VueRouter);
 Vue.use(VueResource);
 
-const router = new VueRouter({
-  routes,
-  mode: 'history',
-});
-// router.beforeEach((to, from, next) => {
-//   console.log('beforeEach' + to +' '+from);
-//   next();
-// })
-new Vue({
+var vm = new Vue({
   el: '#app',
   router,
+  i18n,
   store,
   render: h => h(App)
-})
+});
+

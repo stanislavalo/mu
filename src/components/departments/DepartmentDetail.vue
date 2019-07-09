@@ -9,11 +9,11 @@
           <v-container fill-height fluid>
             <v-layout fill-height>
               <v-flex xs12 align-end flexbox>
-                <div class="headline mb-2">{{department.name[language]}} {{department.sigle}}</div>
-                <router-link v-for="(item, index) in department.production"
-                  :to="item.url" tag= "div" :key="index" class="my-0">
+                <div class="headline mb-2">{{department.name[language]}} {{department.sigle}} </div>
+                <router-link v-for="(item, index) in productions"
+                  :to="item.url+'/'+department.id" tag= "div" :key="index" class="my-0">
                   <img src="../../assets/departments/download.png" >
-                  {{item.name[language]}}
+                    {{ $t("production."+ item.name) }} 
                 </router-link>
                 
               </v-flex>
@@ -23,7 +23,7 @@
         <!-- src="http://localhost:8080/src/assets/departments/ede.jpg" -->
         <v-card-title>
           <div class="description">
-            <span class="indigo--text subheading">{{page.head[language]}}: {{department.head.last_name}} 
+            <span class="indigo--text subheading">{{ $t("department.head") }}: {{department.head.last_name}} 
               {{department.head.first_name}} {{department.head.title}}</span><br>
             <span>{{department.description}}</span>
           </div>
@@ -32,7 +32,7 @@
           <v-btn flat color="orange" class="ml-0" @click="researchThemes = !researchThemes">
             <img v-if="!researchThemes" class="mr-1" src="../../assets/departments/outline-expand_more-24px.svg">
             <img v-else class="mr-1" src="../../assets/departments/outline-expand_less-24px.svg">
-            {{page.themes[language]}}
+            {{ $t("department.themes") }}
           </v-btn>
           <ul id="researchThemes" v-if="researchThemes" class="description ml-4 themes">
             <template v-for="(theme, index) in department.themes"  >
@@ -45,7 +45,7 @@
             <v-btn flat color="orange" class="ml-0" @click="members=!members">
             <img v-if="!members" class="mr-1" src="../../assets/departments/outline-expand_more-24px.svg">
             <img v-else class="mr-1" src="../../assets/departments/outline-expand_less-24px.svg">
-            {{page.members[language]}}</v-btn>
+            {{ $t("department.members") }}</v-btn>
           <div v-if="members" class="row">
             <template v-for="(members,index) in membersBlock">
               <div class="col-sm" :key="index">
@@ -63,7 +63,7 @@
           <v-btn flat color="orange" class="ml-0" @click="formerMembers = !formerMembers">
             <img v-if="!formerMembers" class="mr-1" src="../../assets/departments/outline-expand_more-24px.svg">
             <img v-else class="mr-1" src="../../assets/departments/outline-expand_less-24px.svg">
-            {{page.membersFormer[language]}}
+            {{ $t("department.membersFormer") }}
           </v-btn>
           <div v-if="formerMembers" class="row">
              <template v-for="(membersFormer,index) in membersFormerBlock">
@@ -85,8 +85,8 @@
 </template>
 <script>
 // import data
-import departments from '../../data/departments.js';
-import pagedepartment from '../../data/pages/departments.js';
+import departments from '../../data/departments';
+import productions from '../../data/research/productions';
 import {mapGetters} from 'vuex';
 
 export default {
@@ -99,7 +99,7 @@ export default {
       formerMembers: false,
       mdAndDown:false,
       department:{},
-      page:pagedepartment,
+      productions:productions,
       membersBlock:[],
       membersFormerBlock:[],
     }

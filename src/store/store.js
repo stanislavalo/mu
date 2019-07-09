@@ -5,8 +5,10 @@ import header from './modules/header';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   modules: {
     header,
   }
 });
+
+export default store;
