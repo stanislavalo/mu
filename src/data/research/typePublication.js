@@ -1,0 +1,26 @@
+export default [
+  {
+    id:1,
+    name:'article', 
+  },
+  {
+    id:2,
+    name:'book', 
+  },
+  {
+    id:3,
+    name:'paper', 
+  },
+  {
+    id:4,
+    name:'chapter',
+  },
+  {
+    id:5,
+    name:'report',
+  },
+  {
+    id:20,
+    name:'all' 
+  },
+]
