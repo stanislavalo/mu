@@ -1,5 +1,4 @@
 import { i18n } from '../../plugins/i18n/i18n';
-console.log(i18n._vm)
 var instance = i18n._vm;
 
 const state = {
@@ -7,6 +6,7 @@ const state = {
   showItems:false,
   idActiv:0,
   drawer:false,
+  mdAndDown:false,
   showBisMenuDown:false,
   showMainMenuDown:false,
   language:0, // 0=en,1=cz
@@ -23,6 +23,9 @@ const getters = {
   },
   drawer: state => {
     return state.drawer;
+  },
+  mdAndDown: state => {
+    return state.mdAndDown;
   },
   showBisMenuDown: state => {
     return state.showBisMenuDown;
@@ -58,18 +61,21 @@ const mutations = {
       state.idActiv = menu.id;
     }
   },
+  'SET_MD_AND_DOWN'(state,mdAndDown){
+    state.mdAndDown = mdAndDown;
+  },
   // toggle drawer, toggle sandwich menu
-  'TOGGLE_DRAWER'(state,mdAndDown){
+  'TOGGLE_DRAWER'(state){
     state.drawer = !state.drawer; 
     if(state.drawer){
       state.showBisMenuDown = true;
-      if(mdAndDown){
+      if(state.mdAndDown){
         state.showMainMenuDown = true;
       }
     }
     else{
       state.showBisMenuDown = false;
-      if(mdAndDown){
+      if(state.mdAndDown){
         state.showMainMenuDown = false;
       }
     }
@@ -79,14 +85,15 @@ const actions = {
   setSubmenu: ({commit},menu) => {
       commit('SET_SUBMENU', menu);
   },
-  toggleDrawer: ({commit},mdAndDown) => {
-    commit('TOGGLE_DRAWER',mdAndDown);
+  set_MdAndDown({commit},mdAndDown){
+    commit('SET_MD_AND_DOWN',mdAndDown);
+  },
+  toggleDrawer: ({commit}) => {
+    commit('TOGGLE_DRAWER');
   },
   toggleLanguage:({commit},instance) => {
     commit('TOGGLE_LANGUAGE',instance);
-    console.log('ACTION :state.language='+state.language)  ;
     i18n.locale = state.language;
-    console.log('i18n.locale='+i18n.locale);
   }
 };
 

@@ -20,7 +20,7 @@
         :to="itemMenu.url" >
         {{itemMenu.name[language]}}
       </router-link>
-      <ul v-if="itemMenu.id == idActiv" @click="toggleDrawer(true)">
+      <ul v-if="itemMenu.id == idActiv" @click="toggleDrawer()">
         <router-link 
           v-for="(item, index) in items" :key="index" 
           class="submenu ml-3 px-2 py-3 "

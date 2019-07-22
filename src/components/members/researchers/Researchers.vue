@@ -1,7 +1,7 @@
 <template>
   <v-layout>
     <v-flex  xs12  xs offset-sm3-xl0>
-      <div class="ma-0 pa-1 headline blue--text text--darken-4 ">{{ $t("researchers.title") }}<br/>mdAndDown=={{mdAndDown}}</div>
+      <div class="ma-0 pa-1 headline blue--text text--darken-4 ">{{ $t("researchers.title") }}</div>
       <v-card>
         <v-container grid-list-sm fluid class="ma-0 pa-1">
           <v-layout row wrap>

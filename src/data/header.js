@@ -49,8 +49,8 @@ export default [
     name:['Research','Výzkumná činnost'],
     dropdown:true,
     url:null,
-    items:[{url:'/researche/preprints',name:['Preprints','Preprinty']},
-      {url:'/research.publications',name:['Publications','Publikace'],}
+    items:[{url:'/research/preprints',name:['Preprints','Preprinty']},
+      {url:'/research/publications',name:['Publications','Publikace'],}
     ] 
   },
   {

@@ -45,7 +45,6 @@ import {mapActions} from 'vuex';
 // import components
 import mainMenu from './menus/Mainmenu.vue';
 import logoBig from './logo/LogoBig.vue';
-// import logoSmall from './logo/LogoSmall.vue';
 import navigationStable from './menus/NavigationStable.vue';
 import bisMenu from './menus/BisMenu.vue';
 import mainMenuSandwich from './menus/MainMenuSandwich.vue';
@@ -57,13 +56,11 @@ export default {
       mainMenu: [],
       bisMenu: [],
       MembersMenu: [ 'Intranet','Webmail','Login' ],
-      mdAndDown:false
     }
   },
   components:{
     AppMainMenu: mainMenu,
     AppLogoBig: logoBig,
-    // AppLogoSmall: logoSmall,
     AppNavigationStable: navigationStable,
     AppBisMenu: bisMenu,
     AppMainMenuSandwich: mainMenuSandwich,
@@ -72,7 +69,7 @@ export default {
   },
   mounted () {
     console.log(this.$vuetify.breakpoint);
-    this.mdAndDown = this.$vuetify.breakpoint.mdAndDown;
+    this.$store.dispatch('set_MdAndDown', this.$vuetify.breakpoint.mdAndDown);
   },
   created: function() {
     var main = [];
@@ -87,6 +84,7 @@ export default {
     });
     this.mainMenu = main;
     this.bisMenu = bis;
+
   },
   computed: {
     ...mapGetters({

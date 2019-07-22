@@ -31,10 +31,10 @@ export const i18n = new VueI18n({
         archiv:'Archive of departments',
       },
       production:{
-        preprints: 'Preprints',//,'Preprinty'],
-        publications:'Publications',//'Publikace'],
-        lectures:'Lectures',//'Přednášky'],
-        theses:'Theses'//,'Doktorské disertace']
+        preprints: 'Preprints',
+        publications:'Publications',
+        lectures:'Lectures',
+        theses:'Theses'
       }
 
     },
@@ -51,7 +51,7 @@ export const i18n = new VueI18n({
         interests:'Témata výzkumu'
       },
       researcher:{
-        about:'O mě',
+        about:'Kdo jsem',
       },
       department:{
         head:'Vedoucí oddělení',

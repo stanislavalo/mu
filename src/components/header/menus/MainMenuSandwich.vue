@@ -15,7 +15,7 @@
             <span v-if="itemMenu.dropdown" :class="{dropup:itemMenu.id == idActiv}">
               <span class="dropup-toggle"></span>            </span>
           </v-btn>
-          <ul v-if="itemMenu.id == idActiv" @click="toggleDrawer(true)">
+          <ul v-if="itemMenu.id == idActiv" @click="toggleDrawer()">
             <router-link 
               v-for="(item, index) in items" :key="index"  
               class="submenu ml-1 pl-4 py-3 "

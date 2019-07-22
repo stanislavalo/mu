@@ -1,8 +1,8 @@
 import Home from '../components/home/Home.vue';
 import Staff from '../components/members/Staff.vue';
 import Summary from '../components/members/Summary.vue';
-import Researchers from '../components/members/Researchers.vue';
-import Researcher from '../components/members/Researcher.vue';
+import Researchers from '../components/members/researchers/Researchers.vue';
+import Researcher from '../components/members/researcher/Researcher.vue';
 import Members from '../components/members/Members.vue';
 import Events from '../components/events/Events.vue';
 import Calendar from '../components/events/Calendar.vue';
@@ -13,9 +13,10 @@ import Open from '../components/positions/Open.vue';
 import Department from '../components/departments/Department.vue';
 import Archive from '../components/departments/Archive.vue';
 import DepartmentDetail from '../components/departments/DepartmentDetail.vue';
+import Research from '../components/research/Research.vue';
+import Publications from '../components/research/Publications.vue';
+import Preprints from '../components/research/Preprints.vue';
 
-
-//export const routes = [
 export default [
   {path: '/', name: 'home', component: Home} ,
   {path: '/members', name: 'members', component: Members, children:[
@@ -35,6 +36,10 @@ export default [
   {path:'/department', name:'department', component: Department, children: [
     {path:'detail/:id',name:'detail',component:DepartmentDetail},
     {path: 'archive', name: 'archive', component: Archive} ,
+  ]},
+  {path:'/research', name:'research', component: Research, children: [
+    {path:'publications/',name:'publications',component:Publications},
+    {path:'preprints/',name:'preprints',component:Preprints}, 
   ]},
  
 ];

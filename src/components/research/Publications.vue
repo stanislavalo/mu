@@ -1,57 +1,72 @@
 <template>
-<v-container>
-  <v-layout>
-    <v-flex  xs12  offset-sm3-xl0>
-      <div class="ma-0 pa-1 mb-4 headline blue--text text--darken-4 ">
-        {{ $t("production.publications") }}
-      </div>
-      <form>
-      <div class="form-row">
-        <div class="form-group col-md-1">
-          <label for="inputYear">Year</label>
-          <select id="inputYear" class="form-control" v-model="selectedYear">
-            <option v-for="(year,index) in years" :key="index" :value="year.value">{{year.label}}</option>
-          </select>
-        </div>
-        <div class="form-group col-md-2">
-          <label for="inputDepartment">Departments</label>
-          <select id="inputDepartment" class="form-control" v-model="selectedDepartment">
-            <option v-for="(department,index) in departments" :key="index" :value="department.id">{{department.name}}</option>
-          </select>
-        </div>
-        <div class="form-group col-md-2">
-          <label for="inputType">Type</label>
-          <select id="inputType" class="form-control" v-model="selectedType">
-            <option v-for="(type,index) in typePublication" :key="index" :value="type.id">{{type.name}}</option>
-          </select>
-        </div>
-        <div class="form-group col-md-3">
-          <label for="inputMembers">Members</label>
-          <select id="inputMembers" class="form-control" v-model="selectedMember">
-            <option v-for="(member, index) in  membersOptions" :key="index" :value="member.id">{{member.last_name}} {{member.first_name}}</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-secondary  mt-4 mb-2" 
-          @click.prevent="submitted">Search</button>
-        <div class="form-group col-md-4"></div>
-      </div>
-    </form>
+  <div
+      id="e3"
+      style="width: 100%; margin: auto;"
+      class="grey lighten-4"
+    >
+    <v-flex  xs12 xl12 class="mt-2 mb-2">
+      <v-card >
+        <v-card-title >
+          <v-flex  xl2>
+            <span class=" headline blue--text text--darken-4 ">
+              {{ $t("production.publications") }}
+            </span>
+          </v-flex>
+          <v-flex xl8>
+            <form >
+              <div class="form-row ">
+                <div class="form-group col-md-1">
+                  <label for="inputYear">Year</label>
+                  <select id="inputYear" class="form-control" v-model="selectedYear">
+                    <option v-for="(year,index) in years" :key="index" :value="year.value">{{year.label}}</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="inputDepartment">Departments</label>
+                  <select id="inputDepartment" class="form-control" v-model="selectedDepartment">
+                    <option v-for="(department,index) in departments" :key="index" :value="department.id">{{department.name}}</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="inputType">Type</label>
+                  <select id="inputType" class="form-control" v-model="selectedType">
+                    <option v-for="(type,index) in typePublication" :key="index" :value="type.id">{{type.name}}</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="inputMembers">Members</label>
+                  <select id="inputMembers" class="form-control" v-model="selectedMember">
+                    <option v-for="(member, index) in  membersOptions" :key="index" :value="member.id">{{member.last_name}} {{member.first_name}}</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-secondary  mt-4 mb-2" 
+                  @click.prevent="submitted">Search</button>
+                <div class="form-group col-md-4"></div>
+              </div>
+            </form>
+          </v-flex>
+          <v-spacer></v-spacer>
+        </v-card-title>
+      </v-card>
     </v-flex>
-  </v-layout>
-  <v-layout>
-    <v-flex  xs12  offset-sm3-xl0 v-if="isSubmitted">
-      <p>
-        Search publication for :<br>
-        id_member: {{this.selectedMember}}, <br>
-        type: {{this.selectedType}} <br>
-        year: {{this.selectedYear}}
-      </p>
-    </v-flex>
-  </v-layout> 
-</v-container>
+    <app-publication-detail></app-publication-detail>
+    
+          
+    <!-- </v-layout>
+    <v-layout>
+      <v-flex  xs12  offset-sm3-xl0 v-if="isSubmitted">
+        <p> -->
+          <!-- Search publication for :<br>
+          id_member: {{this.selectedMember}}, <br>
+          type: {{this.selectedType}} <br>
+          year: {{this.selectedYear}} -->
+        <!-- </p>
+      </v-flex> -->
+    
+  </div>
 </template>
 <script>
-
+import publicationDetail from './PublicationDetail.vue';
 import typePublication from '../../data/research/typePublication'
 import members from '../../data/members';
 export default {
@@ -118,6 +133,9 @@ export default {
       members:members,
     }
   },
+  components:{
+    appPublicationDetail:publicationDetail,
+  },
   computed: {
     departments(){
       var departmentsOptions= [];
@@ -171,4 +189,9 @@ function isHistoDepartment(histo,year,department){
   return memberDepartment;
 }
 </script>
+<style scoped>
+  .toolbar {
+      width: 80%
+  }
+</style>
 
