@@ -34,7 +34,8 @@ export const i18n = new VueI18n({
         preprints: 'Preprints',
         publications:'Publications',
         lectures:'Lectures',
-        theses:'Theses'
+        theses:'Theses',
+        grants:'Grants'
       }
 
     },
@@ -65,7 +66,8 @@ export const i18n = new VueI18n({
         preprints: 'Preprinty',
         publications:'Publikace',
         lectures:'Přednášky',
-        theses:'Doktorské disertace'
+        theses:'Doktorské disertace',
+        grants:'Granty, projekty',
       }
     }
   }

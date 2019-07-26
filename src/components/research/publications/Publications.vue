@@ -49,26 +49,25 @@
         </v-card-title>
       </v-card>
     </v-flex>
-    <app-publication-detail></app-publication-detail>
-    
-          
-    <!-- </v-layout>
-    <v-layout>
+    <app-publications-list :typePublication="typePublication"></app-publications-list>
+    <!-- TODO Search publication in BD -->
       <v-flex  xs12  offset-sm3-xl0 v-if="isSubmitted">
-        <p> -->
-          <!-- Search publication for :<br>
+        <p> 
+          Search publication for :<br>
           id_member: {{this.selectedMember}}, <br>
+          department:{{this.selectedDepartment}} <br>
           type: {{this.selectedType}} <br>
-          year: {{this.selectedYear}} -->
-        <!-- </p>
-      </v-flex> -->
-    
+          year: {{this.selectedYear}} 
+        </p>
+      </v-flex>
+     
   </div>
 </template>
 <script>
-import publicationDetail from './PublicationDetail.vue';
-import typePublication from '../../data/research/typePublication'
-import members from '../../data/members';
+import {mapActions} from 'vuex';
+import publicationsList from './PublicationsList.vue';
+import typePublication from '../../../data/research/typePublication';
+import members from '../../../data/members';
 export default {
   data(){
     return{
@@ -81,7 +80,7 @@ export default {
       years:[
         {value:2019,label:'recent'},
         {value:0,label:'all'},
-        {value:2090,label:'to appear'},
+        {value:2100,label:'to appear'},
         {value:2019,label:'2019'},
         {value:2018,label:'2018'},
         {value:2017,label:'2017'},
@@ -134,7 +133,7 @@ export default {
     }
   },
   components:{
-    appPublicationDetail:publicationDetail,
+    appPublicationsList:publicationsList,
   },
   computed: {
     departments(){
@@ -150,7 +149,9 @@ export default {
       return departmentsOptions; 
     },
     membersOptions(){
-      var optionsMembers = [{id:0,last_name:"all",first_name:''}];
+     var optionsMembers = [{id:0,last_name:"all",first_name:''}];
+     this.selectedMember=0;
+     //var optionsMembers=[];
       this.members.forEach(element =>{
         if(element.type.researcher === false){
           return;
@@ -171,9 +172,17 @@ export default {
     }
   },
   methods:{
+    ...mapActions({
+        setSearchCriterias: 'setSearchCriterias',
+    }),
     submitted(){
       this.isSubmitted = true;
-
+      var criterias={};
+      criterias.selectedYear= this.selectedYear;
+      criterias.selectedDepartment = this.selectedDepartment;
+      criterias.selectedType = this.selectedType;
+      criterias.selectedMember = this.selectedMember;
+      this.setSearchCriterias(criterias);
     }
   }
 }
@@ -189,9 +198,3 @@ function isHistoDepartment(histo,year,department){
   return memberDepartment;
 }
 </script>
-<style scoped>
-  .toolbar {
-      width: 80%
-  }
-</style>
-

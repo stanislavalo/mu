@@ -14,8 +14,10 @@ import Department from '../components/departments/Department.vue';
 import Archive from '../components/departments/Archive.vue';
 import DepartmentDetail from '../components/departments/DepartmentDetail.vue';
 import Research from '../components/research/Research.vue';
-import Publications from '../components/research/Publications.vue';
+import Publications from '../components/research/publications/Publications.vue';
 import Preprints from '../components/research/Preprints.vue';
+import Grants from '../components/research/grants/Grants.vue';
+import Grant from '../components/research/grants/Grant.vue';
 
 export default [
   {path: '/', name: 'home', component: Home} ,
@@ -40,6 +42,8 @@ export default [
   {path:'/research', name:'research', component: Research, children: [
     {path:'publications/',name:'publications',component:Publications},
     {path:'preprints/',name:'preprints',component:Preprints}, 
+    {path:'grants/',name:'grants',component:Grants}, 
+    {path:'grant/:id',name:'grant',component:Grant}, 
   ]},
  
 ];

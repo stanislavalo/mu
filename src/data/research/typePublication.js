@@ -1,26 +1,26 @@
 export default [
   {
     id:1,
-    name:'article', 
+    name:'Article', 
   },
   {
     id:2,
-    name:'book', 
+    name:'Book', 
   },
   {
     id:3,
-    name:'paper', 
+    name:'Paper in proceeding', 
   },
   {
     id:4,
-    name:'chapter',
+    name:'Chapter in monograph',
   },
   {
     id:5,
-    name:'report',
+    name:'Report',
   },
   {
     id:20,
-    name:'all' 
+    name:'All' 
   },
 ]

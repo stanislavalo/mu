@@ -17,7 +17,6 @@ export default {
   },
   mounted () {
     this.fluidContenair = this.$vuetify.breakpoint.lgAndDown;
-    console.log('monted '+ this.$i18n.locale);
   },
   components:{
     appHeader:Header,
