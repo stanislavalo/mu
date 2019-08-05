@@ -78,7 +78,6 @@ function getDepartement(typeResearcher) {
       department.push(departmentId);
     }
   });
-  console.log(department);
   return department;  
 }
 function getInterest(interest){

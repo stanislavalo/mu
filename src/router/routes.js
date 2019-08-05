@@ -1,23 +1,73 @@
 import Home from '../components/home/Home.vue';
-import Staff from '../components/members/Staff.vue';
-import Summary from '../components/members/Summary.vue';
-import Researchers from '../components/members/researchers/Researchers.vue';
-import Researcher from '../components/members/researcher/Researcher.vue';
-import Members from '../components/members/Members.vue';
+const Members = resolve => {
+  require.ensure(['../components/members/Members.vue'],() => {
+    resolve(require('../components/members/Members.vue'));
+  });
+};
+const Staff = resolve => {
+  require.ensure(['../components/members/Staff.vue'],() => {
+    resolve(require('../components/members/Staff.vue'));
+  });
+};
+const Summary = resolve => {
+  require.ensure(['../components/members/Summary.vue'],() => {
+    resolve(require('../components/members/Summary.vue'));
+  });
+};
+const Researchers = resolve => {
+  require.ensure(['../components/members/researchers/Researchers.vue'],() => {
+    resolve(require('../components/members/researchers/Researchers.vue'));
+  });
+};
+const Researcher = resolve => {
+  require.ensure(['../components/members/researcher/Researcher.vue'],() => {
+    resolve(require('../components/members/researcher/Researcher.vue'));
+  });
+};
+const Archive = resolve => {
+  require.ensure(['../components/departments/Archive.vue'],() => {
+    resolve(require('../components/departments/Archive.vue'));
+  });
+};
+const Department = resolve => {
+  require.ensure(['../components/departments/Department.vue'],() => {
+    resolve(require('../components/departments/Department.vue'));
+  },'department');
+};
+const DepartmentDetail = resolve => {
+  require.ensure(['../components/departments/DepartmentDetail.vue'],() => {
+    resolve(require('../components/departments/DepartmentDetail.vue'));
+  },'department');
+};
+const Research = resolve => {
+  require.ensure(['../components/research/Research.vue'],() => {
+    resolve(require('../components/research/Research.vue'));
+  });
+};
+const Publications = resolve => {
+  require.ensure(['../components/research/publications/Publications.vue'],() => {
+    resolve(require('../components/research/publications/Publications.vue'));
+  });
+};
+const Grants = resolve => {
+  require.ensure(['../components/research/grants/Grants.vue'],() => {
+    resolve(require('../components/research/grants/Grants.vue'));
+  });
+};
+const Grant = resolve => {
+  require.ensure(['../components/research/grants/Grant.vue'],() => {
+    resolve(require('../components/research/grants/Grant.vue'));
+  });
+};
 import Events from '../components/events/Events.vue';
 import Calendar from '../components/events/Calendar.vue';
 import Seminars from '../components/events/Seminars.vue';
 import Positions from '../components/positions/Positions.vue';
 import ThesesTopics from '../components/positions/ThesesTopics.vue';
 import Open from '../components/positions/Open.vue';
-import Department from '../components/departments/Department.vue';
-import Archive from '../components/departments/Archive.vue';
-import DepartmentDetail from '../components/departments/DepartmentDetail.vue';
-import Research from '../components/research/Research.vue';
-import Publications from '../components/research/publications/Publications.vue';
 import Preprints from '../components/research/Preprints.vue';
-import Grants from '../components/research/grants/Grants.vue';
-import Grant from '../components/research/grants/Grant.vue';
+import { resolve } from 'url';
+import { resolveCname } from 'dns';
 
 export default [
   {path: '/', name: 'home', component: Home} ,
@@ -43,7 +93,7 @@ export default [
     {path:'publications/',name:'publications',component:Publications},
     {path:'preprints/',name:'preprints',component:Preprints}, 
     {path:'grants/',name:'grants',component:Grants}, 
-    {path:'grant/:id',name:'grant',component:Grant}, 
+    {path:'grant/:id',name:'grant',component:Grant},
   ]},
  
 ];

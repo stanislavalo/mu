@@ -13,10 +13,7 @@ const router = new VueRouter({
   routes,
 });
 router.beforeEach((to, from, next) => {
-   console.log('ROUTER '+ store.state.header.language );
-  // console.log('locale='+i18n.locale);
   i18n.locale = store.state.header.language;
-  console.log('locale1='+i18n.locale);
   next();
   
 });

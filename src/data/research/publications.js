@@ -5,7 +5,7 @@ export default[
     grants:[{url:null,id_grant:105,
         name:'AOS(318910)'
       },
-      {url:'http://www.math.cas.cz/recherche/grants/grant_detail.php?id_grant=139&lang=0',
+      {url:null,id_grant:106,
       name:'GA17-27844S'
       }
     ],
@@ -29,7 +29,7 @@ export default[
     id:24,
     type:1,/* Article */
     grants:[{url:'http://fealora.math.cas.cz/',id_grant:100,
-      name:'GA17-27844S'}
+      name:'FEALORA'}
     ],
     url_repository:'https://asep.lib.cas.cz/arl-cav/cs/detail-cav_un_epca-0501201-Joint-numerical-ranges-and-compressions-of-powers-of-operators/',
     /* type author in IM: true,false */
@@ -72,7 +72,7 @@ export default[
     id:41,
     type:3, /* Paper in proceedings   */
     grants:[{
-      url:'http://www.math.cas.cz/recherche/grants/grant_detail.php?id_grant=92&lang=0',name:'201/09/0473'}
+      url:null,id_grant:109,name:'201/09/0473'}
     ],
     url_repository:null,
     /* type author in IM: true,false */
@@ -98,7 +98,7 @@ export default[
     id:81,
     type:2, /* Book   */
     grants:[{
-      url:'http://www.math.cas.cz/recherche/grants/grant_detail.php?id_grant=99&lang=0',name:'201/06/0128'}
+      url:null,id_grant:110,name:'201/06/0128'}
     ],
     url_repository:null,
     /* type author in IM: true,false */
@@ -116,7 +116,7 @@ export default[
     id:88,
     type:5, /* Report   */
     grants:[{
-      url:'http://www.math.cas.cz/recherche/grants/grant_detail.php?id_grant=199&lang=0',name:'201/06/0128'}
+      url:null,id_grant:10,name:'201/06/0128'}
     ],
     url_repository:null,
     /* type author in IM: true,false */

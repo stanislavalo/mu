@@ -1,16 +1,16 @@
 <template>
-  <v-flex xs12 xl12>
+  <v-flex xs12 lg12 xl12>
     <v-card   v-for="publication in list_publications" :key="publication.id"  :flat="!mdAndDown">
       <app-publication-pattern :publication="publication" :listTypePublication="listTypePublication"
         :class="['hidden-md-and-up', 'productionsm', 'type'+publication.type ]"></app-publication-pattern>
       <app-publication-content :publication="publication" 
         :class="['hidden-md-and-up', 'productionsm','pl-2','type'+publication.type]"></app-publication-content>
       <v-layout class="hidden-sm-and-down">
-        <v-flex  xl1 class="ml-3 mr-3" >
+        <v-flex lg2 xl1 class="ml-3 mr-3" >
           <app-publication-pattern :publication="publication" :listTypePublication="listTypePublication"
             :class="['production','type'+publication.type ]"></app-publication-pattern>
         </v-flex>
-        <v-flex  xl9>
+        <v-flex lg10 xl9>
           <app-publication-content :publication="publication" :class="'type'+publication.type"></app-publication-content>
         </v-flex>
       </v-layout>

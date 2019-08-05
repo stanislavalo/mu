@@ -12,7 +12,7 @@
       </v-btn>  
       <v-btn icon small class="mr-3 pa-0 " @click="toggleLanguage">
         <v-img class="mx-0"
-          :src="require('../../../assets/header/lang1.gif')"
+          :src="require('../../../assets/header/'+images[language])"
           min-height="13"
           max-height="13"
           contain>
@@ -24,15 +24,19 @@
 <script>
 // import actions from store
 import {mapActions} from 'vuex';
-
+import {mapGetters} from 'vuex';
 
 export default {
-  // mounted() {
-  //   // console.log(this.$options);
-  //   // console.dir(this.$options.__proto__._base);
-  //   //var instance = this.$options.__proto__._base;
-  //   //console.log(instance);
-  // },
+  data(){
+    return{
+      images:['lang1.gif','gb.png']
+    };
+  },
+  computed: {
+    ...mapGetters({
+        language:'language'
+    })
+  },
   methods:{
     ...mapActions({
         toggleLanguage:'toggleLanguage',

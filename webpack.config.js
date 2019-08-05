@@ -2,7 +2,12 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/main.js',
+  //entry: './src/main.js',
+  entry: [
+    "core-js/modules/es.promise",
+    "core-js/modules/es.array.iterator",
+    path.resolve(__dirname, "./src/main.js"),
+  ],
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
@@ -45,6 +50,10 @@ module.exports = {
       }
     ]
   },
+  node: {
+    dns: 'empty',
+    net: 'empty'
+  },  
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue',
