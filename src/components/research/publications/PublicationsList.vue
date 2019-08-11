@@ -19,6 +19,7 @@
   </v-flex> 
 </template>
 <script>
+
 import publications from '../../../data/research/publications';
 import publicationPattern from './PublicationPattern.vue';
 import publicationContent from './PublicationContent.vue';
@@ -47,6 +48,8 @@ export default {
       type:'type',
       year:'year' 
     }),
+    // TODO search publications dans BD , use filter id_member,departement,type,year
+    // getPublications
   }
 }
 </script>
