@@ -1,8 +1,9 @@
 <template>
-  <router-view :key="$route.fullPath"></router-view>
+  <router-view :key="$route.fullPath" class="col-lg-12  col-cen"></router-view>
 </template>
-<script>
-export default {
-  
+<style scoped>
+.col-cen{
+    float: none;
+    margin: 0 auto;
 }
-</script>
+</style>

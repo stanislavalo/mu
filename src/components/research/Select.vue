@@ -48,7 +48,7 @@ import {mapActions} from 'vuex';
 export default {
   props:['typePublication','showType','typeProduction'],
    data(){
-    return{
+    return{ 
       selectedYear:2019,
       selectedDepartment:0,
       selectedType:20,

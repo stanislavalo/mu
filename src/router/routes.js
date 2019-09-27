@@ -1,4 +1,13 @@
-import Home from '../components/home/Home.vue';
+const NewDetail = resolve => {
+    require.ensure(['../components/home/NewDetail.vue'], () => {
+        resolve(require('../components/home/NewDetail.vue'));
+    });
+};
+const News = resolve => {
+    require.ensure(['../components/home/News.vue'], () => {
+        resolve(require('../components/home/News.vue'));
+    });
+};
 const Members = resolve => {
     require.ensure(['../components/members/Members.vue'], () => {
         resolve(require('../components/members/Members.vue'));
@@ -59,18 +68,62 @@ const Grant = resolve => {
         resolve(require('../components/research/grants/Grant.vue'));
     });
 };
-import Events from '../components/events/Events.vue';
-import Calendar from '../components/events/Calendar.vue';
-import Seminars from '../components/events/Seminars.vue';
-import Positions from '../components/positions/Positions.vue';
-import ThesesTopics from '../components/positions/ThesesTopics.vue';
-import Open from '../components/positions/Open.vue';
-import Preprints from '../components/research/preprints/Preprints.vue';
-import { resolve } from 'url';
-import { resolveCname } from 'dns';
-
-export default [
-    { path: '/', name: 'home', component: Home },
+// TODO import dynamicExternalAddresses from BD
+const dynamicExternalAddresses = [{
+        path: '/news/ox',
+        name: 'ox',
+        beforeEnter() { location.href = 'http://www.ox.ac.uk/admissions/undergraduate/open-days-and-visits' },
+    },
+    {
+        path: '/news/github',
+        name: 'github',
+        beforeEnter() { location.href = 'http://github.com' },
+    },
+    {
+        path: '/news/abel',
+        name: 'abel',
+        beforeEnter() { location.href = 'http://www.math.cas.cz/documents/Abelova_cena.jpeg' }
+    },
+    {
+        path: '/news/Krizek_Somer2',
+        name: 'Krizek_Somer2',
+        beforeEnter() { location.href = 'http://www.math.cas.cz/documents/Krizek_Somer2.jpg' }
+    },
+    {
+        path: '/news/paper',
+        name: 'paper',
+        beforeEnter() { location.href = 'https://www.nature.com/articles/s42256-018-0002-3' },
+    },
+    {
+        path: '/news/award',
+        name: 'award',
+        beforeEnter() { location.href = 'http://www.math.cas.cz/documents/diplom_MUNI.jpg' },
+    },
+    {
+        path: '/news/partners',
+        name: 'partners',
+        beforeEnter() { location.href = 'https://muni100.cz/program-oslav/podrobny/zahradni-slavnost-s-partnery' },
+    },
+    {
+        path: '/news/workshop',
+        name: 'workshop',
+        beforeEnter() { location.href = 'http://workshop.math.cas.cz/MDPW/' },
+    },
+];
+const addresses = [{
+        path: '/',
+        name: 'home',
+        component: News,
+    },
+    {
+        path: '/news',
+        name: 'news',
+        component: NewsHome,
+        children: [
+            { path: 'news', name: 'news', component: News },
+            { path: 'new/:id', name: 'new', component: NewDetail },
+        ]
+    },
     {
         path: '/members',
         name: 'members',
@@ -120,5 +173,22 @@ export default [
             { path: 'grant/:id', name: 'grant', component: Grant },
         ]
     },
-
+    {
+        path: "*",
+        component: News
+    }
 ];
+const allRoutes = addresses.concat(dynamicExternalAddresses);
+
+import NewsHome from '../components/home/NewsHome.vue';
+import Events from '../components/events/Events.vue';
+import Calendar from '../components/events/Calendar.vue';
+import Seminars from '../components/events/Seminars.vue';
+import Positions from '../components/positions/Positions.vue';
+import ThesesTopics from '../components/positions/ThesesTopics.vue';
+import Open from '../components/positions/Open.vue';
+import Preprints from '../components/research/preprints/Preprints.vue';
+// import { resolve } from 'url';
+// import { resolveCname } from 'dns';
+
+export default allRoutes

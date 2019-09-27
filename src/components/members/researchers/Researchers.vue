@@ -1,6 +1,6 @@
 <template>
   <v-layout>
-    <v-flex  xs12  xs offset-sm3-xl0>
+    <v-flex  xs12  xl12 xs offset-sm3-xl0>
       <div class="ma-0 pa-1 headline blue--text text--darken-4 ">{{ $t("researchers.title") }}</div>
       <v-card>
         <v-container grid-list-sm fluid class="ma-0 pa-1">
@@ -8,7 +8,7 @@
             <v-flex
               v-for="(researcher,index) in researchers"
               :key=index
-              xs6 xl12
+              xs6 lg6 xl6 offset-xl="1"
               d-flex
             >
               <app-researchers-card v-if="mdAndDown" :researcher="researcher"></app-researchers-card>

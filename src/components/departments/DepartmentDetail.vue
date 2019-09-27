@@ -1,5 +1,5 @@
 <template>
-  <v-layout class="mx-0 px-0">
+  <v-layout class="px-0">
     <v-flex xs12 class=" px-0">
       <v-card>
         <v-img
@@ -15,7 +15,6 @@
                   <img src="../../assets/departments/download.png" >
                     {{ $t("production."+ item.name) }} 
                 </router-link>
-                
               </v-flex>
             </v-layout>
           </v-container>

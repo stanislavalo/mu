@@ -2,7 +2,7 @@
   <v-card >
     <v-container>
       <v-layout row wrap>
-        <v-flex xl12>
+        <v-flex xl12 >
           <v-card >
             <v-layout>
               <v-flex xl1>
@@ -35,7 +35,7 @@
                 </v-img>
                 </router-link> 
               </v-flex>
-              <v-flex xl2>
+              <v-flex xl7 lg12>
                 <v-card-title primary-title>
                   <div>
                     <router-link :to="{name:'researcher',params:{id:researcher.id}}" >
