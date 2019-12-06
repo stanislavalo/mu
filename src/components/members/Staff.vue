@@ -1,12 +1,11 @@
 <template>
-  <v-container class="mx-2">
-    <v-flex xs12 class=" px-0">
-    <v-layout row wrap class="mb-2">
-      <v-flex xs12 >
+  <v-container fluid>
+    <v-layout row wrap class="mb-2 mx-1">
+    <v-flex xs12>
       <span class="headline blue--text text--darken-4 ">{{ $t("staff.title") }}</span>
       </v-flex>
     </v-layout>
-    <v-layout  row wrap>
+    <v-layout row wrap class="mx-2">
       <v-flex xs12>
       <div class="row summary my-2" v-for="(item, index) in staff" :key="index" >
         <div class="col-sm-4 title pb-1">{{item.last_name}}
@@ -24,7 +23,7 @@
       </div>
       </v-flex>
     </v-layout>
-    </v-flex>
+    
   </v-container> 
 </template>
 <script>

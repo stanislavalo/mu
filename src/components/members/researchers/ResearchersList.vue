@@ -2,10 +2,10 @@
   <v-card >
     <v-container>
       <v-layout row wrap>
-        <v-flex xl12 >
+        <v-flex lg12 xl12 >
           <v-card >
             <v-layout>
-              <v-flex xl1>
+              <v-flex lg2 xl2>
                 <router-link :to="{name:'researcher',params:{id:researcher.id}}" >
                 <v-img
                   :src=researcher.photo
@@ -15,14 +15,14 @@
                     max-width="90px"
                     max-height="140px"
                   >
-                  <v-container fill-height fluid mt-4>
+                  <!-- <v-container fill-height fluid  ml-4>
                     <v-layout align-end justify-end ml-4 mt-4>
                       
                       <v-flex  align-end  flexbox>
                         <img src="../../../assets/members/ic_assignment_ind.png" >
                       </v-flex>
                     </v-layout>
-                  </v-container>
+                  </v-container> -->
                   <template v-slot:placeholder>
                     <v-layout
                       fill-height
@@ -35,7 +35,7 @@
                 </v-img>
                 </router-link> 
               </v-flex>
-              <v-flex xl7 lg12>
+              <v-flex lg4 xl3 >
                 <v-card-title primary-title>
                   <div>
                     <router-link :to="{name:'researcher',params:{id:researcher.id}}" >
@@ -48,7 +48,7 @@
                   </div>
                 </v-card-title>
               </v-flex>
-              <v-flex >
+              <v-flex lg6 xl7>
                 <p class="ma-0 pa-1 "><span class="body-2">{{ $t("researchers.interests") }}:</span>
                 <br>{{researcher.interest}}</p>
               </v-flex>

@@ -1,5 +1,5 @@
 <template>
-    <router-view class="col-lg-12  "></router-view>
+    <router-view class="col-lg-12 mx-0 px-0"></router-view>
 </template>
 <style scoped>
 @media (min-width: 1400px) {

@@ -1,13 +1,13 @@
 <template>
 <v-container class="ma-0 pa-0" fluid >
-  <v-layout xs12 md12 lg12 xl12 row  wrap class="mx-0 px-0">
+  <v-layout  xs12 md12 lg12 xl12 row  wrap class="mx-0 px-1 mb-10">
     <v-flex v-if="!mdAndDown" lg8 xl8 class="ma-0 pa-0" >
-      <v-card  class="ma-0 pa-1" :max-height="2*maxHeight" :min-height="2*maxHeight"  flat>
+      <v-card  class="ma-0 pa-0" :max-height="2*maxHeight" :min-height="2*maxHeight"  flat>
         <app-new-item :item="newsFirst" aspectRatio="0.9" :detail=false></app-new-item>
       </v-card>
     </v-flex>
     <v-flex v-if="mdAndDown" xs12 class="ma-0 pa-0" >
-      <v-card flat class="ma-0 pa-1" height="auto" 
+      <v-card flat class="ma-0 pa-0" height="auto" 
         v-for="(item, index) in news"  :key="index">
         <app-new-item  :item="item" aspectRatio="2.6"></app-new-item>
       </v-card>  
@@ -19,11 +19,11 @@
       </v-card>
     </v-flex>
     <v-flex v-if="!mdAndDown" lg2 xl2 class="ma-0 pa-0" >
-    <v-card  class="ma-0 pa-1" :max-height="maxHeight" :min-height="maxHeight" flat
-      v-for="(item, index) in news2"  :key="index">
-      <app-new-item  :item="item" ></app-new-item>
-    </v-card>
-  </v-flex>
+      <v-card  class="ma-0 pa-1" :max-height="maxHeight" :min-height="maxHeight" flat
+        v-for="(item, index) in news2"  :key="index">
+        <app-new-item  :item="item" ></app-new-item>
+      </v-card>
+    </v-flex>
   </v-layout>
   <v-layout  v-if="!mdAndDown"  md12 lg12 xl12 row  wrap class="mx-0 px-0">
     <v-flex lg3 xl3  v-for="(item, index) in newsRemain"  :key="index" class="mt-3">
@@ -62,7 +62,7 @@ export default {
         {
           id:1,
           title:'M. Křížek, L. Somer, M. Markl, O. Kowalski, P. Pudlák, and I. Vrkoč received the 2018 Josef Hlávka Prize',
-          description:'Every year, the Foundation of Josef, Marie and Zdeňka Hlávka awards the Josef Hlávka Prize for scientific literature. In the ceremony held at the Castle Lužany on June 17, 2019, M. Křížek, L. Somer, M. Markl, O. Kowalski, P. Pudlák, and I. Vrkoč recieved the 2018 Josef Hlávka Prize for their book Abelova cena – nejvyšší ocenění za matematiku (The Abel Prize – the Highest Achievement in Mathematics) published by Academia Publishing House in 2018. The book surveys the major results of the recipients of the first fifteen Abel Prizes. The Prize which is considered a mathematics counterpart of the Nobel Prize is awarded by the King of Norway every year to one or two mathematicians for their lifetime achievement.',
+          description:'Every year, the Foundation of Josef, Marie and Zdeňka Hlávka awards the Josef Hlávka Prize for scientific literature. In the ceremony held at the Castle Lužany on June 17, 2019, M. Křížek, L. Somer, M. Markl, O. Kowalski, P. Pudlák, and I. Vrkoč recieved the 2018 Josef Hlávka Prize for their book Abelova cena – nejvyšší ocenění za matematiku (The Abel Prize – the Highest Achievement in Mathematics) published by Academia Publishing House in 2018. The book surveys the major results of the recipients of the first fifteen Abel Prizes. The Prize which is considered a mathematics counterpart of the Nobel Prize is awarded by the King of Norway every year to one or two mathematicians for their lifetime achievement.The Abel Prize is a Norwegian prize awarded annually by the King of Norway to one or more outstanding mathematicians. It is named after Norwegian mathematician Niels Henrik Abel (1802–1829) and directly modeled after the Nobel Prizes',
           slices: [
             {
               src: '/src/data/photos/news/Josef_Hlavka.jpg',
@@ -275,20 +275,25 @@ export default {
         mdAndDown:'mdAndDown',
     }),
     maxHeight(){
-      if(this.$vuetify.breakpoint.lg)
-        return 320
-      if(this.mdAndDown)  
-        return 'auto'
-      else
-        return 300
+      return 'auto';
+
+      // if(this.$vuetify.breakpoint.xl)
+      //   // return 320
+      //   return 340;
+      // if(this.mdAndDown)  
+      //   return 'auto';
+      // else
+      //   return 300;
     },
     maxHeight1(){
-      if(this.$vuetify.breakpoint.lg)
-        return 270
-      if(this.mdAndDown)  
-        return 'auto'
-      else
-        return 240
+      return 'auto';
+    //   if(this.$vuetify.breakpoint.xl)
+    //     // return 270
+    //     return 290
+    //   if(this.mdAndDown)  
+    //     return 'auto'
+    //   else
+    //     return 240
     }          
   },
   methods:{

@@ -1,5 +1,5 @@
 <template>
-  <div class="px-1">
+  <div class="px-0 pb-3">
     <new-title-card v-if="getIsFirst(item.isFirst)" 
       :item = "item" :getIsFirst="getIsFirst" :detail="detail">
     </new-title-card>

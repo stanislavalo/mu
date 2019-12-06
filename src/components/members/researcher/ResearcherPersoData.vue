@@ -1,8 +1,8 @@
 <template>
-  <v-container grid-list-xl>
-    <v-layout row>
-    <v-flex xs12>
-      <v-sheet class="transparent mt-2">
+  <v-container grid-list-xl class="mx-0 px-0">
+    <v-layout row class="mx-0 px-0">
+    <v-flex xs12 class="mx-0 px-0">
+      <v-sheet class="transparent mx-0 px-0 mt-2">
           <router-link :to="{name:'detail',params:{id:researcher.department[2]}}" >
             <h5 class=" orange--text">{{ $t("researchers.departement") }}: </h5>
             <h5 class="white--text ">{{researcher.department[language]}}</h5>

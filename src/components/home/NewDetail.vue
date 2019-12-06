@@ -1,44 +1,33 @@
 <template>
 <section>
-    <v-layout row wrap class="mx-0 my-0 py-0">
-      <v-flex xs12 class="mx-0 px-1 my-0 py-0">
-      <v-breadcrumbs :items="crumbs" class="mt-1 py-1">
-        <template v-slot:item="props">
-          <span v-if="props.item.disabled">{{props.item.text}}</span>
-          <router-link v-else :to="{name:props.item.href}" class=" blue--text text--darken-4 mx-0 px-0">
-          {{props.item.text}}
-        </router-link>
-        </template>
-      </v-breadcrumbs>
-      </v-flex>
-    </v-layout>
-    <v-layout class="mx-0 px-0">
-      <v-flex xs12  lg7 xl7 class=" mx-1 px-0"> 
-        <v-card class=" ma-0 pa-0" >
-           <app-new-item :item="item" :detail=true></app-new-item>
-        </v-card>
-      </v-flex>
-      
-      <v-flex v-if="!mdAndDown"  lg4 xl4 class=" mx-5 px-2"> 
-        <p class="headline blue--text text--darken-4 ">EVENS 
-          <span class="body-2 blue--text text--darken-4 ml-3 url" > All Events</span>
-        </p>
-        <app-short-event></app-short-event>
-      </v-flex>
-    </v-layout> 
-   <v-layout v-if="mdAndDown" class="mx-1 mt-3">
-      <v-flex xs12class=" mx-5 px-2"> 
-        <p class="headline blue--text text--darken-4 ">EVENS 
-          <span class="body-2 blue--text text--darken-4 ml-3 url" > All Events</span>
-        </p>
-        <app-short-event></app-short-event>
-      </v-flex>
-    </v-layout>
+  <app-crumbs :crumbs="crumbs"></app-crumbs>
+  <v-layout class="mx-0 px-0">
+    <v-flex xs12  lg7 xl7 class=" mx-1 px-0"> 
+      <v-card class=" ma-0 pa-0" >
+          <app-new-item :item="item" :detail=true></app-new-item>
+      </v-card>
+    </v-flex> 
+    <v-flex v-if="!mdAndDown"  lg4 xl4 class=" mx-5 px-2"> 
+      <p class="headline blue--text text--darken-4 ">EVENS 
+        <span class="body-2 blue--text text--darken-4 ml-3 url" > All Events</span>
+      </p>
+      <app-short-event></app-short-event>
+    </v-flex>
+  </v-layout> 
+  <v-layout v-if="mdAndDown" class="mx-1 mt-3">
+    <v-flex xs12class=" mx-5 px-2"> 
+      <p class="headline blue--text text--darken-4 ">EVENS 
+        <span class="body-2 blue--text text--darken-4 ml-3 url" > All Events</span>
+      </p>
+      <app-short-event></app-short-event>
+    </v-flex>
+  </v-layout>
 </section>
 </template>
 <script>
 import {mapGetters} from 'vuex';
 import NewItem from './NewItem.vue';
+import Crumbs from '../sharing/Crumps.vue';
 import ShortEvent from '../events/ShortEvent.vue';
 
 export default {
@@ -227,24 +216,18 @@ export default {
           isFirst:false
         },
       ],
-      crumbs: [
-        {
-          text: 'Home',
-          disabled: false,
-          href: 'news'
-        },
-        {
+      crumbs: [{
           text: 'News',
           disabled: false,
           href: 'news'
-        },
-        
+        }
       ]
     }
   },
   components:{
     AppNewItem:NewItem,
     AppShortEvent:ShortEvent,
+    AppCrumbs:Crumbs,
   },
   mounted() {
     this.mdAndDown = this.$vuetify.breakpoint.mdAndDown;
@@ -261,12 +244,16 @@ export default {
     });
     n.isFirst=true;
     this.item = n;
-    console.log(this.item);
-    },
-    computed: {
-      ...mapGetters({
-          language:'language',
-    }),
+    this.crumbs.push({
+          text: n.title,
+          disabled: true,
+          href: '' 
+    });
+  },
+  computed: {
+    ...mapGetters({
+        language:'language',
+  }),
   },
   methods:{ 
     getIsFirst(isFirst){
