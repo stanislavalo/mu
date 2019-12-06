@@ -232,8 +232,6 @@ body {
 	max-width: 14rem;
   background-color: beige;
 }
-
-
 .calendar-parent {
 	display: flex;
 	flex-direction: column;
