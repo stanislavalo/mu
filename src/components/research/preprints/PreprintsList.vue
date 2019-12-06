@@ -1,7 +1,6 @@
 <template>
   <v-flex xs12 lg12 xl12>
     <v-card   v-for="preprint in list_preprints" :key="preprint.id"  :flat="!mdAndDown">
-      
       <app-preprint-pattern :preprint="preprint" class="hidden-md-and-up xs12"></app-preprint-pattern>
       <app-preprint-content class="hidden-md-and-up pl-2 xs12" :preprint="preprint" 
         :listTypePublication="listTypePublication" >
