@@ -1,8 +1,8 @@
 <template>
 <!------------HEADER ------------------->
-  <div class="col-sm-12 col-lg-12  col-centered " >
+  <div class="col-sm-12 col-lg-12  col-centered mx-0 px-0" >
     <!-- <div class="lg12  col-centered xl11" > -->
-    <v-layout xs12 lg12 row wrap 
+    <v-layout xs12 md12 lg12 row wrap  class="mx-0 px-0"
       style="background: #252697;" 
       min-height="90px">    
       <!------------LOGO, TITLE------------------->
@@ -107,7 +107,7 @@ export default {
 <style>
 .col-centered{
     float: none;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 ul.menudown{
   position: absolute; 

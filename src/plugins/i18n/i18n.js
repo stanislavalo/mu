@@ -39,8 +39,12 @@ export const i18n = new VueI18n({
                 lectures: 'Lectures',
                 theses: 'Theses',
                 grants: 'Grants'
-            }
-
+            },
+            grants: {
+                1: 'Grants',
+                2: 'Foreign Grants',
+                3: 'International Cooperation',
+            },
         },
         1: {
             staff: {
@@ -74,6 +78,11 @@ export const i18n = new VueI18n({
                 lectures: 'Přednášky',
                 theses: 'Doktorské disertace',
                 grants: 'Granty, projekty',
+            },
+            grants: {
+                1: 'Granty, projekty',
+                2: 'Zahraniční granty',
+                3: 'Mezinárodní spolupráce',
             }
         }
     }

@@ -59,13 +59,18 @@ const Publications = resolve => {
     });
 };
 const Grants = resolve => {
-    require.ensure(['../components/research/grants/Grants.vue'], () => {
-        resolve(require('../components/research/grants/Grants.vue'));
+    require.ensure(['../components/grants/Grants.vue'], () => {
+        resolve(require('../components/grants/Grants.vue'));
     });
 };
-const Grant = resolve => {
-    require.ensure(['../components/research/grants/Grant.vue'], () => {
-        resolve(require('../components/research/grants/Grant.vue'));
+const GrantsList = resolve => {
+    require.ensure(['../components/grants/Grants.vue'], () => {
+        resolve(require('../components/grants/GrantsList.vue'));
+    });
+};
+const GrantDetail = resolve => {
+    require.ensure(['../components/grants/GrantDetail.vue'], () => {
+        resolve(require('../components/grants/GrantDetail.vue'));
     });
 };
 // TODO import dynamicExternalAddresses from BD
@@ -117,7 +122,7 @@ const addresses = [{
     },
     {
         path: '/news',
-        name: 'news',
+        name: 'newshome',
         component: NewsHome,
         children: [
             { path: 'news', name: 'news', component: News },
@@ -140,7 +145,7 @@ const addresses = [{
         name: 'events',
         component: Events,
         children: [
-            { path: 'calendar', name: 'calendar', component: Calendar },
+            { path: 'calendar', name: 'calendar', component: CalendarEvents },
             { path: 'seminars', name: 'seminars', component: Seminars },
         ]
     },
@@ -163,14 +168,23 @@ const addresses = [{
         ]
     },
     {
+        path: '/grants',
+        name: 'grants',
+        component: Grants,
+        children: [
+            { path: 'list/:type', name: 'grant-type', component: GrantsList },
+            { path: 'detail/:id', name: 'grant-detail', component: GrantDetail },
+        ]
+    },
+    {
         path: '/research',
         name: 'research',
         component: Research,
         children: [
             { path: 'publications/', name: 'publications', component: Publications },
             { path: 'preprints/', name: 'preprints', component: Preprints },
-            { path: 'grants/', name: 'grants', component: Grants },
-            { path: 'grant/:id', name: 'grant', component: Grant },
+            // { path: 'grants/', name: 'grants', component: Grants },
+            // { path: 'grant/:id', name: 'grant', component: Grant },
         ]
     },
     {
@@ -182,7 +196,7 @@ const allRoutes = addresses.concat(dynamicExternalAddresses);
 
 import NewsHome from '../components/home/NewsHome.vue';
 import Events from '../components/events/Events.vue';
-import Calendar from '../components/events/Calendar.vue';
+import CalendarEvents from '../components/events/CalendarEvents.vue';
 import Seminars from '../components/events/Seminars.vue';
 import Positions from '../components/positions/Positions.vue';
 import ThesesTopics from '../components/positions/ThesesTopics.vue';
@@ -191,4 +205,4 @@ import Preprints from '../components/research/preprints/Preprints.vue';
 // import { resolve } from 'url';
 // import { resolveCname } from 'dns';
 
-export default allRoutes
+export default allRoutes;
