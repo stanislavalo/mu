@@ -47,9 +47,8 @@ export default {
   methods:{
     getPublication() {
       this.toggleDown = !this.toggleDown;
-      //console.log(this.preprint.publication_id);
       this.publication = {
-        type:4, /* Chapter in monograph  */
+        type:4, // Chapter in monograph  
         grants:[{url:null,id_grant:105,
             name:'AOS(318910)'
           },
@@ -58,7 +57,7 @@ export default {
           }
         ],
         url_repository:'https://asep.lib.cas.cz/arl-cav/cs/detail-cav_un_epca-0501201-Joint-numerical-ranges-and-compressions-of-powers-of-operators/',
-        /* type author in IM: true,false */
+        // type author in IM: true,false 
         authors:[{type:1 , name_last:'Müller', name_first:'Vladimír'},
         {name_last:'Tomilov', name_first:'Yuri'}
         ],

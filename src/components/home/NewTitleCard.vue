@@ -16,8 +16,9 @@
           >
           </v-carousel-item>
         </v-carousel>
-        <p  :class="[{'px-1':!mdAndDown},{'title':item.isFirst},{'subtitle-1':!item.isFirst},
+        <p  :class="[{'px-1':!mdAndDown},{'title':item.isFirst},{'subheading':!item.isFirst},
             'py-0','my-0','indigo--text',{'font-weight-black':!item.isFirst }]">
+            <!-- {'font-weight-black':!item.isFirst } -->
           {{item.title}}</p>
         <div v-if="getIsFirst(item.isFirst)"  :class="[{'px-1':!mdAndDown},'py-2','black--text','text-justify']">{{item.description}}
           <router-link :to="{name:getUrl(l)}" tag="p" class="pt-1 pb-1 my-0 url" v-for="(l,index) in item.links"  :key="index"> 

@@ -1,6 +1,6 @@
 <template>
-<v-container class="mx-2" >
-  <v-layout row wrap class="mb-2">
+<v-container >
+  <v-layout row wrap class="mb-2 mx-1">
     <v-flex xs12>
       <span class="headline blue--text text--darken-4 ">{{ $t("summary.title") }}</span>
     <button type="button" class="btn btn-small btn-outline-dark mx-4" 
@@ -8,8 +8,8 @@
       All
     </button>
     </v-flex>
-    <v-flex xs12 mt-2>
-      <button type="button" class="btn  btn-outline-dark mx-1"
+    <v-flex xs12 mt-2 mx-0>
+      <button type="button" class="btn  btn-outline-dark mr-2"
         v-for="(item,index) in groupAlphabet"
         :key="index"
         @click="getSummary(item.select)" >
@@ -17,10 +17,10 @@
       </button>
     </v-flex>
   </v-layout>
-  <v-layout row wrap>
-    <v-flex xs12>
+  <v-layout row wrap class="mx-2">
+    <v-flex xs12 xl12>
      <div class="row summary my-2" v-for="(item, index) in summary" :key="index" >
-        <div class="col-sm-3 title pb-1">{{item.last_name}}
+        <div class="col-sm-3 title mb-0 ">{{item.last_name}}
           <span class="subheading font-weight-bold">{{item.first_name}}</span>
         </div>
         <div class="col-sm-3">{{item.telephone }}</div>

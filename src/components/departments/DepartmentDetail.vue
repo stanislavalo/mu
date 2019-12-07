@@ -1,7 +1,7 @@
 <template>
-  <v-layout class="px-0">
-    <v-flex xs12 class=" px-0">
-      <v-card>
+  <v-layout class="mx-0 px-0">
+    <v-flex xs12 class=" px-0 mx-0">
+      <v-card class=" px-0 mx-0">
         <v-img
           class="white--text"
           height="200px"
@@ -19,12 +19,11 @@
             </v-layout>
           </v-container>
         </v-img>
-        <!-- src="http://localhost:8080/src/assets/departments/ede.jpg" -->
         <v-card-title>
           <div class="description">
             <span class="indigo--text subheading">{{ $t("department.head") }}: {{department.head.last_name}} 
-              {{department.head.first_name}} {{department.head.title}}</span><br>
-            <span>{{department.description}}</span>
+              {{department.head.first_name}} {{department.head.title}}</span>
+            <p class="textjustify">{{department.description}}</p>
           </div>
         </v-card-title>
         <v-flex xs12  justify-start >
@@ -50,7 +49,7 @@
               <div class="col-sm" :key="index">
                 <router-link 
                   v-for="(item, index) in members" :key="index" 
-                  :to="item.url" tag="p"  class="my-0 py-0 pl-3">
+                  :to="{name:'researcher',params:{id:1}}" tag="p"  class="my-0 py-0 pl-3">
                   <a class="purple--text text--darken-4 pr-2">{{item.last_name}} {{item.first_name}}</a>
                   {{item.type.category}} <span>(from {{item.type.from}})</span>
                 </router-link>
@@ -69,7 +68,7 @@
               <div class="col-sm" :key="index">
                 <router-link 
                   v-for="(item, index) in membersFormer" :key="index" 
-                  :to="item.url" tag="p"  class="my-0 py-0 pl-3 grey--text text--darken-1 ">
+                  :to="{name:'researcher',params:{id:1}}" tag="p"  class="my-0 py-0 pl-3 grey--text text--darken-1 ">
                   <a class="pr-2 grey--text text--darken-1">{{item.last_name}} {{item.first_name}}</a>
                   {{item.type.category}} 
                   <span class="caption">({{item.type.from}} - {{item.type.to}})</span>
@@ -155,6 +154,9 @@ export default {
   font-size: 1.2em;
   font-weight: normal;
   font-stretch:expanded;
+}
+.textjustify{
+  text-align: justify 
 }
 #researchThemes,#scientifiqueProduction{
   list-style-type: square;

@@ -1,6 +1,6 @@
 <template>
   <v-container grid-list-sm fluid bg>
-      <v-layout xs12
+      <v-layout xs12 
         flex-child
         wrap
       >
@@ -8,9 +8,10 @@
           xs12
           md12
           d-flex
+          class="ml-2"
         >
           <v-layout wrap>
-            <v-flex xs9 xl2>
+            <v-flex xs12 sm3 md3 lg2 xl2>
               <v-sheet
                 class="d-flex "
                 fill-height 
@@ -24,15 +25,15 @@
                </v-img>
               </v-sheet>
             </v-flex>
-            <v-flex xs3 xl9 offset-xl1>
-              <app-researcher-about v-if="!mdAndDown" class="mt-4 ml-3"></app-researcher-about>
-              <app-researcher-perso-data v-if="!mdAndDown"  :researcher="researcher" :location="location">
+            <v-flex xs12 sm9 md9 lg9 xl9 >
+              <app-researcher-about v-if="!xsOnly" class="mt-0 ml-3"></app-researcher-about>
+              <app-researcher-perso-data v-if="!xsOnly"  class="ml-3" :researcher="researcher" :location="location">
               </app-researcher-perso-data>
               <v-spacer></v-spacer>
             </v-flex>
             <v-flex xs12>
               <v-sheet class="d-flex transparent"> 
-                <div class="mt-2  white--text">
+                <div class="mt-1  white--text">
                   <h3 class="display-1 font-weight-bold mb-0">{{researcher.first_name}} {{researcher.last_name}}</h3>
                   <p class="my-0 pa-0 ">{{researcher.title}}</p>
                 </div>
@@ -42,10 +43,10 @@
              <h3 class="headline font-weight-bold orange--text mt-3 mb-1">{{ $t("researchers.interests") }}: </h3>
             </v-flex>
             <template v-for="(item, index) in researcher.interest" >
-              <v-flex xs2  v-if="mdAndDown"  align-center justify-start :key="index">
+              <v-flex xs2 sm2 md2 v-if="mdAndDown"  align-center justify-start :key="index">
                   <img src="../../../assets/members/circle.png">
               </v-flex>
-              <v-flex xs10  xl12 :key="'a'+index">
+              <v-flex xs10 sm10 md10 lg12 xl12 :key="'a'+index">
                 <div class="pa-3 v-card v-sheet theme--light mb-2 ml-1">
                   <h3 class="subheading font-weight-bold">{{item.title}}</h3>
                   <div>{{item.description}}
@@ -53,11 +54,10 @@
                 </div>
               </v-flex>
             </template>
-            <v-flex xs12 v-if="mdAndDown" class=" my-1 position">
+            <v-flex xs12 v-if="xsOnly" class=" my-1 position">
               <app-researcher-about></app-researcher-about>
             </v-flex>
-            <app-researcher-perso-data v-if="mdAndDown"  :researcher="researcher" :location="location">
-
+            <app-researcher-perso-data v-if="xsOnly"  :researcher="researcher" :location="location">
             </app-researcher-perso-data>
             <v-flex xs12 ml-1> 
               <app-scientific-production></app-scientific-production>
@@ -77,15 +77,16 @@ import {mapGetters} from 'vuex';
 export default {
   data(){
     return{
+      xsOnly:false,
       location:"IM CAS Žitná 25, Praha 1 Czech Republic",
       photo:"http://localhost:8080/src/data/photos/2.jpg",
       researcher:{
         title: 'Mgr',  
-        last_name:'Rozložník', 
-        en_name:'Rozloznik',  
+        last_name:'Rožník', 
+        en_name:'Roznik',  
         en_first_name :'Pavel', 
         first_name:'Pavel',  
-        per_email:'pavel.rozloznik@math.cas.cz', 
+        per_email:'pavel.roznik@math.cas.cz', 
         per_url:'',  
         telephone:'+420 222 090 713',  
         fax:'+420 222 090 716',  
@@ -96,6 +97,9 @@ export default {
     
       }
     };
+  },
+  monted(){
+    this.xsOnly = this.$vuetify.breakpoint.xsOnly;
   },
   computed: {
   ...mapGetters({
