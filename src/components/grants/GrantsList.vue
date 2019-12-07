@@ -1,8 +1,11 @@
 <template>
 <v-container fluid >
   <v-layout>
-    <v-flex  xs12  offset-sm3-xl0>
+    <v-flex  xs12 md3 xl2 lg2 >
       <div class="ma-0 pa-1 headline blue--text text--darken-4 ">{{ $t("grants."+title) }}</div>
+    </v-flex>
+    <v-flex class="hidden-sm-and-down" md3 xl2 lg2>
+      <app-select-year></app-select-year>
     </v-flex>
   </v-layout>
   <v-layout class="mx-0 px-0 my-2">
@@ -23,6 +26,7 @@ import grants from '../../data/grants/grantsList';
 // import components
 import grantTitle from './GrantTitle.vue';
 import grantDescription from './GrantDescription.vue';
+import selectYear from './SelectYear.vue';
 export default {
   data(){
     return {
@@ -35,6 +39,7 @@ export default {
   components:{
     appGrantDescription:grantDescription,
     appGrantTitle:grantTitle,
+    appSelectYear:selectYear,
   },
   created: function() {
     this.seeDescription = !this.$vuetify.breakpoint.xsOnly;
