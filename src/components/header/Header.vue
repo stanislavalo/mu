@@ -68,10 +68,6 @@ export default {
     AppBisMenuSandwich: bisMenuSandwich,
 
   },
-  mounted () {
-    console.log(this.$vuetify.breakpoint);
-    this.$store.dispatch('set_MdAndDown', this.$vuetify.breakpoint.mdAndDown);
-  },
   created: function() {
     var main = [];
     var bis = [];
@@ -87,15 +83,19 @@ export default {
     this.bisMenu = bis;
 
   },
+  mounted () {
+    console.log(this.$vuetify.breakpoint);
+    this.$store.dispatch('header/set_MdAndDown', this.$vuetify.breakpoint.mdAndDown);
+  },
   computed: {
-    ...mapGetters({
+    ...mapGetters('header',{
       drawer:'drawer',
       showBisMenuDown:'showBisMenuDown',
       showMainMenuDown:'showMainMenuDown'
     }),
   },
   methods: {
-    ...mapActions({
+    ...mapActions('header',{
       toggleDrawer:'toggleDrawer'
     }),
     getRandomInt(max) {

@@ -7,10 +7,10 @@ import publication from './modules/publication';
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
-  modules: {
-    header,
-    publication
-  }
+    modules: {
+        header,
+        publication,
+    }
 });
 
 export default store;

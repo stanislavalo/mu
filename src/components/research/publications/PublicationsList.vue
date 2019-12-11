@@ -42,7 +42,7 @@ export default {
     });
   },
   computed: {
-    ...mapGetters({
+    ...mapGetters('publication',{
       id_member:'id_member',
       department:'department',
       type:'type',

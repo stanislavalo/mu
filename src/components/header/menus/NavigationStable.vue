@@ -33,12 +33,12 @@ export default {
     };
   },
   computed: {
-    ...mapGetters({
+    ...mapGetters('header',{
         language:'language'
     })
   },
   methods:{
-    ...mapActions({
+    ...mapActions('header',{
         toggleLanguage:'toggleLanguage',
     }),
   }

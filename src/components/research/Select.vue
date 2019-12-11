@@ -150,7 +150,7 @@ export default {
     }
   },
   methods:{
-    ...mapActions({
+    ...mapActions('publication',{
         setSearchCriterias: 'setSearchCriterias',
     }),
     submitted(){

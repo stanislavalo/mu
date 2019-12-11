@@ -38,7 +38,7 @@ import {mapActions} from 'vuex';
 export default{
   props: ['bisMenu'],
   computed: {
-    ...mapGetters({
+    ...mapGetters('header',{
         items:'items',
         showItems:'showItems',
         idActiv:'idActiv',
@@ -46,7 +46,7 @@ export default{
     })
   },
   methods:{
-    ...mapActions({
+    ...mapActions('header',{
         setSubmenu: 'setSubmenu',
         toggleDrawer:'toggleDrawer',
     }),

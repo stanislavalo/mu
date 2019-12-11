@@ -1,32 +1,12 @@
 <template>
-
-<v-flex class="hidden-sm-and-down" md3 xl3 lg3>
-  <form class="body-1">
-    <div class="form-row my-0 py-0">
-      <div class="form-group col-md-2 my-0 py-0">
-        <label class="mt-0 py-0" >From</label>
-        <select id="inputYear" class="form-control body-1 mt-0" v-model="selectedYear">
-          <option v-for="(year,index) in years" :key="index" :value="year.value">{{year.label}}</option>
-        </select>
-      </div>
-    </div>
-    
-        <!-- <v-select
-          v-model="selectedYear"
-          :items="years"
-          label="From"
-          outline
-          single-line
-        ></v-select> -->
-     
-  </form>
+  <div class="mx-0 px-0 custom-control custom-control-inline  ">
+    <label class="mt-1 mr-2 " for="inputYear" ><span class="caption">From</span></label>
+    <select id="inputYear" class=" custom-select body-1" v-model="selectedYear" @change="onChange()">
+      <option v-for="(year,index) in years" :key="index" :value="year.value">{{year.label}}</option>
+    </select>
+  </div>
   <!-- TODO Search publication in BD --> 
-  <p v-if="isSubmitted" >
-    Search grants for :<br>
-    year: {{this.selectedYear}} 
-  </p>
-</v-flex>
-
+  
 </template>
 
 <script>
@@ -36,7 +16,6 @@ export default {
    data(){
     return{ 
       selectedYear: new Date().getFullYear()-2 ,
-      // years:[ '2019','2018','2017','2016','2015'],
       years:[
         {value:2019,label:'2019'},
         {value:2018,label:'2018'},
@@ -48,14 +27,10 @@ export default {
   },
   
   methods:{
-    ...mapActions({
-        setSearchCriterias: 'setSearchCriterias',
-    }),
-    submitted(){
-      this.isSubmitted = true;
-      var criterias={};
-      this.setSearchCriterias(criterias);
+    onChange(){
+      console.log("selectYeat = "+this.selectedYear);
     }
+
   }
 }
 </script>
