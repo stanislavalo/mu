@@ -41,9 +41,8 @@ export const i18n = new VueI18n({
                 grants: 'Grants'
             },
             grants: {
-                1: 'Grants',
-                2: 'Foreign Grants',
-                3: 'International Cooperation',
+                1: 'Running grants',
+                2: 'Past Grants',
             },
         },
         1: {
@@ -80,9 +79,8 @@ export const i18n = new VueI18n({
                 grants: 'Granty, projekty',
             },
             grants: {
-                1: 'Granty, projekty',
-                2: 'Zahraniční granty',
-                3: 'Mezinárodní spolupráce',
+                1: 'Probíhající granty',
+                2: 'Minulé granty',
             }
         }
     }

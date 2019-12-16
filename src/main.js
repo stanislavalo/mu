@@ -9,11 +9,16 @@ import router from './router/index.js'
 
 import store from './store/store';
 import { i18n } from './plugins/i18n/i18n';
+import moment from 'moment';
 
 Vue.use(Vuetify);
 Vue.use(VueResource);
+Vue.use(moment);
 Vue.filter('shape', function(text, length) {
     return text.length > length ? text.slice(0, length) + '...' : text;
+});
+Vue.filter('dateEU', function(date, formater) {
+    return moment(date).format(formater);
 });
 
 var vm = new Vue({
@@ -21,5 +26,5 @@ var vm = new Vue({
     router,
     i18n,
     store,
-    render: h => h(App)
+    render: h => h(App),
 });

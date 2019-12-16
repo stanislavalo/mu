@@ -17,6 +17,7 @@
     "ajv-errors": "^1.0.1",
     "babel-preset-stage-2": "^6.24.1",
     "bootstrap": "^3.3.7",
+    "bulma": "^0.8.0",
     "core-js": "^3.1.4",
     "dayspan-vuetify": "^0.4.0",
     "dev": "^0.1.3",

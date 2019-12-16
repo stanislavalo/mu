@@ -93,9 +93,11 @@ export default [{
         type: 'bis',
         name: ['Grants', 'Granty, projekty'],
         items: [
-            { url: '/grants/list/1', name: ['Grants', 'Granty, projerkty'] },
-            { url: '/grants/list/2', name: ['Foreign Grants', 'Zahraniční granty'] },
-            { url: '/grants/list/3', name: ['International Cooperation', 'Mezinárodní spolupráce'] },
+            { url: '/grants/list/1', name: ['Running', 'Probíhající'] },
+            { url: '/grants/list/2', name: ['Past', 'Minulé'] },
+            //     { url: '/grants/list/1', name: ['Grants', 'Granty, projerkty'] },
+            //     { url: '/grants/list/2', name: ['Foreign Grants', 'Zahraniční granty'] },
+            //     { url: '/grants/list/3', name: ['International Cooperation', 'Mezinárodní spolupráce'] },
         ],
         dropdown: true,
         url: null

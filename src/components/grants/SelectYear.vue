@@ -24,11 +24,13 @@ export default {
         {value:2015,label:'2015'}
       ],
     }
-  },
-  
+  }, 
   methods:{
+    ...mapActions('grants',{
+        setGrantsYear: 'setGrantsYear',
+    }),
     onChange(){
-      console.log("selectYeat = "+this.selectedYear);
+      this.setGrantsYear(this.selectedYear);
     }
 
   }

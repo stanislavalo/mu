@@ -5,13 +5,13 @@
       <div class="ma-0 pa-0 headline blue--text text--darken-4 ">{{ $t("grants."+title) }} 
       </div>
     </v-flex>
-    <v-flex xs12 lg5 ml-3 px-0 >  
+    <v-flex v-if="type==2" xs12 lg5 ml-3 px-0 >  
       <app-select-year></app-select-year>
     </v-flex> 
   </v-layout>
   <v-layout class="mx-0 px-0 my-2">
     <v-flex xs12 class=" px-0 mx-0"> 
-      <v-card width="100%" flat class=" px-1 mx-0 py-0" v-for="(item, index) in grantsList" :key="index" >
+      <v-card width="100%" flat class=" px-1 mx-0 py-0" v-for="(item, index) in grants" :key="index" >
         <app-grant-title :showTitle=true :item="item" ></app-grant-title>
         <app-grant-description :showIcon=false :seeDescription="seeDescription" :description="item.description" ></app-grant-description> 
         <v-divider light></v-divider>
@@ -22,8 +22,9 @@
 </template>
 <script>
 import {mapGetters} from 'vuex';
-// import data
-import grants from '../../data/grants/grantsList';
+import {mapActions} from 'vuex';
+import moment from 'moment';
+
 // import components
 import grantTitle from './GrantTitle.vue';
 import grantDescription from './GrantDescription.vue';
@@ -31,7 +32,7 @@ import selectYear from './SelectYear.vue';
 export default {
   data(){
     return {
-      type: this.$route.params.type,
+      type: this.$route.params.type, //runnig(activ=1),past(activ=0)
       seeDescription:false,
       id_grantActive:null,
       title:'1',
@@ -42,23 +43,26 @@ export default {
     appGrantTitle:grantTitle,
     appSelectYear:selectYear,
   },
-  created: function() {
+  created() {
     this.seeDescription = !this.$vuetify.breakpoint.xsOnly;
-    var grantsData = [];
-    var typeGrant = this.type;
-    grants.forEach(function(element) {
-      if(element.type_grant == typeGrant){
-         grantsData.push(element);
-      }
-    });
-    this.title =typeGrant.toString();
-    this.grantsList = grantsData;
+    this.title =this.type.toString();
+    this.$store.dispatch('grants/setTypeGrant',this.type);
+    this.$store.dispatch('grants/initGrants');
   },
   computed: {
-    ...mapGetters({
+    ...mapGetters('header',{
         language:'language',
-    })
+    }),
+    ...mapGetters('grants',{
+      grants:'grants',
+      typeGrant:'typeGrant'
+    }),
   },
+  // filters: {
+  //   dateEU: function (date,formater) {
+  //     return moment(date).format(formater);
+  //   }
+  // }
 };
 </script>
 <style scoped>

@@ -10,7 +10,7 @@
           contain>
           <div hidden-xs-only class="text--grey text--darken-3 ml-3 pl-5">
             <p>{{item.number_grant}}</p>
-            <p class="caption" >from {{item.from_date}}&nbsp;&nbsp;to&nbsp;&nbsp;{{item.to_date}}</p> 
+            <p class="caption" >from {{item.from_date| dateEU('DD/MM/YYYY')}}&nbsp;&nbsp;to&nbsp;&nbsp;{{item.to_date| dateEU('DD/MM/YYYY')}}</p> 
           </div>
           </v-img>
       </router-link>
