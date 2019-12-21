@@ -270,7 +270,7 @@ export default {
     this.newsRemain = newsRemainArr;
   },
   computed: {
-    ...mapGetters({
+    ...mapGetters('header',{
         language:'language',
         mdAndDown:'mdAndDown',
     }),

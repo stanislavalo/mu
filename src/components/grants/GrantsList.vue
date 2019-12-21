@@ -58,11 +58,6 @@ export default {
       typeGrant:'typeGrant'
     }),
   },
-  // filters: {
-  //   dateEU: function (date,formater) {
-  //     return moment(date).format(formater);
-  //   }
-  // }
 };
 </script>
 <style scoped>

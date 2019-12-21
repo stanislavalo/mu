@@ -31,6 +31,7 @@
     "vue-resource": "^1.5.1",
     "vue-route": "^1.5.1",
     "vue-router": "^3.0.6",
+    "vue-simple-calendar": "^4.3.2",
     "vue-style-loader": "^4.1.2",
     "vue-sweet-calendar": "^0.3.1",
     "vuetify": "^1.5.16",

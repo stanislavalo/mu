@@ -10,6 +10,7 @@ import router from './router/index.js'
 import store from './store/store';
 import { i18n } from './plugins/i18n/i18n';
 import moment from 'moment';
+import 'bulma/css/bulma.css';
 
 Vue.use(Vuetify);
 Vue.use(VueResource);
