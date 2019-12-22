@@ -57,7 +57,7 @@ export default {
     this.researchers = researchersData;   
   },
   computed: {
-    ...mapGetters({
+    ...mapGetters('header',{
         language:'language',
         mdAndDown:'mdAndDown'
     })

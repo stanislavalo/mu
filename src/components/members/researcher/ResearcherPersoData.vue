@@ -31,7 +31,7 @@ import {mapGetters} from 'vuex';
 export default {
   props:['researcher','location'],
   computed: {
-  ...mapGetters({
+  ...mapGetters('header',{
       language:'language',
     }),
   }

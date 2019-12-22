@@ -142,7 +142,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({
+    ...mapGetters('header',{
         language:'language',
     })
   }

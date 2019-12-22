@@ -18,7 +18,7 @@ export default {
     newTitleCard:newTitleCard
   },
   computed: {
-    ...mapGetters({
+    ...mapGetters('header',{
         language:'language',
         mdAndDown:'mdAndDown',
     })

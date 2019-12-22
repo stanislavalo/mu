@@ -20,11 +20,12 @@
 </div>   
 </template>
 <script>
+import {mapGetters} from 'vuex';
+
 import members from '../../data/people/members.js';
 import investigators from '../../data/grants/grantsInvestigators.js';
 import mainInvestigators from '../../data/grants/grantMainInvestigators.js';
 import grants from '../../data/grants/grantsList';
-import {mapGetters} from 'vuex';
 import grantTitle from './GrantTitle.vue';
 import grantMainLeaders from './GrantMainLeaders.vue';
 import grantDescription from './GrantDescription.vue';
@@ -73,11 +74,12 @@ export default {
     });
     this.grant = grantData;
     //crumbs
+    
     this.crumbs.push({
-          text: "grants."+grantData.type_grant,
+          text: "grants."+this.typeGrant,
           disabled: false,
           href: 'grant-type',
-          params:{type:grantData.type_grant},
+          params:{type:this.typeGrant},
     }),  
     this.crumbs.push({
           text: grantData.title,
@@ -141,9 +143,12 @@ export default {
       this.mainInvestigator = objectInvestigator;
   },
   computed: {
-    ...mapGetters({
+    ...mapGetters('header',{
         language:'language',
-    })
+    }),
+    ...mapGetters('grants',{
+      typeGrant:'typeGrant'
+    }),
   },
 }
 </script>

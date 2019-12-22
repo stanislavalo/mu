@@ -44,7 +44,7 @@ import {mapActions} from 'vuex';
 export default{
   props: ['mainMenu','keyrand'],
   computed: {
-    ...mapGetters({
+    ...mapGetters('header',{
         items:'items',
         showItems:'showItems',
         idActiv:'idActiv',
@@ -52,7 +52,7 @@ export default{
     })
   },
   methods:{
-    ...mapActions({
+    ...mapActions('header',{
         setSubmenu: 'setSubmenu',
     }),
   }

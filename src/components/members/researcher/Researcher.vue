@@ -102,7 +102,7 @@ export default {
     this.xsOnly = this.$vuetify.breakpoint.xsOnly;
   },
   computed: {
-  ...mapGetters({
+  ...mapGetters('header',{
       language:'language',
       mdAndDown:'mdAndDown'
     })

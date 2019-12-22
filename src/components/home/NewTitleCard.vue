@@ -40,7 +40,7 @@ import {mapGetters} from 'vuex';
 export default {
   props:['item','getIsFirst','detail'],
   computed: {
-    ...mapGetters({
+    ...mapGetters('header',{
         language:'language',
         mdAndDown:'mdAndDown',
     })

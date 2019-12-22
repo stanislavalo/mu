@@ -61,6 +61,10 @@ module.exports = {
     //     dns: 'empty',
     //     net: 'empty'
     // },
+    plugins: [
+        // load `moment/locale/ja.js` and `moment/locale/it.js`
+        new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /fr|it/),
+    ],
     resolve: {
         alias: {
             'vue$': 'vue/dist/vue',
