@@ -12,30 +12,77 @@
     >
       <v-card-text>
         <v-layout wrap row >
-          <v-flex xs12 lg2 xl2 offset-xs0 offset-xl2 offset-lg2>
-            <img src="http://www.avcr.cz/opencms/export/system/modules/cz.nelasoft.opencms.avcr/resources/img/logo-cs.png_618290174.png" 
-             class="mt-2" width="167" height="45" alt="Akademie věd České republiky">
+          <v-spacer></v-spacer>
+          <v-flex xs12 lg2 xl2  offset-xs3  offset-lg1 offset-xl1 >
+            <a href="https://www.avcr.cz/en/" >
+            <v-img
+              :src="require('../../data/photos/foot/logo-cs.png_618290174.png')"
+              alt="Akademie věd České republiky"
+              width="12em" 
+              position="right 60%"
+              class="mt-2 mb-2"
+              contain>
+            </v-img>
+            </a>
           </v-flex>
-          <v-flex xs12 lg2 xl2>
-            <img src="https://initiative.eudml.org/themes/eudml/logo.png"  width="185em" class="mt-2 mb-2">
+          <v-flex xs12 lg2 xl2 offset-xs1 offset-lg0 offset-xl0>
+            <a href="https://eudml.org/" >
+              <v-img
+                :src="require('../../data/photos/foot/eudml_logo.png')"
+                alt="The European Digital Library"
+                width="18em" 
+                class="mt-2 mb-2 mr-5"
+                contain>
+              </v-img>
+            </a>
           </v-flex>
-          <v-flex xs6 hidden-sm-and-up offset-xs1>
-            <img src="http://www.jcmf.cz/sites/default/files/garland_logo.png" width="48em" class="mt-2" 
-              alt=" The Union of Czech Mathematicians and Physicists" title=" The Union of Czech Mathematicians and Physicists" id="logo">
+          <v-flex lg2 xl1 hidden-xs-only offset-lg1 >
+            <a href="https://jcmf.cz/?q=en" target="blanc">
+              <v-img
+                :src="require('../../data/photos/foot/logo_jmc.png')"
+                alt="The Union of Czech Mathematicians and Physicists"
+                width="5em" 
+                class="mt-2 mb-2 mx-0"
+                contain>
+              </v-img>
+            </a> 
           </v-flex>
-          <v-flex lg2 xl2 hidden-xs-only>
-            <img src="http://www.jcmf.cz/sites/default/files/garland_logo.png" width="48em" class="ml-0 mt-2" 
-              alt=" The Union of Czech Mathematicians and Physicists" title=" The Union of Czech Mathematicians and Physicists" id="logo">
+           <v-flex  lg2 xl2 hidden-xs-only offset-xl1>
+             <a href="http://www.eu-maths-in.cz/" target="blanc"> 
+              <v-img
+                :src="require('../../data/photos/foot/logo_eumathin.png')"
+                alt="Czech Network for Mathematics in Industry"
+                width="8em" 
+                class="mt-2 mb-2 ml-0 mr-4"
+                contain>
+              </v-img>
+            </a>  
           </v-flex>
-          <v-flex xs4 hidden-sm-and-up >
-              <img src="http://www.eu-maths-in.cz/images/eu-maths-in-eu-logo.png" style="border:0;" alt="EU-MATHS-IN" class="mr-5 mt-2" width="95em">
+          <v-flex xs4 hidden-sm-and-up offset-xs2>
+            <a href="https://jcmf.cz/?q=en" target="blanc">
+              <v-img
+                :src="require('../../data/photos/foot/logo_jmc.png')"
+                alt="The Union of Czech Mathematicians and Physicists"
+                width="4em" 
+                class="mt-2 mb-2 mx-0"
+                contain>
+              </v-img> 
+            </a>
+          </v-flex> 
+          <v-flex xs6 hidden-sm-and-up >
+            <a href="http://www.eu-maths-in.cz/" target="blanc"> 
+              <v-img
+                :src="require('../../data/photos/foot/logo_eumathin.png')"
+                alt="Czech Network for Mathematics in Industry"
+                width="8em" 
+                class="mt-2 mb-2 mx-0"
+                contain>
+              </v-img>
+            </a>
           </v-flex>
-          <v-flex  lg2 xl2 hidden-xs-only >  
-            <img src="http://www.eu-maths-in.cz/images/eu-maths-in-eu-logo.png" style="border:0;" alt="EU-MATHS-IN" class="mr-5 mt-2" width="95em">
-          </v-flex>
+          <v-spacer></v-spacer>
         </v-layout>  
       </v-card-text>
-
       <v-card-text class=" white--text text-xs-center my-0 py-0">
         <v-layout wrap row >
           <v-flex xs12 hidden-sm-and-up >
