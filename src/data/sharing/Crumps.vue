@@ -12,6 +12,7 @@
   </v-layout>
 </template>
 <script>
+import {mapGetters} from 'vuex';
 export default {
   props:['crumbs'],
   data(){ return{
@@ -28,7 +29,7 @@ export default {
       });
       this.crumbsShape = crumbsShapeData; 
     }
-  }
+  },
 }
 
 </script>

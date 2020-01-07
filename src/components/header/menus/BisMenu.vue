@@ -17,7 +17,7 @@
             </span>
           </v-btn>
           <router-link v-else tag="v-btn"
-            flat class="white--text" style="background: #252697; border-style: hidden;"
+            flat class="white--text" style="background: #252697; border-style: hidden; text-transform:none"
             :to="itemMenu.url" >
             {{itemMenu.name[language]}}
           </router-link>

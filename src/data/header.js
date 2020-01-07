@@ -1,61 +1,65 @@
-export default [{
+export default [
+    /** MAIN menu
+     */
+    {
         id: 1,
         type: 'main',
         name: ['People', 'Lidé'],
         dropdown: true,
         url: null,
         items: [
-            { url: '/members/researchers', name: ['Researchers', 'Vědečtí pracovníci'] },
-            { url: '/members/staff', name: ['Staff', 'Ostatní zaměstnanci'] },
-            { url: '/members/summary', name: ['Summary', 'Seznam'] }
+            { url: '/members/researchers', name: ['Researchers fellow', 'Vědečtí pracovníci'] },
+            { url: '/members/postdocs', name: ['Postdocs, students', 'Postdoktorandi, studenti'] },
+            { url: '/members/staff', name: ['Staff', 'Ostatní'] },
+            { url: '/members/distinguishedVisitors', name: ['Eduard Čech Distinguished Visitor', 'Eduard Čech Distinguished Visitor'] },
+            { url: '/members/visitors', name: ['Visitors', 'Hostující pracovníci'] }
         ],
     },
     {
         id: 2,
         type: 'main',
-        name: ['Institute', 'MU AV CZ'],
+        name: ['Research', 'Výzkum'],
         dropdown: true,
         url: null,
         items: [
-            { url: '/', name: ['Home', 'Uvodni strana'] },
-        ],
+            { url: '/research/publications', name: ['Publications', 'Publikace'] },
+            { url: '/research/lectures', name: ['Lectures', 'Přednášky'] },
+            { url: '/research/collaboration', name: ['Collaboration', 'Spolupráce'] },
+        ]
     },
     {
         id: 3,
         type: 'main',
-        name: ['Events & Calender', 'Vedecke akce & Kalendar'],
+        name: ['Events', 'Vědečké akce'],
         dropdown: true,
         url: null,
         items: [
-            { url: '/events/calendar', name: ['Calendar', 'Kalendar'] },
-            { url: '/events/seminars', name: ['Seminars', 'Seminare'] }
+            { url: '/events/calendar', name: ['Calendar', 'Kalendář akcí'] },
+            { url: '/events/seminars', name: ['Seminars', 'Semináře'] },
+            { url: '/events/conferences', name: ['Conferences', 'Konference'] },
+            { url: '/events/lecturesCech', name: ['Eduard Čech Lectures', 'Čechovské přednášky'] },
+            { url: '/events/awards', name: ['Awards', 'Ocenění'] },
         ],
     },
     {
         id: 4,
         type: 'main',
-        name: ['Positions', 'Pracovni prilezitost'],
+        name: ['About', 'O nás'],
         dropdown: true,
         url: null,
         items: [
-            { url: '/positions/open', name: ['Open position', 'Volná místa'] },
-            { url: '/positions/thesetopics', name: ['Proposed theses topics', 'Nabídka doktorského studia'] }
+            { url: '/', name: ['News', 'Aktuality'] },
+            { url: '/about/mission', name: ['Mission', 'Poslání'] },
+            { url: '/about/structure', name: ['Structure', 'Struktura'] },
+            { url: '/about/contack', name: ['Contact', 'Kontakt'] },
         ],
     },
+    /** BIS menu
+     */
     {
         id: 5,
         type: 'bis',
-        name: ['Research', 'Výzkumná činnost'],
-        dropdown: true,
-        url: null,
-        items: [{ url: '/research/preprints', name: ['Preprints', 'Preprinty'] },
-            { url: '/research/publications', name: ['Publications', 'Publikace'], }
-        ]
-    },
-    {
-        id: 6,
-        type: 'bis',
-        name: ['Departments', 'Vědecká oddělení'],
+        name: ['Departments', 'Oddělení'],
         items: [
             { url: '/department/detail/1', name: ['Abstract Analysis (AA)', 'Abstraktní analýza (AA)'] },
             {
@@ -83,11 +87,26 @@ export default [{
                     'Matematická logika a teoretická informatika (MLTCS)'
                 ]
             },
-            { url: '/department/archive', name: ['Archive', 'Archiv'] },
         ],
         dropdown: true,
         url: null
     },
+    {
+        id: 6,
+        type: 'bis',
+        name: ['Library', 'Knihovna'],
+        items: [
+            { url: '/library/library', name: ['Library of the Institute', 'Knihovna ústavu'] },
+            { url: '/library/resources', name: ['Electronic resources', 'Elektronické zdroje'] },
+            { url: '/library/journal/applicationsJournal', name: ['Applications of Mathematics', 'Applications of Mathematics'] },
+            { url: '/library/journal/mathematicalJournal', name: ['Czechoslovak Mathematical Journal', 'Czechoslovak Mathematical Journal'] },
+            { url: '/library/journal/bohemicaJournal', name: ['Mathematica Bohemica', 'Mathematica Bohemica'] },
+
+        ],
+        dropdown: true,
+        url: null
+    },
+
     {
         id: 7,
         type: 'bis',
@@ -95,9 +114,6 @@ export default [{
         items: [
             { url: '/grants/list/1', name: ['Running', 'Probíhající'] },
             { url: '/grants/list/2', name: ['Past', 'Minulé'] },
-            //     { url: '/grants/list/1', name: ['Grants', 'Granty, projerkty'] },
-            //     { url: '/grants/list/2', name: ['Foreign Grants', 'Zahraniční granty'] },
-            //     { url: '/grants/list/3', name: ['International Cooperation', 'Mezinárodní spolupráce'] },
         ],
         dropdown: true,
         url: null
@@ -105,10 +121,14 @@ export default [{
     {
         id: 8,
         type: 'bis',
-        name: ['Journals', ' Časopisy vydávané v MÚ'],
-        items: [],
-        dropdown: true,
-        url: null
+        name: ['Positions', 'Pracovni prilezitost'],
+        dropdown: false,
+        url: '/positions',
+        // items: [
+        //     { url: '/positions/open', name: ['Open position', 'Volná místa'] },
+        //     { url: '/positions/thesetopics', name: ['Proposed theses topics', 'Nabídka doktorského studia'] }
+        // ],
     },
+
 
 ];
