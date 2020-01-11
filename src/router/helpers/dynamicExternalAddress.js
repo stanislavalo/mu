@@ -39,4 +39,9 @@ export const dynamicExternalAddresses = [{
         name: 'workshop',
         beforeEnter() { location.href = 'http://workshop.math.cas.cz/MDPW/' },
     },
+    {
+        path: '/about/documents/pdf',
+        name: 'pdf1',
+        beforeEnter() { location.href = '../../../src/data/about/documents/test.pdf' },
+    },
 ];

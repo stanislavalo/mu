@@ -44,6 +44,10 @@ export const i18n = new VueI18n({
                 1: 'Running grants',
                 2: 'Past Grants',
             },
+            documents: {
+                title: 'Documents',
+                report: 'Annual reports',
+            }
         },
         1: {
             staff: {
@@ -81,6 +85,10 @@ export const i18n = new VueI18n({
             grants: {
                 1: 'Probíhající granty',
                 2: 'Minulé granty',
+            },
+            documents: {
+                title: 'Dokumenty',
+                report: 'Výroční zprávy',
             }
         }
     }
