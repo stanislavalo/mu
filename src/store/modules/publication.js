@@ -1,8 +1,11 @@
+import typePublication from '../../data/research/typePublication.js';
 const state = {
     id_member: 0,
     department: 0,
     type: 20,
     year: new Date().getFullYear(),
+    listTypePublication: [],
+    typePublication: typePublication,
 };
 const getters = {
     id_member: state => {
@@ -14,9 +17,19 @@ const getters = {
     type: state => {
         return state.type;
     },
-    year: year => {
+    year: state => {
         return state.year;
     },
+    typePublication: state => {
+        return state.typePublication;
+    },
+    listTypePublication: state => {
+        state.typePublication.forEach(element => {
+            state.listTypePublication[element.id] = element.name;
+        });
+        return state.listTypePublication;
+    },
+
 };
 const mutations = {
     'SET_SEARCH_CRITERIAS' (state, criterias) {

@@ -9,24 +9,21 @@
             </span>
           </v-flex>
           <v-flex xl8 lg9>
-            <!-- form select publications -->
-            <app-select :typeProduction="typeProduction" :typePublication="typePublication" :showType="showType"></app-select>
+            <app-select :typeProduction="typeProduction" :showType="showType"></app-select>
           </v-flex>
           <v-spacer></v-spacer>
         </v-card-title>
       </v-card>
     </v-flex>
-    <app-publications-list :typePublication="typePublication" ></app-publications-list>
+    <app-publications-list ></app-publications-list>
   </div>
 </template>
 <script>
 import select from '../Select.vue';
 import publicationsList from './PublicationsList.vue';
-import typePublication from '../../../data/research/typePublication';
 export default {
   data(){
     return{
-      typePublication: typePublication,
       typeProduction:'publications',
       showType:true
     }

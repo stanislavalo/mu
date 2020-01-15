@@ -44,9 +44,10 @@
 
 <script>
 import members from '../../data/members';
+import {mapGetters} from 'vuex';
 import {mapActions} from 'vuex';
 export default {
-  props:['typePublication','showType','typeProduction'],
+  props:['showType','typeProduction'],
    data(){
     return{ 
       selectedYear:2019,
@@ -110,6 +111,9 @@ export default {
     }
   },
   computed: {
+    ...mapGetters('publication',{
+      typePublication:'typePublication',
+    }),
     getShowType(){ 
       if(this.typeProduction =='productions')
        this.showType = true;

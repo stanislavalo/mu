@@ -1,6 +1,6 @@
 <template>
   <v-layout row wrap class="mx-2">
-       <app-list :pastList=false :list="last" class="mt-2 mb-0"></app-list>
+       <app-list :pastList=false :list="last" class="mt-2"></app-list>
       <app-list :pastList=true :list="past" class="mt-0"></app-list>
     </v-layout>
 </template>

@@ -1,39 +1,40 @@
 <template>
   <div class="body-1">
-    <div>
-      <span v-for="(author,index) in preprint.authors" :key="index" 
-        :class="{'indigo--text text--darken-2':author.type}">
-        {{author.name_last}} {{author.name_first}}
-        <span v-if="index < preprint.authors.length - 1">,</span></span> 
-    </div>
     <div class="font-italic">{{preprint.title}}</div>
     <v-layout row v-if="preprint.type_display" @click="getPublication" :class="['ml-1',{'yellow':!toggleDown}]">
       <span class="caption font-weight-bold">{{preprint.text_display}} </span>
-      <img  v-if="toggleDown"  src="../../../assets/research/down.png" class="pl-1">
-      <img v-else src="../../../assets/research/up.png" class="pl-1 pb-1">
+      <span  v-if="!mdAndDown"> 
+        <img  v-if="toggleDown"  src="/src/assets/research/down.png" class="pl-1">
+        <img v-else src="/src/assets/research/up.png" class="pl-1 pb-1">
+      </span>
+      <span v-else class="caption font-weight-bold">
+        <span  v-if="toggleDown" class="pt-1 px-1 ">+</span>
+        <span v-else class="pt-1 px-1 font-weight-bold subheading">-</span>
+      </span> 
     </v-layout>
-    <v-card v-if="!toggleDown" row class=" pt-2 ml-1 grey lighten-4">
-      <app-publication-pattern :publication="publication" :listTypePublication="listTypePublication"
-        class="hidden-md-and-up">
-      </app-publication-pattern>
-      <app-publication-content :publication="publication" class="hidden-md-and-up"></app-publication-content> 
-      <v-layout  v-if="!toggleDown" row class="hidden-sm-and-down pt-2 ml-1 grey lighten-4">
-          <v-flex lg2 xl1 xs12 class="ml-3 mr-3" >
-            <app-publication-pattern :publication="publication" :listTypePublication="listTypePublication"></app-publication-pattern>
+    <v-card v-if="!toggleDown" class=" pt-2 ml-1 grey lighten-4">
+      <!-- <app-publication-pattern :publication="publication" class="hidden-md-and-up"></app-publication-pattern> -->
+      <!-- <app-publication-content :publication="publication" class="hidden-md-and-up"></app-publication-content>  -->
+      <v-layout  v-if="!toggleDown" class="pt-2 ml-1 grey lighten-4">
+          <v-flex xs4 lg2 xl1  class="ml-3 mr-3" >
+            <app-publication-pattern :publication="publication" ></app-publication-pattern>
           </v-flex>
-          <v-flex lg10 xl9>
-            <app-publication-content :publication="publication" ></app-publication-content> 
+          <v-flex xs8 lg4 xl9>
+            <app-authors-title :title="publication.title" :authors="publication.authors"></app-authors-title>
+            <app-basic-publication :type="publication.type" :year="publication.year" 
+        :object_type="publication.object_type"></app-basic-publication>
           </v-flex>
       </v-layout>
     </v-card>
   </div> 
 </template>
 <script>
-import publicationPattern from '../publications/PublicationPattern.vue';
-import publicationContent from '../publications/PublicationContent.vue';
-
+import publicationPattern from '../PublicationPattern.vue';
+import basicPublications from '../BasicPublications.vue';
+import authorsTitle from '../AuthorsTitle.vue';
+import {mapGetters} from 'vuex';
 export default {
-  props:['preprint','listTypePublication'],
+  props:['preprint'],
   data(){
     return{
       toggleDown:true,
@@ -42,7 +43,13 @@ export default {
   },
   components:{
     AppPublicationPattern:publicationPattern,
-    AppPublicationContent:publicationContent,
+    AppBasicPublication:basicPublications,
+    AppAuthorsTitle:authorsTitle,
+  },
+  computed: {
+    ...mapGetters('header',{
+      mdAndDown:'mdAndDown',
+    })
   },
   methods:{
     getPublication() {
