@@ -1,11 +1,10 @@
 <template>
   <div class="body-1">
-    <div class="font-italic">{{preprint.title}}</div>
     <v-layout row v-if="preprint.type_display" @click="getPublication" :class="['ml-1',{'yellow':!toggleDown}]">
       <span class="caption font-weight-bold">{{preprint.text_display}} </span>
       <span  v-if="!mdAndDown"> 
-        <img  v-if="toggleDown"  src="/src/assets/research/down.png" class="pl-1">
-        <img v-else src="/src/assets/research/up.png" class="pl-1 pb-1">
+        <img  v-if="toggleDown"  src="../../../../assets/research/down.png" class="pl-1">
+        <img v-else src="../../../../assets/research/up.png" class="pl-1 pb-1">
       </span>
       <span v-else class="caption font-weight-bold">
         <span  v-if="toggleDown" class="pt-1 px-1 ">+</span>
@@ -13,8 +12,6 @@
       </span> 
     </v-layout>
     <v-card v-if="!toggleDown" class=" pt-2 ml-1 grey lighten-4">
-      <!-- <app-publication-pattern :publication="publication" class="hidden-md-and-up"></app-publication-pattern> -->
-      <!-- <app-publication-content :publication="publication" class="hidden-md-and-up"></app-publication-content>  -->
       <v-layout  v-if="!toggleDown" class="pt-2 ml-1 grey lighten-4">
           <v-flex xs4 lg2 xl1  class="ml-3 mr-3" >
             <app-publication-pattern :publication="publication" ></app-publication-pattern>

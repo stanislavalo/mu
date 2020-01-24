@@ -1,7 +1,7 @@
 <template>
 <div :class="[{ grants: !toggleDown }, nogrants]">
   <section @click="getProductionGrants">
-    <span  v-if="imageIcon"> 
+    <span  v-if="icon">
       <img src="../../assets/research/icon_grants.png" class="pl-1">
       <img  v-if="toggleDown"  src="../../assets/research/down.png" class="pt-1 pl-0">
       <img v-else src="../../assets/research/up.png" class="pt-1 pl-0">
@@ -24,7 +24,7 @@
 </template>
 <script>
 export default {
-  props:['grants','imageIcon'],
+  props:['grants','icon'],
   data(){
     return{
       toggleDown:true,

@@ -19,7 +19,7 @@
       <router-link :to="{name:'grant-detail',params:{id:item.id_grant}}" tag="div"
         class="text--grey text--darken-3 py-0 my-0">
           <p class=" pl-1 py-0" >{{item.number_grant}}</p>
-          <p class="caption pl-1 py-0">from {{item.from_date}}&nbsp;&nbsp;to&nbsp;&nbsp;{{item.to_date}}</p> 
+          <p class="caption pl-1 py-0">from {{item.from_date| dateEU('DD/MM/YYYY')}}&nbsp;&nbsp;to&nbsp;&nbsp;{{item.to_date| dateEU('DD/MM/YYYY')}}</p> 
       </router-link>
     </v-flex>
     <v-flex xs12 pl-3 >

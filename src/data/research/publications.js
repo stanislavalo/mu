@@ -165,7 +165,7 @@ export default [{
         ],
         registrat_num: 'IM-2019-1',
         date_preprint: '2019-2-16 ',
-        title: 'Complementary error boundsfor elliptic systems and applications',
+        title: { name: 'Complementary error boundsfor elliptic systems and applications' },
         url_preprint: 'IM_20101216163414_93.pdf',
         type_display: 2,
         text_display: 'Published',
@@ -192,7 +192,7 @@ export default [{
         ],
         registrat_num: 'IM-2019-2',
         date_preprint: '2019-7-16 ',
-        title: 'Weighted inequalities for discrete iterated kernel operators',
+        title: { name: 'Weighted inequalities for discrete iterated kernel operators' },
         url_preprint: 'IM_20101216163414_93.pdf',
         type_display: 0,
         text_display: null,
@@ -223,10 +223,39 @@ export default [{
         ],
         registrat_num: 'IM-2019-3',
         date_preprint: '2019-10-16 ',
-        title: 'Weighted inequalities for discrete iterated kernel operators I',
+        title: { name: 'Weighted inequalities for discrete iterated kernel operators I' },
         url_preprint: 'IM_20101216163414_93.pdf',
         type_display: 0,
         text_display: null,
         grants: null
+    },
+    {
+        id: 3001,
+        type: 7,
+        id_these: 1,
+        authors: [{ type: 1, name_last: 'Monteiro', name_first: 'Giselle Antunes' }, ],
+        supervisor: [{ type: 1, name_last: 'Tvrdý,', name_first: 'Milan' },
+            { type: 0, name_last: ' Federson', name_first: ' Federson', affiliation: '( ICMC-USP, Sao Carlos, SP, Brazil)' }
+        ],
+        title: { name: 'Generalized linear differential equations in a Banach space: continuous dependence on parameters and applications' },
+        url: 'http://www.math.cas.cz/fichier/theses/these_20121211080305_47.pdf',
+        year_start: 2010,
+        department: 'EDE',
+        defence: {
+            available: true,
+            date: '2012-2-14',
+            place: 'Sao Carlos, Brazil',
+        },
+        grants: [{
+                url: null,
+                id_grant: 105,
+                name: 'AOS(318910)'
+            },
+            {
+                url: null,
+                id_grant: 106,
+                name: 'GA17-27844S'
+            }
+        ]
     },
 ]

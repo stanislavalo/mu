@@ -24,7 +24,7 @@ export default [{
     },
     {
         id: 7,
-        name: 'Theses'
+        name: 'Thesis'
     },
     {
         id: 20,

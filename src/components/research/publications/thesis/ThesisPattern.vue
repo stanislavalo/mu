@@ -1,9 +1,9 @@
 <template>
-  <div class="pl-1">
-    <a class="indigo--text text--darken-2 font-weight-bold" :href="preprint.url_preprint" target="_blanc">
+  <div class="pl-1"> 
+    <a class="indigo--text text--darken-2 font-weight-bold" :href="thesis.url" target="_blanc">
       <v-layout xl12 align-start justify-start row fill-height >
         <div class="ml-3 mr-2">
-          {{preprint.registrat_num}}
+          {{thesis.department}}&nbsp;{{thesis.year_start}}
         </div>
         <div>
           <img  v-if="icon" src="../../../../assets/research/acrobat_icon.png" class="pl-1 pb-1">
@@ -11,15 +11,10 @@
         </div>
       </v-layout>
     </a>
-    <span class="caption">Registered: {{preprint.date_preprint}}</span>
   </div>
 </template>
 <script>
 export default {
-  props:['preprint','icon'],
+  props:['thesis','icon'],
 }
 </script>
-
-
-
-
