@@ -5,7 +5,7 @@
         <v-card-title >
           <v-flex  xl2>
             <span class=" headline blue--text text--darken-4 ">
-              {{ $t("production.publications") }}
+              {{ $t("production.lectures") }}
             </span>
           </v-flex>
           <v-flex xl8 lg9>
@@ -15,17 +15,17 @@
         </v-card-title>
       </v-card>
     </v-flex>
-    <app-publications-list :typeProduction="typeProduction" ></app-publications-list>
+    <app-publications-list :typeProduction="typeProduction" ></app-publications-list> 
   </div>
 </template>
 <script>
-import select from '../Select.vue';
-import publicationsList from './PublicationsList.vue';
+import select from '../../Select.vue';
+import publicationsList from '../PublicationsList.vue';
 export default {
   data(){
     return{
-      typeProduction:'publications',
-      showType:true
+      typeProduction:'lectures',
+      showType:false
     }
   },
   components:{

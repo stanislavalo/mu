@@ -164,7 +164,7 @@ export default [{
             { type: 0, name_last: 'Tomilov', name_first: 'Yuri' }
         ],
         registrat_num: 'IM-2019-1',
-        date_preprint: '2019-2-16 ',
+        date_preprint: '2019-02-16 ',
         title: { name: 'Complementary error boundsfor elliptic systems and applications' },
         url_preprint: 'IM_20101216163414_93.pdf',
         type_display: 2,
@@ -191,7 +191,7 @@ export default [{
             { type: 0, name_last: 'Ünver', name_first: 'Tuğçe' }
         ],
         registrat_num: 'IM-2019-2',
-        date_preprint: '2019-7-16 ',
+        date_preprint: '2019-07-26 ',
         title: { name: 'Weighted inequalities for discrete iterated kernel operators' },
         url_preprint: 'IM_20101216163414_93.pdf',
         type_display: 0,
@@ -222,7 +222,7 @@ export default [{
             { type: 0, name_last: 'Ünver', name_first: 'Tuğçe' }
         ],
         registrat_num: 'IM-2019-3',
-        date_preprint: '2019-10-16 ',
+        date_preprint: '2019-10-22 ',
         title: { name: 'Weighted inequalities for discrete iterated kernel operators I' },
         url_preprint: 'IM_20101216163414_93.pdf',
         type_display: 0,

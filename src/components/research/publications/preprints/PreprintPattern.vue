@@ -11,7 +11,7 @@
         </div>
       </v-layout>
     </a>
-    <span class="caption">Registered: {{preprint.date_preprint}}</span>
+    <span class="caption">Registered: {{preprint.date_preprint | dateEU('DD.MM.YYYY')}}</span>
   </div>
 </template>
 <script>

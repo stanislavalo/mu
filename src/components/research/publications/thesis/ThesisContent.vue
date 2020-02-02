@@ -10,7 +10,7 @@
     </p>
     <p v-if="defence.available">
       <span class="font-weight-bold"> Defense:</span>
-      {{defence.date| dateEU('DD/MM/YYYY')}}<span v-if="defence.place">,&nbsp;&nbsp;({{defence.place}})</span>
+      {{defence.date| dateEU('DD.MM.YYYY')}}<span v-if="defence.place">,&nbsp;&nbsp;({{defence.place}})</span>
     </p>
     <p v-else>
       Defense not available.

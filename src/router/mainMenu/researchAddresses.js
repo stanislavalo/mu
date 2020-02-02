@@ -13,8 +13,8 @@ const Publications = resolve => {
     });
 };
 const Lectures = resolve => {
-    require.ensure(['../../components/research/lectures/Lectures.vue'], () => {
-        resolve(require('../../components/research/lectures/Lectures.vue'));
+    require.ensure(['../../components/research/publications/lectures/Lectures.vue'], () => {
+        resolve(require('../../components/research/publications/lectures/Lectures.vue'));
     });
 };
 const Collaboration = resolve => {

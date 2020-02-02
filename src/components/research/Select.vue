@@ -49,10 +49,15 @@ import {mapActions} from 'vuex';
 export default {
   props:['showType','typeProduction'],
    data(){
+     /* all types for publications */
+     var selectedTypeValue = 20;
+     /* only the type "lecture" default value = 8 selected */
+     if(this.typeProduction == 'lectures')
+      selectedTypeValue = 8;
     return{ 
       selectedYear:2019,
       selectedDepartment:0,
-      selectedType:20,
+      selectedType:selectedTypeValue,
       selectedMember:0,      
       isSubmitted:false,
       years:[

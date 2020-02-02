@@ -1,9 +1,9 @@
 <template>
   <v-flex xs12 lg12 xl12>
     <v-card   v-for="publication in list_publications" :key="publication.id"  :flat="!mdAndDown"
-       :class="[{'productionsm':mdAndDown}, {'production':!mdAndDown},'type'+publication.type ]" >                                              
+       :class="[{'productionsm':mdAndDown}, {'production':!mdAndDown},'type'+publication.type ]" >                                             
       <app-publication-pattern :publication="publication" :class="['hidden-md-and-up' ]"></app-publication-pattern>
-      <app-publication-content :publication="publication" :class="['hidden-md-and-up','ml-1']"></app-publication-content>
+      <app-publication-content :publication="publication" :class="['hidden-md-and-up','ml-1']"></app-publication-content> 
       <v-layout class="hidden-sm-and-down">
         <v-flex lg2 xl1 class="ml-3 mr-3" >
           <app-publication-pattern :publication="publication"></app-publication-pattern>
@@ -17,14 +17,16 @@
   </v-flex> 
 </template>
 <script>
-import publications from '../../../data/research/publications';
+import publications from '../../../data/research/publications.js';
+import lectures from '../../../data/research/lectures.js'
 import publicationPattern from './PublicationPattern.vue';
 import publicationContent from './PublicationContent.vue';
 import {mapGetters} from 'vuex';
 export default {
+  props:['typeProduction'],
   data(){
     return {
-      list_publications:publications,
+      list_publications:[],
     }
   },
   components:{
@@ -40,7 +42,13 @@ export default {
     })
     // TODO search publications dans BD , use filter id_member,departement,type,year
     // getPublications
-  }
+  },
+  created(){
+       if(this.typeProduction == 'lectures')
+        this.list_publications = lectures;
+      else
+        this.list_publications = publications; 
+  },
 }
 </script>
 <style  scoped>

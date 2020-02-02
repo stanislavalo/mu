@@ -5,8 +5,11 @@
         {{author.name_last}} {{author.name_first}}
         <span v-if="index <   authors.length - 1">,</span>
       </span> 
-    </div>
-    <div class="font-italic">{{title.name}}</div>
+    <a v-if="title.url" :href="title.url" class="black--text" target="_blanc">
+      <div class="font-italic">{{title.name}}</div>
+    </a>
+    <div v-else class="font-italic">{{title.name}}</div>
+    
     </section>
 </template>
 <script>

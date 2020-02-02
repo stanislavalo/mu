@@ -1,6 +1,6 @@
 <template>
   <div class="body-1">
-    <v-layout row v-if="preprint.type_display" @click="getPublication" :class="['ml-1',{'yellow':!toggleDown}]">
+    <v-layout row v-if="preprint.type_display" @click="getPublication" :class="['ml-0',{'yellow':!toggleDown}]">
       <span class="caption font-weight-bold">{{preprint.text_display}} </span>
       <span  v-if="!mdAndDown"> 
         <img  v-if="toggleDown"  src="../../../../assets/research/down.png" class="pl-1">
