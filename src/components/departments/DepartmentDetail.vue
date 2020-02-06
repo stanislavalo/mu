@@ -1,26 +1,19 @@
 <template>
-  <v-layout class="mx-0 px-0">
-    <v-flex xs12 class=" px-0 mx-0">
-      <v-card class=" px-0 mx-0">
-        <v-img
-          class="white--text"
-          height="200px"
-          src="http://localhost:8080/src/assets/departments/naturali.jpg">
-          <v-container fill-height fluid>
-            <v-layout fill-height>
-              <v-flex xs12 align-end flexbox>
-                <div class="headline mb-2">{{department.name[language]}} {{department.sigle}} </div>
-                <router-link v-for="(item, index) in productions"
-                  :to="item.url+'/'+department.id" tag= "div" :key="index" class="my-0">
-                  <img src="../../assets/departments/download.png" >
-                    {{ $t("production."+ item.name) }} 
-                </router-link>
-              </v-flex>
-            </v-layout>
-          </v-container>
-        </v-img>
-        <v-card-title>
-          <div class="description">
+  <v-layout class="mx-0 px-0 mt-1">
+    <v-flex xs12 class="px-0 mx-0">    
+      <div class="headline ml-3 mb-2">{{department.name[language]}} {{department.sigle}} </div>
+      <div id="prod" class="ml-3 mb-0">
+        <router-link v-for="(item, index) in productions"
+          :to="{name:item.url, params:{idDepartment:id}}"  :key="index" 
+          class="my-0 pr-4 productions subheading font-weight-bold ">
+          <a class="purple--text text--darken-4">
+            {{ $t("production."+ item.name) }} 
+          </a>
+        </router-link>
+      </div>
+      <v-card class=" px-0 ma-0" flat=true>
+        <v-card-title class="my-0 py-1">
+          <div class="description my-0 py-0">
             <span class="indigo--text subheading">{{ $t("department.head") }}: {{department.head.last_name}} 
               {{department.head.first_name}} {{department.head.title}}</span>
             <p class="textjustify">{{department.description}}</p>
@@ -46,7 +39,7 @@
             {{ $t("department.members") }}</v-btn>
           <div v-if="members" class="row">
             <template v-for="(members,index) in membersBlock">
-              <div class="col-sm" :key="index">
+              <div class="col-sm" :key="index" >
                 <router-link 
                   v-for="(item, index) in members" :key="index" 
                   :to="{name:'researcher',params:{id:1}}" tag="p"  class="my-0 py-0 pl-3">
@@ -84,20 +77,28 @@
 <script>
 // import data
 import departments from '../../data/departments';
-import productions from '../../data/research/productions';
 import {mapGetters} from 'vuex';
 
 export default {
   data(){
     return {
       id:this.$route.params.id,
+      productions:[
+        {
+          name:'publications', 
+          url:'publications' 
+        },
+        {
+          name:'lectures', 
+          url:'lectures'
+        },
+      ],
       researchThemes:false,
       scientifiqueProduction: false,
       members: false,
       formerMembers: false,
       mdAndDown:false,
       department:{},
-      productions:productions,
       membersBlock:[],
       membersFormerBlock:[],
     }
@@ -148,7 +149,18 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
+#prod span:hover,
+#prod span.router-link-active,
+#prod span.router-link-exact-active {
+   text-decoration: underline;
+   cursor: pointer;
+ }
+ .productions{
+   text-decoration: underline;
+    color: #3479B2;
+ }
+ 
 .description{
   font-family: arial, Helvetica, sans-serif;
   font-size: 1.2em;

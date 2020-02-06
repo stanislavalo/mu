@@ -8,7 +8,7 @@
           <option v-for="(year,index) in years" :key="index" :value="year.value">{{year.label}}</option>
         </select>
       </div>
-      <div class="form-group col-md-2">
+      <div v-if="showDepartments" class="form-group col-md-2">
         <label for="inputDepartment">Departments</label>
         <select id="inputDepartment" class="form-control" v-model="selectedDepartment">
           <option v-for="(department,index) in departments" :key="index" :value="department.id">{{department.name}}</option>
@@ -47,7 +47,7 @@ import members from '../../data/members';
 import {mapGetters} from 'vuex';
 import {mapActions} from 'vuex';
 export default {
-  props:['showType','typeProduction'],
+  props:['showType','typeProduction','showDepartments'],
    data(){
      /* all types for publications */
      var selectedTypeValue = 20;
