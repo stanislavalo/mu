@@ -11,7 +11,7 @@
           </a>
         </router-link>
       </div>
-      <v-card class=" px-0 ma-0" flat=true>
+      <v-card class=" px-0 ma-0" flat>
         <v-card-title class="my-0 py-1">
           <div class="description my-0 py-0">
             <span class="indigo--text subheading">{{ $t("department.head") }}: {{department.head.last_name}} 

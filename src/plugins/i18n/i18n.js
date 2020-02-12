@@ -8,6 +8,9 @@ export const i18n = new VueI18n({
     // Ready translated locale messages
     messages: {
         0: {
+            home: {
+                title: 'Home',
+            },
             staff: {
                 title: 'Staff'
             },
@@ -26,6 +29,7 @@ export const i18n = new VueI18n({
                 about: 'About me',
             },
             department: {
+                name: 'Department',
                 head: 'Head',
                 themes: 'Research themes',
                 production: 'Scientifique production',
@@ -50,6 +54,9 @@ export const i18n = new VueI18n({
             }
         },
         1: {
+            home: {
+                title: 'MÚ AV ČR',
+            },
             staff: {
                 title: 'Ostatní zaměstnanci'
             },
@@ -68,6 +75,7 @@ export const i18n = new VueI18n({
                 about: 'Kdo jsem',
             },
             department: {
+                name: 'Oddělení',
                 head: 'Vedoucí oddělení',
                 themes: 'Vědecká témata',
                 production: 'Výzkumná činnost',

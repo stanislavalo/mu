@@ -1,6 +1,6 @@
 <template>
 <section>
-  <app-crumbs :crumbs="crumbs"></app-crumbs>
+  <app-crumps :crumps="crumps"></app-crumps>
   <v-layout class="mx-0 px-0">
     <v-flex xs12  lg7 xl7 class=" mx-1 px-0"> 
       <v-card class=" ma-0 pa-0" >
@@ -27,7 +27,7 @@
 <script>
 import {mapGetters} from 'vuex';
 import NewItem from './NewItem.vue';
-import Crumbs from '../sharing/Crumps.vue';
+import Crumps from '../sharing/Crumps.vue';
 import ShortEvent from '../events/ShortEvent.vue';
 
 export default {
@@ -216,7 +216,7 @@ export default {
           isFirst:false
         },
       ],
-      crumbs: [{
+      crumps: [{
           text: 'News',
           disabled: false,
           href: 'news'
@@ -227,7 +227,7 @@ export default {
   components:{
     AppNewItem:NewItem,
     AppShortEvent:ShortEvent,
-    AppCrumbs:Crumbs,
+    AppCrumps:Crumps,
   },
   mounted() {
     this.mdAndDown = this.$vuetify.breakpoint.mdAndDown;
@@ -244,7 +244,7 @@ export default {
     });
     n.isFirst=true;
     this.item = n;
-    this.crumbs.push({
+    this.crumps.push({
           text: n.title,
           disabled: true,
           href: '' 

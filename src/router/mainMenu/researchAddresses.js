@@ -27,8 +27,10 @@ export const ResearchAddresses = [{
     name: 'research',
     component: Research,
     children: [
-        { path: 'publications/', name: 'publications', component: Publications },
-        { path: 'lectures/', name: 'lectures', component: Lectures },
+        { path: 'publications/', name: 'publicationsAll', component: Publications },
+        { path: 'publications/:idDepartment', name: 'publications', component: Publications },
+        { path: 'lectures/', name: 'lecturesAll', component: Lectures },
+        { path: 'lectures/:idDepartment', name: 'lectures', component: Lectures },
         { path: 'collaboration/', name: 'collaboration', component: Collaboration },
     ]
 }];

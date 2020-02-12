@@ -1,6 +1,6 @@
 <template>
 <div class="mb-2">
-  <app-crumbs :crumbs="crumbs"></app-crumbs>
+  <app-crumps :crumps="crumps"></app-crumps>
   <v-layout>
     <v-flex  xs12  xs offset-sm3-xl0>
       <div class="ma-0 pa-1 headline blue--text text--darken-4 ">{{grant.title}}</div>
@@ -42,7 +42,7 @@ export default {
       IMleader:{last_name:null,first_name:null},
       mainInvestigator:{last_name:null,first_name:null},
       IMteam:[],
-      crumbs: [],
+      crumps: [],
     }
   },
   components:{
@@ -51,7 +51,7 @@ export default {
     appGrantMainLeaders: grantMainLeaders,
     appGrantTeamMembers: grantTeamMembers,
     appGrantsInstitutions: grantsInstitutions,
-    appCrumbs: CrumpsVue,
+    appCrumps: CrumpsVue,
   },
   created:function(){
     var leader={};
@@ -75,13 +75,13 @@ export default {
     this.grant = grantData;
     //crumbs
     
-    this.crumbs.push({
+    this.crumps.push({
           text: "grants."+this.typeGrant,
           disabled: false,
           href: 'grant-type',
           params:{type:this.typeGrant},
     }),  
-    this.crumbs.push({
+    this.crumps.push({
           text: grantData.title,
           disabled: true,
           href: '' 

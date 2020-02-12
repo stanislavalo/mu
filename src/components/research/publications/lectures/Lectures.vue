@@ -1,5 +1,6 @@
 <template>
   <div id="search" class="grey lighten-4">
+    <app-crumps :crumps="crumps"></app-crumps>
     <v-flex  xs12 xl12 class="mt-2 mb-2">
       <v-card >
         <v-card-title >
@@ -22,6 +23,7 @@
 import departments from '../../../../data/departments.js';
 import select from '../../Select.vue';
 import publicationsList from '../PublicationsList.vue';
+import CrumpsVue from '../../../sharing/Crumps.vue';
 export default {
   data(){
     return{
@@ -30,6 +32,7 @@ export default {
       typeProduction:'lectures',
       showType:false,
       showDepartments:true,
+      crumps:[],
     }
   },
   created(){
@@ -45,12 +48,33 @@ export default {
         });
         this.sigleDepartment= sigle;
     }
-    else
-      this.showDepartments = true;
+    this.crumps.push({
+          text:"home.title",
+          disabled: false,
+          href: 'home' 
+    });
+    this.crumps.push({
+          text: "department.name",
+          textAdded: this.sigleDepartment,
+          disabled: false,
+          href: 'detail',
+          params:{id:this.idDepartement},
+    }); 
+    this.crumps.push({
+          text: "production.lectures",
+          textAdded: this.sigleDepartment,
+          disabled: false,
+          disableTranslated:true,
+          href: '',
+    }); 
+    
+    // else
+    //   this.showDepartments = true;
   },
   components:{
     appSelect:select,
     appPublicationsList:publicationsList,
+    appCrumps: CrumpsVue,
   },
 }
 </script>
