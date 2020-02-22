@@ -1,7 +1,7 @@
 <template>
   <v-layout>
     <v-flex  xs12  xl12 xs offset-sm3-xl0>
-      <div class="ma-0 pa-1 headline blue--text text--darken-4 ">{{ $t("researchers.title") }}</div>
+      <div class="mx-0 mt-2 pa-1 headline blue--text text--darken-4 ">{{ $t("researchers.title") }}</div>
       <v-card>
         <v-container grid-list-sm fluid class="ma-0 pa-1">
           <v-layout row wrap>
@@ -21,8 +21,8 @@
   </v-layout>
 </template>
 <script>
-import departments from '../../../data/departments';
-import members from '../../../data/members';
+import departments from '../../../data/departments.js';
+import members from '../../../data/people/members.js';
 import researchersCard from './ResearchersCard.vue';
 import researchersList from './ResearchersList.vue';
 import {mapGetters} from 'vuex';
@@ -35,22 +35,38 @@ export default {
   },
   created() {
     var researchersData = [];
+    var deps = departments;
+    function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+          }
     members.forEach(function(element) {
       var researcher= {};
-      if(element.status.activ && element.type.researcher && element.typeResearcher.type == 'researcher'){
+      if(element.status == 0 ){
           researcher.id = element.id;
           researcher.last_name = element.last_name;
           researcher.first_name = element.first_name;
           researcher.title = element.title;
-          researcher.interest= getInterest(element.interest);
-          if(element.photo){ 
-            researcher.photo = "http://localhost:8080/src/data/photos/"+element.id+".jpg"
+          researcher.per_email = element.per_email;
+          researcher.typeResearcher = "researcher";
+          if(element.id %2){ 
+            var photoId = getRandomInt(12) +1;
+            researcher.photo = "http://localhost:8080/src/data/photos/"+photoId+ ".jpg"
+            // researcher.photo = "http://localhost:8080/src/data/photos/"+element.id+".jpg"
           }
           else{
             researcher.photo = "http://localhost:8080/src/assets/members/noimg_middle.png";
 
           }
-          researcher.department =getDepartement(element.typeResearcher);
+          var department = {};
+          var departmentId = element.id_department;
+          deps.forEach(function(departmentItem){
+            if(departmentItem.id == departmentId){
+              department.name = departmentItem.name;
+              department.sigle = departmentItem.sigle;
+              department.id = departmentId;
+            }
+          });
+          researcher.department = department;
           researchersData.push(researcher);
       }
     });
@@ -67,25 +83,17 @@ export default {
      AppResearchersList:researchersList,
   }
 }
-function getDepartement(typeResearcher) {  
-  var department = [];
-  var departmentId = typeResearcher.departmentId;
+function getDepartement(depId) {  
+  var department = {};
+  var departmentId = depId;
   departments.forEach(function(departmentItem){
     if(departmentItem.id == departmentId){
-      department.push(departmentItem.name[0]);
-      department.push(departmentItem.name[1]);
-      department.push(departmentItem.sigle);
-      department.push(departmentId);
+      department.name = departmentItem.name;
+      department.sigle = departmentItem.sigle;
+      department.id = departmentId;
     }
   });
   return department;  
-}
-function getInterest(interest){
-  var description = '';
-  interest.forEach(function(item){
-    description = description +  item.description + ' ,';
-  });
-  return description;
 }
 </script>
 <style>

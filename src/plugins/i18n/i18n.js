@@ -21,9 +21,16 @@ export const i18n = new VueI18n({
                 title: 'News',
             },
             researchers: {
-                title: 'Researchers',
+                title: 'Researchers fellow',
                 departement: 'Department',
-                interests: 'Research interests'
+                interests: 'Research interests',
+            },
+            postdocs: {
+                title: 'Postdocs, students',
+                departement: 'Department',
+                interests: 'Research interests',
+                university: 'University',
+                supervisor: 'Supervisor(s)',
             },
             researcher: {
                 about: 'About me',
@@ -70,6 +77,13 @@ export const i18n = new VueI18n({
                 title: 'Vědečtí pracovníci',
                 departement: 'Vědecké oddělení',
                 interests: 'Témata výzkumu'
+            },
+            postdocs: {
+                title: 'Postdoktorandi, studenti',
+                departement: 'Vědecké oddělení',
+                interests: 'Témata výzkumu',
+                university: 'Universita',
+                supervisor: 'Školitel(é)',
             },
             researcher: {
                 about: 'Kdo jsem',

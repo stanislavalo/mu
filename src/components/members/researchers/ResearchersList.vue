@@ -15,14 +15,6 @@
                     max-width="90px"
                     max-height="140px"
                   >
-                  <!-- <v-container fill-height fluid  ml-4>
-                    <v-layout align-end justify-end ml-4 mt-4>
-                      
-                      <v-flex  align-end  flexbox>
-                        <img src="../../../assets/members/ic_assignment_ind.png" >
-                      </v-flex>
-                    </v-layout>
-                  </v-container> -->
                   <template v-slot:placeholder>
                     <v-layout
                       fill-height
@@ -36,24 +28,32 @@
                 </router-link> 
               </v-flex>
               <v-flex lg4 xl3 >
-                <v-card-title primary-title>
+                <v-card-title class="my-0 py-2" >
                   <div>
                     <router-link :to="{name:'researcher',params:{id:researcher.id}}" >
                       <div class="headline">{{researcher.last_name}}</div>
                       <div class="subheading mb-2">{{researcher.first_name}} </div>
+                      <div class="subheading ">{{researcher.title}} </div>
                     </router-link>
-                    <div>
-                      <p class="ma-0 pa-0  black--text">{{ $t("researchers.departement") }}: <span class="body-2">{{researcher.department[2]}}</span></p>
-                      <p class="body-2 mb-1  black--text">{{researcher.department[language]}}</p></div>
                   </div>
                 </v-card-title>
               </v-flex>
-              <v-flex lg6 xl7>
-                <p class="ma-0 pa-1 "><span class="body-2">{{ $t("researchers.interests") }}:</span>
-                <br>{{researcher.interest}}</p>
+              <v-flex lg6 xl7 class="mt-2">
+                <a :href="'mailto:'+researcher.per_email" >
+                  <svg style="width:24px;height:24px" viewBox="0 0 24 28">
+                    <path fill="currentColor" d="M4,8L12,13L20,8V8L12,3L4,8V8M22,8V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V8C2,7.27 2.39,6.64 2.97,6.29L12,0.64L21.03,6.29C21.61,6.64 22,7.27 22,8Z" />
+                  </svg>
+                </a>
+                <p>Tel.: {{researcher.tel}}  +420 221 403 111</p>
+                <router-link :to="{name:'detail',params:{id:researcher.department.id}}" class="mt-2">
+                  <p class="mx-0 pa-0  mt-2 black--text">{{ $t("researchers.departement") }}: </p>
+                  <p class="body-2 mb-1  black--text">{{researcher.department.name[language]}}</p>
+                </router-link>
+                <app-doc-detail v-if="researcher.typeResearcher =='doc'"
+                  :university="researcher.university" :supervisors="researcher.supervisors">
+                </app-doc-detail>
               </v-flex>
-            </v-layout>
-            <!-- <v-divider light></v-divider> -->    
+            </v-layout>  
           </v-card>
         </v-flex>
       </v-layout>
@@ -61,8 +61,18 @@
   </v-card>
 </template>
 <script>
+import {mapGetters} from 'vuex';
+import docDetail from '../postdocs/docDetail.vue';
 export default {
   props:['researcher'],
+  components:{
+    appDocDetail:docDetail,
+  },
+  computed: {
+    ...mapGetters('header',{
+        language:'language',
+    }),
+  },
 }
 </script>
 <style>
