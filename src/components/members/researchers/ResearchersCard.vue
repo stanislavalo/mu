@@ -7,16 +7,7 @@
         :lazy-src=researcher.photo
           aspect-ratio="0.75"
           class="grey lighten-2"
-          max-width="200px"
-        >
-          <!-- <v-container fill-height fluid >
-            <v-layout align-end justify-end ml-4 mt-4>
-              <v-spacer></v-spacer>
-              <v-flex xs4 align-end  flexbox>
-                <img src="../../../assets/members/ic_assignment_ind.png">
-              </v-flex>
-            </v-layout>
-          </v-container> -->
+          max-width="200px">
           <template v-slot:placeholder>
             <v-layout
               fill-height

@@ -1,29 +1,29 @@
 <template>
   <v-container fluid>
     <v-layout row wrap class="mb-2 mx-1">
-    <v-flex xs12>
+    <v-flex xs12 >
       <span class="headline blue--text text--darken-4 ">{{ $t("staff.title") }}</span>
       </v-flex>
     </v-layout>
-    <v-layout row wrap class="mx-2">
-      <v-flex xs12>
-      <div class="row summary my-2" v-for="(item, index) in staff" :key="index" >
-        <div class="col-sm-4 title pb-1">{{item.last_name}}
-          <span class="subheading font-weight-bold">{{item.first_name}}</span>
-          <a :href="'mailto:' + item.per_email">
-            <img src="../../assets/letter.png" >
-          </a>
-          <div class="row body-2 font-weight-regular ml-0 mt-1 grey--text text--darken-2">{{item.title}}</div>
-        </div>
-        <div class="col-sm-3">tel: {{item.telephone }}</div> 
-        <div class="col-sm-4">fax: {{item.fax }}</div>   
-        <div class="col-sm-1" >Office:&nbsp;
-          <span class="font-weight-bold">{{item.office}}</span>
-        </div>
-      </div>
+    <v-layout  row wrap class="my-0 mx-1">
+        <v-flex v-for="(item, index) in staff" :key=index xs12 sm12 md6 lg4 xl3 class="my-1" >
+          <v-card tile  elevation=3 min-width=100%>
+            <div class=" title pb-1 ml-3 mt-1 ">{{item.last_name}}
+              <span class="subheading font-weight-bold">{{item.first_name}}</span>
+              <a :href="'mailto:' + item.per_email">
+                <svg style="width:24px;height:24px" viewBox="0 0 24 28">
+                  <path fill="currentColor" d="M4,8L12,13L20,8V8L12,3L4,8V8M22,8V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V8C2,7.27 2.39,6.64 2.97,6.29L12,0.64L21.03,6.29C21.61,6.64 22,7.27 22,8Z" />
+                </svg>
+              </a>
+              <div v-if="item.title" class="row body-2 font-weight-regular ml-0 mt-1 grey--text text--darken-2">{{item.title}}</div>
+              <div v-else-if="!smAndDown" class="row body-2 font-weight-regular ml-0 mt-1 grey--text text--darken-2">
+                &nbsp;
+              </div>
+              <div class="row body-2 font-weight-regular ml-0 mt-1 grey--text text--darken-2">{{item.function}}</div>
+            </div>
+          </v-card>
       </v-flex>
     </v-layout>
-    
   </v-container> 
 </template>
 <script>
@@ -33,7 +33,8 @@ import members from '../../data/members';
 export default {
   data(){
     return {
-      staff:[]
+      staff:[],
+      getSpace:false,
     }
   },
   created: function() {
@@ -46,10 +47,11 @@ export default {
     this.staff = staffData;
   },
   computed: {
-    ...mapGetters({
+    ...mapGetters('header',{
         language:'language',
-    })
-  } 
+        smAndDown:'smAndDown'
+    }),
+  },
 }
 </script>
 <style>

@@ -7,6 +7,7 @@ const state = {
     idActiv: 0,
     drawer: false,
     mdAndDown: false,
+    smAndDown: false,
     showBisMenuDown: false,
     showMainMenuDown: false,
     language: 0, // 0=en,1=cz
@@ -26,6 +27,9 @@ const getters = {
     },
     mdAndDown: state => {
         return state.mdAndDown;
+    },
+    smAndDown: state => {
+        return state.smAndDown;
     },
     showBisMenuDown: state => {
         return state.showBisMenuDown;
@@ -62,6 +66,9 @@ const mutations = {
     'SET_MD_AND_DOWN' (state, mdAndDown) {
         state.mdAndDown = mdAndDown;
     },
+    'SET_SM_AND_DOWN' (state, smAndDown) {
+        state.smAndDown = smAndDown;
+    },
     // toggle drawer, toggle sandwich menu
     'TOGGLE_DRAWER' (state) {
         state.drawer = !state.drawer;
@@ -84,6 +91,9 @@ const actions = {
     },
     set_MdAndDown({ commit }, mdAndDown) {
         commit('SET_MD_AND_DOWN', mdAndDown);
+    },
+    set_SmAndDown({ commit }, smAndDown) {
+        commit('SET_SM_AND_DOWN', smAndDown);
     },
     toggleDrawer: ({ commit }) => {
         commit('TOGGLE_DRAWER');

@@ -86,6 +86,7 @@ export default {
   mounted () {
     console.log(this.$vuetify.breakpoint);
     this.$store.dispatch('header/set_MdAndDown', this.$vuetify.breakpoint.mdAndDown);
+    this.$store.dispatch('header/set_SmAndDown', this.$vuetify.breakpoint.smAndDown);
   },
   computed: {
     ...mapGetters('header',{
