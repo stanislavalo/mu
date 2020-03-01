@@ -1,8 +1,8 @@
 <template>
 <v-container fluid >
-  <v-layout row wrap>
+  <v-layout v-if="showTitlePage" row wrap>
     <v-flex  xs12  ml-3 px-0>
-      <div class="ma-0 pa-0 headline blue--text text--darken-4 ">{{ $t("grants."+title) }} 
+      <div class="ma-0 pa-0 headline blue--text text--darken-4 ">{{ $t("grants."+title)}} 
       </div>
     </v-flex>
     <v-flex v-if="type==2" xs12 lg5 ml-3 px-0 >  
@@ -12,8 +12,8 @@
   <v-layout class="mx-0 px-0 my-2">
     <v-flex xs12 class=" px-0 mx-0"> 
       <v-card width="100%" flat class=" px-1 mx-0 py-0" v-for="(item, index) in grants" :key="index" >
-        <app-grant-title :showTitle=true :item="item" ></app-grant-title>
-        <app-grant-description :showIcon=false :seeDescription="seeDescription" :description="item.description" ></app-grant-description> 
+        <app-grant-title :showTitle="true" :item="item" ></app-grant-title>
+        <app-grant-description :key="index+typeGrant"  :showIcon=false :seeDescription="seeDescription" :description="item.description" ></app-grant-description> 
         <v-divider light></v-divider>
       </v-card>
     </v-flex>
@@ -28,12 +28,24 @@ import moment from 'moment';
 // import components
 import grantTitle from './GrantTitle.vue';
 import grantDescription from './GrantDescription.vue';
+import grantDescriptionPast from './GrantDescriptionPast.vue';
 import selectYear from './SelectYear.vue';
+
 export default {
+  props:{
+    showTitlePage:{
+      type:Boolean,
+      default:true,
+    },
+    openDescription:{
+      type:Boolean,
+      default:true,
+    }
+  },
   data(){
     return {
-      type: this.$route.params.type, //runnig(activ=1),past(activ=0)
-      seeDescription:false,
+      seeDescription:true,
+      type: 1,
       id_grantActive:null,
       title:'1',
     };
@@ -44,10 +56,18 @@ export default {
     appSelectYear:selectYear,
   },
   created() {
-    this.seeDescription = !this.$vuetify.breakpoint.xsOnly;
+    var yyyy = new Date().getFullYear()-2 ;
+    console.log("openDescription =" + this.openDescription);
+    if(this.$vuetify.breakpoint.xsOnly ||  this.openDescription == false) 
+      this.seeDescription = false;
+    if(this.$route.params.type)
+      this.type=this.$route.params.type;
     this.title =this.type.toString();
     this.$store.dispatch('grants/setTypeGrant',this.type);
-    this.$store.dispatch('grants/initGrants');
+    if(this.type == 1)
+      this.$store.dispatch('grants/initGrants');
+     else
+      this.$store.dispatch('grants/setGrantsYear',yyyy) ;
   },
   computed: {
     ...mapGetters('header',{

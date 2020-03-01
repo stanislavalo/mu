@@ -2,7 +2,9 @@
   <v-layout row wrap class="mx-0 my-0 py-0">
     <v-flex xs12 class="mx-0 px-1 my-0 py-0">
       <span v-for="(item,index) in crumpsShape"  :key="index">
-      <span v-if="item.disabled" class="caption grey--text text--darken-2 mx-0 px-0">{{item.text}}  </span>
+      <span v-if="item.disabled" class="caption grey--text text--darken-2 mx-0 px-0" 
+        v-html="item.text">
+      </span>
       <span v-else-if="item.disableTranslated" class="caption grey--text text--darken-2 mx-0 px-0">
         {{$t(item.text)}} {{item.textAdded}}
       </span>

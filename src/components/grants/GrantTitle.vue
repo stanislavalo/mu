@@ -23,11 +23,14 @@
       </router-link>
     </v-flex>
     <v-flex xs12 pl-3 >
-      <p class="caption  py-0"><span class="font-weight-bold ">Grantor:</span> {{item.grantor}}</p>
+      <p class="caption  py-0">
+        <span class="font-weight-bold ">Grantor:</span>
+        <span v-html="item.grantor"></span> 
+      </p>
     </v-flex>
     <v-flex v-if="showTitle" xs12 pl-3>
       <router-link :to="{name:'grant-detail',params:{id:item.id_grant}}" tag="div" class="pointer blue--text text--darken-4 font-weight-medium">
-      {{item.title}}
+      <span v-html="item.title"></span>
       </router-link>
     </v-flex>
   </v-layout>

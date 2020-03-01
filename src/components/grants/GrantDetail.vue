@@ -3,7 +3,9 @@
   <app-crumps :crumps="crumps"></app-crumps>
   <v-layout>
     <v-flex  xs12  xs offset-sm3-xl0>
-      <div class="ma-0 pa-1 headline blue--text text--darken-4 ">{{grant.title}}</div>
+      <div class="ma-0 pa-1 headline blue--text text--darken-4 ">
+        <span v-html="grant.title"></span>
+        </div>
     </v-flex>
   </v-layout>
   <v-layout class="mx-0 px-0 my-2">
@@ -74,7 +76,6 @@ export default {
     });
     this.grant = grantData;
     //crumbs
-    
     this.crumps.push({
           text: "grants."+this.typeGrant,
           disabled: false,

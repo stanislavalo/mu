@@ -34,6 +34,10 @@ export const i18n = new VueI18n({
             },
             researcher: {
                 about: 'About me',
+                interests: 'Research interests',
+                department: 'Departement of ',
+                telephone: 'Telephone',
+                office: 'Office',
             },
             department: {
                 name: 'Department',
@@ -87,6 +91,10 @@ export const i18n = new VueI18n({
             },
             researcher: {
                 about: 'Kdo jsem',
+                interests: 'Vědecké zájmy',
+                department: 'Oddělení ',
+                telephone: 'Telefon',
+                office: 'Pracovna',
             },
             department: {
                 name: 'Oddělení',

@@ -1,86 +1,50 @@
 <template>
-  <v-container grid-list-sm fluid bg>
-      <v-layout xs12 
-        flex-child
-        wrap
-      >
-        <v-flex
-          xs12
-          md12
-          d-flex
-          class="ml-2"
-        >
-          <v-layout wrap>
-            <v-flex xs12 sm3 md3 lg2 xl2>
-              <v-sheet
-                class="d-flex "
-                fill-height 
-              >
-               <v-img
-                  :src=photo
-                  :lazy-src=photo
-                    aspect-ratio="0.75"
-                    class="grey lighten-2"
-                  >
-               </v-img>
-              </v-sheet>
-            </v-flex>
-            <v-flex xs12 sm9 md9 lg9 xl9 >
-              <app-researcher-about v-if="!xsOnly" class="mt-0 ml-3"></app-researcher-about>
-              <app-researcher-perso-data v-if="!xsOnly"  class="ml-3" :researcher="researcher" :location="location">
-              </app-researcher-perso-data>
-              <v-spacer></v-spacer>
-            </v-flex>
-            <v-flex xs12>
-              <v-sheet class="d-flex transparent"> 
-                <div class="mt-1  white--text">
-                  <h3 class="display-1 font-weight-bold mb-0">{{researcher.first_name}} {{researcher.last_name}}</h3>
-                  <p class="my-0 pa-0 ">{{researcher.title}}</p>
-                </div>
-              </v-sheet>
-            </v-flex>
-            <v-flex xs12>
-             <h3 class="headline font-weight-bold orange--text mt-3 mb-1">{{ $t("researchers.interests") }}: </h3>
-            </v-flex>
-            <template v-for="(item, index) in researcher.interest" >
-              <v-flex xs2 sm2 md2 v-if="mdAndDown"  align-center justify-start :key="index">
-                  <img src="../../../assets/members/circle.png">
-              </v-flex>
-              <v-flex xs10 sm10 md10 lg12 xl12 :key="'a'+index">
-                <div class="pa-3 v-card v-sheet theme--light mb-2 ml-1">
-                  <h3 class="subheading font-weight-bold">{{item.title}}</h3>
-                  <div>{{item.description}}
-                  </div>
-                </div>
-              </v-flex>
-            </template>
-            <v-flex xs12 v-if="xsOnly" class=" my-1 position">
-              <app-researcher-about></app-researcher-about>
-            </v-flex>
-            <app-researcher-perso-data v-if="xsOnly"  :researcher="researcher" :location="location">
-            </app-researcher-perso-data>
-            <v-flex xs12 ml-1> 
-              <app-scientific-production></app-scientific-production>
-            </v-flex>
-          </v-layout>
-        </v-flex> 
-      </v-layout>
-    </v-container>
+  <v-container grid-list-sm fluid bg >
+    <v-layout xs12 class="my-0 " flex-child wrap>
+      <v-flex xs12 md12 d-flex :class="{'ml-1':xsOnly,'ml-3':!xsOnly}">
+        <v-layout wrap>
+          <v-flex xs12 sm3 md3 lg2 xl2>
+            <v-sheet class="d-flex " fill-height >
+              <v-img :src=photo :lazy-src=photo aspect-ratio="0.75" class="grey lighten-2"></v-img>
+            </v-sheet>
+             <div class="my-0  white--text">
+              <h3 class="display-1 font-weight-bold mt-2">{{researcher.first_name}} {{researcher.last_name}}</h3>
+              <p class="my-0 pa-0 ">{{researcher.title}}</p>
+             </div>
+            <app-researcher-info v-if="!xsOnly" :researcher="researcher"></app-researcher-info>
+          </v-flex>
+          <v-flex xs12 sm9 md9 lg9 xl9 >
+            <app-researcher-quotes v-if="!xsOnly" :quotes="researcher.quotes" class="mt-0 ml-3"></app-researcher-quotes>
+            <app-researcher-department-interest v-if="!xsOnly"  class="ml-3" :researcher="researcher" ></app-researcher-department-interest>
+            <v-spacer></v-spacer>
+          </v-flex>
+
+          <app-researcher-department-interest v-if="xsOnly"  :researcher="researcher" ></app-researcher-department-interest>
+          <v-flex xs12 mt-1> 
+            <app-scientific-production :id="researcher.id" :xsOnly="xsOnly"></app-scientific-production>
+          </v-flex>
+        </v-layout>
+      </v-flex> 
+    </v-layout>
+  </v-container>
 </template>
 <script>
 import departments from '../../../data/departments';
 import members from '../../../data/members';
-import scientificProduction from '../ScientificProduction.vue';
-import researcherAbout from './ResearcherAbout.vue';
-import researcherPersoData from './ResearcherPersoData.vue';
+import scientificProduction from '../scientificProduction/ScientificProduction.vue';
+import researcherQuotes from './ResearcherQutes.vue';
+import ResearcherDepartmentInterest from './ResearcherDepartmentInterest.vue';
+import researcherInfo from './ResearcherInfo.vue';
 import {mapGetters} from 'vuex';
+
 export default {
   data(){
     return{
       xsOnly:false,
-      location:"IM CAS Žitná 25, Praha 1 Czech Republic",
       photo:"http://localhost:8080/src/data/photos/2.jpg",
+      id:this.$route.params.type,
       researcher:{
+        id:1,
         title: 'Mgr',  
         last_name:'Rožník', 
         en_name:'Roznik',  
@@ -88,18 +52,22 @@ export default {
         first_name:'Pavel',  
         per_email:'pavel.roznik@math.cas.cz', 
         per_url:'',  
-        telephone:'+420 222 090 713',  
-        fax:'+420 222 090 716',  
+        telephone:'+420 222 090 713',   
         office:'257',
-        department:["Mathematical Logic and Theoretical Computer Science","Matematická logika a teoretická informatika",6],
-        interest:[{title:'differential equations',description:'partial differential equations, dynamical systems, mathematical fluid ' },   
-            {title:'existence of Strong Solutions', description:'On the Existence of Strong Solutions to a Fluid Structure Interaction Problem with Navier Boundary Conditions'}]
-    
+        department:["Evolution Differential Equations", "Evoluční diferenciální rovnice",5],
+        departmentDetail: ["Evolution Differential Equations", "evolučních diferenciálních rovnic"],
+        interest:[
+          {title:'differential equations',description:'partial differential equations, dynamical systems, mathematical fluid ' },   
+          {title:'existence of Strong Solutions', description:'On the Existence of Strong Solutions to a Fluid Structure Interaction Problem with Navier Boundary Conditions'},
+         {title:'Functional differential equations',description:'boundary value problems; numerical-analytic methods; equations in partially ordered spaces'}
+        ],
+        quotes:{text:"Ideas are like rabbits. You get a couple and learn how to handle them, and pretty soon you have a dozen.",author:"John Steinbeck"},    
       }
     };
   },
-  monted(){
+  created(){
     this.xsOnly = this.$vuetify.breakpoint.xsOnly;
+    console.log(this.xsOnly +" = xsOnly");
   },
   computed: {
   ...mapGetters('header',{
@@ -109,8 +77,9 @@ export default {
   },
   components: {
     'AppScientificProduction': scientificProduction,
-    'AppResearcherAbout':researcherAbout,
-    'AppResearcherPersoData': researcherPersoData,
+    'AppResearcherQuotes':researcherQuotes,
+    'AppResearcherDepartmentInterest': ResearcherDepartmentInterest,
+    'AppResearcherInfo':researcherInfo,
   }
 }
 </script>
