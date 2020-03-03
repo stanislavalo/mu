@@ -22,13 +22,12 @@
 </template>
 <script>
 import {mapGetters} from 'vuex';
-import {mapActions} from 'vuex';
+//import {mapActions} from 'vuex';
 import moment from 'moment';
 
 // import components
 import grantTitle from './GrantTitle.vue';
 import grantDescription from './GrantDescription.vue';
-import grantDescriptionPast from './GrantDescriptionPast.vue';
 import selectYear from './SelectYear.vue';
 
 export default {

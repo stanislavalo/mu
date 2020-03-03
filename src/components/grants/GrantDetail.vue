@@ -17,7 +17,7 @@
       </v-card>
     </v-flex>
   </v-layout>
-  <app-grant-team-members :IMteam=IMteam></app-grant-team-members>
+  <app-grant-team-members v-if="IMteam.lenghth" :IMteam=IMteam></app-grant-team-members>
   <app-grants-institutions :id_grant="id_grant"></app-grants-institutions>
 </div>   
 </template>

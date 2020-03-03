@@ -17,13 +17,12 @@
   </v-flex> 
 </template>
 <script>
-import publications from '../../../data/research/publications.js';
 import lectures from '../../../data/research/lectures.js'
 import publicationPattern from './PublicationPattern.vue';
 import publicationContent from './PublicationContent.vue';
 import {mapGetters} from 'vuex';
 export default {
-  props:['typeProduction'],
+  props:['typeProduction','publications'],
   data(){
     return {
       list_publications:[],
@@ -47,7 +46,7 @@ export default {
        if(this.typeProduction == 'lectures')
         this.list_publications = lectures;
       else
-        this.list_publications = publications; 
+        this.list_publications = this.publications; 
   },
 }
 </script>

@@ -13,7 +13,8 @@
        {{IMleader.last_name}} {{IMleader.first_name}}
     </router-link>
   </p>
-  <p v-if="IMleaderFirst" class="caption font-weight-medium ">Main investigator: {{mainInvestigator.last_name}} {{mainInvestigator.first_name}} </p>
+  <p v-if="isExternMainInvestigator" class="caption font-weight-medium ">Main investigator: {{mainInvestigator.last_name}} {{mainInvestigator.first_name}} </p>
+
 </div>
 </template>
 <script>
@@ -25,12 +26,16 @@ export default {
   data() {
     return{
       isCaption:false,
+      isExternMainInvestigators:false,
     }
   },
   created(){
     if(this.mainInvestigator.id == 0){ 
       this.isCaption = true;
     }
+    if(this.IMleaderFirst && this.mainInvestigator.last_name){ 
+      this.isExternMainInvestigator = true;
+    }   
   }
 }
 </script>

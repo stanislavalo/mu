@@ -21,7 +21,7 @@
 
           <app-researcher-department-interest v-if="xsOnly"  :researcher="researcher" ></app-researcher-department-interest>
           <v-flex xs12 mt-1> 
-            <app-scientific-production :id="researcher.id" :xsOnly="xsOnly"></app-scientific-production>
+            <app-scientific-production v-if="isProduction" :id="id" :xsOnly="xsOnly"></app-scientific-production>
           </v-flex>
         </v-layout>
       </v-flex> 
@@ -36,13 +36,15 @@ import researcherQuotes from './ResearcherQutes.vue';
 import ResearcherDepartmentInterest from './ResearcherDepartmentInterest.vue';
 import researcherInfo from './ResearcherInfo.vue';
 import {mapGetters} from 'vuex';
+import {mapActions} from 'vuex';
 
 export default {
   data(){
     return{
       xsOnly:false,
       photo:"http://localhost:8080/src/data/photos/2.jpg",
-      id:this.$route.params.type,
+      id:this.$route.params.id,
+      isProduction:false,
       researcher:{
         id:1,
         title: 'Mgr',  
@@ -67,14 +69,29 @@ export default {
   },
   created(){
     this.xsOnly = this.$vuetify.breakpoint.xsOnly;
-    console.log(this.xsOnly +" = xsOnly");
+    this.setId(this.id);
+    this.setNbGrants(5);
+    this.setNbPublications(12);
+    if(this.nb_publications >0|| this.nb_grants >0)
+      this.isProduction=true;
   },
   computed: {
   ...mapGetters('header',{
       language:'language',
       mdAndDown:'mdAndDown'
-    })
+    }),
+  ...mapGetters('researcher', {
+    nb_grants:'nb_grants',
+    nb_publications:'nb_publications',
+   }),
   },
+   methods:{
+    ...mapActions('researcher',{
+      setId:'setId',
+      setNbGrants: 'setNbGrants',
+      setNbPublications:'setNbPublications',
+    }),
+   },
   components: {
     'AppScientificProduction': scientificProduction,
     'AppResearcherQuotes':researcherQuotes,

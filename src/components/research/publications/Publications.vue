@@ -16,11 +16,12 @@
         </v-card-title>
       </v-card>
     </v-flex>
-    <app-publications-list :typeProduction="typeProduction" ></app-publications-list>
+    <app-publications-list :typeProduction="typeProduction" :publications="publications"></app-publications-list>
   </div>
 </template>
 <script>
 import departments from '../../../data/departments.js';
+import publications from '../../../data/research/publications.js';
 import select from '../Select.vue';
 import publicationsList from './PublicationsList.vue';
 import CrumpsVue from '../../sharing/Crumps.vue';
@@ -28,6 +29,7 @@ export default {
   data(){
     return{
       typeProduction:'publications',
+      publications:publications,
       showType:true,
       idDepartement:null,
       sigleDepartment:null,
