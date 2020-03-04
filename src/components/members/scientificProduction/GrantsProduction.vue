@@ -26,7 +26,6 @@ export default {
   props:['id','xsOnly'],
   data(){
     return {
-      //shaw:false,
       isActive:true,
       type:1
     };

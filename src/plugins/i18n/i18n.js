@@ -62,7 +62,16 @@ export const i18n = new VueI18n({
             documents: {
                 title: 'Documents',
                 report: 'Annual reports',
-            }
+            },
+            events: {
+                calendar: 'Calendar',
+                seminars: 'Seminars',
+                conferences: 'Conferences',
+                cechLecture: 'Eduard Čech Lectures',
+                awards: 'Awards',
+                bestPapers: 'Best papers in journals published by the Institute',
+            },
+
         },
         1: {
             home: {
@@ -119,7 +128,15 @@ export const i18n = new VueI18n({
             documents: {
                 title: 'Dokumenty',
                 report: 'Výroční zprávy',
-            }
+            },
+            events: {
+                calendar: 'Kalendář akcí',
+                seminars: 'Semináře',
+                conferences: 'Konference',
+                cechLecture: 'Čechovské přednášky',
+                awards: 'Ocenění',
+                bestPapers: 'Nejlepší ċlánky v ċasopisech vydávaných v MÚ',
+            },
         }
     }
 })

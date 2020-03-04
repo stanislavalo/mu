@@ -453,7 +453,7 @@ export default [
     { "id_grant": "150", "id_investigator": "0", "type_investigator": "2" },
     { "id_grant": "150", "id_investigator": "27", "type_investigator": "1" },
     { "id_grant": "150", "id_investigator": "168", "type_investigator": "3" },
-    { "id_grant": "143", "id_investigator": "4029", "type_investigator": "2" },
+    { "id_grant": "143", "id_investigator": "164", "type_investigator": "2" },
     { "id_grant": "144", "id_investigator": "0", "type_investigator": "2" },
     { "id_grant": "144", "id_investigator": "191", "type_investigator": "1" },
     { "id_grant": "144", "id_investigator": "207", "type_investigator": "0" },
@@ -515,10 +515,10 @@ export default [
     { "id_grant": "152", "id_investigator": "79", "type_investigator": "0" },
     { "id_grant": "152", "id_investigator": "10003", "type_investigator": "0" },
     { "id_grant": "152", "id_investigator": "10024", "type_investigator": "0" },
+
     { "id_grant": "153", "id_investigator": "0", "type_investigator": "2" },
-    { "id_grant": "153", "id_investigator": "6044", "type_investigator": "1" },
-    { "id_grant": "153", "id_investigator": "10024", "type_investigator": "0" },
-    { "id_grant": "153", "id_investigator": "204", "type_investigator": "0" },
+    { "id_grant": "153", "id_investigator": "63", "type_investigator": "1" },
+
     { "id_grant": "151", "id_investigator": "0", "type_investigator": "2" },
     { "id_grant": "151", "id_investigator": "63", "type_investigator": "1" },
     { "id_grant": "151", "id_investigator": "200", "type_investigator": "0" },

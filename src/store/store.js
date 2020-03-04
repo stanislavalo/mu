@@ -4,6 +4,7 @@ import Vuex from 'vuex';
 import header from './modules/header';
 import publication from './modules/publication';
 import grants from './modules/grants';
+import researcher from './modules/researcher';
 
 Vue.use(Vuex);
 
@@ -12,6 +13,7 @@ const store = new Vuex.Store({
         header,
         publication,
         grants,
+        researcher
     }
 });
 
