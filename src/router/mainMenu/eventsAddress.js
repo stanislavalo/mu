@@ -32,6 +32,16 @@ const Awards = resolve => {
         resolve(require('../../components/events/awards/Awards.vue'));
     });
 };
+const Seminar = resolve => {
+    require.ensure(['../../components/events/seminars/Seminar.vue'], () => {
+        resolve(require('../../components/events/seminars/Seminar.vue'));
+    });
+};
+const Conference = resolve => {
+    require.ensure(['../../components/events/conferences/Conference.vue'], () => {
+        resolve(require('../../components/events/conferences/Conference.vue'));
+    });
+};
 export const EventsAddresses = [{
     path: '/events',
     name: 'events',
@@ -42,5 +52,7 @@ export const EventsAddresses = [{
         { path: 'conferences', name: 'conferences', component: Conferences },
         { path: 'lecturesCech', name: 'lecturesCech', component: LecturesCech },
         { path: 'awards', name: 'awards', component: Awards },
+        { path: 'seminar/:id', name: 'seminar', component: Seminar },
+        { path: 'conference/:id', name: 'conference', component: Conference },
     ]
 }];
