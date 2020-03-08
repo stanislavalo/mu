@@ -56,7 +56,6 @@ export default {
   },
   created() {
     var yyyy = new Date().getFullYear()-2 ;
-    console.log("openDescription =" + this.openDescription);
     if(this.$vuetify.breakpoint.xsOnly ||  this.openDescription == false) 
       this.seeDescription = false;
     if(this.$route.params.type)
