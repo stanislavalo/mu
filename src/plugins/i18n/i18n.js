@@ -39,6 +39,10 @@ export const i18n = new VueI18n({
                 telephone: 'Telephone',
                 office: 'Office',
             },
+            visitors: {
+                distinguished: 'Eduard Čech Distinguished Visitor',
+                visitors: 'Visitors',
+            },
             department: {
                 name: 'Department',
                 head: 'Head',
@@ -104,6 +108,10 @@ export const i18n = new VueI18n({
                 department: 'Oddělení ',
                 telephone: 'Telefon',
                 office: 'Pracovna',
+            },
+            visitors: {
+                distinguished: 'Eduard Čech Distinguished Visitor',
+                visitors: 'Hostující pracovníci',
             },
             department: {
                 name: 'Oddělení',
