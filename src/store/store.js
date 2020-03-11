@@ -6,6 +6,7 @@ import publication from './modules/publication';
 import grants from './modules/grants';
 import conferences from './modules/conferences';
 import researcher from './modules/researcher';
+import visitors from './modules/visitors';
 
 Vue.use(Vuex);
 
@@ -15,7 +16,8 @@ const store = new Vuex.Store({
         publication,
         grants,
         conferences,
-        researcher
+        researcher,
+        visitors,
     }
 });
 

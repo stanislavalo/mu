@@ -1,11 +1,11 @@
 <template>
   <v-container fluid>
     <v-layout row wrap class="mb-2 mx-1">
-    <v-flex xs12 >
-      <span class="headline blue--text text--darken-4 ">{{ $t("events.conferences") }}</span>
-      <v-flex xs12 lg5 ml-3 mt-1 px-0 >  
-        <app-select-year-conference></app-select-year-conference>
-      </v-flex> 
+      <v-flex xs12 >
+        <span class="headline blue--text text--darken-4 ">{{ $t("events.conferences") }}</span>
+        <div class="ml-1 mt-1 px-0">
+          <app-select-year-conference></app-select-year-conference>
+        </div>
       </v-flex>
     </v-layout>
     <v-layout  row wrap class="my-0 mx-1">
@@ -87,14 +87,6 @@ export default {
   border-left-color: orange;
   border-left-width: 2pt;
   border-left-style:groove;
-  /* border-bottom: orange;
-  border-bottom: 1pt;
-  border-bottom-style:solid; */
-
-
-  /* border: 1px solid;
-  padding: 10px;
-  box-shadow: 5px 10px #888888; */
 }
 
 </style> 

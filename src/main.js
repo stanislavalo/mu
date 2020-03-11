@@ -12,6 +12,7 @@ import { i18n } from './plugins/i18n/i18n';
 import moment from 'moment';
 import 'bulma/css/bulma.css';
 
+
 Vue.use(Vuetify);
 Vue.use(VueResource);
 Vue.use(moment);
@@ -28,4 +29,4 @@ var vm = new Vue({
     i18n,
     store,
     render: h => h(App),
-});
+})
