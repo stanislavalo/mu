@@ -20,8 +20,8 @@
       <v-flex xs12 sm12 md10 lg10 xl10>
         <div  v-if="visitor.affiliation" class="body-2 font-weight-bold mx-4 mt-1 justify" >Afiiliation:
           <span v-html="visitor.affiliation" class="font-weight-regular"></span>
-          ,&nbsp;<span v-if="visitor.city" v-html="visitor.city">
-          ,&nbsp;<span v-if="visitor.country" v-html="visitor.country">
+          ,&nbsp;<span v-if="visitor.city" v-html="visitor.city"></span>
+          ,&nbsp;<span v-if="visitor.country" v-html="visitor.country"></span>
         </div>
         <div v-if="visitor.research_interst"  class="body-2  mx-4 mt-1 justify" >
           Research interests: 

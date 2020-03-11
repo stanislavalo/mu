@@ -43,6 +43,9 @@ export const i18n = new VueI18n({
                 distinguished: 'Eduard Čech Distinguished Visitor',
                 visitors: 'Visitors',
             },
+            research:{
+              collaboration:'Collaboration',
+            },
             department: {
                 name: 'Department',
                 head: 'Head',
@@ -112,6 +115,9 @@ export const i18n = new VueI18n({
             visitors: {
                 distinguished: 'Eduard Čech Distinguished Visitor',
                 visitors: 'Hostující pracovníci',
+            },
+            research:{
+              collaboration:'Spolupráce',
             },
             department: {
                 name: 'Oddělení',
