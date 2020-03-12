@@ -20,6 +20,10 @@ export const i18n = new VueI18n({
             news: {
                 title: 'News',
             },
+            about:{
+              departments:'Departments',
+              mission:'Mission',
+            },
             researchers: {
                 title: 'Researchers fellow',
                 departement: 'Department',
@@ -92,6 +96,10 @@ export const i18n = new VueI18n({
             },
             news: {
                 title: 'Aktuality',
+            },
+            about:{
+              departements:'Vědecká oddělení',
+              mission:'Poslání',
             },
             researchers: {
                 title: 'Vědečtí pracovníci',

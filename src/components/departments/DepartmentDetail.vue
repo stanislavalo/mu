@@ -16,7 +16,7 @@
           <div class="description my-0 py-0">
             <span class="indigo--text subheading">{{ $t("department.head") }}: {{department.head.last_name}} 
               {{department.head.first_name}} {{department.head.title}}</span>
-            <p class="textjustify">{{department.description}}</p>
+            <p class="textjustify" v-html="department.description[language]"></p>
           </div>
         </v-card-title>
         <v-flex xs12  justify-start >

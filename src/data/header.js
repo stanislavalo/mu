@@ -52,7 +52,7 @@ export default [
             { url: '/about/mission', name: ['Mission', 'Poslání'] },
             { url: '/about/structure', name: ['Structure', 'Struktura'] },
             { url: '/about/documents', name: ['Documents', 'Dokumenty'] },
-            { url: '/about/contack', name: ['Contact', 'Kontakt'] },
+            { url: '/about/contact', name: ['Contact', 'Kontakt'] },
         ],
     },
     /** BIS menu
