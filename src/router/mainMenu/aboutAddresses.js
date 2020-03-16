@@ -12,6 +12,11 @@ const Contact = resolve => {
         resolve(require('../../components/about/contact/Contact.vue'));
     });
 };
+const Information = resolve => {
+  require.ensure(['../../components/about/contact/Information.vue'], () => {
+      resolve(require('../../components/about/contact/Information.vue'));
+  });
+};
 const Documents = resolve => {
     require.ensure(['../../components/about/documents/Documents.vue'], () => {
         resolve(require('../../components/about/documents/Documents.vue'));
@@ -33,6 +38,7 @@ export const AboutAddresses = [{
     component: About,
     children: [
         { path: 'contact', name: 'contact', component: Contact },
+        { path: 'information', name: 'information', component: Information },
         { path: 'documents', name: 'documents', component: Documents },
         { path: 'mission', name: 'mission', component: Mission },
         { path: 'structure', name: 'structure', component: Structure },

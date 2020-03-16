@@ -23,6 +23,8 @@ export const i18n = new VueI18n({
             about:{
               departments:'Departments',
               mission:'Mission',
+              contact:'Contact',
+              information:'Information for Visitors',
             },
             researchers: {
                 title: 'Researchers fellow',
@@ -100,6 +102,8 @@ export const i18n = new VueI18n({
             about:{
               departements:'Vědecká oddělení',
               mission:'Poslání',
+              contact:'Kontakt',
+              information:'Informace pro hostující pracovníky',
             },
             researchers: {
                 title: 'Vědečtí pracovníci',
