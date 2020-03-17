@@ -94,7 +94,7 @@
       </v-card-text>
       <v-card-text class=" white--text text-xs-center caption">
         <v-layout wrap row >
-          <v-flex xs12 sm11  md11  >
+          <v-flex xs12 sm11  md11>
              &copy;2019 — Vujs
           </v-flex>
         </v-layout>
