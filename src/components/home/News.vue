@@ -1,6 +1,6 @@
 <template>
-<v-container class="ma-0 pa-0" fluid >
-  <v-layout  xs12 md12 lg12 xl12 row  wrap class="mx-0 px-1 mb-10">
+<v-container id="news" class="mt-1 mb-0 pa-0" fluid >
+  <v-layout  xs12 sm12 md12 lg12 xl12 row  wrap class="mx-0 px-0 mb-10">
     <v-flex v-if="!mdAndDown" lg8 xl8 class="ma-0 pa-0" >
       <v-card  class="ma-0 pa-0" :max-height="2*maxHeight" :min-height="2*maxHeight"  flat>
         <app-new-item :item="newsFirst" aspectRatio="0.9" :detail=false></app-new-item>
@@ -34,11 +34,11 @@
   </v-layout>
   <v-layout xs12 md12 lg12 xl12 row  wrap class="mx-0 px-0">
     <div class="text-xs-center">
-      <router-link  :to="{name:'news'}" >
+      <router-link  :to="{name:'archive'}" >
       <v-bottom-sheet v-model="sheet">
         <template v-slot:activator>
           <v-btn color="indigo" dark>
-          >> &nbsp; More news
+          >> &nbsp; {{$t("news.more")}}
           </v-btn>
         </template>
       </v-bottom-sheet>
@@ -197,7 +197,7 @@ export default {
           id:10,
           title:'Higher Structures – a new journal',
           description:'M. Markl, together with M. Batanin and R. Kaufmann, founded the journal Higher Structures. It is an all-electronic, refereed journal on the theory of higher structures and its applications in the mathematical sciences. The journal publishes articles that make significant new contributions to mathematical science using higher structures, or that significantly advance our understanding of the foundational aspects of the theory of such structures. The scope of the journal includes: higher categories, operads and their generalisations, and applications of these to Algebra, Geometry, Topology, Combinatorics, Logic and Mathematical Physics.',
-          slices:null,
+          slices:[{src:'/src/data/photos/news/Akademicka_premie.jpg'},],
           links:null,
           short:'mathematical science,  ',
           type:1,
@@ -264,10 +264,12 @@ export default {
         newsRemainArr.push(n);
       } 
     });
-    this.news1 = new1Arr;
-    this.news2 = new2Arr;
-    this.newsFirst = firstObj;
-    this.newsRemain = newsRemainArr;
+    
+    // page news has 13 news max !
+    this.news1 = new1Arr; // 2 news
+    this.news2 = new2Arr; // 2 news
+    this.newsFirst = firstObj; // 1 news
+    this.newsRemain = newsRemainArr; //8 news
   },
   computed: {
     ...mapGetters('header',{
@@ -276,24 +278,9 @@ export default {
     }),
     maxHeight(){
       return 'auto';
-
-      // if(this.$vuetify.breakpoint.xl)
-      //   // return 320
-      //   return 340;
-      // if(this.mdAndDown)  
-      //   return 'auto';
-      // else
-      //   return 300;
     },
     maxHeight1(){
       return 'auto';
-    //   if(this.$vuetify.breakpoint.xl)
-    //     // return 270
-    //     return 290
-    //   if(this.mdAndDown)  
-    //     return 'auto'
-    //   else
-    //     return 240
     }          
   },
   methods:{
@@ -328,12 +315,6 @@ export default {
 }
 .url{
   text-decoration: underline;
-}
-.custom-transform-class{ 
-  text-transform: uppercase;
-  border-left-color: orange;
-  border-left-style: solid;
-  border-left-width: 2pt;
 }
 </style>
 

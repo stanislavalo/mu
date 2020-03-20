@@ -8,16 +8,18 @@
       </v-card>
     </v-flex> 
     <v-flex v-if="!mdAndDown"  lg4 xl4 class=" mx-5 px-2"> 
-      <p class="headline blue--text text--darken-4 ">EVENS 
-        <span class="body-2 blue--text text--darken-4 ml-3 url" > All Events</span>
+      <p class="headline blue--text text--darken-4 ">{{$t("news.evens")}}
+        <router-link :to="{name:'calendar'}">
+        <span class="body-2 blue--text text--darken-4 ml-3 url" > {{$t("news.calendar")}}</span>
+        </router-link>
       </p>
       <app-short-event></app-short-event>
     </v-flex>
   </v-layout> 
   <v-layout v-if="mdAndDown" class="mx-1 mt-3">
     <v-flex xs12class=" mx-5 px-2"> 
-      <p class="headline blue--text text--darken-4 ">EVENS 
-        <span class="body-2 blue--text text--darken-4 ml-3 url" > All Events</span>
+      <p class="headline blue--text text--darken-4 ">{{$t("news.evens")}} 
+        <span class="body-2 blue--text text--darken-4 ml-3 url" >  {{$t("news.calendar")}}</span>
       </p>
       <app-short-event></app-short-event>
     </v-flex>

@@ -28,6 +28,12 @@ const News = resolve => {
         resolve(require('../components/home/News.vue'));
     });
 };
+const NewsArchive = resolve => {
+  require.ensure(['../components/home/archive/NewsArchive.vue'], () => {
+      resolve(require('../components/home/archive/NewsArchive.vue'));
+  });
+};
+
 
 const addresses = [{
         path: '/',
@@ -40,6 +46,7 @@ const addresses = [{
         component: NewsHome,
         children: [
             { path: 'news', name: 'news', component: News },
+            { path: 'archive', name: 'archive', component: NewsArchive},
             { path: 'new/:id', name: 'new', component: NewDetail },
         ]
     },

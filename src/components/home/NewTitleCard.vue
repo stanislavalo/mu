@@ -1,7 +1,7 @@
 <template>
   <v-card-title class="mx-0 px-0 my-0 py-0">
     <div class="my-0 pb-0">
-        <v-img v-if="getImg(item.slices,item.isFirst)" class="mb-2"
+        <v-img v-if="getImg(item.slices,item.isFirst,item.order)" class="mb-2"
             :src="item.slices[0]" 
             :max-height="maxHeightImg(detail)"
             aspect-ratio="1.9">
@@ -18,7 +18,6 @@
         </v-carousel>
         <p  :class="[{'px-1':!mdAndDown},{'title':item.isFirst},{'subheading':!item.isFirst},
             'py-0','my-0','indigo--text',{'font-weight-black':!item.isFirst }]">
-            <!-- {'font-weight-black':!item.isFirst } -->
           {{item.title}}</p>
         <div v-if="getIsFirst(item.isFirst)"  :class="[{'px-1':!mdAndDown},'py-2','black--text','text-justify']">{{item.description}}
           <router-link :to="{name:getUrl(l)}" tag="p" class="pt-1 pb-1 my-0 url" v-for="(l,index) in item.links"  :key="index"> 
@@ -28,10 +27,9 @@
         <p v-if="!item.isFirst" class="mt-2 mb-0 text-justify grey--text text--darken-2 pl-1 py-0" >Short text: Lorem ipsum dolor sit 
           amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
         </p>
-        <p v-if="!item.slices" class="mt-0 pt-0  text-justify grey--text text--darken-2 pl-1 py-0" >Short text1: Lorem ipsum dolor sit 
+        <p v-if="item.order >=6" class="mt-0 pt-0  text-justify grey--text text--darken-2 pl-1 py-0" >Short text1: Lorem ipsum dolor sit 
           amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
         </p>
-        <p :class="[{'mt-2':!mdAndDown}, 'custom-transform-class',  'grey--text',  'pl-1']"  >{{item.short}}</p>
     </div>
   </v-card-title>
 </template>
@@ -39,6 +37,11 @@
 import {mapGetters} from 'vuex';
 export default {
   props:['item','getIsFirst','detail'],
+  data(){
+    return{
+      isImages:false,
+    }
+  },
   computed: {
     ...mapGetters('header',{
         language:'language',
@@ -49,10 +52,10 @@ export default {
     getUrl(l){
       return l.url;
     },
-    getImg(slices,first) {
-      if (slices === null)
+    getImg(slices,first,order) {
+      if (slices === null || order >= 6)
         return false
-      else if(first && slices.length == 1)
+      else if(first && slices.length == 1)                                      
         return true
       else if(slices.length && !first && !this.mdAndDown)
         return true;

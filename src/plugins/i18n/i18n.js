@@ -19,6 +19,9 @@ export const i18n = new VueI18n({
             },
             news: {
                 title: 'News',
+                more:'More news',
+                evens: 'Forthcoming events',
+                calendar:'Calendar',
             },
             about:{
               departments:'Departments',
@@ -98,6 +101,10 @@ export const i18n = new VueI18n({
             },
             news: {
                 title: 'Aktuality',
+                more:'Další aktuality',
+                evens: 'Chystané akce',
+                calendar:'Kalendář',
+
             },
             about:{
               departements:'Vědecká oddělení',
