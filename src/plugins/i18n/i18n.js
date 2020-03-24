@@ -29,6 +29,15 @@ export const i18n = new VueI18n({
               contact:'Contact',
               information:'Information for Visitors',
             },
+            structure:{
+              administration:'Administration',
+              boardint:"International Advisory Board",
+              board:"Board of the Institute",
+              supervisory:"Supervisory Board of the Institute",
+              members:"Members",
+              heads:"Scientific departments and department heads",
+              facilities:"Facilities",
+            },
             researchers: {
                 title: 'Researchers fellow',
                 departement: 'Department',
@@ -104,13 +113,21 @@ export const i18n = new VueI18n({
                 more:'Další aktuality',
                 evens: 'Chystané akce',
                 calendar:'Kalendář',
-
             },
             about:{
               departements:'Vědecká oddělení',
               mission:'Poslání',
               contact:'Kontakt',
               information:'Informace pro hostující pracovníky',
+            },
+            structure:{
+              administration:'Vedení ústavu',
+              boardint:"Mezinárodní poradní sbor",
+              board:"Rada pracoviště ",
+              supervisory:"Dozorčí rada",
+              members:"Členové",
+              heads:"Vědecká oddělení a jejich vedoucí ",
+              facilities:"Ostatní útvary  ",
             },
             researchers: {
                 title: 'Vědečtí pracovníci',

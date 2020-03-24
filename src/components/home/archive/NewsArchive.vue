@@ -4,7 +4,7 @@
     <v-layout  wrap row xs12  xl12 class="mt-0 mb-1 px-1">
       <v-flex  xs3 sm3 md2 lg1 xl1>
         <div class="mx-3 mt-2 pa-1 headline blue--text text--darken-4 ">
-          {{ $t("news.title") }} {{language}}
+          {{ $t("news.title") }} 
         </div>
       </v-flex>
       <v-flex  xs3 sm3 md2 lg1 xl1>

@@ -1,4 +1,5 @@
 <template>
+ <v-card width="100%">
 <!------------HEADER ------------------->
   <div class="col-sm-12 col-lg-12  col-centered mx-0 px-0" >
     <!-- <div class="lg12  col-centered xl11" > -->
@@ -24,7 +25,7 @@
             </v-layout>
           </v-flex>
           <!-------------bis menu line------------------>
-          <v-flex  style="background: #252697;"  class="my-0 py-0  hidden-md-and-down">
+          <v-flex  style="background: #252697;"  class="mb-0 py-0  hidden-md-and-down">
             <app-bis-menu :keyrand="getRandomInt(10)" :bisMenu="bisMenu"></app-bis-menu>  
           </v-flex>
         </v-layout> 
@@ -35,7 +36,8 @@
     <app-main-menu-sandwich v-if="showMainMenuDown"  :mainMenu="mainMenu"></app-main-menu-sandwich>
     <!-------------bis menu sandwich------------------>
     <app-bis-menu-sandwich v-if="showBisMenuDown" :bisMenu="bisMenu"></app-bis-menu-sandwich> 
-  </div>   
+  </div>  
+ </v-card> 
 </template>
 <script>
 // import data
