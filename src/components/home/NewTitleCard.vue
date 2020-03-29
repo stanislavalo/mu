@@ -91,7 +91,6 @@ export default {
       }
       else
         return auto
-        
     },
     maxHeightImg1(){
       if(this.$vuetify.breakpoint.lg)

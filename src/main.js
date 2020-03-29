@@ -14,7 +14,6 @@ import moment from 'moment';
 import 'bulma/css/bulma.css';
 import 'leaflet/dist/leaflet.css';
 
-
 Vue.use(Vuetify);
 Vue.use(VueResource);
 Vue.use(moment);
