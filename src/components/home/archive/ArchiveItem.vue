@@ -61,7 +61,7 @@ export default {
   },
   created(){
     if(this.item.slices)
-      this.urlImage = "http://localhost:8080/src/data/photos/news/2019/"+this.item.slices[0].src;
+      this.urlImage = "http://www-test.math.cas.cz/data/photos/news/2019/"+this.item.slices[0].src;
   },
   computed:{
     ...mapGetters('header',{

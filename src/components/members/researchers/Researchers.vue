@@ -50,11 +50,10 @@ export default {
           researcher.typeResearcher = "researcher";
           if(element.id %2){ 
             var photoId = getRandomInt(12) +1;
-            researcher.photo = "http://localhost:8080/src/data/photos/"+photoId+ ".jpg"
-            // researcher.photo = "http://localhost:8080/src/data/photos/"+element.id+".jpg"
+            researcher.photo = "http://www-test.math.cas.cz/data/photos/"+photoId+ ".jpg"
           }
           else{
-            researcher.photo = "http://localhost:8080/src/assets/members/noimg_middle.png";
+            researcher.photo = "http://www-test.math.cas.cz/data/photos/noimg_middle.png";
 
           }
           var department = {};

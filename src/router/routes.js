@@ -46,7 +46,7 @@ const addresses = [{
         component: NewsHome,
         children: [
             { path: 'news', name: 'news', component: News },
-            { path: 'archive', name: 'archive', component: NewsArchive},
+            { path: 'more', name: 'more', component: NewsArchive},
             { path: 'new/:id', name: 'new', component: NewDetail },
         ]
     },

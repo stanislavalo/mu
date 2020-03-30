@@ -44,13 +44,13 @@ export default {
           description:'Every year, the Foundation of Josef, Marie and Zdeňka Hlávka awards the Josef Hlávka Prize for scientific literature. In the ceremony held at the Castle Lužany on June 17, 2019, M. Křížek, L. Somer, M. Markl, O. Kowalski, P. Pudlák, and I. Vrkoč recieved the 2018 Josef Hlávka Prize for their book Abelova cena – nejvyšší ocenění za matematiku (The Abel Prize – the Highest Achievement in Mathematics) published by Academia Publishing House in 2018. The book surveys the major results of the recipients of the first fifteen Abel Prizes. The Prize which is considered a mathematics counterpart of the Nobel Prize is awarded by the King of Norway every year to one or two mathematicians for their lifetime achievement.',
           slices: [
             {
-              src: '/src/data/photos/news/Josef_Hlavka.jpg',
+              src: 'http://www-test.math.cas.cz/data/photos/news/Josef_Hlavka.jpg',
             },
             {
-              src: 'http://www.math.cas.cz/documents/Krizek_Somer2.jpg',
+              src: 'http://www-test.math.cas.cz/data/photos/news/Krizek_Somer2.jpg',
             },
             {
-              src:'/src/data/photos/news/Krizek.jpg'
+              src:'http://www-test.math.cas.cz/data/photos/news/Krizek.jpg'
             }
           ],
           links:[ {url:'abel',text:'Book cover'},
@@ -82,10 +82,10 @@ export default {
           description:'On the occasion of Centennial of Masaryk University in Brno, the Commemorative Medal has been awarded on June 13, 2019 to the Institute of Mathematics as a recognition of the long-term collaboration with the Faculty of Science especially in the field of ordinary differential equations, algebraic topology and differential geometry, for membership in boards and commissions, important joint grant projects and doctoral programme.',
           slices:[
             {
-              src: '/src/data/photos/news/muni.png',
+              src: 'http://www-test.math.cas.cz/data/photos/news/muni.png',
             },
             {
-              src: '/src/data/photos/news/sumava.jpg',
+              src: 'http://www-test.math.cas.cz/data/photos/news/sumava.jpg',
             }
           ],
           links:[
@@ -120,7 +120,7 @@ export default {
           id:5,
           title:'The Academic Award – Praemium Academiae for Martin Markl',
           description:'Thursday, 6 December 2018 at 10:30 a.m., in the main lecture hall of the Institute of Mathematics CAS For abstract see the invitation below. The distinguished Eduard Čech Lectures held to commemorate one of the most eminent Czech mathematicians and founder of the Institute are directed to a general mathematical audience. Professor Vojtěch Rödl is the second Eduard Čech Distinguished Visitor. The fifteenth Eduard Čech Lecture will be part of his research programme in the Institute of Mathematics.',
-          slices:[{src:'/src/data/photos/news/Akademicka_premie.jpg'},],
+          slices:[{src:'http://www-test.math.cas.cz/data/photos/news/Akademicka_premie.jpg'},],
           links:[{url:'calendar',text:' A short video portrait of M. Markl'}],
           short:'Academic Award',
           type:1,

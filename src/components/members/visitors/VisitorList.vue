@@ -43,7 +43,7 @@ export default {
   props:['visitor'],
   data(){
     return {
-      photo: "http://localhost:8080/src/data/photos/visitors/"+this.visitor.url_photo,
+      photo: "http://www-test.math.cas.cz/data/photos/visitors/"+this.visitor.url_photo,
       end:parseInt(this.visitor.year_academic_start) + 1 -2000,
     };
   },

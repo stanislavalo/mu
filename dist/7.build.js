@@ -1,1 +1,2062 @@
-webpackJsonp([7],{330:function(e,t,n){var r=n(331);"string"==typeof r&&(r=[[e.i,r,""]]);n(21)(r,{});r.locals&&(e.exports=r.locals)},331:function(e,t,n){t=e.exports=n(10)(),t.push([e.i,'body[data-v-67ce77a2],html[data-v-67ce77a2]{height:100%;margin:0;background-color:#f7fcff}.calendar-controls[data-v-67ce77a2]{margin-right:1rem;min-width:14rem;max-width:14rem;background-color:beige}.calendar-parent[data-v-67ce77a2]{display:flex;flex-direction:column;flex-grow:1;overflow-x:hidden;overflow-y:hidden;min-height:85vh;background-color:#fff;height:100%;height:-moz-available;height:-webkit-fill-available;height:fill-available}.cv-wrapper.period-month.periodCount-2 .cv-week[data-v-67ce77a2],.cv-wrapper.period-month.periodCount-3 .cv-week[data-v-67ce77a2],.cv-wrapper.period-year .cv-week[data-v-67ce77a2]{min-height:6rem}.theme-default .cv-event[data-v-67ce77a2]{height:auto!important}.theme-default .cv-event.birthday[data-v-67ce77a2]{background-color:#e0f0e0;border-color:#d7e7d7}.theme-default .cv-event.birthday[data-v-67ce77a2]:before{content:"\\1F382";margin-right:.5em}.control-period[data-v-67ce77a2]{display:flex;flex:0 0 auto;flex-flow:row nowrap;align-items:center;min-height:2.5em;border-width:1px 1px 0}.event-text[data-v-67ce77a2]{text-align:justify}',""])},332:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(77),o=(n.n(r),n(333)),a=n(334),i=n(335),s=n.n(i),c=n(344);n.n(c);n(340),n(342),t.default={data:function(){var e=o.a;return{fluidContenair:!0,showDate:this.thisMonth(1),message:{},startingDayOfWeek:0,disablePast:!1,disableFuture:!1,displayPeriodUom:"month",displayPeriodCount:1,showEventTimes:!0,newEventTitle:"",newEventStartDate:"",newEventEndDate:"",useDefaultTheme:!0,useHolidayTheme:!1,useTodayIcons:!1,events:e}},computed:{userLocale:function(){return this.getDefaultBrowserLocale},dayNames:function(){return this.getFormattedWeekdayNames(this.userLocale,"long",1)},messageClasses:function(){return this.$vuetify.breakpoint.mdAndUp?"mt-5 pt-5":"mt-0 pt-0"},messageStyle:function(){return{borderLeftColor:this.message.color,borderLeftStyle:"groove",borderLeftWidth:"1em"}},themeClasses:function(){return{"theme-default":this.useDefaultTheme,"holiday-us-traditional":this.useHolidayTheme,"holiday-us-official":this.useHolidayTheme}}},mounted:function(){this.fluidContenair=this.$vuetify.breakpoint.lgAndDown,this.newEventStartDate=this.isoYearMonthDay(this.today()),this.newEventEndDate=this.isoYearMonthDay(this.today()),this.$vuetify.breakpoint.smAndDown?this.events=a.a:this.events=o.a},components:{CalendarView:c.CalendarView,CalendarViewHeader:c.CalendarViewHeader,EventPopup:s.a},mixins:[c.CalendarMathMixin],methods:{periodChanged:function(e,t){console.log(t),console.log(e)},thisMonth:function(e,t,n){var r=new Date;return new Date(r.getFullYear(),r.getMonth(),e,t||0,n||0)},onClickDay:function(e){this.message="You clicked: ".concat(e.toLocaleDateString())},onClickEvent:function(e){var t=new Date(e.originalEvent.startDate1),n=new Date(e.originalEvent.endDate1);this.message={id:e.id,title:e.title,speaker:e.originalEvent.speaker,text:e.originalEvent.text,startDate1:t.toLocaleDateString("en-GB"),startTime1:t.toLocaleTimeString("en-GB",{hour12:!1,hour:"2-digit",minute:"2-digit"}),endDate1:n.toLocaleDateString("en-GB"),endTime1:n.toLocaleTimeString("en-GB",{hour12:!1,hour:"2-digit",minute:"2-digit"}),place:e.originalEvent.place,color:e.originalEvent.classes},this.message.endDate1==this.message.startDate1&&(this.message.endTime1==this.message.startTime1?this.message.endTime1="00:00":this.message.endTime1="-"+this.message.endTime1),scroll(0,50)},setShowDate:function(e){this.message="Changing calendar view to ".concat(e.toLocaleDateString()),this.showDate=e},onDrop:function(e,t){this.message="You dropped ".concat(e.id," on ").concat(t.toLocaleDateString());var n=this.dayDiff(e.startDate,t);e.originalEvent.startDate=this.addDays(e.startDate,n),e.originalEvent.endDate=this.addDays(e.endDate,n)},clickTestAddEvent:function(){this.events.push({startDate:this.newEventStartDate,endDate:this.newEventEndDate,title:this.newEventTitle,id:"e"+Math.random().toString(36).substr(2,10)}),this.message="You added an event!"}}}},333:function(e,t,n){"use strict";function r(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var o;t.a=[{id:"e0",startDate:"2018-01-05"},(o={id:"e1",startDate:"2019-10-07 13:30",endDate:"2019-10-07 15:00",startDate1:"2019-10-07 13:30",endDate1:"2019-10-07 15:00",place:"in IM, rear building, ground floor",title:"Lengths of proofs for Presburger arithmetic",title1:"Lengths of proofs for Presburger arithmetic",speaker:"Fedor Pakhomov",classes:"cyan"},r(o,"place","in IM, rear building, ground floor"),r(o,"text","Speedups (i.e., differences in the lengths of shortest proofs of the same sentences) between various theories in the language of first-order arithmetic and richer languages is a relatively well-studied phenomenon. There are three typical orders of speedup that occur in natural examples: non-recursive speedups, at most polynomial speedups, and speedups of the order of the super-exponentiation function exp*(0)=1, exp*(x+1)=exp(exp*(x)). In the present talk I will compare this situation to what happens over the language of Presburger arithmetic. We consider theories that are complete in the language of Presburger arithmetic and for them the usual quantifier elimination algorithm guarantees that any formula of the length n has a proof of the length ≤exp(exp(exp(P(n)))). This shows that speedups in this setting are at most triple-exponential. An important tool for proving non-polynomial speedups for first-order theories is Friedman-Pudlak finite version of Gödel's second-incompleteness theorem. In this talk I'll show how to adopt it to the case of theories in the language of Presburger arithmetic. This yields the result that if T is a system in the language of PA and T⊢Con(U), then T has at least exponential speedup over U in the language of Presburger arithmetic. Also I'll show that even very weak theories in the language of Peano arithmetic, for example IΔ₀, have at least exponential speedups over the standard axiomatization of Presburger arithmetic."),o),{id:"e2",startDate:"2019-10-21 13:30",endDate:"2019-10-21 15:00",startDate1:"2019-10-21 13:30",endDate1:"2019-10-21 15:00",place:"in IM, rear building, ground floor",title:"Why are Proof Complexity Lower Bounds Hard?",title1:"Why are Proof Complexity Lower Bounds Hard?",speaker:"Ján Pich",text:"We formalize and study the question of whether there are inherent difficulties to showing lower bounds on propositional proof complexity. We establish the following unconditional result: Propositional proof systems cannot efficiently show that truth tables of random Boolean functions lack polynomial size non-uniform proofs of hardness. Assuming a conjecture of Rudich, propositional proof systems also cannot efficiently show that random k-CNFs of linear density lack polynomial size non-uniform proofs of unsatisfiability. Since the statements in question assert the average-case hardness of standard NP problems (MCSP and 3-SAT respectively) against co-nondeterministic circuits for natural distributions, one interpretation of our result is that propositional proof systems are inherently incapable of efficiently proving strong complexity lower bounds in our formalization. Another interpretation is that an analogue of the Razborov-Rudich 'natural proofs' barrier holds in proof complexity: under reasonable hardness assumptions, there are natural distributions on hard tautologies for which it is infeasible to show proof complexity lower bounds for strong enough proof systems. For the specific case of the Extended Frege (EF) propositional proof system, we show that at least one of the following cases holds: (1) EF has no efficient proofs of superpolynomial circuit lower bound tautologies for any Boolean function or (2) There is an explicit family of tautologies of each length such that under reasonable hardness assumptions, most tautologies are hard but no propositional proof system can efficiently establish hardness for most tautologies in the family. Thus, under reasonable hardness assumptions, either the Circuit Lower Bounds program toward complexity separations cannot be implemented in EF, or there are inherent obstacles to implementing the Cook-Reckhow program for EF.",classes:"cyan"},{id:"e3",startDate:"2019-10-08 9:00",endDate:"2019-10-08 10:00",startDate1:"2019-10-08 9:00",endDate1:"2019-10-08 10:00",place:"in IM, rear building, ground floor",speaker:"Nicola Zamponi",title:"A non-local diffusion equation",title1:"A non-local diffusion equation",text:"We consider a non-local porous medium equation with non-local diffusion effects given by a fractional heat operator in 2 space dimensions. Global in time existence of weak solutions is shown by employing a time semi-discretization of the equations, an energy inequality, a higher integrability estimate of the approximate solution and a generalization of the well-known Div-Curl Lemma.",classes:"green"},{id:"e4",startDate:"2019-10-08 10:00",endDate:"2019-10-08 12:00",startDate1:"2019-10-08 10:00",endDate1:"2019-10-08 12:00",place:"in IM, rear building, ground floor",speaker:"Marián Fabian",title:"An inverse mapping theorem in Fréchet-Montel spaces",title1:"An inverse mapping theorem in Fréchet-Montel spaces",text:"According to a recent paper by M. Ivanov and N. Zlateva, we prove a statement in the style of Nash-Moser-Ekeland inverse mapping theorem, for mappings $f: X\rightarrow Y$ where $X, Y$ are Fr'echet-Montel spaces (the space $C^infty(Omega)$ is such) and $f$ is continuous and directionally differentiable (in particular Gateaux differentiable) whose derivative has a right inverse.",classes:"blue"},{id:"e5",startDate:"2019-10-27 17:00",endDate:"2019-11-03 13:00",startDate1:"2019-10-27 17:00",endDate1:"2019-11-03 13:00",title:"MATTRIAD 2019, International Conference on Matrix Analysis and its Applications",title1:"MATTRIAD 2019, International Conference on Matrix Analysis and its Applications",place:"Liblice, Czech Republic",text:"MAT TRIAD provides an opportunity to bring together researchers sharing an interest in a variety of aspects of matrix analysis and its applications in other area of science. Researchers and graduate students interested in recent developments in matrix and operator theory and computation, spectral problems, applications of linear algebra in statistics, statistical models, matrices and graphs as well as combinatorial matrix theory are particularly encouraged to attend. MAT TRIAD 2019 is a registered satellite meeting of ICIAM 2019, The International Congress on Industrial and Applied Mathematics, to be held at Valencia, Spain, July 15-19, 2019. A special issue of Applications of Mathematics will be published after the meeting, with the papers related to the talks presented during the conference. Invited speakers •Dario Bini, University of Pisa, Italy •Mirjam Dür, University of Augsburg, Germany •Shmuel Friedland, University of Illinois, Chicago, USA •Arnold Neumaier, University of Vienna, Austria •Martin Stoll, Technical University of Chemnitz, Germany •Zdeněk Strakoš, Charles University, Prague, Czech Republic Invited talks by recipients of Young Scientists Awards from MatTriad'2017 •Álvaro Barreras, Universidad Internacional de La Rioja, Spain •Ryo Tabata, National Institute of Technology, Fukuoka, Japan",classes:"grey"},{id:"e6",startDate:"2019-10-31 09:00",endDate:"2019-10-31 10:00",startDate1:"2019-10-31 09:00",endDate1:"2019-10-31 10:00",place:"in IM, front building, third floor",title:"Modelling of multicomponent diffusion in porous media using the Maxwell-Stefan theory and continuum mechanics",title1:"Modelling of multicomponent diffusion in porous media using the Maxwell-Stefan theory and continuum mechanics",speaker:"Jiří Mikyška",classes:"red"},{id:"e7",startDate:"2019-10-21",endDate:"2019-10-24",startDate1:"2019-10-21",endDate1:"2019-10-24",place:"Institute of Mathematics CAS, main lecture room",title:"Meeting Dresden-Prague-Wroclaw",title1:"Meeting Dresden-Prague-Wroclaw",text:"A workshop Dresden-Prague-Wroclaw on evolutionary equations",classes:"grey"},{id:"e8",startDate:"2019-10-25 10:40",endDate:"2019-10-25",startDate1:"2019-10-25 10:40",endDate1:"2019-10-25",place:"Institute of Mathematics CAS, main lecture room",title:"Example of a smooth homeomorphism violating the Luzin N−1 property",title1:"Example of a smooth homeomorphism violating the Luzin N−1 property",speaker:"Tomáš Roskovec",text:"",classes:"pink"}]},334:function(e,t,n){"use strict";function r(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var o;t.a=[{id:"e0",startDate:"2018-01-05"},(o={id:"e1",startDate:"2019-10-07",endDate:"2019-10-07",startDate1:"2019-10-07 13:30",endDate1:"2019-10-07 15:00",place:"in IM, rear building, ground floor",title:"Lengths of proofs for Presburger arithmetic",title1:"Lengths of proofs for Presburger arithmetic",speaker:"Fedor Pakhomov",classes:"cyan"},r(o,"place","in IM, rear building, ground floor"),r(o,"text","Speedups (i.e., differences in the lengths of shortest proofs of the same sentences) between various theories in the language of first-order arithmetic and richer languages is a relatively well-studied phenomenon. There are three typical orders of speedup that occur in natural examples: non-recursive speedups, at most polynomial speedups, and speedups of the order of the super-exponentiation function exp*(0)=1, exp*(x+1)=exp(exp*(x)). In the present talk I will compare this situation to what happens over the language of Presburger arithmetic. We consider theories that are complete in the language of Presburger arithmetic and for them the usual quantifier elimination algorithm guarantees that any formula of the length n has a proof of the length ≤exp(exp(exp(P(n)))). This shows that speedups in this setting are at most triple-exponential. An important tool for proving non-polynomial speedups for first-order theories is Friedman-Pudlak finite version of Gödel's second-incompleteness theorem. In this talk I'll show how to adopt it to the case of theories in the language of Presburger arithmetic. This yields the result that if T is a system in the language of PA and T⊢Con(U), then T has at least exponential speedup over U in the language of Presburger arithmetic. Also I'll show that even very weak theories in the language of Peano arithmetic, for example IΔ₀, have at least exponential speedups over the standard axiomatization of Presburger arithmetic."),o),{id:"e2",startDate:"2019-10-21",endDate:"2019-10-21",startDate1:"2019-10-21 13:30",endDate1:"2019-10-21 15:00",place:"in IM, rear building, ground floor",title:"Why are Proof Complexity Lower Bounds Hard? ",title1:"Why are Proof Complexity Lower Bounds Hard?",speaker:"Ján Pich",text:"We formalize and study the question of whether there are inherent difficulties to showing lower bounds on propositional proof complexity. We establish the following unconditional result: Propositional proof systems cannot efficiently show that truth tables of random Boolean functions lack polynomial size non-uniform proofs of hardness. Assuming a conjecture of Rudich, propositional proof systems also cannot efficiently show that random k-CNFs of linear density lack polynomial size non-uniform proofs of unsatisfiability. Since the statements in question assert the average-case hardness of standard NP problems (MCSP and 3-SAT respectively) against co-nondeterministic circuits for natural distributions, one interpretation of our result is that propositional proof systems are inherently incapable of efficiently proving strong complexity lower bounds in our formalization. Another interpretation is that an analogue of the Razborov-Rudich 'natural proofs' barrier holds in proof complexity: under reasonable hardness assumptions, there are natural distributions on hard tautologies for which it is infeasible to show proof complexity lower bounds for strong enough proof systems. For the specific case of the Extended Frege (EF) propositional proof system, we show that at least one of the following cases holds: (1) EF has no efficient proofs of superpolynomial circuit lower bound tautologies for any Boolean function or (2) There is an explicit family of tautologies of each length such that under reasonable hardness assumptions, most tautologies are hard but no propositional proof system can efficiently establish hardness for most tautologies in the family. Thus, under reasonable hardness assumptions, either the Circuit Lower Bounds program toward complexity separations cannot be implemented in EF, or there are inherent obstacles to implementing the Cook-Reckhow program for EF.",classes:"cyan"},{id:"e3",startDate:"2019-10-08",endDate:"2019-10-08",startDate1:"2019-10-08 9:00",endDate1:"2019-10-08 10:00",place:"in IM, rear building, ground floor",speaker:"Nicola Zamponi",title:"A non-local diffusion equation ",title1:"A non-local diffusion equation",text:"We consider a non-local porous medium equation with non-local diffusion effects given by a fractional heat operator in 2 space dimensions. Global in time existence of weak solutions is shown by employing a time semi-discretization of the equations, an energy inequality, a higher integrability estimate of the approximate solution and a generalization of the well-known Div-Curl Lemma.",classes:"green"},{id:"e4",startDate:"2019-10-08",endDate:"2019-10-08",startDate1:"2019-10-08 10:00",endDate1:"2019-10-08 12:00",place:"in IM, rear building, ground floor",speaker:"Marián Fabian",title:"An inverse mapping theorem in Fréchet-Montel spaces ",title1:"An inverse mapping theorem in Fréchet-Montel spaces",text:"According to a recent paper by M. Ivanov and N. Zlateva, we prove a statement in the style of Nash-Moser-Ekeland inverse mapping theorem, for mappings $f: X\rightarrow Y$ where $X, Y$ are Fr'echet-Montel spaces (the space $C^infty(Omega)$ is such) and $f$ is continuous and directionally differentiable (in particular Gateaux differentiable) whose derivative has a right inverse.",classes:"blue"},{id:"e5",startDate:"2019-10-28",endDate:"2019-10-31",startDate1:"2019-10-27 17:00",endDate1:"2019-11-03 13:00",title:"MATTRIAD 2019, International Conference on Matrix Analysis and its Applications ",title1:"MATTRIAD 2019, International Conference on Matrix Analysis and its Applications",place:"Liblice, Czech Republic",text:"MAT TRIAD provides an opportunity to bring together researchers sharing an interest in a variety of aspects of matrix analysis and its applications in other area of science. Researchers and graduate students interested in recent developments in matrix and operator theory and computation, spectral problems, applications of linear algebra in statistics, statistical models, matrices and graphs as well as combinatorial matrix theory are particularly encouraged to attend. MAT TRIAD 2019 is a registered satellite meeting of ICIAM 2019, The International Congress on Industrial and Applied Mathematics, to be held at Valencia, Spain, July 15-19, 2019. A special issue of Applications of Mathematics will be published after the meeting, with the papers related to the talks presented during the conference. Invited speakers •Dario Bini, University of Pisa, Italy •Mirjam Dür, University of Augsburg, Germany •Shmuel Friedland, University of Illinois, Chicago, USA •Arnold Neumaier, University of Vienna, Austria •Martin Stoll, Technical University of Chemnitz, Germany •Zdeněk Strakoš, Charles University, Prague, Czech Republic Invited talks by recipients of Young Scientists Awards from MatTriad'2017 •Álvaro Barreras, Universidad Internacional de La Rioja, Spain •Ryo Tabata, National Institute of Technology, Fukuoka, Japan",classes:"grey"},{id:"e6",startDate:"2019-10-31",endDate:"2019-10-31",startDate1:"2019-10-31 9:00",endDate1:"2019-10-31 10:00",place:"in IM, front building, third floor",title:"Modelling of multicomponent diffusion in porous media using the Maxwell-Stefan theory and continuum mechanics ",title1:"Modelling of multicomponent diffusion in porous media using the Maxwell-Stefan theory and continuum mechanics",speaker:"Jiří Mikyška",classes:"red"},{id:"e7",startDate:"2019-10-21",endDate:"2019-10-24",startDate1:"2019-10-21",endDate1:"2019-10-24",place:"Institute of Mathematics CAS, main lecture room",title:"Meeting Dresden-Prague-Wroclaw",title1:"Meeting Dresden-Prague-Wroclaw",text:"A workshop Dresden-Prague-Wroclaw on evolutionary equations",classes:"grey"},{id:"e8",startDate:"2019-10-25",endDate:"2019-10-25",startDate1:"2019-10-25 10:40",endDate1:"2019-10-25",place:"Institute of Mathematics CAS, main lecture room",title:"Example of a smooth homeomorphism violating the Luzin N−1 property",title1:"Example of a smooth homeomorphism violating the Luzin N−1 property",speaker:"Tomáš Roskovec",text:"",classes:"pink"}]},335:function(e,t,n){var r,o;n(336),r=n(338);var a=n(339);o=r=r||{},"object"!=typeof r.default&&"function"!=typeof r.default||(o=r=r.default),"function"==typeof o&&(o=o.options),o.render=a.render,o.staticRenderFns=a.staticRenderFns,o._scopeId="data-v-6f097aea",e.exports=r},336:function(e,t,n){var r=n(337);"string"==typeof r&&(r=[[e.i,r,""]]);n(21)(r,{});r.locals&&(e.exports=r.locals)},337:function(e,t,n){t=e.exports=n(10)(),t.push([e.i,".event-text[data-v-6f097aea]{text-align:justify}",""])},338:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default={props:["message"],data:function(){return{maxWidth:"100%"}}}},339:function(e,t){e.exports={render:function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("v-card",{attrs:{"max-width":e.maxWidth}},[n("v-card-text",[e._v("\n    "+e._s(e.message.startDate1)+"\n    "),"00:00"!=e.message.startTime1?n("span",[e._v(e._s(e.message.startTime1))]):e._e(),e._v(" "),e.message.endDate1!=e.message.startDate1?n("br"):e._e(),e._v(" "),e.message.endDate1!=e.message.startDate1?n("span",[e._v(e._s(e.message.endDate1)+" ")]):e._e(),e._v(" "),"00:00"!=e.message.endTime1?n("span",[e._v(" "+e._s(e.message.endTime1))]):e._e(),e._v(" "),n("h4",{staticClass:" mx-0 my-0"},[e._v(e._s(e.message.place))])]),e._v(" "),n("h2",{staticClass:"title ml-3 my-0"},[e._v(e._s(e.message.speaker))]),e._v(" "),n("v-card-title",{staticClass:"my-0 pt-0 pb-3",attrs:{"primary-title":""}},[n("h4",{staticClass:"headline mb-0"},[e._v(e._s(e.message.title))]),e._v(" "),n("div",{staticClass:"event-text"},[e._v(" "+e._s(e.message.text)+" ")])])],1)},staticRenderFns:[]}},340:function(e,t,n){var r=n(341);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0};o.transform=void 0,o.insertInto=void 0;n(33)(r,o);r.locals&&(e.exports=r.locals)},341:function(e,t,n){t=e.exports=n(10)(),t.push([e.i,'.theme-default .cv-header,.theme-default .cv-header-day{background-color:#f0f0f0}.theme-default .cv-header .periodLabel{font-size:1.5em}.theme-default .cv-header button{color:#7f7f7f}.theme-default .cv-header button:disabled{color:#ccc;background-color:#f7f7f7}.theme-default .cv-day.past{background-color:#fafafa}.theme-default .cv-day.outsideOfMonth{background-color:#f7f7f7}.theme-default .cv-day.today{background-color:#ffe}.theme-default .cv-event{border-color:#e0e0f0;border-radius:.5em;background-color:#e7e7ff;text-overflow:ellipsis}.theme-default .cv-event.purple{background-color:#f0e0ff;border-color:#e7d7f7}.theme-default .cv-event.orange{background-color:#ffe7d0;border-color:#f7e0c7}.theme-default .cv-event.continued:before,.theme-default .cv-event.toBeContinued:after{content:" \\21E2   ";color:#999}.theme-default .cv-event.toBeContinued{border-right-style:none;border-top-right-radius:0;border-bottom-right-radius:0}.theme-default .cv-event.isHovered.hasUrl{text-decoration:underline}.theme-default .cv-event.continued{border-left-style:none;border-top-left-radius:0;border-bottom-left-radius:0}.theme-default .cv-event .endTime,.theme-default .cv-event .startTime{font-weight:700;color:#666}.theme-default .cv-day.draghover{box-shadow:inset 0 0 .2em .2em #ff0}',""])},342:function(e,t,n){var r=n(343);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0};o.transform=void 0,o.insertInto=void 0;n(33)(r,o);r.locals&&(e.exports=r.locals)},343:function(e,t,n){t=e.exports=n(10)(),t.push([e.i,'.cv-wrapper.holiday-us-traditional .d2015-04-05 .cv-day-number:before,.cv-wrapper.holiday-us-traditional .d2016-03-27 .cv-day-number:before,.cv-wrapper.holiday-us-traditional .d2017-04-16 .cv-day-number:before,.cv-wrapper.holiday-us-traditional .d2018-04-01 .cv-day-number:before,.cv-wrapper.holiday-us-traditional .d2019-04-21 .cv-day-number:before,.cv-wrapper.holiday-us-traditional .d2020-04-12 .cv-day-number:before,.cv-wrapper.holiday-us-traditional .d2021-04-04 .cv-day-number:before,.cv-wrapper.holiday-us-traditional .d2022-04-17 .cv-day-number:before,.cv-wrapper.holiday-us-traditional .d2023-04-09 .cv-day-number:before{content:"\\271D"}.cv-wrapper.holiday-us-traditional .d05-05 .cv-day-number:before{content:"\\1F1F2\\1F1FD"}.cv-wrapper.holiday-us-traditional .d10-31 .cv-day-number:before{content:"\\1F383"}.cv-wrapper.holiday-us-official .d01-01 .cv-day-number:before{content:"\\1F37E"}.cv-wrapper.holiday-us-official .d07-04 .cv-day-number:before{content:"\\1F1FA\\1F1F8"}.cv-wrapper.holiday-us-official .d11-11 .cv-day-number:before{content:"\\1F396"}.cv-wrapper.holiday-us-official .d12-25 .cv-day-number:before{content:"\\1F384"}.cv-wrapper.holiday-us-official.m01 .day.dow1.instance3 .cv-day-number:before{content:"\\270C\\1F3FE"}.cv-wrapper.holiday-us-official.m02 .day.dow1.instance3 .cv-day-number:before{content:"\\1F34E"}.cv-wrapper.holiday-us-official.m05 .day.dow1.lastInstance .cv-day-number:before{content:"\\1F1FA\\1F1F8"}.cv-wrapper.holiday-us-official.m09 .day.dow1.instance1 .cv-day-number:before{content:"\\1F4AA"}.cv-wrapper.holiday-us-official.m10 .day.dow1.instance2 .cv-day-number:before{content:"\\2388"}.cv-wrapper.holiday-us-official.m11 .day.dow4.instance4 .cv-day-number:before{content:"\\1F64F"}',""])},344:function(e,t,n){!function(t,n){e.exports=n()}("undefined"!=typeof self&&self,function(){return function(e){function t(r){if(n[r])return n[r].exports;var o=n[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var n={};return t.m=e,t.c=n,t.d=function(e,n,r){t.o(e,n)||Object.defineProperty(e,n,{enumerable:!0,get:r})},t.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.t=function(e,n){if(1&n&&(e=t(e)),8&n)return e;if(4&n&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(t.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&n&&"string"!=typeof e)for(var o in e)t.d(r,o,function(t){return e[t]}.bind(null,o));return r},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s="fae3")}({"0273":function(e,t,n){var r=n("c1b2"),o=n("4180"),a=n("2c6c");e.exports=r?function(e,t,n){return o.f(e,t,a(1,n))}:function(e,t,n){return e[t]=n,e}},"0363":function(e,t,n){var r=n("3ac6"),o=n("d659"),a=n("78e7"),i=n("3e80"),s=n("1e63"),c=n("62d0"),u=o("wks"),l=r.Symbol,f=c?l:i;e.exports=function(e){return a(u,e)||(s&&a(l,e)?u[e]=l[e]:u[e]=f("Symbol."+e)),u[e]}},"06cf":function(e,t,n){var r=n("83ab"),o=n("d1e7"),a=n("5c6c"),i=n("fc6a"),s=n("c04e"),c=n("5135"),u=n("0cfb"),l=Object.getOwnPropertyDescriptor;t.f=r?l:function(e,t){if(e=i(e),t=s(t,!0),u)try{return l(e,t)}catch(e){}if(c(e,t))return a(!o.f.call(e,t),e[t])}},"06fa":function(e,t){e.exports=function(e){try{return!!e()}catch(e){return!0}}},"0b11":function(e,t,n){e.exports=n("2f74")},"0b7b":function(e,t,n){var r=n("8f95"),o=n("7463"),a=n("0363"),i=a("iterator");e.exports=function(e){if(void 0!=e)return e[i]||e["@@iterator"]||o[r(e)]}},"0cfb":function(e,t,n){var r=n("83ab"),o=n("d039"),a=n("cc12");e.exports=!r&&!o(function(){return 7!=Object.defineProperty(a("div"),"a",{get:function(){return 7}}).a})},1276:function(e,t,n){"use strict";var r=n("d784"),o=n("44e7"),a=n("825a"),i=n("1d80"),s=n("4840"),c=n("8aa5"),u=n("50c4"),l=n("14c3"),f=n("9263"),d=n("d039"),p=[].push,h=Math.min,v=!d(function(){return!RegExp(4294967295,"y")});r("split",2,function(e,t,n){var r;return r="c"=="abbc".split(/(b)*/)[1]||4!="test".split(/(?:)/,-1).length||2!="ab".split(/(?:ab)*/).length||4!=".".split(/(.?)(.?)/).length||".".split(/()()/).length>1||"".split(/.?/).length?function(e,n){var r=String(i(this)),a=void 0===n?4294967295:n>>>0;if(0===a)return[];if(void 0===e)return[r];if(!o(e))return t.call(r,e,a);for(var s,c,u,l=[],d=(e.ignoreCase?"i":"")+(e.multiline?"m":"")+(e.unicode?"u":"")+(e.sticky?"y":""),h=0,v=new RegExp(e.source,d+"g");(s=f.call(v,r))&&!((c=v.lastIndex)>h&&(l.push(r.slice(h,s.index)),s.length>1&&s.index<r.length&&p.apply(l,s.slice(1)),u=s[0].length,h=c,l.length>=a));)v.lastIndex===s.index&&v.lastIndex++;return h===r.length?!u&&v.test("")||l.push(""):l.push(r.slice(h)),l.length>a?l.slice(0,a):l}:"0".split(void 0,0).length?function(e,n){return void 0===e&&0===n?[]:t.call(this,e,n)}:t,[function(t,n){var o=i(this),a=void 0==t?void 0:t[e];return void 0!==a?a.call(t,o,n):r.call(String(o),t,n)},function(e,o){var i=n(r,e,this,o,r!==t);if(i.done)return i.value;var f=a(e),d=String(this),p=s(f,RegExp),m=f.unicode,g=(f.ignoreCase?"i":"")+(f.multiline?"m":"")+(f.unicode?"u":"")+(v?"y":"g"),y=new p(v?f:"^(?:"+f.source+")",g),b=void 0===o?4294967295:o>>>0;if(0===b)return[];if(0===d.length)return null===l(y,d)?[d]:[];for(var x=0,w=0,D=[];w<d.length;){y.lastIndex=v?w:0;var S,P=l(y,v?d:d.slice(w));if(null===P||(S=h(u(y.lastIndex+(v?0:w)),d.length))===x)w=c(d,w,m);else{if(D.push(d.slice(x,w)),D.length===b)return D;for(var k=1;k<=P.length-1;k++)if(D.push(P[k]),D.length===b)return D;w=x=S}}return D.push(d.slice(x)),D}]},!v)},1316:function(e,t,n){e.exports=n("9cd3")},"14c3":function(e,t,n){var r=n("c6b6"),o=n("9263");e.exports=function(e,t){var n=e.exec;if("function"==typeof n){var a=n.call(e,t);if("object"!=typeof a)throw TypeError("RegExp exec method returned something other than an Object or null");return a}if("RegExp"!==r(e))throw TypeError("RegExp#exec called on incompatible receiver");return o.call(e,t)}},1561:function(e,t){var n=Math.ceil,r=Math.floor;e.exports=function(e){return isNaN(e=+e)?0:(e>0?r:n)(e)}},1875:function(e,t){e.exports=function(e){if(void 0==e)throw TypeError("Can't call method on "+e);return e}},"194a":function(e,t,n){var r=n("cc94");e.exports=function(e,t,n){if(r(e),void 0===t)return e;switch(n){case 0:return function(){return e.call(t)};case 1:return function(n){return e.call(t,n)};case 2:return function(n,r){return e.call(t,n,r)};case 3:return function(n,r,o){return e.call(t,n,r,o)}}return function(){return e.apply(t,arguments)}}},"1be4":function(e,t,n){var r=n("d066");e.exports=r("document","documentElement")},"1c0a":function(e,t,n){"use strict";var r=n("d63b"),o=n("8f95");e.exports=r?{}.toString:function(){return"[object "+o(this)+"]"}},"1c0b":function(e,t){e.exports=function(e){if("function"!=typeof e)throw TypeError(String(e)+" is not a function");return e}},"1d80":function(e,t){e.exports=function(e){if(void 0==e)throw TypeError("Can't call method on "+e);return e}},"1dde":function(e,t,n){var r=n("d039"),o=n("b622"),a=n("60ae"),i=o("species");e.exports=function(e){return a>=51||!r(function(){var t=[],n=t.constructor={};return n[i]=function(){return{foo:1}},1!==t[e](Boolean).foo})}},"1e63":function(e,t,n){var r=n("06fa");e.exports=!!Object.getOwnPropertySymbols&&!r(function(){return!String(Symbol())})},"21b8":function(e,t,n){n("a5eb")({target:"Function",proto:!0},{bind:n("e9d9")})},"23cb":function(e,t,n){var r=n("a691"),o=Math.max,a=Math.min;e.exports=function(e,t){var n=r(e);return n<0?o(n+t,0):a(n,t)}},"23e7":function(e,t,n){var r=n("da84"),o=n("06cf").f,a=n("9112"),i=n("6eeb"),s=n("ce4e"),c=n("e893"),u=n("94ca");e.exports=function(e,t){var n,l,f,d,p,h=e.target,v=e.global,m=e.stat;if(n=v?r:m?r[h]||s(h,{}):(r[h]||{}).prototype)for(l in t){if(d=t[l],e.noTargetGet?(p=o(n,l),f=p&&p.value):f=n[l],!u(v?l:h+(m?".":"#")+l,e.forced)&&void 0!==f){if(typeof d==typeof f)continue;c(d,f)}(e.sham||f&&f.sham)&&a(d,"sham",!0),i(n,l,d,e)}}},"241c":function(e,t,n){var r=n("ca84"),o=n("7839"),a=o.concat("length","prototype");t.f=Object.getOwnPropertyNames||function(e){return r(e,a)}},"24fb":function(e,t,n){"use strict";function r(e,t){var n=e[1]||"",r=e[3];if(!r)return n;if(t&&"function"==typeof btoa){var a=o(r);return[n].concat(r.sources.map(function(e){return"/*# sourceURL=".concat(r.sourceRoot).concat(e," */")})).concat([a]).join("\n")}return[n].join("\n")}function o(e){return"/*# ".concat("sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(e)))))," */")}e.exports=function(e){var t=[];return t.toString=function(){return this.map(function(t){var n=r(t,e);return t[2]?"@media ".concat(t[2],"{").concat(n,"}"):n}).join("")},t.i=function(e,n){"string"==typeof e&&(e=[[null,e,""]]);for(var r={},o=0;o<this.length;o++){var a=this[o][0];null!=a&&(r[a]=!0)}for(var i=0;i<e.length;i++){var s=e[i];null!=s[0]&&r[s[0]]||(n&&!s[2]?s[2]=n:n&&(s[2]="(".concat(s[2],") and (").concat(n,")")),t.push(s))}},t}},2616:function(e,t,n){var r=n("0363"),o=n("7463"),a=r("iterator"),i=Array.prototype;e.exports=function(e){return void 0!==e&&(o.Array===e||i[a]===e)}},2874:function(e,t,n){var r=n("d63b"),o=n("4180").f,a=n("0273"),i=n("78e7"),s=n("1c0a"),c=n("0363"),u=c("toStringTag");e.exports=function(e,t,n,c){if(e){var l=n?e:e.prototype;i(l,u)||o(l,u,{configurable:!0,value:t}),c&&!r&&a(l,"toString",s)}}},"2af1":function(e,t,n){n("23e7")({target:"Math",stat:!0},{sign:n("f748")})},"2c6c":function(e,t){e.exports=function(e,t){return{enumerable:!(1&e),configurable:!(2&e),writable:!(4&e),value:t}}},"2dc0":function(e,t,n){e.exports=n("588c")},"2f5a":function(e,t,n){var r,o,a,i=n("96e9"),s=n("3ac6"),c=n("dfdb"),u=n("0273"),l=n("78e7"),f=n("b2ed"),d=n("6e9a"),p=s.WeakMap,h=function(e){return a(e)?o(e):r(e,{})},v=function(e){return function(t){var n;if(!c(t)||(n=o(t)).type!==e)throw TypeError("Incompatible receiver, "+e+" required");return n}};if(i){var m=new p,g=m.get,y=m.has,b=m.set;r=function(e,t){return b.call(m,e,t),t},o=function(e){return g.call(m,e)||{}},a=function(e){return y.call(m,e)}}else{var x=f("state");d[x]=!0,r=function(e,t){return u(e,x,t),t},o=function(e){return l(e,x)?e[x]:{}},a=function(e){return l(e,x)}}e.exports={set:r,get:o,has:a,enforce:h,getterFor:v}},"2f74":function(e,t,n){e.exports=n("68ec")},"2f97":function(e,t,n){var r=n("dfdb");e.exports=function(e){if(!r(e)&&null!==e)throw TypeError("Can't set "+String(e)+" as a prototype");return e}},3327:function(e,t,n){n("21b8");var r=n("a169");e.exports=r("Function").bind},"37e8":function(e,t,n){var r=n("83ab"),o=n("9bf2"),a=n("825a"),i=n("df75");e.exports=r?Object.defineProperties:function(e,t){a(e);for(var n,r=i(t),s=r.length,c=0;s>c;)o.f(e,n=r[c++],t[n]);return e}},"3ac6":function(e,t,n){(function(t){var n=function(e){return e&&e.Math==Math&&e};e.exports=n("object"==typeof globalThis&&globalThis)||n("object"==typeof window&&window)||n("object"==typeof self&&self)||n("object"==typeof t&&t)||Function("return this")()}).call(this,n("c8ba"))},"3bbe":function(e,t,n){var r=n("861d");e.exports=function(e){if(!r(e)&&null!==e)throw TypeError("Can't set "+String(e)+" as a prototype");return e}},"3e47":function(e,t,n){"use strict";var r=n("cbd0").charAt,o=n("2f5a"),a=n("4056"),i=o.set,s=o.getterFor("String Iterator");a(String,"String",function(e){i(this,{type:"String Iterator",string:String(e),index:0})},function(){var e,t=s(this),n=t.string,o=t.index;return o>=n.length?{value:void 0,done:!0}:(e=r(n,o),t.index+=e.length,{value:e,done:!1})})},"3e80":function(e,t){var n=0,r=Math.random();e.exports=function(e){return"Symbol("+String(void 0===e?"":e)+")_"+(++n+r).toString(36)}},4056:function(e,t,n){"use strict";var r=n("a5eb"),o=n("f575"),a=n("5779"),i=n("ec62"),s=n("2874"),c=n("0273"),u=n("d666"),l=n("0363"),f=n("7042"),d=n("7463"),p=n("bb83"),h=p.IteratorPrototype,v=p.BUGGY_SAFARI_ITERATORS,m=l("iterator"),g=function(){return this};e.exports=function(e,t,n,l,p,y,b){o(n,t,l);var x,w,D,S=function(e){if(e===p&&C)return C;if(!v&&e in I)return I[e];switch(e){case"keys":case"values":case"entries":return function(){return new n(this,e)}}return function(){return new n(this)}},P=t+" Iterator",k=!1,I=e.prototype,M=I[m]||I["@@iterator"]||p&&I[p],C=!v&&M||S(p),A="Array"==t?I.entries||M:M;if(A&&(x=a(A.call(new e)),h!==Object.prototype&&x.next&&(f||a(x)===h||(i?i(x,h):"function"!=typeof x[m]&&c(x,m,g)),s(x,P,!0,!0),f&&(d[P]=g))),"values"==p&&M&&"values"!==M.name&&(k=!0,C=function(){return M.call(this)}),f&&!b||I[m]===C||c(I,m,C),d[t]=C,p)if(w={values:S("values"),keys:y?C:S("keys"),entries:S("entries")},b)for(D in w)!v&&!k&&D in I||u(I,D,w[D]);else r({target:t,proto:!0,forced:v||k},w);return w}},4180:function(e,t,n){var r=n("c1b2"),o=n("77b2"),a=n("6f8d"),i=n("7168"),s=Object.defineProperty;t.f=r?s:function(e,t,n){if(a(e),t=i(t,!0),a(n),o)try{return s(e,t,n)}catch(e){}if("get"in n||"set"in n)throw TypeError("Accessors not supported");return"value"in n&&(e[t]=n.value),e}},"41eb":function(e,t,n){e.exports=n("6326")},"428f":function(e,t,n){e.exports=n("da84")},"44ad":function(e,t,n){var r=n("d039"),o=n("c6b6"),a="".split;e.exports=r(function(){return!Object("z").propertyIsEnumerable(0)})?function(e){return"String"==o(e)?a.call(e,""):Object(e)}:Object},"44ba":function(e,t,n){var r=n("c1b2"),o=n("7043"),a=n("2c6c"),i=n("a421"),s=n("7168"),c=n("78e7"),u=n("77b2"),l=Object.getOwnPropertyDescriptor;t.f=r?l:function(e,t){if(e=i(e),t=s(t,!0),u)try{return l(e,t)}catch(e){}if(c(e,t))return a(!o.f.call(e,t),e[t])}},"44d2":function(e,t,n){var r=n("b622"),o=n("7c73"),a=n("9112"),i=r("unscopables"),s=Array.prototype;void 0==s[i]&&a(s,i,o(null)),e.exports=function(e){s[i][e]=!0}},"44e7":function(e,t,n){var r=n("861d"),o=n("c6b6"),a=n("b622"),i=a("match");e.exports=function(e){var t;return r(e)&&(void 0!==(t=e[i])?!!t:"RegExp"==o(e))}},4508:function(e,t,n){var r=n("1561"),o=Math.max,a=Math.min;e.exports=function(e,t){var n=r(e);return n<0?o(n+t,0):a(n,t)}},"46c8":function(e,t,n){t=e.exports=n("24fb")(!1),t.push([e.i,".cv-header{display:flex;flex:0 1 auto;flex-flow:row nowrap;align-items:center;min-height:2.5em;border-width:1px 1px 0 1px}.cv-header .periodLabel{display:flex;flex:1 1 auto;flex-flow:row nowrap;min-height:1.5em;line-height:1;font-size:1.5em}.cv-header,.cv-header button{border-style:solid;border-color:#ddd}.cv-header-nav,.cv-header .periodLabel{margin:.1em .6em}.cv-header-nav button,.cv-header .periodLabel{padding:.4em .6em}.cv-header button{box-sizing:border-box;line-height:1em;font-size:1em;border-width:1px}",""])},"471b":function(e,t,n){"use strict";var r=n("194a"),o=n("4fff"),a=n("faaa"),i=n("2616"),s=n("6725"),c=n("6c15"),u=n("0b7b");e.exports=function(e){var t,n,l,f,d,p=o(e),h="function"==typeof this?this:Array,v=arguments.length,m=v>1?arguments[1]:void 0,g=void 0!==m,y=0,b=u(p);if(g&&(m=r(m,v>2?arguments[2]:void 0,2)),void 0==b||h==Array&&i(b))for(t=s(p.length),n=new h(t);t>y;y++)c(n,y,g?m(p[y],y):p[y]);else for(f=b.call(p),d=f.next,n=new h;!(l=d.call(f)).done;y++)c(n,y,g?a(f,m,[l.value,y],!0):l.value);return n.length=y,n}},4840:function(e,t,n){var r=n("825a"),o=n("1c0b"),a=n("b622"),i=a("species");e.exports=function(e,t){var n,a=r(e).constructor;return void 0===a||void 0==(n=r(a)[i])?t:o(n)}},"484e":function(e,t,n){var r=n("a5eb"),o=n("471b");r({target:"Array",stat:!0,forced:!n("7de7")(function(e){Array.from(e)})},{from:o})},4896:function(e,t,n){var r=n("6f8d"),o=n("c230"),a=n("9e57"),i=n("6e9a"),s=n("edbd"),c=n("7a37"),u=n("b2ed"),l=u("IE_PROTO"),f=function(){},d=function(){var e,t=c("iframe"),n=a.length;for(t.style.display="none",s.appendChild(t),t.src=String("javascript:"),e=t.contentWindow.document,e.open(),e.write("<script>document.F=Object<\/script>"),e.close(),d=e.F;n--;)delete d.prototype[a[n]];return d()};e.exports=Object.create||function(e,t){var n;return null!==e?(f.prototype=r(e),n=new f,f.prototype=null,n[l]=e):n=d(),void 0===t?n:o(n,t)},i[l]=!0},4930:function(e,t,n){var r=n("d039");e.exports=!!Object.getOwnPropertySymbols&&!r(function(){return!String(Symbol())})},"499e":function(e,t,n){"use strict";function r(e,t){for(var n=[],r={},o=0;o<t.length;o++){var a=t[o],i=a[0],s=a[1],c=a[2],u=a[3],l={id:e+":"+o,css:s,media:c,sourceMap:u};r[i]?r[i].parts.push(l):n.push(r[i]={id:i,parts:[l]})}return n}function o(e,t,n,o){v=n,g=o||{};var i=r(e,t);return a(i),function(t){for(var n=[],o=0;o<i.length;o++){var s=i[o],c=f[s.id];c.refs--,n.push(c)}t?(i=r(e,t),a(i)):i=[];for(var o=0;o<n.length;o++){var c=n[o];if(0===c.refs){for(var u=0;u<c.parts.length;u++)c.parts[u]();delete f[c.id]}}}}function a(e){for(var t=0;t<e.length;t++){var n=e[t],r=f[n.id];if(r){r.refs++;for(var o=0;o<r.parts.length;o++)r.parts[o](n.parts[o]);for(;o<n.parts.length;o++)r.parts.push(s(n.parts[o]));r.parts.length>n.parts.length&&(r.parts.length=n.parts.length)}else{for(var a=[],o=0;o<n.parts.length;o++)a.push(s(n.parts[o]));f[n.id]={id:n.id,refs:1,parts:a}}}}function i(){var e=document.createElement("style");return e.type="text/css",d.appendChild(e),e}function s(e){var t,n,r=document.querySelector("style["+y+'~="'+e.id+'"]');if(r){if(v)return m;r.parentNode.removeChild(r)}if(b){var o=h++;r=p||(p=i()),t=c.bind(null,r,o,!1),n=c.bind(null,r,o,!0)}else r=i(),t=u.bind(null,r),n=function(){r.parentNode.removeChild(r)};return t(e),function(r){if(r){if(r.css===e.css&&r.media===e.media&&r.sourceMap===e.sourceMap)return;t(e=r)}else n()}}function c(e,t,n,r){var o=n?"":r.css;if(e.styleSheet)e.styleSheet.cssText=x(t,o);else{var a=document.createTextNode(o),i=e.childNodes;i[t]&&e.removeChild(i[t]),i.length?e.insertBefore(a,i[t]):e.appendChild(a)}}function u(e,t){var n=t.css,r=t.media,o=t.sourceMap;if(r&&e.setAttribute("media",r),g.ssrId&&e.setAttribute(y,t.id),o&&(n+="\n/*# sourceURL="+o.sources[0]+" */",n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(o))))+" */"),e.styleSheet)e.styleSheet.cssText=n;else{for(;e.firstChild;)e.removeChild(e.firstChild);e.appendChild(document.createTextNode(n))}}n.r(t),n.d(t,"default",function(){return o});var l="undefined"!=typeof document;if("undefined"!=typeof DEBUG&&DEBUG&&!l)throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var f={},d=l&&(document.head||document.getElementsByTagName("head")[0]),p=null,h=0,v=!1,m=function(){},g=null,y="data-vue-ssr-id",b="undefined"!=typeof navigator&&/msie [6-9]\b/.test(navigator.userAgent.toLowerCase()),x=function(){var e=[];return function(t,n){return e[t]=n,e.filter(Boolean).join("\n")}}()},"4d64":function(e,t,n){var r=n("fc6a"),o=n("50c4"),a=n("23cb"),i=function(e){return function(t,n,i){var s,c=r(t),u=o(c.length),l=a(i,u);if(e&&n!=n){for(;u>l;)if((s=c[l++])!=s)return!0}else for(;u>l;l++)if((e||l in c)&&c[l]===n)return e||l||0;return!e&&-1}};e.exports={includes:i(!0),indexOf:i(!1)}},"4de4":function(e,t,n){"use strict";var r=n("23e7"),o=n("b727").filter;r({target:"Array",proto:!0,forced:!n("1dde")("filter")},{filter:function(e){return o(this,e,arguments.length>1?arguments[1]:void 0)}})},"4fff":function(e,t,n){var r=n("1875");e.exports=function(e){return Object(r(e))}},"50c4":function(e,t,n){var r=n("a691"),o=Math.min;e.exports=function(e){return e>0?o(r(e),9007199254740991):0}},5135:function(e,t){var n={}.hasOwnProperty;e.exports=function(e,t){return n.call(e,t)}},5145:function(e,t,n){n("9103");var r=n("78a2"),o=n("3ac6"),a=n("0273"),i=n("7463"),s=n("0363"),c=s("toStringTag");for(var u in r){var l=o[u],f=l&&l.prototype;f&&!f[c]&&a(f,c,u),i[u]=i.Array}},5692:function(e,t,n){var r=n("c430"),o=n("c6cd");(e.exports=function(e,t){return o[e]||(o[e]=void 0!==t?t:{})})("versions",[]).push({version:"3.4.2",mode:r?"pure":"global",copyright:"© 2019 Denis Pushkarev (zloirock.ru)"})},"56c5":function(e,t,n){n("a5eb")({target:"Object",stat:!0},{setPrototypeOf:n("ec62")})},"56ef":function(e,t,n){var r=n("d066"),o=n("241c"),a=n("7418"),i=n("825a");e.exports=r("Reflect","ownKeys")||function(e){var t=o.f(i(e)),n=a.f;return n?t.concat(n(e)):t}},5779:function(e,t,n){var r=n("78e7"),o=n("4fff"),a=n("b2ed"),i=n("f5fb"),s=a("IE_PROTO"),c=Object.prototype;e.exports=i?Object.getPrototypeOf:function(e){return e=o(e),r(e,s)?e[s]:"function"==typeof e.constructor&&e instanceof e.constructor?e.constructor.prototype:e instanceof Object?c:null}},"588c":function(e,t,n){n("5145"),n("3e47"),e.exports=n("59d7")},5899:function(e,t){e.exports="\t\n\v\f\r                　\u2028\u2029\ufeff"},"58a8":function(e,t,n){var r=n("1d80"),o=n("5899"),a="["+o+"]",i=RegExp("^"+a+a+"*"),s=RegExp(a+a+"*$"),c=function(e){return function(t){var n=String(r(t));return 1&e&&(n=n.replace(i,"")),2&e&&(n=n.replace(s,"")),n}};e.exports={start:c(1),end:c(2),trim:c(3)}},"59d7":function(e,t,n){var r=n("8f95"),o=n("0363"),a=n("7463"),i=o("iterator");e.exports=function(e){var t=Object(e);return void 0!==t[i]||"@@iterator"in t||a.hasOwnProperty(r(t))}},"5ab9":function(e,t,n){n("e519");var r=n("764b");e.exports=r.Array.isArray},"5c6c":function(e,t){e.exports=function(e,t){return{enumerable:!(1&e),configurable:!(2&e),writable:!(4&e),value:t}}},"608f":function(e,t,n){"use strict";var r=n("e412"),o=n.n(r);o.a},"60ae":function(e,t,n){var r,o,a=n("da84"),i=n("b39a"),s=a.process,c=s&&s.versions,u=c&&c.v8;u?(r=u.split("."),o=r[0]+r[1]):i&&(!(r=i.match(/Edge\/(\d+)/))||r[1]>=74)&&(r=i.match(/Chrome\/(\d+)/))&&(o=r[1]),e.exports=o&&+o},6220:function(e,t,n){var r=n("fc48");e.exports=Array.isArray||function(e){return"Array"==r(e)}},"62d0":function(e,t,n){var r=n("1e63");e.exports=r&&!Symbol.sham&&"symbol"==typeof Symbol()},6326:function(e,t,n){n("f8b4");var r=n("764b");e.exports=r.Reflect.construct},6386:function(e,t,n){var r=n("a421"),o=n("6725"),a=n("4508"),i=function(e){return function(t,n,i){var s,c=r(t),u=o(c.length),l=a(i,u);if(e&&n!=n){for(;u>l;)if((s=c[l++])!=s)return!0}else for(;u>l;l++)if((e||l in c)&&c[l]===n)return e||l||0;return!e&&-1}};e.exports={includes:i(!0),indexOf:i(!1)}},"638c":function(e,t,n){var r=n("06fa"),o=n("fc48"),a="".split;e.exports=r(function(){return!Object("z").propertyIsEnumerable(0)})?function(e){return"String"==o(e)?a.call(e,""):Object(e)}:Object},6547:function(e,t,n){var r=n("a691"),o=n("1d80"),a=function(e){return function(t,n){var a,i,s=String(o(t)),c=r(n),u=s.length;return c<0||c>=u?e?"":void 0:(a=s.charCodeAt(c),a<55296||a>56319||c+1===u||(i=s.charCodeAt(c+1))<56320||i>57343?e?s.charAt(c):a:e?s.slice(c,c+2):i-56320+(a-55296<<10)+65536)}};e.exports={codeAt:a(!1),charAt:a(!0)}},"65f0":function(e,t,n){var r=n("861d"),o=n("e8b5"),a=n("b622"),i=a("species");e.exports=function(e,t){var n;return o(e)&&(n=e.constructor,"function"!=typeof n||n!==Array&&!o(n.prototype)?r(n)&&null===(n=n[i])&&(n=void 0):n=void 0),new(void 0===n?Array:n)(0===t?0:t)}},6725:function(e,t,n){var r=n("1561"),o=Math.min;e.exports=function(e){return e>0?o(r(e),9007199254740991):0}},"68ec":function(e,t,n){n("56c5");var r=n("764b");e.exports=r.Object.setPrototypeOf},"69f3":function(e,t,n){var r,o,a,i=n("7f9a"),s=n("da84"),c=n("861d"),u=n("9112"),l=n("5135"),f=n("f772"),d=n("d012"),p=s.WeakMap,h=function(e){return a(e)?o(e):r(e,{})},v=function(e){return function(t){var n;if(!c(t)||(n=o(t)).type!==e)throw TypeError("Incompatible receiver, "+e+" required");return n}};if(i){var m=new p,g=m.get,y=m.has,b=m.set;r=function(e,t){return b.call(m,e,t),t},o=function(e){return g.call(m,e)||{}},a=function(e){return y.call(m,e)}}else{var x=f("state");d[x]=!0,r=function(e,t){return u(e,x,t),t},o=function(e){return l(e,x)?e[x]:{}},a=function(e){return l(e,x)}}e.exports={set:r,get:o,has:a,enforce:h,getterFor:v}},"6c15":function(e,t,n){"use strict";var r=n("7168"),o=n("4180"),a=n("2c6c");e.exports=function(e,t,n){var i=r(t);i in e?o.f(e,i,a(0,n)):e[i]=n}},"6e77":function(e,t,n){e.exports=n("8cfd")},"6e9a":function(e,t){e.exports={}},"6eeb":function(e,t,n){var r=n("da84"),o=n("5692"),a=n("9112"),i=n("5135"),s=n("ce4e"),c=n("9e81"),u=n("69f3"),l=u.get,f=u.enforce,d=String(c).split("toString");o("inspectSource",function(e){return c.call(e)}),(e.exports=function(e,t,n,o){var c=!!o&&!!o.unsafe,u=!!o&&!!o.enumerable,l=!!o&&!!o.noTargetGet;if("function"==typeof n&&("string"!=typeof t||i(n,"name")||a(n,"name",t),f(n).source=d.join("string"==typeof t?t:"")),e===r)return void(u?e[t]=n:s(t,n));c?!l&&e[t]&&(u=!0):delete e[t],u?e[t]=n:a(e,t,n)})(Function.prototype,"toString",function(){return"function"==typeof this&&l(this).source||c.call(this)})},"6f8d":function(e,t,n){var r=n("dfdb");e.exports=function(e){if(!r(e))throw TypeError(String(e)+" is not an object");return e}},7042:function(e,t){e.exports=!0},7043:function(e,t,n){"use strict";var r={}.propertyIsEnumerable,o=Object.getOwnPropertyDescriptor,a=o&&!r.call({1:2},1);t.f=a?function(e){var t=o(this,e);return!!t&&t.enumerable}:r},7156:function(e,t,n){var r=n("861d"),o=n("d2bb");e.exports=function(e,t,n){var a,i;return o&&"function"==typeof(a=t.constructor)&&a!==n&&r(i=a.prototype)&&i!==n.prototype&&o(e,i),e}},7168:function(e,t,n){var r=n("dfdb");e.exports=function(e,t){if(!r(e))return e;var n,o;if(t&&"function"==typeof(n=e.toString)&&!r(o=n.call(e)))return o;if("function"==typeof(n=e.valueOf)&&!r(o=n.call(e)))return o;if(!t&&"function"==typeof(n=e.toString)&&!r(o=n.call(e)))return o;throw TypeError("Can't convert object to primitive value")}},7418:function(e,t){t.f=Object.getOwnPropertySymbols},7463:function(e,t){e.exports={}},"74e7":function(e,t,n){e.exports=n("bc59")},"764b":function(e,t){e.exports={}},7685:function(e,t,n){var r=n("3ac6"),o=n("8fad"),a=r["__core-js_shared__"]||o("__core-js_shared__",{});e.exports=a},"77b2":function(e,t,n){var r=n("c1b2"),o=n("06fa"),a=n("7a37");e.exports=!r&&!o(function(){return 7!=Object.defineProperty(a("div"),"a",{get:function(){return 7}}).a})},7839:function(e,t){e.exports=["constructor","hasOwnProperty","isPrototypeOf","propertyIsEnumerable","toLocaleString","toString","valueOf"]},"78a2":function(e,t){e.exports={CSSRuleList:0,CSSStyleDeclaration:0,CSSValueList:0,ClientRectList:0,DOMRectList:0,DOMStringList:0,DOMTokenList:1,DataTransferItemList:0,FileList:0,HTMLAllCollection:0,HTMLCollection:0,HTMLFormElement:0,HTMLSelectElement:0,MediaList:0,MimeTypeArray:0,NamedNodeMap:0,NodeList:1,PaintRequestList:0,Plugin:0,PluginArray:0,SVGLengthList:0,SVGNumberList:0,SVGPathSegList:0,SVGPointList:0,SVGStringList:0,SVGTransformList:0,SourceBufferList:0,StyleSheetList:0,TextTrackCueList:0,TextTrackList:0,TouchList:0}},"78e7":function(e,t){var n={}.hasOwnProperty;e.exports=function(e,t){return n.call(e,t)}},"7a37":function(e,t,n){var r=n("3ac6"),o=n("dfdb"),a=r.document,i=o(a)&&o(a.createElement);e.exports=function(e){return i?a.createElement(e):{}}},"7b0b":function(e,t,n){var r=n("1d80");e.exports=function(e){return Object(r(e))}},"7c73":function(e,t,n){var r=n("825a"),o=n("37e8"),a=n("7839"),i=n("d012"),s=n("1be4"),c=n("cc12"),u=n("f772"),l=u("IE_PROTO"),f=function(){},d=function(){var e,t=c("iframe"),n=a.length;for(t.style.display="none",s.appendChild(t),t.src=String("javascript:"),e=t.contentWindow.document,e.open(),e.write("<script>document.F=Object<\/script>"),e.close(),d=e.F;n--;)delete d.prototype[a[n]];return d()};e.exports=Object.create||function(e,t){var n;return null!==e?(f.prototype=r(e),n=new f,f.prototype=null,n[l]=e):n=d(),void 0===t?n:o(n,t)},i[l]=!0},"7db0":function(e,t,n){"use strict";var r=n("23e7"),o=n("b727").find,a=n("44d2"),i=!0;"find"in[]&&Array(1).find(function(){i=!1}),r({target:"Array",proto:!0,forced:i},{find:function(e){return o(this,e,arguments.length>1?arguments[1]:void 0)}}),a("find")},"7de7":function(e,t,n){var r=n("0363"),o=r("iterator"),a=!1;try{var i=0,s={next:function(){return{done:!!i++}},return:function(){a=!0}};s[o]=function(){return this},Array.from(s,function(){throw 2})}catch(e){}e.exports=function(e,t){if(!t&&!a)return!1;var n=!1;try{var r={};r[o]=function(){return{next:function(){return{done:n=!0}}}},e(r)}catch(e){}return n}},"7f9a":function(e,t,n){var r=n("da84"),o=n("9e81"),a=r.WeakMap;e.exports="function"==typeof a&&/native code/.test(o.call(a))},"81d5":function(e,t,n){"use strict";var r=n("7b0b"),o=n("23cb"),a=n("50c4");e.exports=function(e){for(var t=r(this),n=a(t.length),i=arguments.length,s=o(i>1?arguments[1]:void 0,n),c=i>2?arguments[2]:void 0,u=void 0===c?n:o(c,n);u>s;)t[s++]=e;return t}},"825a":function(e,t,n){var r=n("861d");e.exports=function(e){if(!r(e))throw TypeError(String(e)+" is not an object");return e}},"83ab":function(e,t,n){var r=n("d039");e.exports=!r(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},8418:function(e,t,n){"use strict";var r=n("c04e"),o=n("9bf2"),a=n("5c6c");e.exports=function(e,t,n){var i=r(t);i in e?o.f(e,i,a(0,n)):e[i]=n}},"861d":function(e,t){e.exports=function(e){return"object"==typeof e?null!==e:"function"==typeof e}},"88ff":function(e,t,n){e.exports=n("6e77")},"8aa5":function(e,t,n){"use strict";var r=n("6547").charAt;e.exports=function(e,t,n){return t+(n?r(e,t).length:1)}},"8cfd":function(e,t,n){var r=n("3327"),o=Function.prototype;e.exports=function(e){var t=e.bind;return e===o||e instanceof Function&&t===o.bind?r:t}},"8f95":function(e,t,n){var r=n("d63b"),o=n("fc48"),a=n("0363"),i=a("toStringTag"),s="Arguments"==o(function(){return arguments}()),c=function(e,t){try{return e[t]}catch(e){}};e.exports=r?o:function(e){var t,n,r;return void 0===e?"Undefined":null===e?"Null":"string"==typeof(n=c(t=Object(e),i))?n:s?o(t):"Object"==(r=o(t))&&"function"==typeof t.callee?"Arguments":r}},"8fad":function(e,t,n){var r=n("3ac6"),o=n("0273");e.exports=function(e,t){try{o(r,e,t)}catch(n){r[e]=t}return t}},"90e3":function(e,t){var n=0,r=Math.random();e.exports=function(e){return"Symbol("+String(void 0===e?"":e)+")_"+(++n+r).toString(36)}},9103:function(e,t,n){"use strict";var r=n("a421"),o=n("c44e"),a=n("7463"),i=n("2f5a"),s=n("4056"),c=i.set,u=i.getterFor("Array Iterator");e.exports=s(Array,"Array",function(e,t){c(this,{type:"Array Iterator",target:r(e),index:0,kind:t})},function(){var e=u(this),t=e.target,n=e.kind,r=e.index++;return!t||r>=t.length?(e.target=void 0,{value:void 0,done:!0}):"keys"==n?{value:r,done:!1}:"values"==n?{value:t[r],done:!1}:{value:[r,t[r]],done:!1}},"values"),a.Arguments=a.Array,o("keys"),o("values"),o("entries")},9112:function(e,t,n){var r=n("83ab"),o=n("9bf2"),a=n("5c6c");e.exports=r?function(e,t,n){return o.f(e,t,a(1,n))}:function(e,t,n){return e[t]=n,e}},9263:function(e,t,n){"use strict";var r=n("ad6d"),o=RegExp.prototype.exec,a=String.prototype.replace,i=o,s=function(){var e=/a/,t=/b*/g;return o.call(e,"a"),o.call(t,"a"),0!==e.lastIndex||0!==t.lastIndex}(),c=void 0!==/()??/.exec("")[1];(s||c)&&(i=function(e){var t,n,i,u,l=this;return c&&(n=new RegExp("^"+l.source+"$(?!\\s)",r.call(l))),s&&(t=l.lastIndex),i=o.call(l,e),s&&i&&(l.lastIndex=l.global?i.index+i[0].length:t),c&&i&&i.length>1&&a.call(i[0],n,function(){for(u=1;u<arguments.length-2;u++)void 0===arguments[u]&&(i[u]=void 0)}),i}),e.exports=i},"94ca":function(e,t,n){var r=n("d039"),o=/#|\.prototype\./,a=function(e,t){var n=s[i(e)];return n==u||n!=c&&("function"==typeof t?r(t):!!t)},i=a.normalize=function(e){return String(e).replace(o,".").toLowerCase()},s=a.data={},c=a.NATIVE="N",u=a.POLYFILL="P";e.exports=a},"96e9":function(e,t,n){var r=n("3ac6"),o=n("ab85"),a=r.WeakMap;e.exports="function"==typeof a&&/native code/.test(o.call(a))},9883:function(e,t,n){var r=n("764b"),o=n("3ac6"),a=function(e){return"function"==typeof e?e:void 0};e.exports=function(e,t){return arguments.length<2?a(r[e])||a(o[e]):r[e]&&r[e][t]||o[e]&&o[e][t]}},"99af":function(e,t,n){"use strict";var r=n("23e7"),o=n("d039"),a=n("e8b5"),i=n("861d"),s=n("7b0b"),c=n("50c4"),u=n("8418"),l=n("65f0"),f=n("1dde"),d=n("b622"),p=n("60ae"),h=d("isConcatSpreadable"),v=p>=51||!o(function(){var e=[];return e[h]=!1,e.concat()[0]!==e}),m=f("concat"),g=function(e){if(!i(e))return!1;var t=e[h];return void 0!==t?!!t:a(e)};r({target:"Array",proto:!0,forced:!v||!m},{concat:function(e){var t,n,r,o,a,i=s(this),f=l(i,0),d=0;for(t=-1,r=arguments.length;t<r;t++)if(a=-1===t?i:arguments[t],g(a)){if(o=c(a.length),d+o>9007199254740991)throw TypeError("Maximum allowed index exceeded");for(n=0;n<o;n++,d++)n in a&&u(f,d,a[n])}else{if(d>=9007199254740991)throw TypeError("Maximum allowed index exceeded");u(f,d++,a)}return f.length=d,f}})},"9bf2":function(e,t,n){var r=n("83ab"),o=n("0cfb"),a=n("825a"),i=n("c04e"),s=Object.defineProperty;t.f=r?s:function(e,t,n){if(a(e),t=i(t,!0),a(n),o)try{return s(e,t,n)}catch(e){}if("get"in n||"set"in n)throw TypeError("Accessors not supported");return"value"in n&&(e[t]=n.value),e}},"9cd3":function(e,t,n){e.exports=n("5ab9")},"9e57":function(e,t){e.exports=["constructor","hasOwnProperty","isPrototypeOf","propertyIsEnumerable","toLocaleString","toString","valueOf"]},"9e81":function(e,t,n){var r=n("5692");e.exports=r("native-function-to-string",Function.toString)},a016:function(e,t,n){var r=n("b323"),o=n("9e57");e.exports=Object.keys||function(e){return r(e,o)}},a06f:function(e,t,n){e.exports=n("74e7")},a0e5:function(e,t,n){var r=n("06fa"),o=/#|\.prototype\./,a=function(e,t){var n=s[i(e)];return n==u||n!=c&&("function"==typeof t?r(t):!!t)},i=a.normalize=function(e){return String(e).replace(o,".").toLowerCase()},s=a.data={},c=a.NATIVE="N",u=a.POLYFILL="P";e.exports=a},a15b:function(e,t,n){"use strict";var r=n("23e7"),o=n("44ad"),a=n("fc6a"),i=n("b301"),s=[].join,c=o!=Object,u=i("join",",");r({target:"Array",proto:!0,forced:c||u},{join:function(e){return s.call(a(this),void 0===e?",":e)}})},a169:function(e,t,n){var r=n("764b");e.exports=function(e){return r[e+"Prototype"]}},a421:function(e,t,n){var r=n("638c"),o=n("1875");e.exports=function(e){return r(o(e))}},a45d:function(e,t,n){"use strict";var r=n("c6ad"),o=n.n(r);o.a},a5eb:function(e,t,n){"use strict";var r=n("3ac6"),o=n("44ba").f,a=n("a0e5"),i=n("764b"),s=n("194a"),c=n("0273"),u=n("78e7"),l=function(e){var t=function(t,n,r){if(this instanceof e){switch(arguments.length){case 0:return new e;case 1:return new e(t);case 2:return new e(t,n)}return new e(t,n,r)}return e.apply(this,arguments)};return t.prototype=e.prototype,t};e.exports=function(e,t){var n,f,d,p,h,v,m,g,y,b=e.target,x=e.global,w=e.stat,D=e.proto,S=x?r:w?r[b]:(r[b]||{}).prototype,P=x?i:i[b]||(i[b]={}),k=P.prototype;for(p in t)n=a(x?p:b+(w?".":"#")+p,e.forced),f=!n&&S&&u(S,p),v=P[p],f&&(e.noTargetGet?(y=o(S,p),m=y&&y.value):m=S[p]),h=f&&m?m:t[p],f&&typeof v==typeof h||(g=e.bind&&f?s(h,r):e.wrap&&f?l(h):D&&"function"==typeof h?s(Function.call,h):h,(e.sham||h&&h.sham||v&&v.sham)&&c(g,"sham",!0),P[p]=g,D&&(d=b+"Prototype",u(i,d)||c(i,d,{}),i[d][p]=h,e.real&&k&&!k[p]&&c(k,p,h)))}},a691:function(e,t){var n=Math.ceil,r=Math.floor;e.exports=function(e){return isNaN(e=+e)?0:(e>0?r:n)(e)}},a9e3:function(e,t,n){"use strict";var r=n("83ab"),o=n("da84"),a=n("94ca"),i=n("6eeb"),s=n("5135"),c=n("c6b6"),u=n("7156"),l=n("c04e"),f=n("d039"),d=n("7c73"),p=n("241c").f,h=n("06cf").f,v=n("9bf2").f,m=n("58a8").trim,g=o.Number,y=g.prototype,b="Number"==c(d(y)),x=function(e){var t,n,r,o,a,i,s,c,u=l(e,!1);if("string"==typeof u&&u.length>2)if(u=m(u),43===(t=u.charCodeAt(0))||45===t){if(88===(n=u.charCodeAt(2))||120===n)return NaN}else if(48===t){switch(u.charCodeAt(1)){case 66:case 98:r=2,o=49;break;case 79:case 111:r=8,o=55;break;default:return+u}for(a=u.slice(2),i=a.length,s=0;s<i;s++)if((c=a.charCodeAt(s))<48||c>o)return NaN;return parseInt(a,r)}return+u};if(a("Number",!g(" 0o1")||!g("0b1")||g("+0x1"))){for(var w,D=function(e){var t=arguments.length<1?0:e,n=this;return n instanceof D&&(b?f(function(){y.valueOf.call(n)}):"Number"!=c(n))?u(new g(x(t)),n,D):x(t)},S=r?p(g):"MAX_VALUE,MIN_VALUE,NaN,NEGATIVE_INFINITY,POSITIVE_INFINITY,EPSILON,isFinite,isInteger,isNaN,isSafeInteger,MAX_SAFE_INTEGER,MIN_SAFE_INTEGER,parseFloat,parseInt,isInteger".split(","),P=0;S.length>P;P++)s(g,w=S[P])&&!s(D,w)&&v(D,w,h(g,w));D.prototype=y,y.constructor=D,i(o,"Number",D)}},ab85:function(e,t,n){var r=n("d659");e.exports=r("native-function-to-string",Function.toString)},ad6d:function(e,t,n){"use strict";var r=n("825a");e.exports=function(){var e=r(this),t="";return e.global&&(t+="g"),e.ignoreCase&&(t+="i"),e.multiline&&(t+="m"),e.dotAll&&(t+="s"),e.unicode&&(t+="u"),e.sticky&&(t+="y"),t}},b2ed:function(e,t,n){var r=n("d659"),o=n("3e80"),a=r("keys");e.exports=function(e){return a[e]||(a[e]=o(e))}},b301:function(e,t,n){"use strict";var r=n("d039");e.exports=function(e,t){var n=[][e];return!n||!r(function(){n.call(null,t||function(){throw 1},1)})}},b323:function(e,t,n){var r=n("78e7"),o=n("a421"),a=n("6386").indexOf,i=n("6e9a");e.exports=function(e,t){var n,s=o(e),c=0,u=[];for(n in s)!r(i,n)&&r(s,n)&&u.push(n);for(;t.length>c;)r(s,n=t[c++])&&(~a(u,n)||u.push(n));return u}},b39a:function(e,t,n){var r=n("d066");e.exports=r("navigator","userAgent")||""},b622:function(e,t,n){var r=n("da84"),o=n("5692"),a=n("5135"),i=n("90e3"),s=n("4930"),c=n("fdbf"),u=o("wks"),l=r.Symbol,f=c?l:i;e.exports=function(e){return a(u,e)||(s&&a(l,e)?u[e]=l[e]:u[e]=f("Symbol."+e)),u[e]}},b64b:function(e,t,n){var r=n("23e7"),o=n("7b0b"),a=n("df75");r({target:"Object",stat:!0,forced:n("d039")(function(){a(1)})},{keys:function(e){return a(o(e))}})},b727:function(e,t,n){var r=n("f8c2"),o=n("44ad"),a=n("7b0b"),i=n("50c4"),s=n("65f0"),c=[].push,u=function(e){var t=1==e,n=2==e,u=3==e,l=4==e,f=6==e,d=5==e||f;return function(p,h,v,m){for(var g,y,b=a(p),x=o(b),w=r(h,v,3),D=i(x.length),S=0,P=m||s,k=t?P(p,D):n?P(p,0):void 0;D>S;S++)if((d||S in x)&&(g=x[S],y=w(g,S,b),e))if(t)k[S]=y;else if(y)switch(e){case 3:return!0;case 5:return g;case 6:return S;case 2:c.call(k,g)}else if(l)return!1;return f?-1:u||l?l:k}};e.exports={forEach:u(0),map:u(1),filter:u(2),some:u(3),every:u(4),find:u(5),findIndex:u(6)}},bb83:function(e,t,n){"use strict";var r,o,a,i=n("5779"),s=n("0273"),c=n("78e7"),u=n("0363"),l=n("7042"),f=u("iterator"),d=!1,p=function(){return this};[].keys&&(a=[].keys(),"next"in a?(o=i(i(a)))!==Object.prototype&&(r=o):d=!0),void 0==r&&(r={}),l||c(r,f)||s(r,f,p),e.exports={IteratorPrototype:r,BUGGY_SAFARI_ITERATORS:d}},bc59:function(e,t,n){n("3e47"),n("484e");var r=n("764b");e.exports=r.Array.from},c04e:function(e,t,n){var r=n("861d");e.exports=function(e,t){if(!r(e))return e;var n,o;if(t&&"function"==typeof(n=e.toString)&&!r(o=n.call(e)))return o;if("function"==typeof(n=e.valueOf)&&!r(o=n.call(e)))return o;if(!t&&"function"==typeof(n=e.toString)&&!r(o=n.call(e)))return o;throw TypeError("Can't convert object to primitive value")}},c1b2:function(e,t,n){var r=n("06fa");e.exports=!r(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},c230:function(e,t,n){var r=n("c1b2"),o=n("4180"),a=n("6f8d"),i=n("a016");e.exports=r?Object.defineProperties:function(e,t){a(e);for(var n,r=i(t),s=r.length,c=0;s>c;)o.f(e,n=r[c++],t[n]);return e}},c23c:function(e,t,n){t=e.exports=n("24fb")(!1),t.push([e.i,'.cv-wrapper{display:flex;flex-direction:column;flex-grow:1;height:100%;min-height:100%;max-height:100%;overflow-x:hidden;overflow-y:hidden}.cv-wrapper,.cv-wrapper div{box-sizing:border-box;line-height:1em;font-size:1em}.cv-header-days{flex-grow:0;flex-basis:auto;border-width:0 0 0 1px}.cv-header-day,.cv-header-days{display:flex;flex-shrink:0;flex-flow:row nowrap}.cv-header-day{flex-grow:1;flex-basis:0;align-items:center;justify-content:center;text-align:center;border-width:1px 1px 0 0}.cv-weeks{flex-shrink:1;flex-basis:auto;flex-flow:column nowrap;border-width:0 0 1px 1px}.cv-week,.cv-weeks{display:flex;flex-grow:1;overflow-y:auto;-ms-overflow-style:none}.cv-week{flex-flow:row nowrap;min-height:3em;border-width:0;position:relative;width:100%}.cv-day,.cv-week{flex-shrink:0;flex-basis:0;direction:ltr}.cv-day{display:flex;flex-grow:1;position:relative;position:-webkit-sticky;position:sticky;top:0;border-width:1px 1px 0 0}.cv-day,_:-ms-lang(x){position:relative}/ .cv-day-number{position:absolute;right:0}.cv-event{position:absolute;white-space:nowrap;overflow:hidden;background-color:#f7f7f7;border-width:1px;direction:ltr}.cv-wrapper.wrap-event-title-on-hover .cv-event:hover{white-space:normal;z-index:1}.cv-day,.cv-event,.cv-header-day,.cv-header-days,.cv-week,.cv-weeks{border-style:solid;border-color:#ddd}.cv-event .endTime:before{content:"-"}.cv-day-number,.cv-event,.cv-header-day{padding:.2em}.cv-day-number:before{margin-right:.5em}.cv-event.offset0{left:0}.cv-event.offset1{left:14.28571%}.cv-event.offset2{left:28.57143%}.cv-event.offset3{left:42.85714%}.cv-event.offset4{left:57.14286%}.cv-event.offset5{left:71.42857%}.cv-event.offset6{left:85.71429%}.cv-event.span1{width:calc(14.28571% - .05em)}.cv-event.span2{width:calc(28.57143% - .05em)}.cv-event.span3{width:calc(42.85714% - .05em);text-align:center}.cv-event.span4{width:calc(57.14286% - .05em);text-align:center}.cv-event.span5{width:calc(71.42857% - .05em);text-align:center}.cv-event.span6{width:calc(85.71429% - .05em);text-align:center}.cv-event.span7{width:calc(100% - .05em);text-align:center}.cv-week::-webkit-scrollbar,.cv-weeks::-webkit-scrollbar{width:0;background:transparent}',""])},c430:function(e,t){e.exports=!1},c44e:function(e,t){e.exports=function(){}},c6ad:function(e,t,n){var r=n("c23c");"string"==typeof r&&(r=[[e.i,r,""]]),r.locals&&(e.exports=r.locals);var o=n("499e").default;o("78370484",r,!0,{sourceMap:!1,shadowMode:!1})},c6b6:function(e,t){var n={}.toString;e.exports=function(e){return n.call(e).slice(8,-1)}},c6cd:function(e,t,n){var r=n("da84"),o=n("ce4e"),a=r["__core-js_shared__"]||o("__core-js_shared__",{});e.exports=a},c8ba:function(e,t){var n;n=function(){return this}();try{n=n||new Function("return this")()}catch(e){"object"==typeof window&&(n=window)}e.exports=n},ca84:function(e,t,n){var r=n("5135"),o=n("fc6a"),a=n("4d64").indexOf,i=n("d012");e.exports=function(e,t){var n,s=o(e),c=0,u=[];for(n in s)!r(i,n)&&r(s,n)&&u.push(n);for(;t.length>c;)r(s,n=t[c++])&&(~a(u,n)||u.push(n));return u}},cb29:function(e,t,n){var r=n("23e7"),o=n("81d5"),a=n("44d2");r({target:"Array",proto:!0},{fill:o}),a("fill")},cbd0:function(e,t,n){var r=n("1561"),o=n("1875"),a=function(e){return function(t,n){var a,i,s=String(o(t)),c=r(n),u=s.length;return c<0||c>=u?e?"":void 0:(a=s.charCodeAt(c),a<55296||a>56319||c+1===u||(i=s.charCodeAt(c+1))<56320||i>57343?e?s.charAt(c):a:e?s.slice(c,c+2):i-56320+(a-55296<<10)+65536)}};e.exports={codeAt:a(!1),charAt:a(!0)}},cc12:function(e,t,n){var r=n("da84"),o=n("861d"),a=r.document,i=o(a)&&o(a.createElement);e.exports=function(e){return i?a.createElement(e):{}}},cc94:function(e,t){e.exports=function(e){if("function"!=typeof e)throw TypeError(String(e)+" is not a function");return e}},ce4e:function(e,t,n){var r=n("da84"),o=n("9112");e.exports=function(e,t){try{o(r,e,t)}catch(n){r[e]=t}return t}},d012:function(e,t){e.exports={}},d039:function(e,t){e.exports=function(e){try{return!!e()}catch(e){return!0}}},d066:function(e,t,n){var r=n("428f"),o=n("da84"),a=function(e){return"function"==typeof e?e:void 0};e.exports=function(e,t){return arguments.length<2?a(r[e])||a(o[e]):r[e]&&r[e][t]||o[e]&&o[e][t]}},d1e7:function(e,t,n){"use strict";var r={}.propertyIsEnumerable,o=Object.getOwnPropertyDescriptor,a=o&&!r.call({1:2},1);t.f=a?function(e){var t=o(this,e);return!!t&&t.enumerable}:r},d2bb:function(e,t,n){var r=n("825a"),o=n("3bbe");e.exports=Object.setPrototypeOf||("__proto__"in{}?function(){var e,t=!1,n={};try{e=Object.getOwnPropertyDescriptor(Object.prototype,"__proto__").set,e.call(n,[]),t=n instanceof Array}catch(e){}return function(n,a){return r(n),o(a),t?e.call(n,a):n.__proto__=a,n}}():void 0)},d63b:function(e,t,n){var r=n("0363"),o=r("toStringTag"),a={};a[o]="z",e.exports="[object z]"===String(a)},d659:function(e,t,n){var r=n("7042"),o=n("7685");(e.exports=function(e,t){return o[e]||(o[e]=void 0!==t?t:{})})("versions",[]).push({version:"3.4.2",mode:r?"pure":"global",copyright:"© 2019 Denis Pushkarev (zloirock.ru)"})},d666:function(e,t,n){var r=n("0273");e.exports=function(e,t,n,o){o&&o.enumerable?e[t]=n:r(e,t,n)}},d784:function(e,t,n){"use strict";var r=n("9112"),o=n("6eeb"),a=n("d039"),i=n("b622"),s=n("9263"),c=i("species"),u=!a(function(){var e=/./;return e.exec=function(){var e=[];return e.groups={a:"7"},e},"7"!=="".replace(e,"$<a>")}),l=!a(function(){var e=/(?:)/,t=e.exec;e.exec=function(){return t.apply(this,arguments)};var n="ab".split(e);return 2!==n.length||"a"!==n[0]||"b"!==n[1]});e.exports=function(e,t,n,f){var d=i(e),p=!a(function(){var t={};return t[d]=function(){return 7},7!=""[e](t)}),h=p&&!a(function(){var t=!1,n=/a/;return"split"===e&&(n={},n.constructor={},n.constructor[c]=function(){return n},n.flags="",n[d]=/./[d]),n.exec=function(){return t=!0,null},n[d](""),!t});if(!p||!h||"replace"===e&&!u||"split"===e&&!l){var v=/./[d],m=n(d,""[e],function(e,t,n,r,o){return t.exec===s?p&&!o?{done:!0,value:v.call(t,n,r)}:{done:!0,value:e.call(n,t,r)}:{done:!1}}),g=m[0],y=m[1];o(String.prototype,e,g),o(RegExp.prototype,d,2==t?function(e,t){return y.call(e,this,t)}:function(e){return y.call(e,this)}),f&&r(RegExp.prototype[d],"sham",!0)}}},d81d:function(e,t,n){"use strict";var r=n("23e7"),o=n("b727").map;r({target:"Array",proto:!0,forced:!n("1dde")("map")},{map:function(e){return o(this,e,arguments.length>1?arguments[1]:void 0)}})},da84:function(e,t,n){(function(t){var n=function(e){return e&&e.Math==Math&&e};e.exports=n("object"==typeof globalThis&&globalThis)||n("object"==typeof window&&window)||n("object"==typeof self&&self)||n("object"==typeof t&&t)||Function("return this")()}).call(this,n("c8ba"))},df75:function(e,t,n){var r=n("ca84"),o=n("7839");e.exports=Object.keys||function(e){return r(e,o)}},dfdb:function(e,t){e.exports=function(e){return"object"==typeof e?null!==e:"function"==typeof e}},e412:function(e,t,n){var r=n("46c8");"string"==typeof r&&(r=[[e.i,r,""]]),r.locals&&(e.exports=r.locals);var o=n("499e").default;o("2953b5c4",r,!0,{sourceMap:!1,shadowMode:!1})},e519:function(e,t,n){n("a5eb")({target:"Array",stat:!0},{isArray:n("6220")})},e893:function(e,t,n){var r=n("5135"),o=n("56ef"),a=n("06cf"),i=n("9bf2");e.exports=function(e,t){for(var n=o(t),s=i.f,c=a.f,u=0;u<n.length;u++){var l=n[u];r(e,l)||s(e,l,c(t,l))}}},e8b5:function(e,t,n){var r=n("c6b6");e.exports=Array.isArray||function(e){return"Array"==r(e)}},e9d9:function(e,t,n){"use strict";var r=n("cc94"),o=n("dfdb"),a=[].slice,i={},s=function(e,t,n){if(!(t in i)){for(var r=[],o=0;o<t;o++)r[o]="a["+o+"]";i[t]=Function("C,a","return new C("+r.join(",")+")")}return i[t](e,n)};e.exports=Function.bind||function(e){var t=r(this),n=a.call(arguments,1),i=function(){var r=n.concat(a.call(arguments));return this instanceof i?s(t,r.length,r):t.apply(e,r)};return o(t.prototype)&&(i.prototype=t.prototype),i}},ec62:function(e,t,n){var r=n("6f8d"),o=n("2f97");e.exports=Object.setPrototypeOf||("__proto__"in{}?function(){var e,t=!1,n={};try{e=Object.getOwnPropertyDescriptor(Object.prototype,"__proto__").set,e.call(n,[]),t=n instanceof Array}catch(e){}return function(n,a){return r(n),o(a),t?e.call(n,a):n.__proto__=a,n}}():void 0)},edbd:function(e,t,n){var r=n("9883");e.exports=r("document","documentElement")},f575:function(e,t,n){"use strict";var r=n("bb83").IteratorPrototype,o=n("4896"),a=n("2c6c"),i=n("2874"),s=n("7463"),c=function(){return this};e.exports=function(e,t,n){var u=t+" Iterator";return e.prototype=o(r,{next:a(1,n)}),i(e,u,!1,!0),s[u]=c,e}},f5fb:function(e,t,n){var r=n("06fa");e.exports=!r(function(){function e(){}return e.prototype.constructor=null,Object.getPrototypeOf(new e)!==e.prototype})},f6fd:function(e,t){!function(e){var t=e.getElementsByTagName("script");"currentScript"in e||Object.defineProperty(e,"currentScript",{get:function(){try{throw new Error}catch(r){var e,n=(/.*at [^\(]*\((.*):.+:.+\)$/gi.exec(r.stack)||[!1])[1];for(e in t)if(t[e].src==n||"interactive"==t[e].readyState)return t[e];return null}}})}(document)},f748:function(e,t){e.exports=Math.sign||function(e){return 0==(e=+e)||e!=e?e:e<0?-1:1}},f772:function(e,t,n){var r=n("5692"),o=n("90e3"),a=r("keys");e.exports=function(e){return a[e]||(a[e]=o(e))}},f846:function(e,t,n){e.exports=n("41eb")},f8b4:function(e,t,n){var r=n("a5eb"),o=n("9883"),a=n("cc94"),i=n("6f8d"),s=n("dfdb"),c=n("4896"),u=n("e9d9"),l=n("06fa"),f=o("Reflect","construct"),d=l(function(){function e(){}return!(f(function(){},[],e)instanceof e)}),p=!l(function(){f(function(){})}),h=d||p;r({target:"Reflect",stat:!0,forced:h,sham:h},{construct:function(e,t){a(e),i(t);var n=arguments.length<3?e:a(arguments[2]);if(p&&!d)return f(e,t,n);if(e==n){switch(t.length){case 0:return new e;case 1:return new e(t[0]);case 2:return new e(t[0],t[1]);case 3:return new e(t[0],t[1],t[2]);case 4:return new e(t[0],t[1],t[2],t[3])}var r=[null];return r.push.apply(r,t),new(u.apply(e,r))}var o=n.prototype,l=c(s(o)?o:Object.prototype),h=Function.apply.call(e,l,t);return s(h)?h:l}})},f8c2:function(e,t,n){var r=n("1c0b");e.exports=function(e,t,n){if(r(e),void 0===t)return e;switch(n){case 0:return function(){return e.call(t)};case 1:return function(n){return e.call(t,n)};case 2:return function(n,r){return e.call(t,n,r)};case 3:return function(n,r,o){return e.call(t,n,r,o)}}return function(){return e.apply(t,arguments)}}},faaa:function(e,t,n){var r=n("6f8d");e.exports=function(e,t,n,o){try{return o?t(r(n)[0],n[1]):t(n)}catch(t){var a=e.return;throw void 0!==a&&r(a.call(e)),t}}},fae3:function(e,t,n){"use strict";function r(e){if(v()(e)){for(var t=0,n=new Array(e.length);t<e.length;t++)n[t]=e[t];return n}}function o(e){if(b()(Object(e))||"[object Arguments]"===Object.prototype.toString.call(e))return g()(e)}function a(){throw new TypeError("Invalid attempt to spread non-iterable instance")}function i(e){return r(e)||o(e)||a()}function s(e,t){return(s=k.a||function(e,t){return e.__proto__=t,e})(e,t)}function c(){if("undefined"==typeof Reflect||!S.a)return!1;if(S.a.sham)return!1;if("function"==typeof Proxy)return!0;try{return Date.prototype.toString.call(S()(Date,[],function(){})),!0}catch(e){return!1}}function u(e,t,n){return u=c()?S.a:function(e,t,n){var r=[null];r.push.apply(r,t);var o=w()(Function).apply(e,r),a=new o;return n&&s(a,n.prototype),a},u.apply(null,arguments)}function l(e,t,n,r,o,a,i,s){var c="function"==typeof e?e.options:e;t&&(c.render=t,c.staticRenderFns=n,c._compiled=!0),r&&(c.functional=!0),a&&(c._scopeId="data-v-"+a);var u;if(i?(u=function(e){e=e||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext,e||"undefined"==typeof __VUE_SSR_CONTEXT__||(e=__VUE_SSR_CONTEXT__),o&&o.call(this,e),e&&e._registeredComponents&&e._registeredComponents.add(i)},c._ssrRegister=u):o&&(u=s?function(){o.call(this,this.$root.$options.shadowRoot)}:o),u)if(c.functional){c._injectStyles=u;var l=c.render;c.render=function(e,t){return u.call(t),l(e,t)}}else{var f=c.beforeCreate;c.beforeCreate=f?[].concat(f,u):[u]}return{exports:e,options:c}}if(n.r(t),"undefined"!=typeof window){n("f6fd");var f;(f=window.document.currentScript)&&(f=f.src.match(/(.+\/)[^\/]+\.js(\?.*)?$/))&&(n.p=f[1])}var d=function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{class:["cv-wrapper","locale-"+e.languageCode(e.displayLocale),"locale-"+e.displayLocale,"y"+e.periodStart.getFullYear(),"m"+e.paddedMonth(e.periodStart),"period-"+e.displayPeriodUom,"periodCount-"+e.displayPeriodCount,{past:e.isPastMonth(e.periodStart),future:e.isFutureMonth(e.periodStart),noIntl:!e.supportsIntl}]},[e._t("header",null,{headerProps:e.headerProps}),n("div",{staticClass:"cv-header-days"},[e._l(e.weekdayNames,function(t,r){return[e._t("dayHeader",[n("div",{key:e.getColumnDOWClass(r),staticClass:"cv-header-day",class:e.getColumnDOWClass(r)},[e._v(" "+e._s(t)+" ")])],{index:e.getColumnDOWClass(r),label:t})]})],2),n("div",{staticClass:"cv-weeks"},e._l(e.weeksOfPeriod,function(t,r){return n("div",{key:r+"-week",class:["cv-week","week"+(r+1),"ws"+e.isoYearMonthDay(t)]},[e._l(e.daysOfWeek(t),function(t,r){return n("div",{key:e.getColumnDOWClass(r),class:["cv-day",e.getColumnDOWClass(r),"d"+e.isoYearMonthDay(t),"d"+e.isoMonthDay(t),"d"+e.paddedDay(t),"instance"+e.instanceOfMonth(t),{today:e.isSameDate(t,e.today()),outsideOfMonth:!e.isSameMonth(t,e.defaultedShowDate),past:e.isInPast(t),future:e.isInFuture(t),last:e.isLastDayOfMonth(t),lastInstance:e.isLastInstanceOfMonth(t)}].concat(e.dateClasses&&e.dateClasses[e.isoYearMonthDay(t)]||null),on:{click:function(n){return e.onClickDay(t)},drop:function(n){return n.preventDefault(),e.onDrop(t,n)},dragover:function(n){return n.preventDefault(),e.onDragOver(t)},dragenter:function(n){return n.preventDefault(),e.onDragEnter(t,n)},dragleave:function(n){return n.preventDefault(),e.onDragLeave(t,n)}}},[n("div",{staticClass:"cv-day-number"},[e._v(e._s(t.getDate()))]),e._t("dayContent",null,{day:t})],2)}),e._l(e.getWeekItems(t),function(r){return[e._t("event",[n("div",{key:r.id,staticClass:"cv-event",class:r.classes,style:"top:"+e.getItemTop(r)+";"+r.originalEvent.style,attrs:{draggable:e.enableDragDrop,title:r.title},domProps:{innerHTML:e._s(e.getItemTitle(r))},on:{dragstart:function(t){return e.onDragStart(r,t)},mouseenter:function(t){return e.onMouseEnterItem(r,t)},mouseleave:function(t){return e.onMouseLeaveItem(r,t)},click:function(t){return t.stopPropagation(),e.onClickItem(r,t)}}})],{event:r,weekStartDate:t,top:e.getItemTop(r)})]})],2)}),0)],2)},p=[],h=(n("99af"),n("cb29"),n("4de4"),n("d81d"),n("2af1"),n("a9e3"),n("1316")),v=n.n(h),m=n("a06f"),g=n.n(m),y=n("2dc0"),b=n.n(y),x=(n("7db0"),n("a15b"),n("fb6a"),n("b64b"),n("1276"),n("88ff")),w=n.n(x),D=n("f846"),S=n.n(D),P=n("0b11"),k=n.n(P),I={methods:{today:function(){return this.dateOnly(new Date)},beginningOfPeriod:function(e,t,n){switch(t){case"year":return new Date(e.getFullYear(),0);case"month":return new Date(e.getFullYear(),e.getMonth());case"week":return this.beginningOfWeek(e,n);default:return null}},daysOfWeek:function(e){var t=this;return Array(7).fill().map(function(n,r){return t.addDays(e,r)})},addDays:function(e,t){return new Date(e.getFullYear(),e.getMonth(),e.getDate()+t,e.getHours(),e.getMinutes(),e.getSeconds())},beginningOfWeek:function(e,t){return this.addDays(e,(t-e.getDay()-7)%-7)},endOfWeek:function(e,t){return this.addDays(this.beginningOfWeek(e,t),7)},beginningOfMonth:function(e){return new Date(e.getFullYear(),e.getMonth())},instanceOfMonth:function(e){return Math.ceil(e.getDate()/7)},incrementPeriod:function(e,t,n){return new Date(e.getFullYear()+("year"==t?n:0),e.getMonth()+("month"==t?n:0),e.getDate()+("week"==t?7*n:0))},paddedMonth:function(e){return("0"+String(e.getMonth()+1)).slice(-2)},paddedDay:function(e){return("0"+String(e.getDate())).slice(-2)},isoYearMonth:function(e){return e.getFullYear()+"-"+this.paddedMonth(e)},isoYearMonthDay:function(e){return this.isoYearMonth(e)+"-"+this.paddedDay(e)},isoMonthDay:function(e){return this.paddedMonth(e)+"-"+this.paddedDay(e)},formattedTime:function(e,t,n){if(0===e.getHours()&&0===e.getMinutes()&&0===e.getSeconds())return"";if(!this.supportsIntl()){var r=6e4*(new Date).getTimezoneOffset();return new Date(e-r).toISOString().slice(11,16)}return e.toLocaleTimeString(t,n)},formattedPeriod:function(e,t,n,r){var o=e.getFullYear()===t.getFullYear(),a=this.isSameMonth(e,t),i="year"===n,s="month"===n,c=!i&&!s,u=[];return u.push(r[e.getMonth()]),c&&(u.push(" "),u.push(e.getDate())),o||(u.push(c?", ":" "),u.push(e.getFullYear())),a&&o?c&&u.push(" – "):(u.push(" – "),a||u.push(r[t.getMonth()]),c&&u.push(" ")),c?(u.push(t.getDate()),u.push(", ")):u.push(" "),u.push(t.getFullYear()),u.join("")},dayDiff:function(e,t){var n=new Date(t.getFullYear(),t.getMonth(),t.getDate()),r=new Date(e.getFullYear(),e.getMonth(),e.getDate());return n.setUTCHours(0,0,0,0),r.setUTCHours(0,0,0,0),(n-r)/864e5},isSameDate:function(e,t){return 0===this.dayDiff(e,t)},isSameDateTime:function(e,t){return e.getTime()===t.getTime()},isSameMonth:function(e,t){return e.getFullYear()===t.getFullYear()&&e.getMonth()===t.getMonth()},isPastMonth:function(e){return this.beginningOfMonth(e)<this.beginningOfMonth(this.today())},isFutureMonth:function(e){return this.beginningOfMonth(e)>this.beginningOfMonth(this.today())},isInFuture:function(e){return this.dateOnly(e)>this.today()},isInPast:function(e){return this.dateOnly(e)<this.today()},isLastInstanceOfMonth:function(e){return e.getMonth()!==this.addDays(e,7).getMonth()},isLastDayOfMonth:function(e){return e.getMonth()!==this.addDays(e,1).getMonth()},isSelectedDay:function(e){var t=this,n=Object.keys(this.dateClasses).find(function(n){return t.isSameDate(t.fromIsoStringToLocalDate(n),e)});return n?this.dateClasses[n]:void 0},fromIsoStringToLocalDate:function(e){var t=e.split(/\D/).map(function(e){return Number(e)});return t[1]--,u(Date,i(t))},toLocalDate:function(e){return"string"==typeof e?this.fromIsoStringToLocalDate(e):new Date(e)},dateOnly:function(e){var t=new Date(e);return t.setHours(0,0,0,0),t},languageCode:function(e){return e.substring(0,2)},supportsIntl:function(){return"undefined"!=typeof Intl},getFormattedMonthNames:function(e,t){if(!this.supportsIntl())return Array(12).fill("");var n=new Intl.DateTimeFormat(e,{month:t});return Array(12).fill().map(function(e,t){return n.format(new Date(2017,t,1))})},getFormattedWeekdayNames:function(e,t,n){if(!this.supportsIntl())return Array(7).fill("");var r=new Intl.DateTimeFormat(e,{weekday:t});return Array(7).fill().map(function(e,t){return r.format(new Date(2017,0,(t+1+n)%7))})},getDefaultBrowserLocale:function(){return"undefined"==typeof navigator?"unk":(navigator.languages&&navigator.languages.length?navigator.languages[0]:navigator.language||navigator.browserLanguage).toLowerCase()},normalizeEvent:function(e,t){var n=e.classes?Array.isArray(e.classes)?i(e.classes):[e.classes]:[];return t&&n.push("isHovered"),{originalEvent:e,startDate:this.toLocalDate(e.startDate),endDate:this.toLocalDate(e.endDate||e.startDate),classes:n,title:e.title||"Untitled",id:e.id}}}},M={name:"CalendarView",mixins:[I],props:{showDate:{type:Date,default:void 0},displayPeriodUom:{type:String,default:"month"},displayPeriodCount:{type:Number,default:1},locale:{type:String,default:void 0},monthNameFormat:{type:String,default:"long"},weekdayNameFormat:{type:String,default:"short"},showEventTimes:{type:Boolean,default:!1},timeFormatOptions:{type:Object,default:function(){}},disablePast:{type:Boolean,default:!1},disableFuture:{type:Boolean,default:!1},enableDragDrop:{type:Boolean,default:!1},startingDayOfWeek:{type:Number,default:0},events:{type:Array,default:function(){return[]}},dateClasses:{type:Object,default:function(){}},eventTop:{type:String,default:"1.4em"},eventContentHeight:{type:String,default:"1.4em"},eventBorderHeight:{type:String,default:"2px"},periodChangedCallback:{type:Function,default:void 0},currentPeriodLabel:{type:String,default:""},currentPeriodLabelIcons:{type:String,default:"⇤-⇥"},doEmitItemMouseEvents:{type:Boolean,default:!1}},data:function(){return{currentDragItem:null,currentHoveredItemId:void 0}},computed:{displayLocale:function(){return this.locale||this.getDefaultBrowserLocale()},defaultedShowDate:function(){return this.showDate?this.dateOnly(this.showDate):this.today()},periodStart:function(){return this.beginningOfPeriod(this.defaultedShowDate,this.displayPeriodUom,this.startingDayOfWeek)},periodEnd:function(){return this.addDays(this.incrementPeriod(this.periodStart,this.displayPeriodUom,this.displayPeriodCount),-1)},displayFirstDate:function(){return this.beginningOfWeek(this.periodStart,this.startingDayOfWeek)},displayLastDate:function(){return this.endOfWeek(this.periodEnd,this.startingDayOfWeek)},weeksOfPeriod:function(){var e=this,t=Math.floor((this.dayDiff(this.displayFirstDate,this.displayLastDate)+1)/7);return Array(t).fill().map(function(t,n){return e.addDays(e.displayFirstDate,7*n)})},monthNames:function(){return this.getFormattedMonthNames(this.displayLocale,this.monthNameFormat)},weekdayNames:function(){return this.getFormattedWeekdayNames(this.displayLocale,this.weekdayNameFormat,this.startingDayOfWeek)},fixedItems:function(){var e=this;return this.events.map(function(t){return e.normalizeEvent(t,e.currentHoveredItemId&&t.id===e.currentHoveredItemId)})},periodLabel:function(){return this.formattedPeriod(this.periodStart,this.periodEnd,this.displayPeriodUom,this.monthNames)},currentPeriodStart:function(){return this.beginningOfPeriod(this.today(),this.displayPeriodUom,this.startingDayOfWeek)},currentPeriodEnd:function(){return this.addDays(this.incrementPeriod(this.currentPeriodStart,this.displayPeriodUom,this.displayPeriodCount),-1)},currentPeriodLabelFinal:function(){var e=this.currentPeriodStart,t=this.periodStart;return this.currentPeriodLabel?"icons"===this.currentPeriodLabel?this.currentPeriodLabelIcons[Math.sign(e-t)+1]:this.currentPeriodLabel:this.formattedPeriod(e,this.currentPeriodEnd,this.displayPeriodUom,this.monthNames)},headerProps:function(){return{previousYear:this.getIncrementedPeriod(-12),previousPeriod:this.getIncrementedPeriod(-1),nextPeriod:this.getIncrementedPeriod(1),previousFullPeriod:this.getIncrementedPeriod(-this.displayPeriodCount),nextFullPeriod:this.getIncrementedPeriod(this.displayPeriodCount),nextYear:this.getIncrementedPeriod(12),currentPeriod:this.currentPeriodStart,currentPeriodLabel:this.currentPeriodLabelFinal,periodStart:this.periodStart,periodEnd:this.periodEnd,displayLocale:this.displayLocale,displayFirstDate:this.displayFirstDate,displayLastDate:this.displayLastDate,monthNames:this.monthNames,fixedEvents:this.fixedItems,periodLabel:this.periodLabel}},periodRange:function(){return{periodStart:this.periodStart,periodEnd:this.periodEnd,displayFirstDate:this.displayFirstDate,displayLastDate:this.displayLastDate}}},watch:{periodRange:{immediate:!0,handler:function(e){this.periodChangedCallback&&(this.$emit("period-changed"),this.periodChangedCallback(e,"watch"))}}},methods:{onClickDay:function(e,t){this.disablePast&&this.isInPast(e)||this.disableFuture&&this.isInFuture(e)||this.$emit("click-date",e,t)},onClickItem:function(e,t){this.$emit("click-event",e,t)},getColumnDOWClass:function(e){return"dow"+(e+this.startingDayOfWeek)%7},getIncrementedPeriod:function(e){var t=this.incrementPeriod(this.periodStart,this.displayPeriodUom,e),n=this.incrementPeriod(t,this.displayPeriodUom,this.displayPeriodCount);return this.disablePast&&n<=this.today()?null:this.disableFuture&&t>this.today()?null:t},onMouseEnterItem:function(e,t){this.currentHoveredItemId=e.id,this.doEmitItemMouseEvents&&this.$emit("item-mouseenter",e,t)},onMouseLeaveItem:function(e,t){this.currentHoveredItemId=void 0,this.doEmitItemMouseEvents&&this.$emit("item-mouseleave",e,t)},onDragStart:function(e,t){return!!this.enableDragDrop&&(this.currentDragItem=e,t.dataTransfer.setData("text","foo"),this.$emit("drag-start",e),!0)},handleDragEvent:function(e,t){return!!this.enableDragDrop&&(!(!this.currentDragItem&&!this.$scopedSlots.event)&&(this.$emit(e,this.currentDragItem,t),!0))},onDragOver:function(e){this.handleDragEvent("drag-over-date",e)},onDragEnter:function(e,t){this.handleDragEvent("drag-enter-date",e)&&t.target.classList.add("draghover")},onDragLeave:function(e,t){this.handleDragEvent("drag-leave-date",e)&&t.target.classList.remove("draghover")},onDrop:function(e,t){this.handleDragEvent("drop-on-date",e)&&t.target.classList.remove("draghover")},findAndSortItemsInWeek:function(e){var t=this;return this.fixedItems.filter(function(n){return n.startDate<t.addDays(e,7)&&n.endDate>=e},this).sort(function(e,t){return e.startDate<t.startDate?-1:t.startDate<e.startDate?1:e.endDate>t.endDate?-1:t.endDate>e.endDate?1:e.id<t.id?-1:1})},getWeekItems:function(e){for(var t=this.findAndSortItemsInWeek(e),n=[],r=[[],[],[],[],[],[],[]],o=0;o<t.length;o++){var a=Object.assign({},t[o],{classes:i(t[o].classes),eventRow:0}),s=a.startDate<e,c=s?0:this.dayDiff(e,a.startDate),u=Math.min(7-c,this.dayDiff(this.addDays(e,c),a.endDate)+1);s&&a.classes.push("continued"),this.dayDiff(e,a.endDate)>6&&a.classes.push("toBeContinued"),this.isInPast(a.endDate)&&a.classes.push("past"),a.originalEvent.url&&a.classes.push("hasUrl");for(var l=0;l<7;l++)if(l===c){for(var f=0;r[l][f];)f++;a.eventRow=f,r[l][f]=!0}else l<c+u&&(r[l][a.eventRow]=!0);a.classes.push("offset".concat(c)),a.classes.push("span".concat(u)),n.push(a)}return n},getFormattedTimeRange:function(e){var t=this.formattedTime(e.startDate,this.displayLocale,this.timeFormatOptions),n="";return this.isSameDateTime(e.startDate,e.endDate)||(n=this.formattedTime(e.endDate,this.displayLocale,this.timeFormatOptions)),(""!==t?'<span class="startTime">'.concat(t,"</span>"):"")+(""!==n?'<span class="endTime">'.concat(n,"</span>"):"")},getItemTitle:function(e){return this.showEventTimes?this.getFormattedTimeRange(e)+" "+e.title:e.title},getItemTop:function(e){var t=e.eventRow,n=this.eventContentHeight,r=this.eventBorderHeight;return"calc(".concat(this.eventTop," + ").concat(t,"*").concat(n," + ").concat(t,"*").concat(r,")")}}},C=M,A=(n("a45d"),l(C,d,p,!1,null,null,null)),O=A.exports,T=function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"cv-header"},[n("div",{staticClass:"cv-header-nav"},[n("button",{staticClass:"previousYear",attrs:{disabled:!e.headerProps.previousYear},on:{click:function(t){return t.preventDefault(),e.onInput(e.headerProps.previousYear)}}},[e._v(" << ")]),n("button",{staticClass:"previousPeriod",attrs:{disabled:!e.headerProps.previousPeriod},on:{click:function(t){return t.preventDefault(),e.onInput(e.headerProps.previousPeriod)}}},[e._v(" < ")]),n("button",{staticClass:"currentPeriod",on:{click:function(t){return t.preventDefault(),e.onInput(e.headerProps.currentPeriod)}}},[e._v(" "+e._s(e.headerProps.currentPeriodLabel)+" ")]),n("button",{staticClass:"nextPeriod",attrs:{disabled:!e.headerProps.nextPeriod},on:{click:function(t){return t.preventDefault(),e.onInput(e.headerProps.nextPeriod)}}},[e._v(" > ")]),n("button",{staticClass:"nextYear",attrs:{disabled:!e.headerProps.nextYear},on:{click:function(t){return t.preventDefault(),e.onInput(e.headerProps.nextYear)}}},[e._v(" >> ")])]),n("div",{staticClass:"periodLabel"},[e._t("label",[e._v(e._s(e.headerProps.periodLabel))])],2)])},_=[],E={name:"CalendarViewHeader",props:{headerProps:{type:Object,required:!0}},methods:{onInput:function(e){this.$emit("input",e)}}},F=E,L=(n("608f"),l(F,T,_,!1,null,null,null)),j=L.exports;n.d(t,"CalendarView",function(){return O}),n.d(t,"CalendarViewHeader",function(){return j}),n.d(t,"CalendarMathMixin",function(){return I})},fb6a:function(e,t,n){"use strict";var r=n("23e7"),o=n("861d"),a=n("e8b5"),i=n("23cb"),s=n("50c4"),c=n("fc6a"),u=n("8418"),l=n("1dde"),f=n("b622"),d=f("species"),p=[].slice,h=Math.max;r({target:"Array",proto:!0,forced:!l("slice")},{slice:function(e,t){var n,r,l,f=c(this),v=s(f.length),m=i(e,v),g=i(void 0===t?v:t,v);if(a(f)&&(n=f.constructor,"function"!=typeof n||n!==Array&&!a(n.prototype)?o(n)&&null===(n=n[d])&&(n=void 0):n=void 0,n===Array||void 0===n))return p.call(f,m,g);for(r=new(void 0===n?Array:n)(h(g-m,0)),l=0;m<g;m++,l++)m in f&&u(r,l,f[m]);return r.length=l,r}})},fc48:function(e,t){var n={}.toString;e.exports=function(e){return n.call(e).slice(8,-1)}},fc6a:function(e,t,n){var r=n("44ad"),o=n("1d80");e.exports=function(e){return r(o(e))}},fdbf:function(e,t,n){var r=n("4930");e.exports=r&&!Symbol.sham&&"symbol"==typeof Symbol()}})})},345:function(e,t){e.exports={render:function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("v-container",{staticClass:"ma-0 pa-0",attrs:{fluid:""}},[n("v-layout",{staticClass:"mx-0 px-0",attrs:{xs12:"",row:"",wrap:"","black--text":""}},[e.message.id?n("v-flex",{attrs:{sm12:"",md3:"",lg3:"",xl3:""}},[n("div",{class:e.messageClasses,style:e.messageStyle,attrs:{id:"up"}},[n("event-popup",{attrs:{message:e.message}})],1)]):e._e(),e._v(" "),n("v-flex",{attrs:{grow:""}},[n("div",{staticClass:"calendar-parent "},[n("div",{staticClass:"cv-header-nav"},[n("div",{staticClass:"control ma-0 caption"},[n("label",{staticClass:"mt-1 caption"},[e._v("Period:")]),e._v(" "),n("div",{staticClass:"select"},[n("select",{directives:[{name:"model",rawName:"v-model",value:e.displayPeriodUom,expression:"displayPeriodUom"}],on:{change:function(t){var n=Array.prototype.filter.call(t.target.options,function(e){return e.selected}).map(function(e){return"_value"in e?e._value:e.value});e.displayPeriodUom=t.target.multiple?n:n[0]}}},[n("option",[e._v("month")]),e._v(" "),n("option",[e._v("week")])])])])]),e._v(" "),n("div",{staticClass:"cv-header-nav",attrs:{hidden:""}},[n("div",{staticClass:"control ma-0 caption"},[n("label",{staticClass:"mt-1 caption"},[e._v("Starting day:")]),e._v(" "),n("div",{staticClass:"select "},[n("select",{directives:[{name:"model",rawName:"v-model",value:e.startingDayOfWeek,expression:"startingDayOfWeek"}],on:{change:function(t){var n=Array.prototype.filter.call(t.target.options,function(e){return e.selected}).map(function(e){return"_value"in e?e._value:e.value});e.startingDayOfWeek=t.target.multiple?n:n[0]}}},e._l(e.dayNames,function(t,r){return n("option",{key:r,domProps:{value:r}},[e._v(e._s(t))])}),0)])])]),e._v(" "),n("calendar-view",{class:e.themeClasses,attrs:{events:e.events,"show-date":e.showDate,"time-format-options":{hour:"numeric",minute:"2-digit"},"enable-drag-drop":!0,"disable-past":e.disablePast,"disable-future":e.disableFuture,"show-event-times":e.showEventTimes,"display-period-uom":e.displayPeriodUom,"display-period-count":e.displayPeriodCount,"starting-day-of-week":1,"period-changed-callback":e.periodChanged,"current-period-label":e.useTodayIcons?"icons":"","month-name-format":"short"},on:{"drop-on-date":e.onDrop,"click-date":e.onClickDay,"click-event":e.onClickEvent},scopedSlots:e._u([{key:"header",fn:function(t){var r=t.headerProps;return n("calendar-view-header",{attrs:{"header-props":r},on:{input:e.setShowDate}})}}])})],1)])],1)],1)},staticRenderFns:[]}},76:function(e,t,n){var r,o;n(330),r=n(332);var a=n(345);o=r=r||{},"object"!=typeof r.default&&"function"!=typeof r.default||(o=r=r.default),"function"==typeof o&&(o=o.options),o.render=a.render,o.staticRenderFns=a.staticRenderFns,o._scopeId="data-v-67ce77a2",e.exports=r}});
+webpackJsonp([7],{
+
+/***/ 234:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = {}
+
+/* script */
+__vue_exports__ = __webpack_require__(235)
+
+/* template */
+var __vue_template__ = __webpack_require__(236)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 235:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['crumps'],
+  data: function data() {
+    return {
+      crumpsShape: this.crumps,
+      divider: '&nbsp;&nbsp;/&nbsp;&nbsp;'
+    };
+  },
+  created: function created() {
+    if (this.$vuetify.breakpoint.xsOnly) {
+      var filters = this.$options.filters;
+      var crumpsShapeData = this.crumps;
+      crumpsShapeData.forEach(function (element) {
+        element.text = filters.shape(element.text, 36);
+      });
+      this.crumpsShape = crumpsShapeData;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ 236:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('v-layout', {
+    staticClass: "mx-0 my-0 py-0",
+    attrs: {
+      "row": "",
+      "wrap": ""
+    }
+  }, [_c('v-flex', {
+    staticClass: "mx-0 px-1 my-0 py-0",
+    attrs: {
+      "xs12": ""
+    }
+  }, _vm._l((_vm.crumpsShape), function(item, index) {
+    return _c('span', {
+      key: index
+    }, [(item.disabled) ? _c('span', {
+      staticClass: "caption grey--text text--darken-2 mx-0 px-0",
+      domProps: {
+        "innerHTML": _vm._s(item.text)
+      }
+    }) : (item.disableTranslated) ? _c('span', {
+      staticClass: "caption grey--text text--darken-2 mx-0 px-0"
+    }, [_vm._v("\n      " + _vm._s(_vm.$t(item.text)) + " " + _vm._s(item.textAdded) + "\n    ")]) : _c('router-link', {
+      staticClass: "body-1 blue--text text--darken-4 mx-0 px-0",
+      attrs: {
+        "to": {
+          name: item.href,
+          params: item.params
+        }
+      }
+    }, [_vm._v("\n      " + _vm._s(_vm.$t(item.text)) + "  " + _vm._s(item.textAdded) + "\n    ")]), _vm._v(" "), (index != _vm.crumpsShape.length - 1) ? _c('span', {
+      domProps: {
+        "innerHTML": _vm._s(_vm.divider)
+      }
+    }) : _vm._e()], 1)
+  }), 0)], 1)
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 331:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ([{
+  "entity_id": "2420",
+  "field_seminar_title_value": "Cohomology in algebra, geometry, physics and statistics",
+  "field_usualy_date_seminar_value": "every Wednesday at 11:30 AM",
+  "field_usualy_place_seminar_value": "Institute of Mathematics of ASCR, Žitná 25, Praha 1, konírna",
+  "field_chairmen_value": "Anton Galaev, Roman Golovko, Igor Khavkine, Alexei Kotov, Hong Van Le and Petr Somberg",
+  "text": "<br \/>\r\nIn this seminar we shall discuss topics concerning constructions and applications of cohomology theory in algebra, geometry, physics and statistics. In particular we shall discuss in first four seminars the relations between vertex algebras and foliations on manifolds, Gelfand-Fuks cohomology on singular spaces, cohomology of homotopy Lie algebras. The expositions should be accessible for all participants."
+}, {
+  "entity_id": "460",
+  "field_seminar_title_value": "Complexity seminar",
+  "field_usualy_date_seminar_value": "each Friday  at  13:30",
+  "field_usualy_place_seminar_value": "in IM, rear building, ground floor",
+  "field_chairmen_value": "Michal Koucky, Pavel Pudlak",
+  "text": "The programme is announced via the &nbsp; <a href=\"https:\/\/list.math.cas.cz\/listinfo\/complexity-seminar\"> mailing list<\/a>."
+}, {
+  "entity_id": "664",
+  "field_seminar_title_value": "Current Problems in Numerical Analysis",
+  "field_usualy_date_seminar_value": "each Friday,  at  09:00",
+  "field_usualy_place_seminar_value": "in IM, front building, third floor",
+  "field_chairmen_value": "Michal Křížek, Pavel Kůs, Jakub Šístek, Tomáš Vejchodský",
+  "text": "Old web page with the seminar history: <a class=\"moz-txt-link-freetext\" href=\"http:\/\/users.math.cas.cz\/~okmma\/\">http:\/\/users.math.cas.cz\/~okmma\/<\/a>"
+}, {
+  "entity_id": "470",
+  "field_seminar_title_value": "Functional Analysis",
+  "field_usualy_date_seminar_value": "each Tuesday  at  10:00",
+  "field_usualy_place_seminar_value": "in MÚ AV ČR, Žitná 25, konírna",
+  "field_chairmen_value": "Vladimir Muller",
+  "text": null
+}, {
+  "entity_id": "338",
+  "field_seminar_title_value": "Logic seminar",
+  "field_usualy_date_seminar_value": "each Monday at 14:00",
+  "field_usualy_place_seminar_value": "in IM, rear building, ground floor",
+  "field_chairmen_value": "Pavel Pudlak,  Neil Thapen",
+  "text": "More information on the&nbsp;<a href=\"http:\/\/www.math.cas.cz\/~thapen\/seminar.html\">old seminar web page<\/a>. The programme is announced via the <a href=\"http:\/\/list.math.cas.cz\/listinfo\/logic-seminar\"> mailing list<\/a>."
+}, {
+  "entity_id": "711",
+  "field_seminar_title_value": "Mathematical-Biological seminar",
+  "field_usualy_date_seminar_value": "each Tuesday, check time in the calendar",
+  "field_usualy_place_seminar_value": "in IM, front building, third floor",
+  "field_chairmen_value": "Milan Kučera, Jindřich Brejcha, Tomáš Vejchodský",
+  "text": null
+}, {
+  "entity_id": "534",
+  "field_seminar_title_value": "Seminar on Differential Equations and Integration Theory",
+  "field_usualy_date_seminar_value": "each Thursday  at  10:00",
+  "field_usualy_place_seminar_value": "in IM, front building, third floor",
+  "field_chairmen_value": "Giselle Antunes Monteiro, Antonín Slavík",
+  "text": null
+}, {
+  "entity_id": "356",
+  "field_seminar_title_value": "Seminar on Partial Differential Equations",
+  "field_usualy_date_seminar_value": "each Tuesday  at  09:00",
+  "field_usualy_place_seminar_value": "in IM, rear building, ground floor",
+  "field_chairmen_value": "Šárka Nečasová, Milan Pokorný",
+  "text": null
+}, {
+  "entity_id": "665",
+  "field_seminar_title_value": "Seminar on Qualitative Theory of Ordinary and Functional Differential Equations",
+  "field_usualy_date_seminar_value": "usually Wednesday at 10:00",
+  "field_usualy_place_seminar_value": "in branch in Brno, Žižkova 22, Brno, 5th Floor, Lecture Room",
+  "field_chairmen_value": "Alexander Lomtatidze",
+  "text": null
+}, {
+  "entity_id": "1522",
+  "field_seminar_title_value": "Seminar on Reckoning",
+  "field_usualy_date_seminar_value": "Wednesday  at  11:00",
+  "field_usualy_place_seminar_value": "in Institute of Mathematics AS CR, Zitna 25, seminar room, 3rd floor, front building",
+  "field_chairmen_value": "David Chodounsky, Bohuslav Balcar",
+  "text": null
+}, {
+  "entity_id": "465",
+  "field_seminar_title_value": "Seminar on theory of function spaces",
+  "field_usualy_date_seminar_value": "Every Wednesday 10:00",
+  "field_usualy_place_seminar_value": "Department of Mathematical Analysis, Faculty of Mathematics and Physics, Sokolovská 83",
+  "field_chairmen_value": "Bohumír Opic, Luboš Pick",
+  "text": null
+}, {
+  "entity_id": "344",
+  "field_seminar_title_value": "Set Theory and Analysis",
+  "field_usualy_date_seminar_value": "Every Tuesday 10:00 ",
+  "field_usualy_place_seminar_value": "IM, konírna",
+  "field_chairmen_value": "Martin Dolezal, Michal Doucha, Wieslaw Kubis",
+  "text": null
+}]);
+
+/***/ }),
+
+/***/ 332:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = {}
+
+/* styles */
+__webpack_require__(333)
+
+/* script */
+__vue_exports__ = __webpack_require__(335)
+
+/* template */
+var __vue_template__ = __webpack_require__(336)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-b5bf6e6c"
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 333:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(334);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(9)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-b5bf6e6c&scoped=true!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SeminarInfo.vue", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-b5bf6e6c&scoped=true!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SeminarInfo.vue");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 334:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)();
+// imports
+
+
+// module
+exports.push([module.i, ".justify[data-v-b5bf6e6c]{text-align:justify}.date[data-v-b5bf6e6c]{border-left-color:orange;border-left-width:2pt;border-left-style:groove}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 335:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    item: {
+      type: Object
+    },
+    detail: {
+      type: Boolean,
+      "default": false
+    }
+  },
+  data: function data() {
+    return {
+      getChair: 'Chair: ' + this.item.field_chairmen_value
+    };
+  }
+});
+
+/***/ }),
+
+/***/ 336:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('v-card', {
+    attrs: {
+      "tile": "",
+      "elevation": "3",
+      "min-width": "100%"
+    }
+  }, [_c('div', {
+    class: [_vm.detail ? 'headline' : 'subheading', 'ml-3', 'mt-1',
+      _vm.detail ? 'font-weight-regular' : 'font-weight-bold'
+    ]
+  }, [(_vm.detail) ? _c('span', {
+    staticClass: "blue--text text--darken-4"
+  }, [_vm._v(_vm._s(_vm.item.field_seminar_title_value) + "  ")]) : _c('router-link', {
+    staticClass: "blue--text text--darken-4",
+    attrs: {
+      "to": {
+        name: 'seminar',
+        params: {
+          id: _vm.item.entity_id
+        }
+      }
+    }
+  }, [_vm._v("\n        " + _vm._s(_vm.item.field_seminar_title_value) + " \n    ")]), _vm._v(" "), _c('p', {
+    staticClass: "body-2 font-weight-regular pt-1"
+  }, [(_vm.detail) ? _c('span', {
+    staticClass: "pr-1"
+  }, [_vm._v("usually takes place ")]) : _vm._e(), _vm._v(" "), _c('span', {
+    class: {
+      'font-weight-bold': _vm.detail
+    }
+  }, [_vm._v(_vm._s(_vm.item.field_usualy_date_seminar_value))])]), _vm._v(" "), _c('div', {
+    staticClass: "row body-2 font-weight-regular ml-0 mt-1 grey--text text--darken-2"
+  }, [_vm._v("\n      " + _vm._s(_vm.item.field_usualy_place_seminar_value) + "\n    ")]), _vm._v(" "), _c('p', {
+    staticClass: "row body-2 font-weight-bold ml-0 mt-1 "
+  }, [(_vm.detail) ? _c('span', {
+    domProps: {
+      "innerHTML": _vm._s(_vm.getChair)
+    }
+  }) : _c('span', [_vm._v(_vm._s(_vm.item.field_chairmen_valu))])]), _vm._v(" "), (_vm.detail) ? _c('div', {
+    staticClass: "row body-2 font-weight-regular ml-0 mr-1 pt-0 mt-0 justify",
+    domProps: {
+      "innerHTML": _vm._s(_vm.item.text)
+    }
+  }) : _vm._e()], 1)])
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 476:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__data_events_seminars_seminars_js__ = __webpack_require__(331);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SeminarPage_vue__ = __webpack_require__(477);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SeminarPage_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__SeminarPage_vue__);
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      seminar: null
+    };
+  },
+  created: function created() {
+    var id_seminar = this.$route.params.id;
+    var seminarData = null;
+    __WEBPACK_IMPORTED_MODULE_0__data_events_seminars_seminars_js__["a" /* default */].forEach(function (element) {
+      if (element.entity_id == id_seminar) {
+        seminarData = element;
+      }
+    });
+    this.seminar = seminarData;
+  },
+  components: {
+    AppSeminarPage: __WEBPACK_IMPORTED_MODULE_1__SeminarPage_vue___default.a
+  }
+});
+
+/***/ }),
+
+/***/ 477:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = {}
+
+/* script */
+__vue_exports__ = __webpack_require__(478)
+
+/* template */
+var __vue_template__ = __webpack_require__(489)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 478:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SelectYearSeminars_vue__ = __webpack_require__(479);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SelectYearSeminars_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__SelectYearSeminars_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__SeminarInfo_vue__ = __webpack_require__(332);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__SeminarInfo_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__SeminarInfo_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Programme_vue__ = __webpack_require__(482);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Programme_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__Programme_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sharing_Crumps_vue__ = __webpack_require__(234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sharing_Crumps_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__sharing_Crumps_vue__);
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['seminar'],
+  data: function data() {
+    return {
+      detail: true,
+      crumps: []
+    };
+  },
+  components: {
+    AppSelectYearSeminars: __WEBPACK_IMPORTED_MODULE_1__SelectYearSeminars_vue___default.a,
+    AppSeminarInfo: __WEBPACK_IMPORTED_MODULE_2__SeminarInfo_vue___default.a,
+    AppProgramme: __WEBPACK_IMPORTED_MODULE_3__Programme_vue___default.a,
+    appCrumps: __WEBPACK_IMPORTED_MODULE_4__sharing_Crumps_vue___default.a
+  },
+  created: function created() {
+    //crumbs
+    this.crumps.push({
+      text: "Home",
+      disabled: false,
+      href: 'home'
+    }), this.crumps.push({
+      text: "Seminars",
+      disabled: false,
+      href: 'seminars'
+    }), this.crumps.push({
+      text: this.seminar.field_seminar_title_value,
+      disabled: true,
+      href: ''
+    });
+  },
+  computed: _objectSpread({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])('header', {
+    language: 'language',
+    smAndDown: 'smAndDown'
+  }))
+});
+
+/***/ }),
+
+/***/ 479:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = {}
+
+/* script */
+__vue_exports__ = __webpack_require__(480)
+
+/* template */
+var __vue_template__ = __webpack_require__(481)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 480:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(1);
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: [],
+  data: function data() {
+    return {
+      selectedYear: 2100,
+      years: []
+    };
+  },
+  created: function created() {
+    this.years = this.getYears(2010);
+  },
+  computed: _objectSpread({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])('header', {
+    smAndDown: 'smAndDown'
+  })),
+  methods: {
+    onChange: function onChange() {
+      setConferencesYear(this.selectedYear);
+    },
+    getYears: function getYears(start) {
+      var options = [{
+        value: 2100,
+        label: 'upcoming'
+      }];
+      var yyyy = new Date().getFullYear();
+
+      for (var i = yyyy; i >= start; i--) {
+        options.push({
+          value: i,
+          label: i.toString()
+        });
+      }
+
+      options.push({
+        value: 0,
+        label: 'All'
+      });
+      return options;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ 481:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "my-2 px-0 custom-control ",
+    class: {
+      'custom-control-inline': _vm.smAndDown
+    }
+  }, [_vm._m(0), _vm._v(" "), _c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.selectedYear),
+      expression: "selectedYear"
+    }],
+    staticClass: " custom-select body-1 mt-0",
+    attrs: {
+      "id": "inputYear"
+    },
+    on: {
+      "change": [function($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
+          return o.selected
+        }).map(function(o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val
+        });
+        _vm.selectedYear = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+      }, function($event) {
+        return _vm.onChange()
+      }]
+    }
+  }, _vm._l((_vm.years), function(year, index) {
+    return _c('option', {
+      key: index,
+      domProps: {
+        "value": year.value
+      }
+    }, [_vm._v(_vm._s(year.label))])
+  }), 0)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('label', {
+    staticClass: "mt-1 mb-0 ml-1 mr-2 ",
+    attrs: {
+      "for": "inputYear"
+    }
+  }, [_c('span', {
+    staticClass: "body-1"
+  }, [_vm._v("Select")])])
+}]}
+
+/***/ }),
+
+/***/ 482:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = {}
+
+/* styles */
+__webpack_require__(483)
+
+/* script */
+__vue_exports__ = __webpack_require__(485)
+
+/* template */
+var __vue_template__ = __webpack_require__(488)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-a4cd8a32"
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 483:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(484);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(9)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-a4cd8a32&scoped=true!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Programme.vue", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-a4cd8a32&scoped=true!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Programme.vue");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 484:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)();
+// imports
+
+
+// module
+exports.push([module.i, ".justify[data-v-a4cd8a32]{text-align:justify}.date[data-v-a4cd8a32]{border-left-color:orange;border-left-width:2pt;border-left-style:groove}.read-more-button[data-v-a4cd8a32]{margin-top:0!important;padding-top:.1em!important}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 485:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_read_more_smooth__ = __webpack_require__(486);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_read_more_smooth___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_read_more_smooth__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__data_events_seminars_complexity2019_js__ = __webpack_require__(487);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['entity_id'],
+  data: function data() {
+    return {
+      date_from: "2018-12-14T13:30:00+01:00",
+      date_to: "2018-12-14T15:00:00+01:00",
+      programmes: __WEBPACK_IMPORTED_MODULE_1__data_events_seminars_complexity2019_js__["a" /* default */],
+      text1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    };
+  },
+  components: {
+    VueReadMoreSmooth: __WEBPACK_IMPORTED_MODULE_0_vue_read_more_smooth___default.a
+  }
+});
+
+/***/ }),
+
+/***/ 486:
+/***/ (function(module, exports) {
+
+module.exports =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "fb15");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "2350":
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+
+/***/ "499e":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/vue-style-loader/lib/listToStyles.js
+/**
+ * Translates the list format produced by css-loader into something
+ * easier to manipulate.
+ */
+function listToStyles (parentId, list) {
+  var styles = []
+  var newStyles = {}
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i]
+    var id = item[0]
+    var css = item[1]
+    var media = item[2]
+    var sourceMap = item[3]
+    var part = {
+      id: parentId + ':' + i,
+      css: css,
+      media: media,
+      sourceMap: sourceMap
+    }
+    if (!newStyles[id]) {
+      styles.push(newStyles[id] = { id: id, parts: [part] })
+    } else {
+      newStyles[id].parts.push(part)
+    }
+  }
+  return styles
+}
+
+// CONCATENATED MODULE: ./node_modules/vue-style-loader/lib/addStylesClient.js
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return addStylesClient; });
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+  Modified by Evan You @yyx990803
+*/
+
+
+
+var hasDocument = typeof document !== 'undefined'
+
+if (typeof DEBUG !== 'undefined' && DEBUG) {
+  if (!hasDocument) {
+    throw new Error(
+    'vue-style-loader cannot be used in a non-browser environment. ' +
+    "Use { target: 'node' } in your Webpack config to indicate a server-rendering environment."
+  ) }
+}
+
+/*
+type StyleObject = {
+  id: number;
+  parts: Array<StyleObjectPart>
+}
+
+type StyleObjectPart = {
+  css: string;
+  media: string;
+  sourceMap: ?string
+}
+*/
+
+var stylesInDom = {/*
+  [id: number]: {
+    id: number,
+    refs: number,
+    parts: Array<(obj?: StyleObjectPart) => void>
+  }
+*/}
+
+var head = hasDocument && (document.head || document.getElementsByTagName('head')[0])
+var singletonElement = null
+var singletonCounter = 0
+var isProduction = false
+var noop = function () {}
+var options = null
+var ssrIdKey = 'data-vue-ssr-id'
+
+// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+// tags it will allow on a page
+var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase())
+
+function addStylesClient (parentId, list, _isProduction, _options) {
+  isProduction = _isProduction
+
+  options = _options || {}
+
+  var styles = listToStyles(parentId, list)
+  addStylesToDom(styles)
+
+  return function update (newList) {
+    var mayRemove = []
+    for (var i = 0; i < styles.length; i++) {
+      var item = styles[i]
+      var domStyle = stylesInDom[item.id]
+      domStyle.refs--
+      mayRemove.push(domStyle)
+    }
+    if (newList) {
+      styles = listToStyles(parentId, newList)
+      addStylesToDom(styles)
+    } else {
+      styles = []
+    }
+    for (var i = 0; i < mayRemove.length; i++) {
+      var domStyle = mayRemove[i]
+      if (domStyle.refs === 0) {
+        for (var j = 0; j < domStyle.parts.length; j++) {
+          domStyle.parts[j]()
+        }
+        delete stylesInDom[domStyle.id]
+      }
+    }
+  }
+}
+
+function addStylesToDom (styles /* Array<StyleObject> */) {
+  for (var i = 0; i < styles.length; i++) {
+    var item = styles[i]
+    var domStyle = stylesInDom[item.id]
+    if (domStyle) {
+      domStyle.refs++
+      for (var j = 0; j < domStyle.parts.length; j++) {
+        domStyle.parts[j](item.parts[j])
+      }
+      for (; j < item.parts.length; j++) {
+        domStyle.parts.push(addStyle(item.parts[j]))
+      }
+      if (domStyle.parts.length > item.parts.length) {
+        domStyle.parts.length = item.parts.length
+      }
+    } else {
+      var parts = []
+      for (var j = 0; j < item.parts.length; j++) {
+        parts.push(addStyle(item.parts[j]))
+      }
+      stylesInDom[item.id] = { id: item.id, refs: 1, parts: parts }
+    }
+  }
+}
+
+function createStyleElement () {
+  var styleElement = document.createElement('style')
+  styleElement.type = 'text/css'
+  head.appendChild(styleElement)
+  return styleElement
+}
+
+function addStyle (obj /* StyleObjectPart */) {
+  var update, remove
+  var styleElement = document.querySelector('style[' + ssrIdKey + '~="' + obj.id + '"]')
+
+  if (styleElement) {
+    if (isProduction) {
+      // has SSR styles and in production mode.
+      // simply do nothing.
+      return noop
+    } else {
+      // has SSR styles but in dev mode.
+      // for some reason Chrome can't handle source map in server-rendered
+      // style tags - source maps in <style> only works if the style tag is
+      // created and inserted dynamically. So we remove the server rendered
+      // styles and inject new ones.
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  if (isOldIE) {
+    // use singleton mode for IE9.
+    var styleIndex = singletonCounter++
+    styleElement = singletonElement || (singletonElement = createStyleElement())
+    update = applyToSingletonTag.bind(null, styleElement, styleIndex, false)
+    remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true)
+  } else {
+    // use multi-style-tag mode in all other cases
+    styleElement = createStyleElement()
+    update = applyToTag.bind(null, styleElement)
+    remove = function () {
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  update(obj)
+
+  return function updateStyle (newObj /* StyleObjectPart */) {
+    if (newObj) {
+      if (newObj.css === obj.css &&
+          newObj.media === obj.media &&
+          newObj.sourceMap === obj.sourceMap) {
+        return
+      }
+      update(obj = newObj)
+    } else {
+      remove()
+    }
+  }
+}
+
+var replaceText = (function () {
+  var textStore = []
+
+  return function (index, replacement) {
+    textStore[index] = replacement
+    return textStore.filter(Boolean).join('\n')
+  }
+})()
+
+function applyToSingletonTag (styleElement, index, remove, obj) {
+  var css = remove ? '' : obj.css
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = replaceText(index, css)
+  } else {
+    var cssNode = document.createTextNode(css)
+    var childNodes = styleElement.childNodes
+    if (childNodes[index]) styleElement.removeChild(childNodes[index])
+    if (childNodes.length) {
+      styleElement.insertBefore(cssNode, childNodes[index])
+    } else {
+      styleElement.appendChild(cssNode)
+    }
+  }
+}
+
+function applyToTag (styleElement, obj) {
+  var css = obj.css
+  var media = obj.media
+  var sourceMap = obj.sourceMap
+
+  if (media) {
+    styleElement.setAttribute('media', media)
+  }
+  if (options.ssrId) {
+    styleElement.setAttribute(ssrIdKey, obj.id)
+  }
+
+  if (sourceMap) {
+    // https://developer.chrome.com/devtools/docs/javascript-debugging
+    // this makes source maps inside style tags work properly in Chrome
+    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
+    // http://stackoverflow.com/a/26603875
+    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
+  }
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild)
+    }
+    styleElement.appendChild(document.createTextNode(css))
+  }
+}
+
+
+/***/ }),
+
+/***/ "4d93":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("2350")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".text-overflow-content[data-v-72c03b2a]{--nlines:3;--lineHeight:1.5;max-height:calc(var(--nlines)*var(--lineHeight));overflow:hidden;-webkit-transition:max-height .3s ease;transition:max-height .3s ease}.text-overflow[data-v-72c03b2a]{position:relative}.no-overflow .text-overflow-content[data-v-72c03b2a]{max-height:100%;overflow:visible}.no-overflow .button-read-more[data-v-72c03b2a],.no-overflow .hide-text[data-v-72c03b2a]{display:none}.read-more-button[data-v-72c03b2a]{cursor:pointer;display:block;position:relative;border-top:1px solid #dbdbdb;height:.1em;margin:2em auto;width:95%;text-align:center}.read-more-button span[data-v-72c03b2a]{background:#fff;color:#b5b5b5;display:inline-block;font-size:.75em;padding:.4em .8em;-webkit-transform:translateY(-1.1em);transform:translateY(-1.1em);text-align:center}.hide-text[data-v-72c03b2a]{--nlines:6;--lineHeight:1.5;background-image:-webkit-gradient(linear,left top,left bottom,from(hsla(0,0%,100%,0)),color-stop(90%,#fff),to(#fff));background-image:linear-gradient(180deg,hsla(0,0%,100%,0) 0,#fff 90%,#fff);width:100%;height:calc(var(--nlines)*var(--lineHeight));position:absolute;-webkit-transform:translateY(calc(var(--nlines)*-1*var(--lineHeight)));transform:translateY(calc(var(--nlines)*-1*var(--lineHeight)))}.hide-text[data-v-72c03b2a],.read-more-button[data-v-72c03b2a]{-webkit-transition:opacity .3s ease,margin .3s ease;transition:opacity .3s ease,margin .3s ease;opacity:1}.expanded .hide-text[data-v-72c03b2a],.expanded .read-more-button[data-v-72c03b2a]:not(.show-less){opacity:0;margin-top:0;margin-bottom:0;pointer-events:none}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "6099":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("4d93");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("e6468484", content, true, {"sourceMap":false,"shadowMode":false});
+
+/***/ }),
+
+/***/ "6b0e":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ReadMore_vue_vue_type_style_index_0_id_72c03b2a_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("6099");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ReadMore_vue_vue_type_style_index_0_id_72c03b2a_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ReadMore_vue_vue_type_style_index_0_id_72c03b2a_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ReadMore_vue_vue_type_style_index_0_id_72c03b2a_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "f6fd":
+/***/ (function(module, exports) {
+
+// document.currentScript polyfill by Adam Miller
+
+// MIT license
+
+(function(document){
+  var currentScript = "currentScript",
+      scripts = document.getElementsByTagName('script'); // Live NodeList collection
+
+  // If browser needs currentScript polyfill, add get currentScript() to the document object
+  if (!(currentScript in document)) {
+    Object.defineProperty(document, currentScript, {
+      get: function(){
+
+        // IE 6-10 supports script readyState
+        // IE 10+ support stack trace
+        try { throw new Error(); }
+        catch (err) {
+
+          // Find the second match for the "at" string to get file src url from stack.
+          // Specifically works with the format of stack traces in IE.
+          var i, res = ((/.*at [^\(]*\((.*):.+:.+\)$/ig).exec(err.stack) || [false])[1];
+
+          // For all scripts on the page, if src matches or if ready state is interactive, return the script tag
+          for(i in scripts){
+            if(scripts[i].src == res || scripts[i].readyState == "interactive"){
+              return scripts[i];
+            }
+          }
+
+          // If no match, return null
+          return null;
+        }
+      }
+    });
+  }
+})(document);
+
+
+/***/ }),
+
+/***/ "fb15":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
+// This file is imported into lib/wc client bundles.
+
+if (typeof window !== 'undefined') {
+  if (true) {
+    __webpack_require__("f6fd")
+  }
+
+  var i
+  if ((i = window.document.currentScript) && (i = i.src.match(/(.+\/)[^/]+\.js(\?.*)?$/))) {
+    __webpack_require__.p = i[1] // eslint-disable-line
+  }
+}
+
+// Indicate to webpack that this file can be concatenated
+/* harmony default export */ var setPublicPath = (null);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0f797f57-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/ReadMore.vue?vue&type=template&id=72c03b2a&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"text-overflow",class:{ expanded: _vm.expanded, 'no-overflow': _vm.inMaxRange }},[_c('div',{ref:"to",staticClass:"text-overflow-content"},[_vm._t("default")],2),(!_vm.noShadow)?_c('div',{ref:"ht",staticClass:"hide-text"}):_vm._e(),(!_vm.noButton)?_c('div',{staticClass:"button-read-more",on:{"click":_vm.toggle}},[_vm._t("more",[_c('div',{staticClass:"read-more-button",class:{ 'show-less': !_vm.noLess }},[_c('span',[_vm._v(_vm._s(_vm.expanded ? _vm.textLess : _vm.text))])])],{"open":_vm.expanded})],2):_vm._e()])}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/ReadMore.vue?vue&type=template&id=72c03b2a&scoped=true&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/ReadMore.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var ReadMorevue_type_script_lang_js_ = ({
+  name: "vue-read-more-smooth",
+  props: {
+    lines: {
+      type: Number,
+      default: 3
+    },
+    gLines: {
+      type: Number,
+      default: null
+    },
+    maxLines: {
+      type: Number,
+      default: null
+    },
+    text: {
+      type: String,
+      default: "Read more"
+    },
+    textLess: {
+      type: String,
+      default: "Read less"
+    },
+    noLess: {
+      type: Boolean,
+      default: false
+    },
+    openByDefault: {
+      type: Boolean,
+      default: false
+    },
+    open: {
+      type: Boolean,
+      default: null
+    },
+    noButton: {
+      type: Boolean,
+      default: false
+    },
+    noShadow: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data() {
+    return {
+      readmore: false,
+      expanded: false,
+      inMaxRange: false,
+      localMaxLines: 1
+    };
+  },
+  watch: {
+    open(v) {
+      if (v !== this.expanded) {
+        this.toggle(!v);
+      }
+    }
+  },
+  created() {
+    if (this.lines && !this.maxLines) {
+      this.localMaxLines = this.lines + 1;
+    } else {
+      this.localMaxLines = this.maxLines - 1;
+    }
+
+    if (this.open === true) {
+      this.expanded = true;
+    }
+  },
+  mounted() {
+    const lh = this.getLineHeight(this.$refs.to);
+
+    if (this.lines) {
+      this.$refs.to.style.setProperty("--nlines", this.lines);
+    }
+    let gLines = 2;
+    if (this.gLines) {
+      gLines = this.gLines;
+    } else if (this.lines > 12) {
+      gLines = 4;
+    } else if (this.lines > 6) {
+      gLines = 3;
+    }
+
+    if (this.$refs.ht) {
+      this.$refs.ht.style.setProperty("--nlines", gLines);
+    }
+
+    if (this.open === true) {
+      this.$refs.to.style.setProperty("max-height", "100%");
+    }
+
+    setTimeout(() => {
+      this.readmore = this.$refs.to.offsetHeight < this.$refs.to.scrollHeight;
+
+      if (this.$refs.to.scrollHeight <= this.localMaxLines * lh) {
+        this.inMaxRange = true;
+      }
+
+      this.$refs.to.style.setProperty("--lineHeight", lh + "px");
+      if (this.$refs.ht) {
+        this.$refs.ht.style.setProperty("--lineHeight", lh + "px");
+      }
+
+      if (this.open === true) {
+        this.$refs.to.style.setProperty(
+          "max-height",
+          this.$refs.to.scrollHeight + "px"
+        );
+      }
+    });
+  },
+  methods: {
+    toggle(val) {
+      const valExp = typeof val === "boolean" ? val : this.expanded;
+
+      if (valExp) {
+        if (!this.noLess) {
+          this.$refs.to.style.removeProperty("max-height");
+          this.expanded = false;
+          this.$emit("update:open", false);
+        }
+      } else {
+        this.expanded = true;
+        this.$emit("update:open", true);
+        this.$refs.to.style.setProperty(
+          "max-height",
+          this.$refs.to.scrollHeight + "px"
+        );
+      }
+    },
+    getLineHeight(element) {
+      let temp = document.createElement(element.children[0].nodeName);
+      const cpStyle = getComputedStyle(element.children[0]);
+      temp.setAttribute(
+        "style",
+        "position:absolute;left:-999em;margin:0px;padding:0px;font-family:" +
+          cpStyle.fontFamily +
+          ";font-size:" +
+          cpStyle.fontSize
+      );
+      temp.innerHTML = "test";
+      temp = document.body.appendChild(temp);
+      const ret = temp.clientHeight;
+      temp.parentNode.removeChild(temp);
+      return ret;
+    }
+  }
+});
+
+// CONCATENATED MODULE: ./src/ReadMore.vue?vue&type=script&lang=js&
+ /* harmony default export */ var src_ReadMorevue_type_script_lang_js_ = (ReadMorevue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/ReadMore.vue?vue&type=style&index=0&id=72c03b2a&scoped=true&lang=scss&
+var ReadMorevue_type_style_index_0_id_72c03b2a_scoped_true_lang_scss_ = __webpack_require__("6b0e");
+
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+// CONCATENATED MODULE: ./src/ReadMore.vue
+
+
+
+
+
+
+/* normalize component */
+
+var component = normalizeComponent(
+  src_ReadMorevue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  "72c03b2a",
+  null
+  
+)
+
+/* harmony default export */ var ReadMore = (component.exports);
+// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
+
+
+/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (ReadMore);
+
+
+
+/***/ })
+
+/******/ })["default"];
+//# sourceMappingURL=vue-read-more-smooth.common.js.map
+
+/***/ }),
+
+/***/ 487:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ([{
+  "entity_id": "2832",
+  "title": "A Logical Characteristic of Read-Once Branching Programs",
+  "speaker": "Stanislav Žák",
+  "affiliation": "Institute of Computer Science, CAS",
+  "date_from": "2020-01-31 13:30:00",
+  "date_to": "2020-01-31 15:00:00",
+  "place": "in IM, rear building, ground floor",
+  "text": "We present a mathematical model of the intuitive notions such as the knowledge or the information arising at different stages of computations on branching programs (b.p.). The model has two appropriate properties:<br \/>\r\n<br \/>\r\ni) The \"knowledge\" arising at a stage of computation in question is derivable from the \"knowledge\" arising at the previous stage according to the rules of the model and according to the local arrangement of the b.p.<br \/>\r\n<br \/>\r\nii) The model confirms the intuitively well-known fact that the knowledge arising at a node of a computation depends not only on it but in some cases also on a \"mystery\" information. (I. e. different computations reaching the same node may have different knowledge(s) arisen at it.)<br \/>\r\n<br \/>\r\nWe prove that with respect to our model no such information exists in read-once b.p.`s but on the other hand in b. p.`s which are not read-once such information must be present. The read-once property forms a frontier. More concretely, we may see the instances of our models as a systems $S=(U,D)$ where $U$ is a universe of knowledge and $D$ arederivation rules. We say that a b.p. $P$ is compatible with a system $S$ iff along each computation in $P$ $S$ derives $F$ ($false$) or $T$ ($true$) at the end correctly according to the label of the reached sink. This key notion modifies the classic paradigm according to which the computational complexity is defined with respect to different classes of restricted b.p.`s (e.g. read-once b.p.`s, k-b.p.`s, b.p.`s computing in limited time etc.). Now, the restriction is defined by a subset of systems and only these programs are taken into account which are compatible with at least one of the chosen systems. Further&nbsp; we may understand the sets $U$ of knowledge(s) as a sets of admissible logical formulae.&nbsp; More rich&nbsp; sets $U$`s imply the larger (= more free) restrictions on b.p.`s and consequently the smaller complexities of Boolean functions are detected. More rich logical equipment implies stronger computational effectiveness."
+}, {
+  "entity_id": "2808",
+  "title": "Some Results in Property Testing",
+  "speaker": "Alexander Belov",
+  "affiliation": "University of Latvia ",
+  "date_from": "2019-12-20 13:30:00",
+  "date_to": "2019-12-20 15:00:00",
+  "place": "in IM, rear building, ground floor",
+  "text": "The field of property testing deals with the following question. Given an object, detect whether it satisfies some property or is far from doing so. Usually, the object is modelled as a bit-string, and the distance is (relative) Hamming distance. The goal is to develop an algorithm whose complexity is very small: much smaller than the size of the object.<br \/>\r\n<br \/>\r\n&nbsp;"
+}, {
+  "entity_id": "2805",
+  "title": "Does the existence of a complete problem for TFNP class imply the existence of an optimal proof system or vice versa? Part II.",
+  "speaker": "Erfan Khaniki",
+  "affiliation": "IM",
+  "date_from": "2019-12-13 13:30:00",
+  "date_to": "2019-12-13 15:00:00",
+  "place": "in IM, rear building, ground floor",
+  "text": "In this lecture we will construct an oracle with respect to which:<br \/>\r\n&nbsp;&nbsp;&nbsp;&nbsp; a. There is no optimal proof system for propositional tautologies.<br \/>\r\n&nbsp; &nbsp; &nbsp;b. TFNP=FP.<br \/>\r\nThe existence of this oracle and the one constructed in the previous lecture shows that TFNP_c and CON^N are independent<br \/>\r\nof each other in relativized worlds.<br \/>\r\n&nbsp;"
+}, {
+  "entity_id": "2799",
+  "title": "Does the existence of a complete problem for TFNP class imply the existence of an optimal proof system or vice versa? ",
+  "speaker": "Erfan Khaniki",
+  "affiliation": "IM",
+  "date_from": "2019-12-06 13:30:00",
+  "date_to": "2019-12-06 15:00:00",
+  "place": "in IM, rear building, 1st floor (!)",
+  "text": "In this talk, we will investigate the relationship between proof complexity conjectures that are mentioned in the \"Incompleteness in the finite domain\" paper. In particular, we are interested in the relationship between the nonexistence of a complete problem for TFNP class (TFNP_c)&nbsp; and the nonexistence of an optimal proof system for propositional tautologies (CON^N). For this matter,&nbsp; we will construct two oracles V and W such that:<br \/>\r\n<br \/>\r\n1. With respect to the V<br \/>\r\n&nbsp; &nbsp; &nbsp;a. There is no complete problem for disjoint NP-pairs.<br \/>\r\n&nbsp; &nbsp; &nbsp;b. E=NE.<br \/>\r\n2. With respect to the W<br \/>\r\n&nbsp; &nbsp; &nbsp;a. There is no optimal proof system for propositional tautologies.<br \/>\r\n&nbsp; &nbsp; &nbsp;b. TFNP=FP.<br \/>\r\nThe existence of these oracles shows that TFNP_c and CON^N are independent of each other in the relativized worlds.<br \/>\r\n&nbsp;"
+}, {
+  "entity_id": "2784",
+  "title": "Grassmann meets Macaulay: From Algebra to Algorithms and back",
+  "speaker": "Cornelius Brand",
+  "affiliation": "MFF",
+  "date_from": "2019-11-29 13:30:00",
+  "date_to": "2019-11-29 15:00:00",
+  "place": "in IM, rear building, ground floor",
+  "text": "In this talk, I will give an introduction to two recent algebraic techniques in (parameterized) algorithms for hard problems: One is the exterior-algebra based approach of Brand, Dell and Husfeldt (STOC'18) and Brand (ESA'19), the other is the one by Pratt (FOCS'19) and Brand and Pratt (submitted), based on a symbolic calculus of differential operators.<br \/>\r\n<br \/>\r\nBoth techniques will be gently introduced in the context of their flagship application problem: Detecting squarefree monomials in polynomials computed by arithmetic circuits, where they each yield the state-of-the-art in certain settings. I then proceed to show how these seemingly unrelated algorithmic techniques both arise from an underlying isomorphism of algebraic structures. This is of independent interest, and gives lower bounds on the symmetric rank of a specific symmetric tensor, namely the determinant of generic Hankel matrices, and extends recent work in commutative algebra (Shafiei 2015, J. Commut. Alg.).<br \/>\r\n&nbsp;"
+}, {
+  "entity_id": "2770",
+  "title": "Adventures in Monotone Complexity and TFNP ",
+  "speaker": "Lukáš Folwarczný",
+  "affiliation": "IM CAS",
+  "date_from": "2019-11-15 13:30:00",
+  "date_to": "2019-11-15 15:00:00",
+  "place": "in IM, rear building, ground floor",
+  "text": "In this talk, I present the main ideas from the paper Adventures in Monotone Complexity and TFNP&nbsp;by Mika Göös, Pritish Kamath, Robert Robere, and Dmitry Sokolov. The main focus of the talk will be on the relations between monotone computational models and communication complexity (going from Karchmer-Wigderson (formulas) and Razborov (circuits) to this paper (span programs)).<br \/>\r\n&nbsp;"
+}, {
+  "entity_id": "2759",
+  "title": "Presburger meets Cambridge Analytica",
+  "speaker": "Martin Koutecký",
+  "affiliation": "IUUK MFF UK",
+  "date_from": "2019-11-01 13:30:00",
+  "date_to": "2019-11-01 15:00:00",
+  "place": "in IM, rear building, ground floor ",
+  "text": "Cambridge Analytica is an infamous and now bankrupt (but sure to survive in some other way) company which helped manipulate elections all over the world (including the Brexit and Trump campaigns) through targeted advertising on social networks. We want to analyze such tasks and events from the perspective of computational complexity, asking questions such as: what is the cheapest bribery which makes my candidate win? what if opinion diffusion happens in the underlying social network? what if manipulation happens simultaneously by multiple agents? Answering these questions is helpful not only to a potential briber, but also to observers wishing to detect bribery or have meaningful measures of the (surprisingly elusive) notion of margin of victory.<br \/>\r\n<br \/>\r\nPresburger arithmetic (PrA) is the first-order theory of the natural numbers with addition, named in honor of Mojżesz Presburger who introduced it in 1929 and proved its decidability. While the questions posed above are hard in general, we show that when the number of candidates and\/or voter types is small, the problems can be formulated as model checking of short PrA sentences, and already Presburger's proof gives a fixed-parameter tractable algorithm. In this talk, I will present Cooper's algorithm from the 1970's which is faster than Presburger's original procedure. Still, many interesting questions remain open.<br \/>\r\n&nbsp;"
+}, {
+  "entity_id": "2744",
+  "title": "Beyond Natural Proofs",
+  "speaker": "Jan Pich",
+  "affiliation": "IM",
+  "date_from": "2019-10-18 13:30:00",
+  "date_to": "2019-10-18 15:00:00",
+  "place": "in IM, rear building, ground floor ",
+  "text": "Hardness magnification reduces major complexity separations to proving lower bounds for some natural problem Q against weak circuit models. Several recent works have established results of this form. In the most intriguing cases, the required lower bound is known for problems that appear to be significantly easier than Q, while Q itself is susceptible to lower bounds but these are not yet sufficient for magnification. In this work, we provide more examples of this phenomenon, and investigate the prospects of proving new lower bounds using this approach. In particular, we consider the following essential questions associated with the hardness magnification program:<br \/>\r\n<br \/>\r\n- Does hardness magnification avoid the natural proofs barrier of Razborov and Rudich?<br \/>\r\n- Can we adapt known lower bound techniques to establish the desired lower bound for Q?<br \/>\r\n<br \/>\r\nWe establish that some instantiations of hardness magnification overcome the natural proofs barrier in the following sense: slightly superlinear-size circuit lower bounds for certain versions of the minimum circuit size problem MCSP imply the non-existence of natural proofs. As a corollary of our result, we show that certain magnification theorems not only imply strong worst-case circuit lower bounds but also rule out the existence of efficient learning algorithms.<br \/>\r\n<br \/>\r\nHardness magnification might sidestep natural proofs, but we identify a source of difficulty when trying to adapt existing lower bound techniques to prove strong lower bounds via magnification. This is captured by a locality barrier: existing magnification theorems unconditionally show that the problems Q considered above admit highly efficient circuits extended with small fan-in oracle gates, while lower bound techniques against weak circuit models quite often easily extend to circuits containing such oracles. This explains why direct adaptations of certain lower bounds are unlikely to yield strong complexity separations via hardness magnification.<br \/>\r\n<br \/>\r\nThis is a joint work with Lijie Chen, Shuichi Hirahara, Igor C. Oliveira, Ninad Rajgopal and Rahul Santhanam."
+}, {
+  "entity_id": "2737",
+  "title": "On the distribution of runners on a circle",
+  "speaker": "Pavel Hrubes",
+  "affiliation": "IM",
+  "date_from": "2019-10-11 13:30:00",
+  "date_to": "2019-10-11 15:00:00",
+  "place": "in IM, rear building, ground floor ",
+  "text": "I will discuss the following problem: consider runners on a circular track, running with constant speeds such that k of the speeds are distinct. Does it have to be the case that, at some point in time, their distribution on the circle is far from uniform? I will give an almost optimal solution, as a function of k. This has an interesting application to the distribution of complex arguments of roots of univariate polynomials, and the Real Tau Conjecture in arithmetic circuit complexity."
+}, {
+  "entity_id": "2731",
+  "title": "Solving connectivity problems via basic Linear Algebra",
+  "speaker": "Anish Mukherjee",
+  "affiliation": "MFF UK",
+  "date_from": "2019-10-04 13:30:00",
+  "date_to": "2019-10-04 15:00:00",
+  "place": "in IM, rear building, ground floor ",
+  "text": "We consider some classical graph connectivity problems like reachability,<br \/>\r\nshortest path and disjoint paths in this talk. For the first two problems,<br \/>\r\nwe show efficient parallel (dynamic AC^0) algorithms in the dynamic model,<br \/>\r\nconfirming a conjecture of Patnaik and Immerman ’94 for directed<br \/>\r\nreachability. Recently, we have been able to extend this for batch updates<br \/>\r\nalso. For the optimization version of the disjoint paths problem, we show<br \/>\r\nefficient sequential and parallel algorithms in planar graphs where all the<br \/>\r\nterminals lie on a single face. This partly answers an open question of<br \/>\r\nColin De Verdière and Schrijver ’08. Interestingly the basic idea behind<br \/>\r\nthese algorithms is to compute some linear algebraic property of the matrix<br \/>\r\nassociated with the given graph, which I shall try to convey in this talk.<br \/>\r\n<br \/>\r\nBased on joint works with Samir Datta, Raghav Kulkarni, Siddharth Iyer,<br \/>\r\nThomas Schwentick, and Thomas Zeume.<br \/>\r\n&nbsp;"
+}, {
+  "entity_id": "2715",
+  "title": "Who needs category theory?",
+  "speaker": "Yuri Gurevich",
+  "affiliation": "University of Michigan",
+  "date_from": "2019-09-13 13:30:00",
+  "date_to": "2019-09-13 15:00:00",
+  "place": "in IM, rear building, ground floor ",
+  "text": "Mathematicians use category theory, at least some of them do. In fact category theory<br \/>\r\nis instrumental in some branches of mathematics, e.g. algebraic topology. But what<br \/>\r\nabout computer scientists or physicists? Do they need category theory?<br \/>\r\n<br \/>\r\nIf category theory is your hammer, some computing problems look like appropriate<br \/>\r\nnails. However the speaker was not impressed and remained skeptical about the use of<br \/>\r\ncategory theory in computer science. When he learned that the generally accepted<br \/>\r\nmathematical basis for topological quantum computing is sophisticated category theory,<br \/>\r\nhe proposed to his long-time collaborator Andreas Blass to \"decategorize\" topological<br \/>\r\nquantum computing.<br \/>\r\n<br \/>\r\nIt turned out, surprisingly, that category theory or something like it is necessary<br \/>\r\nfor topological quantum computing. Moreover the root cause of the necessity is not<br \/>\r\nspecific to topological quantum computing. There should be numerous other computing<br \/>\r\nproblems where something like category theory is necessary. Understanding the root<br \/>\r\ncause allowed us to simplify the mathematical basis for the topological quantum<br \/>\r\ncomputing and to decategorize it to the extent possible.<br \/>\r\n<br \/>\r\nIn the main part of the talk, without assuming any knowledge of category theory or<br \/>\r\nquantum computing, we illustrate, on a simplified example, why category theory or<br \/>\r\nsomething like it is necessary for topological quantum computing.<br \/>\r\n&nbsp;"
+}, {
+  "entity_id": "2693",
+  "title": "Exponential Separation between Quantum Communication and Logarithm of Approximate Rank",
+  "speaker": "Makrand Sinha",
+  "affiliation": "CWI Amsterdam",
+  "date_from": "2019-06-07 13:30:00",
+  "date_to": "2019-06-07 15:00:00",
+  "place": "in IM, rear building, ground floor ",
+  "text": "Chattopadhyay, Mande and Sherif (to appear in STOC 2019) recently<br \/>\r\nexhibited a total Boolean function, the sink function, that has polynomial<br \/>\r\napproximate rank and polynomial randomized communication complexity. This gives<br \/>\r\nan exponential separation between randomized communication complexity and<br \/>\r\nlogarithm of the approximate rank, refuting the log-approximate-rank conjecture.<br \/>\r\nWe show that even the quantum communication complexity of the sink function is<br \/>\r\npolynomial, thus also refuting the quantum log-approximate-rank conjecture.<br \/>\r\n<br \/>\r\nOur lower bound is based on the fooling distribution method introduced by Rao<br \/>\r\nand Sinha (Theory of Computing 2018) for the classical case and extended by<br \/>\r\nAnshu, Touchette, Yao and Yu (STOC 2017) for the quantum case. We also give a<br \/>\r\nnew proof of the classical lower bound using the fooling distribution method.<br \/>\r\n<br \/>\r\nJoint work with Ronald de Wolf."
+}, {
+  "entity_id": "2685",
+  "title": "Finding a Nash Equilibrium Is No Easier Than Breaking Fiat-Shamir",
+  "speaker": "Pavel Hubacek",
+  "affiliation": "MFF UK",
+  "date_from": "2019-05-24 13:30:00",
+  "date_to": "2019-05-24 15:00:00",
+  "place": "in IM, rear building, ground floor ",
+  "text": "The Fiat-Shamir heuristic transforms a public-coin interactive proof into a non-interactive argument,<br \/>\r\nby replacing the verifier’s random coins with a cryptographic hash function that is applied to the<br \/>\r\nprotocol's transcript. Constructing hash functions for which this transformation is sound is a<br \/>\r\ncentral and long-standing open question in cryptography. We show that solving the End-Of-Metered-Line<br \/>\r\nproblem is no easier than breaking the soundness of the Fiat-Shamir transformation when applied to<br \/>\r\nthe sumcheck protocol. In particular, if the transformed protocol is sound, then any hard problem in<br \/>\r\n#P gives rise to a hard distribution in the class CLS. Since CLS is contained in PPAD for which the<br \/>\r\nproblem of finding a Nash equilibrium is complete, our results show existence of a distribution of<br \/>\r\nstrategic games for which it is not possible to find a Nash equilibrium in polynomial time.<br \/>\r\n<br \/>\r\nOur main technical contribution is a stateful incrementally verifiable procedure that, given a SAT<br \/>\r\ninstance over n variables, counts the number of satisfying assignments. This is accomplished via an<br \/>\r\nexponential sequence of small steps, each computable in time poly(n). Incremental verifiability means<br \/>\r\nthat each intermediate state includes a sumcheck-based proof of its correctness, and the proof can be<br \/>\r\nupdated and verified in time poly(n).<br \/>\r\n<br \/>\r\nJoint work with Arka Rai Choudhuri, Chethan Kamath, Krzysztof Pietrzak, Alon Rosen and Guy N.<br \/>\r\nRothblum.<br \/>\r\n&nbsp;"
+}, {
+  "entity_id": "2678",
+  "title": "Constant factor approximations to edit distance on far input pairs in nearly linear time",
+  "speaker": "Michal Koucky",
+  "affiliation": "MFF UK",
+  "date_from": "2019-05-17 13:30:00",
+  "date_to": "2019-05-17 15:00:00",
+  "place": "in IM, rear building, ground floor ",
+  "text": "We will present an algorithm that runs in time n^{1+eps} and computes a<br \/>\r\nconstant factor approximation to edit distance of two input strings, given that<br \/>\r\ntheir edit distance is at least n^{1-delta} for some delta&gt;0 dependening on eps&gt;0.<br \/>\r\nJoint work with Mike Saks."
+}, {
+  "entity_id": "2671",
+  "title": "Lower bounds on balancing families",
+  "speaker": "Pavel Hrubes",
+  "affiliation": "IM CAS",
+  "date_from": "2019-05-03 13:30:00",
+  "date_to": "2019-05-03 15:00:00",
+  "place": "in IM, rear building, ground floor ",
+  "text": "A family of proper non-empty subsets S<sub>1<\/sub>, . . . , S<sub>k<\/sub> ⊂ [n] is called<br \/>\r\nbalancing if for every subset X ⊂ [n] of size n\/2, there is i ∈ [k] so that<br \/>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |S<sub>i<\/sub> ∩ X| = |S<sub>i<\/sub>|\/2.<br \/>\r\nI will show that, for n even, the size of a balancing family must be at least<br \/>\r\nn(1-o(1))\/2. A similar reasoning can be applied to prove lower bounds on certain<br \/>\r\ntypes of depth-two circuits computing the majority function.&nbsp;<br \/>\r\n<br \/>\r\nJoint work with S.Ramamoorthy, A. Rao, and A. Yehudayoff."
+}, {
+  "entity_id": "2652",
+  "title": "A separator theorem for hypergraphs and a CSP-SAT algorithm",
+  "speaker": "Navid Talebanfard",
+  "affiliation": "IM",
+  "date_from": "2019-04-12 13:30:00",
+  "date_to": "2019-04-12 15:00:00",
+  "place": "in IM, rear building, ground floor ",
+  "text": "I'll show how to remove a small number of edges from a uniform hypergraph of small vertex degree to break it<br \/>\r\ninto small connected components. I'll use it to give a CSP-SAT algorithm for CSPs with small variable frequency.<br \/>\r\n<br \/>\r\nThis is joint work with&nbsp;Vojtěch Rödl."
+}, {
+  "entity_id": "2638",
+  "title": "Attribute-Based Encryption and Information-Theoretic Crypto",
+  "speaker": "Hoeteck Wee",
+  "affiliation": "CNRS and ENS",
+  "date_from": "2019-03-29 13:30:00",
+  "date_to": "2019-03-29 15:00:00",
+  "place": "in IM, rear building, ground floor ",
+  "text": "Can we encrypt data while enabling fine-grained access control, as is necessary to protect big, complex data? In this talk, we will survey how addressing this question led to new lower and upper bounds in information-theoretic cryptography and secret sharing, which in turn came from building new connections to communication complexity and private information-retrieval."
+}, {
+  "entity_id": "2622",
+  "title": "Circuit lower bounds via non-negative rank",
+  "speaker": "Pavel Hrubeš",
+  "affiliation": "IM CAS",
+  "date_from": "2019-03-15 13:30:00",
+  "date_to": "2019-03-15 15:00:00",
+  "place": "in IM, rear building, ground floor ",
+  "text": "The non-negative rank of a matrix is a quantity which has found several applications in communication<br \/>\r\ncomplexity and extension complexity of polytopes. We will show that certain lower bounds on non-negative rank<br \/>\r\nimply, at least in principle, circuit lower bounds. With a Boolean function $f$ and $\\epsilon&gt;0$, we associate<br \/>\r\nan explicit matrix $M_\\epsilon(f)$ so that the circuit size of $f$ is at least the non-negative rank of<br \/>\r\n$M_{\\epsilon}(f)$, for $\\epsilon$ sufficiently small. We also discuss continuity properties of the<br \/>\r\nnon-negative rank. &nbsp;<br \/>\r\n<br \/>\r\n&nbsp;"
+}, {
+  "entity_id": "2600",
+  "title": "Stronger Lower Bounds for Online ORAM",
+  "speaker": "Veronika Slivova",
+  "affiliation": "MFF UK",
+  "date_from": "2019-03-01 13:30:00",
+  "date_to": "2019-03-01 15:00:00",
+  "place": "in IM, rear building, ground floor ",
+  "text": "Oblivious RAM (ORAM), introduced in the context of software protection<br \/>\r\nby Goldreich and Ostrovsky [JACM’96], aims at obfuscating the memory<br \/>\r\naccess pattern induced by a RAM computation. We will show that every<br \/>\r\nimplementation of Online Oblivious RAM has logarthmic overhead.<br \/>\r\n<br \/>\r\nJoint work with P. Hubacek, M. Koucky and K. Kral.<br \/>\r\n<br \/>\r\n&nbsp;"
+}, {
+  "entity_id": "2587",
+  "title": "Deterministic indeterminacy of CHSH-solving protocols",
+  "speaker": "Dmitri Gavinsky",
+  "affiliation": "IM",
+  "date_from": "2019-02-15 13:30:00",
+  "date_to": "2019-02-15 15:00:00",
+  "place": "in IM, rear building, ground floor ",
+  "text": "How unpredicatble is the behaviour of efficient entagled players in the CHSH game?<br \/>\r\nWe will discuss this question from both qualitative and quantitative point viewpoints."
+}, {
+  "entity_id": "2580",
+  "title": "How to compute random Boolean function over the reals.",
+  "speaker": "Pavel Hrubeš",
+  "affiliation": "IM",
+  "date_from": "2019-02-01 13:30:00",
+  "date_to": "2019-02-01 15:00:00",
+  "place": "in IM, rear building, ground floor ",
+  "text": "We consider the problem of defining a Boolean function by means of a first-order formula over the reals. We discuss the connection of this problem with other questions in computational complexity. We also outline some bounds on the size of formulas computing a random Boolean function. &nbsp;<br \/>\r\n&nbsp;"
+}, {
+  "entity_id": "2574",
+  "title": "Entropy extractors for small zero-fixing sources, part III",
+  "speaker": "Pavel Pudlák",
+  "affiliation": "IM",
+  "date_from": "2019-01-25 13:30:00",
+  "date_to": "2019-01-25 15:00:00",
+  "place": "in IM, rear building, ground floor ",
+  "text": "I will finish the first construction by presenting the skeleton-fixing procedure and start the second construction."
+}, {
+  "entity_id": "2570",
+  "title": "Entropy extractors for small zero fixing sources, part II",
+  "speaker": "Pavel Pudlák",
+  "affiliation": "IM ",
+  "date_from": "2019-01-18 13:30:00",
+  "date_to": "2019-01-18 15:00:00",
+  "place": "in IM, rear building, ground floor<br \/>\r\n&nbsp; ",
+  "text": "I will continue with the construction of an extractor for zero fixing sources of triple logarithmic size.<br \/>\r\n&nbsp;"
+}, {
+  "entity_id": "2566",
+  "title": "Entropy extractors for small zero fixing sources",
+  "speaker": "Pavel Pudlák",
+  "affiliation": "IM",
+  "date_from": "2019-01-11 13:30:00",
+  "date_to": "2019-01-11 15:00:00",
+  "place": "in IM, rear building, ground floor",
+  "text": "A (k,n)-zero fixing source X is given by a subset S of [n] of size k. The source X produces 0-1 vectors that are zero outside of S each with probability 2^{-k}. An extractor for a (k,n)-zero fixing source is a mapping F:{0,1}^n\\to {0,1}^l such that F(X) is close to the uniform distribution on {0,1}^l. Such extractors are known for k down to log log n with l=k-O(1). In this talk we will show some constructions for k << log log n and some upper bounds on the amount of entropy that is possible to extract for small k.\r\n\r\nThese problems are closely connected with Ramsey theory.\r\n\r\nJoint work with Vojtěch Rodl.\r\n"
+}, {
+  "entity_id": "2556",
+  "title": "The layer complexity of Arthur-Merlin-like communication",
+  "speaker": "Dmitry Gavinsky",
+  "affiliation": "IM CAS",
+  "date_from": "2019-01-04 13:30:00",
+  "date_to": "2019-01-04 15:00:00",
+  "place": "in IM, rear building, ground floor ",
+  "text": "In communication complexity the Arthur-Merlin (AM) model is the most natural one that allows both randomness\r\nand non-determinism. Presently we do not have any super-logarithmic lower bound for the AM-complexity of an\r\nexplicit function. Obtaining such a bound is a fundamental challenge to our understanding of communication\r\nphenomena. In this work we explore the gap between the known techniques and the complexity class AM.\r\n\r\nIn the first part we define a new natural class Small-advantage Layered Arthur-Merlin (SLAM) that have the\r\nfollowing properties:\r\n    - SLAM is (strictly) included in AM and includes all previously known sub-AM classes with non-trivial\r\nlower bounds.\r\n    - SLAM is qualitatively stronger than the union of those classes.\r\n    - SLAM is a subject to the discrepancy bound: in particular, the inner product function does not have an\r\nefficient SLAM-protocol.\r\n\r\nStructurally this can be summarised as\r\nSBP ∪ UAM ⊂ SLAM ⊆ AM ∩ PP.\r\n\r\nIn the second part we ask why proving a lower bound of ω(√n) on the MA-complexity of an explicit function\r\nseems to be difficult.\r\n\r\nBoth of these results are related to the notion of layer complexity, which is, informally, the number of\r\n“layers of non-determinism” used by a protocol. We believe that further investigation of this concept may\r\nlead to better understanding of the communication model AM and to non-trivial lower bounds against it.\r\n"
+}]);
+
+/***/ }),
+
+/***/ 488:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('v-flex', {
+    attrs: {
+      "xs12": ""
+    }
+  }, _vm._l((_vm.programmes), function(programme, index) {
+    return _c('v-card', {
+      key: index,
+      staticClass: "mx-0 my-2",
+      attrs: {
+        "width": "100%"
+      }
+    }, [_c('v-card-title', [_c('div', [_c('span', {
+      staticClass: "subheading font-weight-bold  mx-0 mt-1"
+    }, [_vm._v("\n         " + _vm._s(programme.title) + "\n       ")]), _vm._v(" "), _c('p', {
+      staticClass: "orange--text text--darken-3 mt-1"
+    }, [_vm._v(_vm._s(programme.speaker))]), _vm._v(" "), _c('p', {
+      staticClass: "body-2 font-weight-regular ml-0  grey--text text--darken-2"
+    }, [_vm._v(" " + _vm._s(programme.affiliation) + " ")]), _vm._v(" "), _c('p', {
+      staticClass: "date pl-1 body-2 mt-1"
+    }, [_vm._v(_vm._s(_vm._f("dateEU")(programme.date_from, 'dddd, DD.MMMM YYYY - HH:mm')) + " to \n         " + _vm._s(_vm._f("dateEU")(programme.date_to, 'HH:mm')) + " \n       ")]), _c('p', {
+      staticClass: "date body-2 font-weight-regular pl-1  grey--text text--darken-2 "
+    }, [_vm._v("\n       " + _vm._s(programme.place) + "\n       ")]), _vm._v(" "), (index == 0) ? _c('div', {
+      staticClass: "justify body-2 font-weight-regular ml-0 mt-1 mr-2 black--text",
+      domProps: {
+        "innerHTML": _vm._s(programme.text)
+      }
+    }) : _c('vue-read-more-smooth', {
+      attrs: {
+        "text": "More!",
+        "text-less": "Less!"
+      }
+    }, [_c('div', {
+      staticClass: "justify body-2 font-weight-regular ml-0 mt-1 mr-2 black--text",
+      domProps: {
+        "innerHTML": _vm._s(programme.text)
+      }
+    })])], 1)])], 1)
+  }), 1)
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 489:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('v-layout', {
+    staticClass: "my-0 mx-1",
+    attrs: {
+      "row": "",
+      "wrap": ""
+    }
+  }, [_c('v-flex', {
+    attrs: {
+      "xs12": ""
+    }
+  }, [_c('app-crumps', {
+    attrs: {
+      "crumps": _vm.crumps
+    }
+  })], 1), _vm._v(" "), _c('v-flex', {
+    staticClass: "hidden-md-and-down grey lighten-2",
+    attrs: {
+      "lg1": "",
+      "xl1": ""
+    }
+  }, [_c('app-select-year-seminars', {
+    staticClass: "ml-5"
+  })], 1), _vm._v(" "), _c('v-spacer', {
+    staticClass: "hidden-md-and-down grey lighten-2"
+  }), _vm._v(" "), _c('v-flex', {
+    attrs: {
+      "xs12": "",
+      "sm12": "",
+      "md12": "",
+      "lg10": "",
+      "xl10": ""
+    }
+  }, [_c('app-seminar-info', {
+    attrs: {
+      "item": _vm.seminar,
+      "detail": _vm.detail
+    }
+  })], 1), _vm._v(" "), _c('v-flex', {
+    staticClass: "hidden-lg-and-up mx-0",
+    attrs: {
+      "xl2": "",
+      "md12": ""
+    }
+  }, [_c('app-select-year-seminars')], 1), _vm._v(" "), _c('app-programme', {
+    attrs: {
+      "entity_id": _vm.seminar.entity_id
+    }
+  })], 1)
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 490:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('v-container', {
+    attrs: {
+      "fluid": ""
+    }
+  }, [_c('app-seminar-page', {
+    attrs: {
+      "seminar": _vm.seminar
+    }
+  })], 1)
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 80:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = {}
+
+/* script */
+__vue_exports__ = __webpack_require__(476)
+
+/* template */
+var __vue_template__ = __webpack_require__(490)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+module.exports = __vue_exports__
+
+
+/***/ })
+
+});
+//# sourceMappingURL=7.build.js.map
