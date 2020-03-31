@@ -33,17 +33,11 @@
     </v-flex>
   </v-layout>
   <v-layout xs12 md12 lg12 xl12 row  wrap class="mx-0 px-0">
-    <div class="text-xs-center">
-      <router-link  :to="{name:'more'}" >
-      <v-bottom-sheet v-model="sheet">
-        <template v-slot:activator>
-          <v-btn color="indigo" dark>
-          >> &nbsp; {{$t("news.more")}}
-          </v-btn>
-        </template>
-      </v-bottom-sheet>
-      </router-link>
-    </div>
+    <router-link :to="{path:'/morenews'}" >
+     <v-btn color="indigo" dark>
+        >> &nbsp; {{$t("news.more")}}
+      </v-btn>
+    </router-link>
   </v-layout>
 </v-container>
 </template>

@@ -20,6 +20,9 @@ export default {
     this.years = this.getYears(2011);  
   },
   methods:{
+    ...mapActions('news',{
+      setNewsYear:'setNewsYear',
+    }),
     onChange(){
       console.log(this.selectedYear);
       this.setNewsYear(this.selectedYear);

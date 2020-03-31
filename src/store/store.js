@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import header from './modules/header';
+import news from './modules/news';
 import publication from './modules/publication';
 import grants from './modules/grants';
 import conferences from './modules/conferences';
@@ -13,6 +14,7 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
     modules: {
         header,
+        news,
         publication,
         grants,
         conferences,
