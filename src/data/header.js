@@ -8,7 +8,7 @@ export default [
         dropdown: true,
         url: null,
         items: [
-            { url: '/members/researchers', name: ['Researchers fellow', 'Vědečtí pracovníci'] },
+            { url: '/members/researchers', name: ['Research fellows', 'Vědečtí pracovníci'] },
             { url: '/members/postdocs', name: ['Postdocs, students', 'Postdoktorandi, studenti'] },
             { url: '/members/staff', name: ['Staff', 'Ostatní'] },
             { url: '/members/distinguishedVisitors', name: ['Eduard Čech Distinguished Visitor', 'Eduard Čech Distinguished Visitor'] },

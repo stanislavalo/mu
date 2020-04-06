@@ -39,7 +39,7 @@ export const i18n = new VueI18n({
               facilities:"Facilities",
             },
             researchers: {
-                title: 'Researchers fellow',
+                title: 'Research fellows',
                 departement: 'Department',
                 interests: 'Research interests',
             },

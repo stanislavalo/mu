@@ -30,7 +30,8 @@ export default {
    },
   methods:{
     onChange(){
-     setConferencesYear(this.selectedYear);
+      //todo
+     var yy = this.selectedYear;
     },
     getYears(start){
       var options = [{value:2100,label:'upcoming'}];

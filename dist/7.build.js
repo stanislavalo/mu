@@ -602,7 +602,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   })),
   methods: {
     onChange: function onChange() {
-      setConferencesYear(this.selectedYear);
+      //todo
+      var yy = this.selectedYear;
     },
     getYears: function getYears(start) {
       var options = [{

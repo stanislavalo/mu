@@ -20,7 +20,7 @@
               v-for="(item, index) in items" :key="index"  
               class="submenu ml-1 pl-4 py-3 "
               :to="item.url" tag="li">
-              <a class="blue--text">{{item.name[language]}}</a>
+              <span class="blue--text">{{item.name[language]}}</span>
             </router-link>
           </ul>
         </li>

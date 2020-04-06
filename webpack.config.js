@@ -2,7 +2,6 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-    //entry: './src/main.js',
     entry: [
         "core-js/modules/es.promise",
         "core-js/modules/es.array.iterator",
@@ -58,17 +57,12 @@ module.exports = {
             }
         ]
     },
-    // node: {
-    //     dns: 'empty',
-    //     net: 'empty'
-    // },
     plugins: [
-        // load `moment/locale/ja.js` and `moment/locale/it.js`
         new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /fr|it/),
     ],
     resolve: {
         alias: {
-            'vue$': 'vue/dist/vue',
+            'vue$': 'vue/dist/vue.min',
         }
     },
     devServer: {

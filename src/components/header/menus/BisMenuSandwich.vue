@@ -25,7 +25,7 @@
           v-for="(item, index) in items" :key="index" 
           class="submenu ml-3 px-2 py-3 "
           :to="item.url" tag="li" active-class="active" >
-          <a class="blue--text">{{item.name[language]}}</a>
+          <span class="blue--text">{{item.name[language]}}</span>
         </router-link>
       </ul>
     </v-flex>

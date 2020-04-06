@@ -42,7 +42,7 @@ export default {
   data(){
     return{
       xsOnly:false,
-      photo:"http://www-test.math.cas.cz/data/photos/2.jpg",
+      photo:"http://www-test.math.cas.cz/data/photos/5.jpg",
       id:this.$route.params.id,
       isProduction:false,
       researcher:{

@@ -1,6 +1,6 @@
 <template>
   <div >
-    <span class="body-1 font-weight-bold pl-1"> {{lecture.month+'-01-'+lecture.year|dateEU('MMMM YYYY')}}
+    <span class="body-1 font-weight-bold pl-1"> {{lecture.year+'-'+lecture.month|dateEU('MMMM YYYY')}}
       </span>
     <a :href="lecture.filepdf" target="_blanc">
       <v-layout xl12 align-start justify-start row fill-height >
