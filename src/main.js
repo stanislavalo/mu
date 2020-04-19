@@ -14,15 +14,18 @@ import moment from 'moment';
 import 'bulma/css/bulma.css';
 import 'leaflet/dist/leaflet.css';
 
+import dayjs from 'dayjs';
 Vue.use(Vuetify);
 Vue.use(VueResource);
-Vue.use(moment);
+// Vue.use(moment);
+
 
 Vue.filter('shape', function(text, length) {
     return text.length > length ? text.slice(0, length) + '...' : text;
 });
-Vue.filter('dateEU', function(date, formater) {
-    return moment(date).format(formater);
+Vue.filter('dateEU', function(date,formater) { 
+  return dayjs(date).format(formater);
+  //return moment(date).format(formater);
 });
 
 var vm = new Vue({

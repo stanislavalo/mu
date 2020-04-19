@@ -19,7 +19,7 @@
           <template v-for="(item, index) in awardsItems">
             <v-list-tile :key="index" avatar>
               <v-list-tile-avatar >
-                <img :src="listStyle">
+                <img  src="../../../assets/members/circle.png">
               </v-list-tile-avatar>
               <v-list-tile-content>
                 <v-list-tile-title v-html="item.header" ></v-list-tile-title>
@@ -46,7 +46,6 @@ import {mapGetters} from 'vuex';
   export default {
     data () {
       return {
-        listStyle:'http://localhost:8080/src/assets/members/circle.png',
         awards:[],
         papers:[],
         showAwards:true,

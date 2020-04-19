@@ -37,7 +37,7 @@ import ResearcherDepartmentInterest from './ResearcherDepartmentInterest.vue';
 import researcherInfo from './ResearcherInfo.vue';
 import {mapGetters} from 'vuex';
 import {mapActions} from 'vuex';
-
+//import x from '../../../assets/members/mural.jpg';
 export default {
   data(){
     return{
@@ -105,7 +105,7 @@ export default {
 .bg {
   /* The image used */
   background-image: /*linear-gradient(rgba(43, 41, 41, 0.5), rgba(16, 9, 36, 0.5)),*/
-        url("../../../../src/assets/members/mural.jpg");          
+       url("../../../assets/members/mural.jpg") ;      
   background-repeat: repeat-y;
   /* Full height */
   height: 100%;

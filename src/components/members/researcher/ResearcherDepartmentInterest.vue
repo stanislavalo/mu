@@ -33,7 +33,6 @@ export default {
   },
   created(){
     this.xsOnly = this.$vuetify.breakpoint.xsOnly;
-    console.log(this.xsOnly +" = xsOnly");
   },
   computed: {
   ...mapGetters('header',{

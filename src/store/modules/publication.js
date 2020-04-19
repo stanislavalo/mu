@@ -37,7 +37,6 @@ const mutations = {
         state.department = criterias.selectedDepartment;
         state.type = criterias.selectedType;
         state.year = criterias.selectedYear;
-        console.log('store state=' + state.year);
     },
 };
 const actions = {

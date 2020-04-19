@@ -43,7 +43,6 @@ export default {
   methods:{
     setSeeDescription() {
       this.toggleDown = !this.toggleDown;  
-      console.log("setSeeDescription toggleDown= "+this.toggleDown);
     }
   }
 }

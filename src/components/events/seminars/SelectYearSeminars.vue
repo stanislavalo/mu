@@ -1,10 +1,11 @@
 <template>
-  <div class="my-2 px-0 custom-control " :class="{'custom-control-inline':smAndDown}  ">
+  <div class="my-2 px-0 custom-control" :class="{'custom-control-inline':smAndDown}  ">
     <label class="mt-1 mb-0 ml-1 mr-2 " for="inputYear" >
       <span class="body-1">Select</span>
     </label>
-    <select id="inputYear" class=" custom-select body-1 mt-0" v-model="selectedYear" @change="onChange()">
-      <option v-for="(year,index) in years" :key="index" :value="year.value">{{year.label}}</option>
+    <select id="inputYear" class=" custom-select body-2 mt-0 mr-1" v-model="selectedYear" @change="onChange()">
+      <option class="body-2" v-for="(year,index) in years" :key="index" :value="year.value">
+        {{year.label}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
     </select>
   </div> 
 </template>

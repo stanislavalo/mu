@@ -231,11 +231,9 @@ export default {
   },
   mounted() {
     this.mdAndDown = this.$vuetify.breakpoint.mdAndDown;
-     console.log(this.$route.params.id);
   },
   created(){
     var idItem = this.$route.params.id;
-    console.log('idItem='+idItem);
     var n = {};
     this.news.forEach(function(element) {
       if(element.id == idItem){

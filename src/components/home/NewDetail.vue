@@ -1,8 +1,8 @@
 <template>
-<section>
+<v-container id="news" class="mt-1 mb-0 pa-0" fluid >
   <app-crumps :crumps="crumps"></app-crumps>
-  <v-layout class="mx-0 px-0">
-    <v-flex xs12  lg7 xl7 class=" mx-1 px-0"> 
+  <v-layout class="mx-0 px-0 ">
+    <v-flex xs12 md7 lg7 xl7 class="mt-2 mx-1 px-0"> 
       <v-card class=" ma-0 pa-0" >
           <app-new-item :item="item" :detail=true></app-new-item>
       </v-card>
@@ -17,14 +17,14 @@
     </v-flex>
   </v-layout> 
   <v-layout v-if="mdAndDown" class="mx-1 mt-3">
-    <v-flex xs12class=" mx-5 px-2"> 
+    <v-flex xs12 class=" mx-4 px-2"> 
       <p class="headline blue--text text--darken-4 ">{{$t("news.evens")}} 
         <span class="body-2 blue--text text--darken-4 ml-3 url" >  {{$t("news.calendar")}}</span>
       </p>
       <app-short-event></app-short-event>
     </v-flex>
   </v-layout>
-</section>
+</v-container>
 </template>
 <script>
 import {mapGetters} from 'vuex';
@@ -233,11 +233,9 @@ export default {
   },
   mounted() {
     this.mdAndDown = this.$vuetify.breakpoint.mdAndDown;
-     console.log(this.$route.params.id);
   },
   created(){
     var idItem = this.$route.params.id;
-    console.log('idItem='+idItem);
     var n = {};
     this.news.forEach(function(element) {
       if(element.id == idItem){

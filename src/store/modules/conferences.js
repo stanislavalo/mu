@@ -27,9 +27,7 @@ const mutations = {
         if (dd < 10)
             dd = '0' + dd;
         var df = d.getFullYear() + '-' + m + '-' + dd; // 00:00:00
-        console.log('initConference mutation');
         state.allConferences.forEach(function(element) {
-            console.log(element.event_calendar_date_value + '>=' + df);
             if (element.event_calendar_date_value >= df) {
                 conferencesData.push(element);
             }
@@ -43,7 +41,6 @@ const mutations = {
         state.selectedYear = year;
         var df = year + '-01-01';
         var dto = year + '-12-31';
-        console.log('to_date <= ' + dto);
         var conferencesData = [];
         state.allConferences.forEach(function(element) {
             if (element.event_calendar_date_value >= df && element.event_calendar_date_value2 <= dto)

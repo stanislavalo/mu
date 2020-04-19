@@ -1,5 +1,5 @@
 <template>         
-  <v-card tile  elevation=3  min-width=100%>
+  <v-card tile  elevation=2  min-width=100%>
     <div :class="[detail ? 'headline' : 'subheading','ml-3', 'mt-1',
       detail ? 'font-weight-regular' : 'font-weight-bold' ]" >
       <span v-if="detail" class="blue--text text--darken-4">{{item.field_seminar_title_value}}  </span>

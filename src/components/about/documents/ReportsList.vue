@@ -1,8 +1,10 @@
 <template>
   <v-layout row wrap class="mx-2">
-       <app-list :pastList=false :list="last" class="mt-2"></app-list>
+    <v-flex xs12>
+      <app-list :pastList=false :list="last" class="mt-2"></app-list>
       <app-list :pastList=true :list="past" class="mt-0"></app-list>
-    </v-layout>
+    </v-flex>
+  </v-layout>
 </template>
 <script>
 import annuels from '../../../data/about/documents/ann_reports.js';

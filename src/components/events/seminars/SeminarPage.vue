@@ -3,8 +3,8 @@
     <v-flex xs12>
       <app-crumps :crumps="crumps"></app-crumps>
     </v-flex>
-    <v-flex  lg1 xl1 class="hidden-md-and-down grey lighten-2">
-      <app-select-year-seminars class="ml-5"></app-select-year-seminars>
+    <v-flex  lg2 xl1 class="hidden-md-and-down grey lighten-2">
+      <app-select-year-seminars class="ml-4 mr-2"></app-select-year-seminars>
     </v-flex>
     <v-spacer class="hidden-md-and-down grey lighten-2"></v-spacer>
     <v-flex xs12 sm12 md12 lg10  xl10 >
@@ -13,10 +13,11 @@
     <v-flex xl2 md12 class="hidden-lg-and-up mx-0">
       <app-select-year-seminars></app-select-year-seminars>
     </v-flex>
-  <app-programme :entity_id="seminar.entity_id"></app-programme>
+    <app-programme v-if="!ie"  :entity_id="seminar.entity_id"></app-programme>
   </v-layout>
 </template>
 <script>
+
 import {mapGetters} from 'vuex';
 import selectYearSeminars from './SelectYearSeminars.vue';
 import seminarInfo from'./SeminarInfo.vue';
@@ -30,6 +31,7 @@ export default {
     return {
       detail:true,
        crumps: [],
+      
     }
   },
   components:{
@@ -41,12 +43,12 @@ export default {
   created(){
     //crumbs
     this.crumps.push({
-          text: "Home",
+          text: "home.title",
           disabled: false,
           href: 'home',
     }), 
     this.crumps.push({
-          text: "Seminars",
+          text: "events.seminars",
           disabled: false,
           href: 'seminars',
     }),  
@@ -64,5 +66,4 @@ export default {
   },
 }
 </script>
-
 

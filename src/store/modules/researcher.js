@@ -17,7 +17,6 @@ const getters = {
 const mutations = {
     'SET_ID' (state, id) {
         state.id = id;
-        console.log('store id researcher: ' + id);
     },
     'SET_NB_GRANTS' (state, nb_grants) {
         state.nb_grants = nb_grants;

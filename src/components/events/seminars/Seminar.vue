@@ -1,7 +1,5 @@
 <template>
-   <v-container fluid>
     <app-seminar-page :seminar="seminar"></app-seminar-page>
-   </v-container>
 </template>
 <script>
 import seminars from '../../../data/events/seminars/seminars.js';
@@ -11,6 +9,7 @@ export default {
   data(){
     return{
      seminar:null,
+     crumps: [],
     };
   },
   created(){
@@ -22,6 +21,21 @@ export default {
       }
     });
     this.seminar = seminarData;
+    this.crumps.push({
+          text: "home.title",
+          disabled: false,
+          href: 'home',
+    }), 
+    this.crumps.push({
+          text: "events.seminars",
+          disabled: false,
+          href: 'seminars',
+    }),  
+    this.crumps.push({
+          text: this.seminar.field_seminar_title_value,
+          disabled: true,
+          href: '' 
+    });
   },
   components:{
     AppSeminarPage:seminarPage,

@@ -28,7 +28,6 @@ export default {
       setConferencesYear: 'setConferencesYear',
     }),
     onChange(){
-      console.log(this.selectedYear);
       if(this.selectedYear == 0)
         this.setAllConferences();
       else if (this.selectedYear == 2100)  

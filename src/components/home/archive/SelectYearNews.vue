@@ -24,7 +24,6 @@ export default {
       setNewsYear:'setNewsYear',
     }),
     onChange(){
-      console.log(this.selectedYear);
       this.setNewsYear(this.selectedYear);
     },
     getYears(start){

@@ -4,13 +4,13 @@
     min-width="260">
     <router-link :to="{name:'home'}" class="pa-1 address" tag="v-layout">
       <v-flex xs8 class="ml-0">
-        <v-card-title class="ml-0" >
+        <v-card-title class="ml-0 mr-1" >
           <div class="ml-0">
-            <h3 class="headline headcolor ma-0 pa-0">Institute of Mathematics</h3>
+            <span class="headline headcolor ma-0 pa-0">Institute of Mathematics</span>
           </div>
         </v-card-title>
       </v-flex>
-      <v-flex xs4  class="mt-2 mr-5">
+      <v-flex xs4  class="mt-2 mr-2">
         <v-img
           :src="require('../../../assets/header/im-logo.gif')"
           min-height="80"

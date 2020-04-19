@@ -31,7 +31,6 @@ const mutations = {
         var m = d.getMonth() + 1;
         var df = d.getFullYear() + '-' + m + '-' + d.getDate();
         var condition = '>="' + df + '"';
-        console.log('to_date' + condition);
         state.allGrants.forEach(function(element) {
             if (element.to_date >= df) {
                 grantsData.push(element);
@@ -44,7 +43,6 @@ const mutations = {
         var df = year + '-01-01';
         var yyyy = new Date().getFullYear();
         var dto = (yyyy - 1) + '-12-31';
-        console.log('to_date <= ' + dto);
         var grantsData = [];
         state.allGrants.forEach(function(element) {
             if (element.from_date >= df && element.to_date <= dto)
@@ -53,7 +51,6 @@ const mutations = {
         state.grants = grantsData;
     },
     'SET_TYPE' (state, type) {
-        console.log('set type= ' + type);
         if (type != state.typeGrant) {
             state.typeGrantChanged = true;
         }

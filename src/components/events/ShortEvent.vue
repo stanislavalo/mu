@@ -1,32 +1,33 @@
 <template>
-<div>
-  <v-layout xs12 lg12 xl12 v-for="(event, index) in events"  :key="index">
-    <v-flex xs2 xl1 class="mr-4">
-      <router-link :to="{name:event.url}" tag="div" class=" pl-2 pr-2 text-center  date-bg"> 
-            <a class="white--text">{{event.datetime.day}}<br> {{event.datetime.month}}</a>
-      </router-link>
-    </v-flex>
-    <v-flex> 
-    <router-link :to="{name:event.url}" tag="p" class="title mb-0 ">
-      <a class="blue--text text--darken-4">{{event.title}}</a>
-    </router-link>
-    <p class="text-justify"> {{event.text}} <br>
-      {{event.datetime.day}} {{event.datetime.month}}  
-      {{event.datetime.hh}}h<span v-if="event.datetime.mm>0">{{event.datetime.mm}}</span>
-      <span v-else>00</span>
-    </p>
-  </v-flex>
-  </v-layout>
-  </div>
+  <container>
+    <v-layout xs12 sm12 md12 lg12 xl12 row v-for="(event, index) in events"  :key="index">
+      <v-flex xs2 sm2 md2 lg2 xl1 :class="[!smAndDown ? 'mr-4' : 'mr-2']" >
+        <router-link :to="{name:event.url}" tag="div" :class="[!smAndDown ? 'px-2' : 'px-1','text-center','date-bg' ]"> 
+              <a class="white--text">{{event.datetime.day}}<br> {{event.datetime.month}}</a>
+        </router-link>
+      </v-flex>
+      <v-flex> 
+        <router-link :to="{name:event.url}" tag="p" class="subtitle-1 font-weight-bold mb-0 ">
+          <a class="subtitle-1 font-weight-bold blue--text text--darken-4">{{event.title}}</a>
+        </router-link>
+        <p class="text-justify"> {{event.text}} <br>
+          {{event.datetime.day}} {{event.datetime.month}}  
+          {{event.datetime.hh}}h<span v-if="event.datetime.mm>0">{{event.datetime.mm}}</span>
+          <span v-else>00</span>
+        </p>
+      </v-flex>
+    </v-layout>
+  </container>
 </template>
 <script>
+import {mapGetters} from 'vuex';
 export default {
   data(){
     return{
       events:[
         {
           datetime:{
-            day:25,
+            day:23,
             month:'SEP',
             year:2019,
             hh:9,
@@ -62,7 +63,12 @@ export default {
         }
       ]
     }
-  }
+  },
+  computed: {
+    ...mapGetters('header',{
+        smAndDown:'smAndDown',
+    }),
+  },
 }
 </script>
 <style scoped>
